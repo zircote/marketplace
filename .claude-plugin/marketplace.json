@@ -13,8 +13,10 @@
       "author": {
         "name": "epicpast"
       },
+      "source": {
       "source": "github",
-      "repo": "epicpast/nsip-api-client",
+      "repo": "epicpast/nsip-api-client"
+      },
       "category": "data-access"
     }
   ],
