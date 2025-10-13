@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "nsip": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/epicpast/nsip-api-client.git",
+        "nsip-mcp-server"
+      ],
+      "env": {
+        "MCP_TRANSPORT": "stdio"
+      }
+    }
+  }
+}

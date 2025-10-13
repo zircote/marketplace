@@ -1,28 +1,14 @@
 {
-  "name": "marketplace",
-  "version": "1.0.0",
-  "description": "A curated marketplace of Claude Code plugins for enhanced development workflows",
+  "name": "epicpast",
   "owner": {
-    "name": "Allen, Robert",
+    "name": "epicpast",
     "email": "bob@epicpastures.com"
   },
   "plugins": [
     {
-      "name": "nsip-api-client",
-      "description": "Access NSIP sheep breeding data with MCP tools and slash commands for discovering breeds, looking up animals, viewing lineages and progeny, and monitoring server health",
-      "author": {
-        "name": "epicpast"
-      },
-      "source": {
-      "source": "github",
-      "repo": "epicpast/nsip-api-client"
-      },
-      "category": "data-access"
+      "name": "nsip",
+      "source": "./plugins/nsip",
+      "description": "MCP tools and slash commands for querying the NSIP sheep breeding database"
     }
-  ],
-  "metadata": {
-    "created": "2025-10-12",
-    "repository": "https://github.com/epicpast/marketplace",
-    "documentation": "https://github.com/epicpast/marketplace/blob/main/README.md"
-  }
+  ]
 }
