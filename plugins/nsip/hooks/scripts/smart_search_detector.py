@@ -32,9 +32,10 @@ class SmartSearchDetector:
 
         # LPN ID patterns (common formats)
         self.lpn_patterns = [
+            r'\b\d{1,4}#{0,10}\d{4,10}#{0,10}\d{1,4}\b',  # e.g., 6####92020###249
             r'\b[A-Z]{2,4}\d{6,10}\b',  # e.g., NSWK123456
-            r'\b\d{10,12}\b',            # e.g., 1234567890
-            r'\bLPN[:\s-]?([A-Z0-9]+)\b',  # e.g., LPN:ABC123
+            r'\b\d{10,15}\b',            # e.g., 621879202000024
+            r'\bLPN[:\s-]?([A-Z0-9#]+)\b',  # e.g., LPN:ABC123 or LPN:6####92020###249
         ]
 
     def _log_detection(self, log_entry: dict):
@@ -200,7 +201,7 @@ class SmartSearchDetector:
         # Log detection
         if detected_ids or any(intents.values()):
             log_entry = {
-                "timestamp": datetime.utcnow().isoformat() + "Z",
+                "timestamp": datetime.now().isoformat(),
                 "detected_ids": detected_ids,
                 "intents": {k: v for k, v in intents.items() if v},
                 "prompt_length": len(prompt)

@@ -283,11 +283,7 @@ class TestMultiHookInteraction(BaseHookTestCase):
             "prompt": "Search for Merino sheep"
         }
 
-        # Execute all hook types
-        with self.assertRaises(Exception):
-            # API health check might fail without mocking
-            pass  # Skip for now
-
+        # Execute all hook types - they should all succeed independently
         breed_result = self.run_hook('breed_context_injector.py', pre_input)
         self.assertHookContinues(breed_result)
 
@@ -297,8 +293,7 @@ class TestMultiHookInteraction(BaseHookTestCase):
         detector_result = self.run_hook('smart_search_detector.py', prompt_input)
         self.assertHookContinues(detector_result)
 
-        # All hooks should complete successfully
-        # and not interfere with each other
+        # All hooks should complete successfully and not interfere with each other
 
     def test_hooks_share_filesystem_safely(self):
         """Test that hooks can safely share log/cache directories."""
@@ -321,7 +316,7 @@ class TestMultiHookInteraction(BaseHookTestCase):
         }
 
         prompt_input = {
-            "prompt": "Test prompt with TEST3"
+            "prompt": "Test prompt with 6####92020###249"
         }
 
         # Execute hooks that write to different files
@@ -334,9 +329,9 @@ class TestMultiHookInteraction(BaseHookTestCase):
         retry_log = self.env.read_log_file('retry_log.jsonl')
         detected_log = self.env.read_log_file('detected_ids.jsonl')
 
-        self.assertGreater(len(query_log), 0)
-        self.assertGreater(len(retry_log), 0)
-        self.assertGreater(len(detected_log), 0)
+        self.assertGreater(len(query_log), 0, "Query log should contain entries")
+        self.assertGreater(len(retry_log), 0, "Retry log should contain entries")
+        self.assertGreater(len(detected_log), 0, "Detection log should contain entries")
 
 
 if __name__ == '__main__':

@@ -19,8 +19,9 @@ class ComparativeAnalyzer:
         """Initialize comparative analyzer."""
         # Patterns for detecting multiple animals
         self.animal_patterns = [
+            r'\b\d{1,4}#{0,10}\d{4,10}#{0,10}\d{1,4}\b',  # e.g., 6####92020###249
             r'\b[A-Z]{2,4}\d{6,10}\b',  # LPN IDs
-            r'\b\d{10,12}\b',            # Numeric IDs
+            r'\b\d{10,15}\b',            # Numeric IDs
         ]
 
         # Comparison keywords
