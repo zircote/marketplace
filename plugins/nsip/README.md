@@ -14,24 +14,44 @@ Access NSIP sheep breeding data through Claude Code with one-command installatio
 
 **What you get:**
 - 9 MCP tools for sheep breeding data
-- 9 slash commands for quick workflows
-- 5 automatic hooks for enhanced functionality
+- 10 slash commands for quick workflows
+- 1 expert agent for breeding consultation
+- 15 automatic hooks for enhanced functionality
 - Automatic package installation via `uvx`
 - No manual setup required
 
 ## Enhanced Features (Hooks)
 
-The NSIP plugin includes intelligent hooks that automatically enhance your workflow:
+The NSIP plugin includes 15 intelligent hooks that automatically enhance your workflow:
 
-| Hook | When | What It Does |
-|------|------|--------------|
-| API Health Check | Session start | Verifies NSIP API connectivity |
-| LPN Validator | Before calls | Validates LPN ID format to prevent errors |
-| Query Logger | After calls | Logs all API calls for audit/debugging |
-| Result Cache | After calls | Caches frequently accessed data (60min TTL) |
-| CSV Exporter | After searches | Auto-exports search results to CSV |
+### Hook Categories
 
-See [hooks/README.md](./hooks/README.md) for detailed hook documentation.
+**Error Resilience (3 hooks)**
+- Auto-retry with exponential backoff
+- Fallback to cached data on failures
+- Alert tracking for repeated errors
+
+**Context Enhancement (2 hooks)**
+- Breed-specific characteristics injection
+- Comprehensive trait definitions
+
+**Data Export (2 hooks)**
+- Pedigree tree visualizations
+- Breeding analysis reports
+
+**Workflow Intelligence (2 hooks)**
+- Smart LPN ID detection in prompts
+- Comparative analysis suggestions
+
+**Core Operations (6 hooks)**
+- API health monitoring
+- LPN format validation
+- Query logging
+- Result caching
+- CSV exports
+- Performance tracking
+
+See [hooks/README.md](./hooks/README.md) for detailed documentation on all 15 hooks.
 
 ## How It Works
 
@@ -103,9 +123,18 @@ Example:
 
 The plugin hooks store data in your home directory:
 
-- **Query Logs**: `~/.claude-code/nsip-logs/query_log.jsonl`
-- **Cache Files**: `~/.claude-code/nsip-cache/` (60-minute TTL)
-- **CSV Exports**: `~/.claude-code/nsip-exports/`
+**Logs**:
+- `~/.claude-code/nsip-logs/query_log.jsonl` - All API calls
+- `~/.claude-code/nsip-logs/retry_log.jsonl` - Retry attempts
+- `~/.claude-code/nsip-logs/fallback_log.jsonl` - Cache fallbacks
+- `~/.claude-code/nsip-logs/detected_ids.jsonl` - LPN detections
+- `~/.claude-code/nsip-logs/ALERT_*.txt` - Error alerts
+
+**Cache**:
+- `~/.claude-code/nsip-cache/` - Cached API responses (60-min TTL)
+
+**Exports**:
+- `~/.claude-code/nsip-exports/` - CSV, pedigrees, breeding reports
 
 All hook operations are automatic and transparent. See [hooks/README.md](./hooks/README.md) for maintenance.
 
@@ -195,31 +224,45 @@ See [hooks/README.md](./hooks/README.md) for detailed troubleshooting.
 ## Plugin Structure
 
 ```
-.claude-plugin/
-├── plugin.json          # Plugin config + MCP server setup
-├── marketplace.json     # Marketplace listing
-├── README.md           # This file
-├── MCP_SERVER_FIX.md   # Technical documentation
-├── commands/           # Slash commands
-│   └── nsip/
-│       ├── discover.md
-│       ├── health.md
-│       ├── lineage.md
-│       ├── lookup.md
-│       ├── profile.md
-│       ├── progeny.md
-│       ├── search.md
-│       ├── test-api.md
-│       └── traits.md
-└── hooks/              # Plugin hooks
-    ├── README.md       # Hook documentation
-    ├── hooks.json      # Hook configuration
-    └── scripts/        # Hook implementations
-        ├── api_health_check.py
-        ├── lpn_validator.py
-        ├── query_logger.py
-        ├── result_cache.py
-        └── csv_exporter.py
+plugins/nsip/
+├── README.md                    # This file
+├── .mcp.json                    # MCP server configuration
+├── commands/                    # Slash commands (10 total)
+│   ├── consult.md              # Expert agent consultation
+│   ├── discover.md
+│   ├── health.md
+│   ├── lineage.md
+│   ├── lookup.md
+│   ├── profile.md
+│   ├── progeny.md
+│   ├── search.md
+│   ├── test-api.md
+│   └── traits.md
+├── agents/                      # Expert agents
+│   └── shepherd.md             # Sheep breeding expert
+├── hooks/                       # Plugin hooks (15 total)
+│   ├── README.md               # Hook documentation
+│   ├── hooks.json              # Hook configuration
+│   └── scripts/                # Hook implementations
+│       ├── api_health_check.py
+│       ├── lpn_validator.py
+│       ├── breed_context_injector.py
+│       ├── trait_dictionary.py
+│       ├── auto_retry.py
+│       ├── fallback_cache.py
+│       ├── error_notifier.py
+│       ├── query_logger.py
+│       ├── result_cache.py
+│       ├── csv_exporter.py
+│       ├── pedigree_visualizer.py
+│       ├── breeding_report.py
+│       ├── smart_search_detector.py
+│       └── comparative_analyzer.py
+└── tests/                       # Test suite (78 tests)
+    ├── README.md
+    ├── unit/
+    ├── integration/
+    └── fixtures/
 ```
 
 ## MCP Server Configuration
@@ -297,7 +340,8 @@ Works identically on:
 
 ## Version
 
-Current plugin version: **1.3.0**
-Current hooks version: **1.0.0**
+- **Plugin**: 1.3.0
+- **Hooks**: 2.0.0 (15 hooks across 4 lifecycle events)
+- **Tests**: 78 tests with 98.7% success rate
 
 See [CHANGELOG](../docs/CHANGELOG.md) for release history.
