@@ -6,8 +6,8 @@ Access NSIP sheep breeding data through Claude Code with one-command installatio
 
 ```bash
 # Install the plugin from GitHub
-/plugin marketplace add epicpast/nsip-api-client
-/plugin install nsip-api-client
+/plugin marketplace add epicpast/marketplace
+/plugin install nsip
 
 # That's it! The MCP server and all tools are automatically configured.
 ```
