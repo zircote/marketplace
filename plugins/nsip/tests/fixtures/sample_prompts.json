@@ -1,0 +1,45 @@
+{
+  "with_lpn_ids": [
+    "Show me details for animal 6####92020###249",
+    "I want to search for LPN:NSWK123456",
+    "Compare animals 1234567890 and 9876543210",
+    "Get lineage for ABC-12345",
+    "What's the breeding value for XYZ_98765?"
+  ],
+  "with_intents": {
+    "search": [
+      "Search for Merino sheep with high wool quality",
+      "Find animals with good growth rates",
+      "Locate sheep from NSW region"
+    ],
+    "lineage": [
+      "Show me the pedigree for 6####92020###249",
+      "What are the parents of this animal?",
+      "I need to see the family tree",
+      "Show ancestors of NSWK123456"
+    ],
+    "progeny": [
+      "List all offspring of 6####92020###249",
+      "Show me the descendants",
+      "What children does this animal have?",
+      "Get progeny information"
+    ],
+    "compare": [
+      "Compare 6####92020###249 vs NSWK123456",
+      "What's the difference between these two animals?",
+      "Compare trait values for multiple sheep"
+    ],
+    "trait_analysis": [
+      "What are the EBVs for this animal?",
+      "Show me breeding values",
+      "Analyze wool traits",
+      "Check parasite resistance levels"
+    ]
+  },
+  "without_nsip": [
+    "What is the weather today?",
+    "Calculate 2 + 2",
+    "Write a poem about sheep",
+    "Explain machine learning"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "get_animal_success": {
+    "isError": false,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"lpn_id\": \"6####92020###249\", \"name\": \"Test Animal\", \"breed\": \"Merino\", \"status\": \"Active\"}"
+      }
+    ]
+  },
+  "get_animal_error": {
+    "isError": true,
+    "error": "Animal not found",
+    "content": [
+      {
+        "type": "text",
+        "text": "Error: Animal not found"
+      }
+    ]
+  },
+  "search_animals_success": {
+    "isError": false,
+    "content": [
+      {
+        "type": "text",
+        "text": "[{\"lpn_id\": \"ABC123\", \"name\": \"Animal 1\"}, {\"lpn_id\": \"XYZ789\", \"name\": \"Animal 2\"}]"
+      }
+    ]
+  },
+  "search_animals_empty": {
+    "isError": false,
+    "content": []
+  },
+  "api_timeout": {
+    "isError": true,
+    "error": "Request timeout",
+    "content": [
+      {
+        "type": "text",
+        "text": "Error: Request timeout after 30 seconds"
+      }
+    ]
+  },
+  "api_network_error": {
+    "isError": true,
+    "error": "Network error",
+    "content": [
+      {
+        "type": "text",
+        "text": "Error: Failed to connect to API"
+      }
+    ]
+  },
+  "get_lineage_success": {
+    "isError": false,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"animal\": \"6####92020###249\", \"sire\": \"ABC123\", \"dam\": \"XYZ789\", \"generations\": 3}"
+      }
+    ]
+  },
+  "get_trait_ranges_success": {
+    "isError": false,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"breed_id\": \"1\", \"traits\": {\"weight\": {\"min\": 20, \"max\": 100}, \"wool\": {\"min\": 5, \"max\": 15}}}"
+      }
+    ]
+  }
+}
