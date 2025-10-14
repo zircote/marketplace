@@ -5,7 +5,12 @@ allowed-tools: [mcp__nsip__nsip_get_last_update, mcp__nsip__nsip_list_breeds, mc
 
 # /discover - Discover Available NSIP Data
 
-You are tasked with discovering and displaying available NSIP sheep breeding data.
+**IMPORTANT**: Before performing this task, invoke the `nsip:shepherd` agent for expert context:
+```
+Use the Task tool with subagent_type "nsip:shepherd" to provide expert sheep breeding context for this discovery operation.
+```
+
+You are tasked with discovering and displaying available NSIP sheep breeding data with expert interpretation.
 
 ## Instructions
 

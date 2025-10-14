@@ -57,15 +57,27 @@ The plugin uses `uvx` to automatically install the `nsip-client` package from Gi
 
 | Command | Purpose | Example |
 |---------|---------|---------|
-| `/nsip/discover` | Show database info, breeds, statuses | `/nsip/discover` |
-| `/nsip/lookup` | Get animal details by LPN ID | `/nsip/lookup 6####92020###249` |
-| `/nsip/profile` | Complete animal profile | `/nsip/profile 6####92020###249` |
-| `/nsip/health` | Server performance metrics | `/nsip/health` |
-| `/nsip/test-api` | Validate API connectivity | `/nsip/test-api` |
-| `/nsip/search` | Search animals with filters | `/nsip/search` |
-| `/nsip/traits` | Get trait ranges for breed | `/nsip/traits 486` |
-| `/nsip/lineage` | Get pedigree tree | `/nsip/lineage 6####92020###249` |
-| `/nsip/progeny` | List offspring | `/nsip/progeny 6####92020###249` |
+| `/nsip:consult` | **Expert breeding consultation** (uses shepherd agent) | `/nsip:consult I need a terminal sire` |
+| `/nsip:discover` | Show database info, breeds, statuses | `/nsip:discover` |
+| `/nsip:lookup` | Get animal details by LPN ID | `/nsip:lookup 6####92020###249` |
+| `/nsip:profile` | Complete animal profile | `/nsip:profile 6####92020###249` |
+| `/nsip:health` | Server performance metrics | `/nsip:health` |
+| `/nsip:test-api` | Validate API connectivity | `/nsip:test-api` |
+| `/nsip:search` | Search animals with filters | `/nsip:search` |
+| `/nsip:traits` | Get trait ranges for breed | `/nsip:traits 486` |
+| `/nsip:lineage` | Get pedigree tree | `/nsip:lineage 6####92020###249` |
+| `/nsip:progeny` | List offspring | `/nsip:progeny 6####92020###249` |
+
+### Expert Agent Commands
+
+**`/nsip:consult`** - This command invokes the `nsip:shepherd` expert agent, which provides:
+- Breeding decision support with NSIP data analysis
+- Health diagnosis and treatment recommendations
+- Nutrition planning across production stages
+- Flock management and culling guidance
+- Genetic trait interpretation and selection strategies
+
+The shepherd agent has access to all NSIP tools and provides expert interpretation of breeding values, genetics, and farm operations.
 
 ## MCP Tools
 

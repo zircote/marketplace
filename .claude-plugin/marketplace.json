@@ -24,6 +24,7 @@
       "keywords": ["nsip", "sheep", "breeding", "MCP", "claude-code"],
       "strict": false,
       "commands": [
+        "./plugins/nsip/commands/consult.md",
         "./plugins/nsip/commands/discover.md",
         "./plugins/nsip/commands/health.md",
         "./plugins/nsip/commands/lineage.md",
