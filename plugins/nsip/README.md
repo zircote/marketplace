@@ -6,8 +6,8 @@ Access NSIP sheep breeding data through Claude Code with one-command installatio
 
 ```bash
 # Install the plugin from GitHub
-/plugin marketplace add epicpast/nsip-api-client
-/plugin install nsip-api-client
+/plugin marketplace add epicpast/marketplace
+/plugin install nsip
 
 # That's it! The MCP server and all tools are automatically configured.
 ```
@@ -15,8 +15,23 @@ Access NSIP sheep breeding data through Claude Code with one-command installatio
 **What you get:**
 - 9 MCP tools for sheep breeding data
 - 9 slash commands for quick workflows
+- 5 automatic hooks for enhanced functionality
 - Automatic package installation via `uvx`
 - No manual setup required
+
+## Enhanced Features (Hooks)
+
+The NSIP plugin includes intelligent hooks that automatically enhance your workflow:
+
+| Hook | When | What It Does |
+|------|------|--------------|
+| API Health Check | Session start | Verifies NSIP API connectivity |
+| LPN Validator | Before calls | Validates LPN ID format to prevent errors |
+| Query Logger | After calls | Logs all API calls for audit/debugging |
+| Result Cache | After calls | Caches frequently accessed data (60min TTL) |
+| CSV Exporter | After searches | Auto-exports search results to CSV |
+
+See [hooks/README.md](./hooks/README.md) for detailed hook documentation.
 
 ## How It Works
 
@@ -28,6 +43,7 @@ The plugin uses `uvx` to automatically install the `nsip-client` package from Gi
 4. `uvx` automatically downloads and installs the package
 5. MCP server starts and connects
 6. All tools become available
+7. Hooks automatically activate
 
 **No manual installation required!**
 
@@ -70,6 +86,16 @@ Example:
 "Use nsip_list_breeds to show me all available sheep breeds"
 "Search for Katahdin sheep using nsip_search_animals with breed_id 64"
 ```
+
+## Hook Data Locations
+
+The plugin hooks store data in your home directory:
+
+- **Query Logs**: `~/.claude-code/nsip-logs/query_log.jsonl`
+- **Cache Files**: `~/.claude-code/nsip-cache/` (60-minute TTL)
+- **CSV Exports**: `~/.claude-code/nsip-exports/`
+
+All hook operations are automatic and transparent. See [hooks/README.md](./hooks/README.md) for maintenance.
 
 ## Troubleshooting
 
@@ -145,6 +171,15 @@ Then update `.claude-plugin/plugin.json` to use the installed command:
 - Use: `/nsip/test-api` command to diagnose
 - Verify internet connectivity
 
+### Hook Issues
+
+**If hooks aren't working:**
+- Check: `~/.claude-code/` directory permissions
+- Clear cache: `rm -rf ~/.claude-code/nsip-cache/*`
+- View logs: `tail -f ~/.claude-code/nsip-logs/query_log.jsonl`
+
+See [hooks/README.md](./hooks/README.md) for detailed troubleshooting.
+
 ## Plugin Structure
 
 ```
@@ -153,17 +188,26 @@ Then update `.claude-plugin/plugin.json` to use the installed command:
 ├── marketplace.json     # Marketplace listing
 ├── README.md           # This file
 ├── MCP_SERVER_FIX.md   # Technical documentation
-└── commands/           # Slash commands
-    └── nsip/
-        ├── discover.md
-        ├── health.md
-        ├── lineage.md
-        ├── lookup.md
-        ├── profile.md
-        ├── progeny.md
-        ├── search.md
-        ├── test-api.md
-        └── traits.md
+├── commands/           # Slash commands
+│   └── nsip/
+│       ├── discover.md
+│       ├── health.md
+│       ├── lineage.md
+│       ├── lookup.md
+│       ├── profile.md
+│       ├── progeny.md
+│       ├── search.md
+│       ├── test-api.md
+│       └── traits.md
+└── hooks/              # Plugin hooks
+    ├── README.md       # Hook documentation
+    ├── hooks.json      # Hook configuration
+    └── scripts/        # Hook implementations
+        ├── api_health_check.py
+        ├── lpn_validator.py
+        ├── query_logger.py
+        ├── result_cache.py
+        └── csv_exporter.py
 ```
 
 ## MCP Server Configuration
@@ -237,9 +281,11 @@ Works identically on:
 - **Issues**: https://github.com/epicpast/nsip-api-client/issues
 - **Changelog**: https://github.com/epicpast/nsip-api-client/blob/main/docs/CHANGELOG.md
 - **Technical Details**: [MCP_SERVER_FIX.md](./MCP_SERVER_FIX.md)
+- **Hook Documentation**: [hooks/README.md](./hooks/README.md)
 
 ## Version
 
 Current plugin version: **1.3.0**
+Current hooks version: **1.0.0**
 
 See [CHANGELOG](../docs/CHANGELOG.md) for release history.

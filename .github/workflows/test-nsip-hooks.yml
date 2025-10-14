@@ -1,0 +1,194 @@
+name: Test NSIP Plugin Hooks
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'plugins/nsip/hooks/**'
+      - 'plugins/nsip/tests/**'
+      - '.github/workflows/test-nsip-hooks.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'plugins/nsip/hooks/**'
+      - 'plugins/nsip/tests/**'
+      - '.github/workflows/test-nsip-hooks.yml'
+
+jobs:
+  test:
+    name: Run NSIP Hook Tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Display Python version
+      run: python --version
+
+    - name: Run unit tests
+      run: |
+        cd plugins/nsip/tests
+        python test_runner.py --unit --json unit-results.json
+
+    - name: Run integration tests
+      run: |
+        cd plugins/nsip/tests
+        python test_runner.py --integration --json integration-results.json
+
+    - name: Run all tests
+      run: |
+        cd plugins/nsip/tests
+        python test_runner.py --json test-results.json
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results-${{ matrix.os }}-py${{ matrix.python-version }}
+        path: |
+          plugins/nsip/tests/unit-results.json
+          plugins/nsip/tests/integration-results.json
+          plugins/nsip/tests/test-results.json
+
+    - name: Check test success
+      run: |
+        cd plugins/nsip/tests
+        python -c "
+        import json
+        with open('test-results.json') as f:
+            data = json.load(f)
+        stats = data['statistics']
+        print(f'Tests: {stats[\"total\"]}')
+        print(f'Passed: {stats[\"passed\"]}')
+        print(f'Failed: {stats[\"failed\"]}')
+        print(f'Errors: {stats[\"errors\"]}')
+        print(f'Success Rate: {stats[\"success_rate\"]}%')
+        if stats['failed'] > 0 or stats['errors'] > 0:
+            exit(1)
+        "
+
+  test-coverage:
+    name: Test Coverage
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install coverage
+      run: pip install coverage
+
+    - name: Run tests with coverage
+      run: |
+        cd plugins/nsip/tests
+        coverage run test_runner.py
+
+    - name: Generate coverage report
+      run: |
+        cd plugins/nsip/tests
+        coverage report
+        coverage json
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: plugins/nsip/tests/coverage.json
+
+    - name: Check coverage threshold
+      run: |
+        cd plugins/nsip/tests
+        python -c "
+        import json
+        with open('coverage.json') as f:
+            data = json.load(f)
+        coverage = data['totals']['percent_covered']
+        print(f'Coverage: {coverage}%')
+        if coverage < 80:
+            print('Coverage is below 80%!')
+            exit(1)
+        "
+
+  lint:
+    name: Lint Hook Scripts
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install linters
+      run: |
+        pip install flake8 pylint
+
+    - name: Run flake8
+      run: |
+        flake8 plugins/nsip/hooks/scripts/*.py --max-line-length=100 --ignore=E501,W503
+      continue-on-error: true
+
+    - name: Run pylint
+      run: |
+        pylint plugins/nsip/hooks/scripts/*.py --disable=C0111,R0903,W0703
+      continue-on-error: true
+
+  summary:
+    name: Test Summary
+    runs-on: ubuntu-latest
+    needs: [test, test-coverage]
+    if: always()
+
+    steps:
+    - name: Download test results
+      uses: actions/download-artifact@v4
+      with:
+        path: test-results
+
+    - name: Generate summary
+      run: |
+        echo "# NSIP Hook Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "## Test Execution" >> $GITHUB_STEP_SUMMARY
+
+        for result in test-results/test-results-*/test-results.json; do
+          if [ -f "$result" ]; then
+            python3 -c "
+        import json
+        import sys
+        with open('$result') as f:
+            data = json.load(f)
+        stats = data['statistics']
+        os_info = '$result'.split('/')[-2]
+        print(f'### {os_info}')
+        print(f'- Total: {stats[\"total\"]}')
+        print(f'- Passed: {stats[\"passed\"]} ✓')
+        print(f'- Failed: {stats[\"failed\"]} ✗')
+        print(f'- Success Rate: {stats[\"success_rate\"]:.1f}%')
+        print()
+        " >> $GITHUB_STEP_SUMMARY
+          fi
+        done
+
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "## Status" >> $GITHUB_STEP_SUMMARY
+        echo "✅ All tests completed" >> $GITHUB_STEP_SUMMARY

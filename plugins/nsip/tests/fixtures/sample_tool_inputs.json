@@ -1,0 +1,119 @@
+{
+  "session_start": {
+    "valid": {
+      "event": "SessionStart",
+      "timestamp": "2025-01-15T10:00:00Z"
+    }
+  },
+  "pre_tool_use": {
+    "get_animal": {
+      "tool": {
+        "name": "mcp__nsip__nsip_get_animal",
+        "parameters": {
+          "lpn_id": "6####92020###249"
+        }
+      }
+    },
+    "search_animals": {
+      "tool": {
+        "name": "mcp__nsip__nsip_search_animals",
+        "parameters": {
+          "breed_id": "1",
+          "limit": 10,
+          "offset": 0
+        }
+      }
+    },
+    "get_trait_ranges": {
+      "tool": {
+        "name": "mcp__nsip__nsip_get_trait_ranges",
+        "parameters": {
+          "breed_id": "486"
+        }
+      }
+    },
+    "invalid_lpn": {
+      "tool": {
+        "name": "mcp__nsip__nsip_get_animal",
+        "parameters": {
+          "lpn_id": "abc"
+        }
+      }
+    },
+    "no_lpn": {
+      "tool": {
+        "name": "mcp__nsip__nsip_list_breeds",
+        "parameters": {}
+      }
+    }
+  },
+  "post_tool_use": {
+    "success": {
+      "tool": {
+        "name": "mcp__nsip__nsip_get_animal",
+        "parameters": {
+          "lpn_id": "6####92020###249"
+        }
+      },
+      "result": {
+        "isError": false,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"lpn_id\": \"6####92020###249\", \"name\": \"Test Animal\"}"
+          }
+        ]
+      }
+    },
+    "failure": {
+      "tool": {
+        "name": "mcp__nsip__nsip_get_animal",
+        "parameters": {
+          "lpn_id": "NOTFOUND123"
+        }
+      },
+      "result": {
+        "isError": true,
+        "error": "Animal not found",
+        "content": []
+      }
+    },
+    "search_success": {
+      "tool": {
+        "name": "mcp__nsip__nsip_search_animals",
+        "parameters": {
+          "breed_id": "1"
+        }
+      },
+      "result": {
+        "isError": false,
+        "content": [
+          {
+            "type": "text",
+            "text": "[{\"lpn_id\": \"A1\", \"name\": \"Animal 1\"}, {\"lpn_id\": \"A2\", \"name\": \"Animal 2\"}]"
+          }
+        ]
+      }
+    }
+  },
+  "user_prompt_submit": {
+    "with_lpn": {
+      "prompt": "Show me details for animal 6####92020###249"
+    },
+    "with_multiple_lpn": {
+      "prompt": "Compare animals 6####92020###249 and NSWK123456"
+    },
+    "with_lineage_intent": {
+      "prompt": "Show me the pedigree for 6####92020###249"
+    },
+    "with_search_intent": {
+      "prompt": "Search for Merino sheep with high wool quality"
+    },
+    "no_nsip": {
+      "prompt": "What is the weather today?"
+    },
+    "empty": {
+      "prompt": ""
+    }
+  }
+}
