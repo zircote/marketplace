@@ -1,0 +1,30 @@
+{
+  "valid_ids": [
+    "6####92020###249",
+    "NSWK123456",
+    "1234567890",
+    "ABC-12345",
+    "XYZ_98765",
+    "12345#6789",
+    "TEST123456789"
+  ],
+  "invalid_ids": [
+    "",
+    "abc",
+    "123",
+    "X",
+    "!@#$%",
+    "ID WITH SPACES",
+    "toolong" + "x" * 50,
+    "invalid@chars",
+    "special&chars",
+    "LPN:invalid@"
+  ],
+  "edge_cases": [
+    "12345",
+    "ABCDE",
+    "#####",
+    "A1B2C",
+    "1-2-3-4-5"
+  ]
+}
