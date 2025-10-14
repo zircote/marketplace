@@ -39,3 +39,4 @@ temp/
 Thumbs.db
 .git
 __pycache__/
+test-results.json
