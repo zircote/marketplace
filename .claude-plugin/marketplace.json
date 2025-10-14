@@ -1,14 +1,45 @@
 {
-  "name": "epicpast",
+  "name": "epicpast-marketplace",
   "owner": {
-    "name": "epicpast",
-    "email": "bob@epicpastures.com"
+    "name": "epic pastures",
+    "email": "bob@epicpastures.com",
+    "url": "https://github.com/epicpast"
+  },
+  "metadata": {
+    "description": "NSIP sheep breeding data tools and MCP integrations for Claude Code",
+    "version": "1.3.0"
   },
   "plugins": [
     {
       "name": "nsip",
-      "source": "./plugins/nsip",
-      "description": "MCP tools and slash commands for querying the NSIP sheep breeding database"
+      "source": "./",
+      "description": "Access NSIP sheep breeding data with MCP tools and slash commands",
+      "version": "1.3.0",
+      "author": {
+        "name": "epic pastures",
+        "email": "bob@epicpastures.com",
+        "url": "https://github.com/epicpast"
+      },
+      "license": "MIT",
+      "keywords": ["nsip", "sheep", "breeding", "MCP", "claude-code"],
+      "strict": false,
+      "commands": [
+        "./plugins/nsip/commands/discover.md",
+        "./plugins/nsip/commands/health.md",
+        "./plugins/nsip/commands/lineage.md",
+        "./plugins/nsip/commands/lookup.md",
+        "./plugins/nsip/commands/profile.md",
+        "./plugins/nsip/commands/progeny.md",
+        "./plugins/nsip/commands/search.md",
+        "./plugins/nsip/commands/test-api.md",
+        "./plugins/nsip/commands/traits.md"
+      ],
+      "agents": [
+        "./plugins/nsip/agents/shepherd.md"
+      ],
+      "mcpServers": [
+        "./plugins/nsip/.mcp.json"
+      ]
     }
   ]
 }
