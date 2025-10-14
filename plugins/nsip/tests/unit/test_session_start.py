@@ -20,6 +20,7 @@ from conftest import BaseHookTestCase
 class TestAPIHealthCheck(BaseHookTestCase):
     """Test api_health_check.py hook."""
 
+    @unittest.skip("Requires external API - may fail if NSIP API is down")
     def test_health_check_continues_on_success(self):
         """Hook should continue when API is healthy."""
         input_data = {

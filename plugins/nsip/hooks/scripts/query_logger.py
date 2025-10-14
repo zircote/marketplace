@@ -28,7 +28,7 @@ def log_query(tool_name: str, parameters: dict, result: dict, duration_ms: float
         duration_ms: Duration of the call in milliseconds
     """
     log_entry = {
-        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "timestamp": datetime.now().isoformat(),
         "tool": tool_name,
         "parameters": parameters,
         "success": not result.get("isError", False),

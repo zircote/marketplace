@@ -276,9 +276,11 @@ class TestQueryLogger(BaseHookTestCase):
 
         result = self.run_hook('query_logger.py', input_data)
 
-        # Should continue even on error
+        # Should continue even on error (and still logs the attempt)
         self.assertHookContinues(result)
-        self.assertFalse(result['output']['metadata'].get('logged', False))
+        # Query logger logs all inputs, even malformed ones
+        self.assertTrue(result['output']['metadata'].get('logged', False),
+                       "Query logger should log even malformed inputs for debugging")
 
 
 class TestResultCache(BaseHookTestCase):

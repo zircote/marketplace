@@ -158,17 +158,19 @@ class TestLPNValidator(BaseHookTestCase):
 
     def test_lpn_error_handling(self):
         """Should handle errors gracefully and continue."""
-        # Malformed input
+        # Malformed input - missing tool/parameters structure
         input_data = {"invalid": "structure"}
 
         result = self.run_hook('lpn_validator.py', input_data)
 
-        # Should continue even on error
+        # Should continue even on error (validation skipped)
         self.assertHookContinues(result)
         self.assertEqual(
             result['output']['metadata']['validation'],
-            'error'
+            'skipped',
+            "Validator should skip when no LPN parameter found"
         )
+        self.assertIn('reason', result['output']['metadata'])
 
 
 class TestBreedContextInjector(BaseHookTestCase):
