@@ -1,13 +1,13 @@
-# NSIP API Client - Claude Code Plugin
+# nsip Plugin - NSIP API Client for Claude Code
 
-Access NSIP sheep breeding data through Claude Code with one-command installation.
+Access NSIP (National Sheep Improvement Program) sheep breeding data through Claude Code with one-command installation.
 
 ## Quick Start
 
 ```bash
-# Install the plugin from GitHub
-/plugin marketplace add epicpast/marketplace
-/plugin install nsip
+# Add the marketplace and install
+claude /plugin marketplace add zircote/marketplace
+claude /plugin install nsip
 
 # That's it! The MCP server and all tools are automatically configured.
 ```
@@ -168,8 +168,8 @@ All hook operations are automatic and transparent. See [hooks/README.md](./hooks
 
 4. **Re-enable the plugin:**
    ```bash
-   /plugin disable nsip-api-client
-   /plugin enable nsip-api-client
+   claude /plugin disable nsip
+   claude /plugin enable nsip
    ```
 
 5. **Check Claude Code MCP panel:**
@@ -209,7 +209,7 @@ Then update `.claude-plugin/plugin.json` to use the installed command:
 
 **If API calls fail:**
 - Check: `curl http://nsipsearch.nsip.org/api/GetLastUpdate`
-- Use: `/nsip/test-api` command to diagnose
+- Use: `/nsip:test-api` command to diagnose
 - Verify internet connectivity
 
 ### Hook Issues
@@ -227,6 +227,8 @@ See [hooks/README.md](./hooks/README.md) for detailed troubleshooting.
 plugins/nsip/
 ├── README.md                    # This file
 ├── .mcp.json                    # MCP server configuration
+├── .claude-plugin/
+│   └── plugin.json              # Plugin manifest with hooks
 ├── commands/                    # Slash commands (10 total)
 │   ├── consult.md              # Expert agent consultation
 │   ├── discover.md
@@ -242,7 +244,6 @@ plugins/nsip/
 │   └── shepherd.md             # Sheep breeding expert
 ├── hooks/                       # Plugin hooks (15 total)
 │   ├── README.md               # Hook documentation
-│   ├── hooks.json              # Hook configuration
 │   └── scripts/                # Hook implementations
 │       ├── api_health_check.py
 │       ├── lpn_validator.py
@@ -293,8 +294,6 @@ The plugin uses this configuration in `plugin.json`:
 - `nsip-mcp-server` is the entry point from `pyproject.toml`
 - Works for all users, no local setup needed
 
-See `MCP_SERVER_FIX.md` for technical details.
-
 ## Development Testing
 
 For local development:
@@ -321,8 +320,6 @@ uvx --from . nsip-mcp-server
 - Direct Git URLs
 - Plugin auto-installation with `uvx`
 
-See [docs/DISTRIBUTION.md](../docs/DISTRIBUTION.md) for details.
-
 ## Platform Support
 
 Works identically on:
@@ -330,12 +327,16 @@ Works identically on:
 - Claude Code VS Code extension
 - 100% feature parity across platforms
 
+## Integration with Other Plugins
+
+- **z plugin**: Use `data-analyst` for breeding data analysis
+- **git plugin**: Commit breeding reports with `/git:cm`
+- **document-skills**: Export pedigrees to PDF/XLSX
+
 ## Support
 
 - **Repository**: https://github.com/epicpast/nsip-api-client
 - **Issues**: https://github.com/epicpast/nsip-api-client/issues
-- **Changelog**: https://github.com/epicpast/nsip-api-client/blob/main/docs/CHANGELOG.md
-- **Technical Details**: [MCP_SERVER_FIX.md](./MCP_SERVER_FIX.md)
 - **Hook Documentation**: [hooks/README.md](./hooks/README.md)
 
 ## Version
@@ -343,5 +344,3 @@ Works identically on:
 - **Plugin**: 1.3.0
 - **Hooks**: 2.0.0 (15 hooks across 4 lifecycle events)
 - **Tests**: 78 tests with 98.7% success rate
-
-See [CHANGELOG](../docs/CHANGELOG.md) for release history.

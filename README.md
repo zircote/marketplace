@@ -1,257 +1,319 @@
-# Epic Pastures Plugin Marketplace
+# Zircote Claude Marketplace
 
-A curated collection of Claude Code plugins for agricultural data management and sheep breeding operations.
+A curated collection of Claude Code plugins featuring specialized agents, development workflows, monitoring integrations, and document processing capabilities.
 
 ## Overview
 
-This marketplace provides specialized tools and integrations for working with livestock data, currently featuring NSIP (National Sheep Improvement Program) sheep breeding database access through Claude Code.
+This marketplace provides 7 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
-### Installing from this Marketplace
-
 ```bash
 # Add this marketplace to Claude Code
-/plugin marketplace add https://github.com/epicpast/marketplace
+claude /plugin marketplace add zircote/marketplace
+
+# List available plugins
+claude /plugin list
 
 # Install a specific plugin
-/plugin install nsip
+claude /plugin install z          # 115+ specialized agents
+claude /plugin install git        # Git workflow commands
+claude /plugin install datadog    # DataDog monitoring agents
+claude /plugin install copilot    # GitHub Copilot onboarding
+claude /plugin install document-skills  # PDF/DOCX/XLSX/PPTX processing
+claude /plugin install nsip       # Sheep breeding data (NSIP)
+claude /plugin install cs         # Project specification lifecycle
 ```
-
-### Prerequisites
-
-- Claude Code CLI or VS Code extension
-- `uv` package manager (install from https://docs.astral.sh/uv/)
-- Internet connection for downloading plugin dependencies
 
 ## Available Plugins
 
-### NSIP Plugin
+### z - Agent Library
 
-**Version:** 1.3.0
-**License:** MIT
+**115+ specialized Opus 4.5 agents** organized by domain, plus 46 skills and powerful commands.
 
-Access NSIP sheep breeding data with MCP tools and slash commands.
+| Category | Agents | Examples |
+|----------|--------|----------|
+| Core Development | 11 | frontend-developer, backend-developer, api-designer |
+| Language Specialists | 24 | python-pro, typescript-pro, golang-pro, rust-engineer |
+| Infrastructure | 12 | devops-engineer, sre-engineer, kubernetes-specialist |
+| Quality & Security | 12 | code-reviewer, security-auditor, penetration-tester |
+| Data & AI | 12 | data-scientist, ml-engineer, llm-architect, postgres-pro |
+| Developer Experience | 10 | documentation-engineer, cli-developer, mcp-developer |
+| Specialized Domains | 11 | fintech-engineer, blockchain-developer, game-developer |
+| Business & Product | 10 | product-manager, technical-writer, scrum-master |
+| Meta Orchestration | 8 | multi-agent-coordinator, workflow-orchestrator |
+| Research & Analysis | 6 | research-analyst, competitive-analyst |
+
+**Commands:**
+- `/explore <path|pattern|question>` - Exhaustive codebase exploration with parallel subagents
+- `/deep-research <topic>` - Multi-phase research protocol with structured deliverables
+
+**Skills:** 46 specialized skills including `claude-code`, `anthropic-prompt-engineer`, `databases`, `devops`, `debugging`, and more.
+
+```bash
+claude /plugin install z
+```
+
+---
+
+### git - Git Workflow Commands
+
+Streamlined version control operations and GitHub ecosystem integration.
+
+| Command | Description |
+|---------|-------------|
+| `/git:cm` | Stage all and commit with conventional commit format |
+| `/git:cp` | Stage, commit, and push in one operation |
+| `/git:pr [to] [from]` | Create pull request via `gh` CLI |
+| `/git:fr [remote] [branch]` | Fetch and rebase onto remote branch |
+| `/git:sync [remote] [branch]` | Full sync: fetch, rebase, push |
+| `/git:ff [remote] [branch]` | Fast-forward merge only |
+| `/git:prune [--force]` | Clean up stale local branches |
+
+**Skills:**
+- **ADR** - Architecture Decision Records management
+- **GitHub Ecosystem** - Actions, templates, CODEOWNERS, Dependabot setup
+
+```bash
+claude /plugin install git
+```
+
+---
+
+### datadog - DataDog Integration
+
+Expert agents for monitoring setup, dashboard creation, and APM integration.
+
+**Agents:**
+- **datadog-pro** - DataDog API specialist for `datadog-api-client` (v2.45.0+)
+- **datadog-api-expert** - Monitor/dashboard creation, query syntax, error handling
 
 **Features:**
-- 9 MCP tools for querying sheep breeding database
-- 10 slash commands for quick workflows
-- 1 expert agent (Shepherd) for breeding consultation
-- 15 intelligent hooks for enhanced functionality
-- Automatic MCP server setup via `uvx`
+- Complete code examples with imports and error handling
+- v1/v2 API guidance with official documentation citations
+- Regional configuration support (US, EU, AP regions)
 
-**Installation:**
 ```bash
-/plugin install nsip
+claude /plugin install datadog
 ```
 
-**Quick Usage:**
+---
+
+### copilot - GitHub Copilot Onboarding
+
+Bridge Claude Code and GitHub Copilot configurations for consistent AI behavior.
+
+**Command:** `/onboard [repository-path]`
+
+**Generated Files:**
+- `.github/copilot-instructions.md` - Repository-wide instructions
+- `.github/workflows/copilot-setup-steps.yml` - Environment setup
+- `.github/instructions/*.instructions.md` - Scoped instructions by file type
+
+Automatically extracts settings from CLAUDE.md to create Copilot-compatible configuration.
+
 ```bash
-# Consult with expert agent for breeding advice
-/nsip:consult I need a terminal sire with good growth rates
-
-# Discover available breeds
-/nsip:discover
-
-# Look up an animal by LPN ID
-/nsip:lookup 6####92020###249
-
-# Get complete animal profile with lineage and progeny
-/nsip:profile 6####92020###249
-
-# Search for animals with filters
-/nsip:search
-
-# Get trait ranges for a breed
-/nsip:traits 486
+claude /plugin install copilot
 ```
 
-**MCP Tools Available:**
+---
+
+### document-skills - Document Processing
+
+AI-powered document processing for common office formats.
+
+| Skill | Capabilities |
+|-------|-------------|
+| **PDF** | Text extraction, table detection, OCR, metadata, form fields |
+| **DOCX** | Full text extraction, style preservation, comments, revisions |
+| **XLSX** | Cell/formula reading, named ranges, charts, conditional formatting |
+| **PPTX** | Slide content, speaker notes, shapes, animations |
+
+```bash
+claude /plugin install document-skills
+
+# Usage
+claude "Analyze the contents of report.pdf"
+claude "Extract data from sales.xlsx"
+```
+
+---
+
+### nsip - NSIP Sheep Breeding
+
+Access National Sheep Improvement Program breeding data with MCP tools.
+
+**9 MCP Tools:**
 - `nsip_get_last_update` - Database update date
 - `nsip_list_breeds` - Available breed groups
-- `nsip_get_statuses` - Animal statuses by breed
-- `nsip_get_trait_ranges` - Trait ranges for breed
 - `nsip_search_animals` - Search with pagination
 - `nsip_get_animal` - Detailed animal information
-- `nsip_get_lineage` - Pedigree tree (ancestry)
+- `nsip_get_lineage` - Pedigree tree
 - `nsip_get_progeny` - Offspring list
-- `nsip_search_by_lpn` - Complete animal profile
+- And more...
 
-**Expert Agent:**
-- `nsip:shepherd` - Expert sheep farm operations advisor specializing in NSIP data interpretation, genetics, health management, nutrition planning, and flock optimization. Accessible via `/nsip:consult` command.
+**10 Commands:**
+- `/nsip:consult` - Expert breeding consultation
+- `/nsip:lookup` - Animal lookup by LPN ID
+- `/nsip:profile` - Complete animal profile
+- `/nsip:search` - Search with filters
+- `/nsip:traits` - Trait ranges by breed
 
-**Documentation:** [plugins/nsip/README.md](plugins/nsip/README.md)
+**Agent:** `shepherd` - Expert sheep breeding advisor
+
+**Hooks:** 15 intelligent hooks for error resilience, caching, and exports
+
+```bash
+claude /plugin install nsip
+```
+
+**Prerequisites:** `uv` package manager (https://docs.astral.sh/uv/)
+
+---
+
+### cs - Project Specification Lifecycle
+
+Strategic project planning, implementation tracking, and retrospectives.
+
+**External Source:** [zircote/claude-spec](https://github.com/zircote/claude-spec)
+
+**Commands:**
+- `/cs:p <project-idea>` - Strategic project planner with Socratic elicitation
+- `/cs:i [project-id]` - Implementation progress tracker with PROGRESS.md
+- `/cs:s [project-id]` - Project status and portfolio listing
+- `/cs:c <project-path>` - Close project with retrospective generation
+
+**Features:**
+- PRD and implementation plan generation
+- PROGRESS.md checkpoint system for multi-session work
+- Git worktree management for parallel development
+
+```bash
+claude /plugin install cs
+```
+
+---
 
 ## Marketplace Structure
-
-This marketplace follows the claude-code-templates monorepo pattern:
 
 ```
 marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # Central plugin registry
 ├── plugins/
-│   └── nsip/                     # NSIP plugin
-│       ├── .mcp.json             # MCP server configuration
-│       ├── README.md             # Plugin documentation
-│       ├── agents/
-│       │   └── shepherd.md       # Shepherd agent
-│       └── commands/
-│           ├── discover.md
-│           ├── health.md
-│           ├── lineage.md
-│           ├── lookup.md
-│           ├── profile.md
-│           ├── progeny.md
-│           ├── search.md
-│           ├── test-api.md
-│           └── traits.md
+│   ├── z/                        # Agent library (115+ agents, 46 skills)
+│   │   ├── agents/               # Organized by domain (01-10)
+│   │   ├── skills/               # Development skills
+│   │   └── commands/             # explore, deep-research
+│   ├── git/                      # Git workflow
+│   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune
+│   │   ├── adr/                  # ADR skills
+│   │   └── ecosystem/            # GitHub ecosystem skills
+│   ├── datadog/                  # Monitoring integration
+│   │   └── agents/               # datadog-pro, datadog-api-expert
+│   ├── copilot/                  # Copilot onboarding
+│   │   └── onboard/              # Agent and command
+│   ├── document-skills/          # Document processing
+│   │   ├── pdf/                  # PDF skill
+│   │   ├── docx/                 # Word skill
+│   │   ├── xlsx/                 # Excel skill
+│   │   └── pptx/                 # PowerPoint skill
+│   └── nsip/                     # Sheep breeding data
+│       ├── agents/               # shepherd
+│       ├── commands/             # 10 commands
+│       └── hooks/                # 15 hooks
 └── README.md                     # This file
 ```
-
-## How It Works
-
-1. **Marketplace Registration**: Add this repository to Claude Code's marketplace list
-2. **Plugin Discovery**: Claude Code reads `.claude-plugin/marketplace.json` to discover available plugins
-3. **Installation**: When you install a plugin, Claude Code:
-   - Loads slash commands from `commands/*.md`
-   - Registers agents from `agents/*.md`
-   - Configures MCP servers from `.mcp.json`
-4. **Usage**: All tools become immediately available in Claude Code
 
 ## Installation Methods
 
 ### Method 1: From GitHub (Recommended)
 
 ```bash
-# Add marketplace
-/plugin marketplace add https://github.com/epicpast/marketplace
-
-# Install plugin
-/plugin install nsip
+claude /plugin marketplace add zircote/marketplace
+claude /plugin install <plugin-name>
 ```
 
-### Method 2: Local Development
+### Method 2: Direct GitHub URL
 
 ```bash
-# Clone the repository
-git clone https://github.com/epicpast/marketplace.git
+claude /plugin marketplace add https://github.com/zircote/marketplace
+claude /plugin install <plugin-name>
+```
+
+### Method 3: Local Development
+
+```bash
+git clone https://github.com/zircote/marketplace.git
 cd marketplace
-
-# Add local marketplace
-/plugin marketplace add ./
-
-# Install plugin
-/plugin install nsip
+claude /plugin marketplace add ./
+claude /plugin install <plugin-name>
 ```
 
-### Method 3: Direct Git URL
+## Contributing
 
-```bash
-# Install directly from GitHub
-/plugin marketplace add epicpast/marketplace
-/plugin install nsip
+To add a new plugin:
+
+1. Create a plugin directory under `plugins/`
+2. Add required files:
+   ```
+   plugins/your-plugin/
+   ├── .claude-plugin/
+   │   └── plugin.json    # Plugin manifest
+   ├── README.md          # Documentation
+   ├── agents/            # Agent definitions (optional)
+   ├── commands/          # Slash commands (optional)
+   └── skills/            # Skills (optional)
+   ```
+3. Register in `.claude-plugin/marketplace.json`
+4. Submit a pull request
+
+### plugin.json Structure
+
+```json
+{
+  "name": "your-plugin",
+  "version": "1.0.0",
+  "description": "Brief description",
+  "author": {
+    "name": "Your Name",
+    "url": "https://github.com/username"
+  },
+  "license": "MIT",
+  "keywords": ["keyword1", "keyword2"],
+  "agents": ["./agents/*.md"],
+  "commands": ["./commands/*.md"],
+  "skills": ["./skills/*/SKILL.md"]
+}
 ```
 
 ## Troubleshooting
 
 ### Marketplace Not Found
 
-**Problem**: `/plugin marketplace add` fails
+```bash
+# Verify the URL
+claude /plugin marketplace add https://github.com/zircote/marketplace
 
-**Solutions**:
-1. Verify the URL is correct: `https://github.com/epicpast/marketplace`
-2. Check internet connectivity
-3. Ensure you have the latest version of Claude Code
-4. Try using the GitHub shorthand: `epicpast/marketplace`
+# Or use shorthand
+claude /plugin marketplace add zircote/marketplace
+```
 
 ### Plugin Installation Fails
 
-**Problem**: `/plugin install nsip` fails
+1. Ensure marketplace is added first
+2. Check internet connectivity
+3. For NSIP plugin, verify `uv` is installed: `uv --version`
 
-**Solutions**:
-1. Make sure the marketplace is added first
-2. Check that `uv` is installed: `uv --version`
-3. Verify internet connectivity for downloading dependencies
-4. Review Claude Code logs for specific error messages
+### MCP Server Issues (NSIP)
 
-### MCP Server Not Starting
+```bash
+# Test MCP server manually
+uvx --from git+https://github.com/epicpast/nsip-api-client.git nsip-mcp-server
 
-**Problem**: Slash commands work but MCP tools don't appear
-
-**Solutions**:
-1. Verify `uv` and `uvx` are installed:
-   ```bash
-   uv --version
-   uvx --version
-   ```
-2. Test the MCP server manually:
-   ```bash
-   uvx --from git+https://github.com/epicpast/nsip-api-client.git nsip-mcp-server
-   ```
-3. Check Claude Code's MCP panel for error messages
-4. Re-enable the plugin:
-   ```bash
-   /plugin disable nsip
-   /plugin enable nsip
-   ```
-
-## Contributing
-
-We welcome contributions! To add a new plugin to this marketplace:
-
-1. Create a new plugin directory under `plugins/`
-2. Add your plugin files:
-   - `commands/` - Slash command markdown files
-   - `agents/` - Agent markdown files (optional)
-   - `.mcp.json` - MCP server configuration (optional)
-   - `README.md` - Plugin documentation
-3. Register your plugin in `.claude-plugin/marketplace.json`
-4. Submit a pull request
-
-### Plugin Structure Guidelines
-
-Each plugin should follow this structure:
-
-```
-plugins/your-plugin/
-├── .mcp.json              # MCP server config (if applicable)
-├── README.md              # Documentation
-├── agents/                # Optional: specialized agents
-│   └── agent-name.md
-└── commands/              # Slash commands
-    ├── command1.md
-    └── command2.md
-```
-
-### marketplace.json Entry
-
-Add your plugin to `.claude-plugin/marketplace.json`:
-
-```json
-{
-  "name": "your-plugin",
-  "source": "./",
-  "description": "Brief description of your plugin",
-  "version": "1.0.0",
-  "author": {
-    "name": "Your Name",
-    "email": "your@email.com",
-    "url": "https://github.com/yourusername"
-  },
-  "license": "MIT",
-  "keywords": ["keyword1", "keyword2"],
-  "strict": false,
-  "commands": [
-    "./plugins/your-plugin/commands/command1.md"
-  ],
-  "agents": [
-    "./plugins/your-plugin/agents/agent-name.md"
-  ],
-  "mcpServers": [
-    "./plugins/your-plugin/.mcp.json"
-  ]
-}
+# Re-enable plugin
+claude /plugin disable nsip
+claude /plugin enable nsip
 ```
 
 ## Platform Support
@@ -259,30 +321,21 @@ Add your plugin to `.claude-plugin/marketplace.json`:
 All plugins work identically across:
 - Claude Code CLI (terminal)
 - Claude Code VS Code extension
-- 100% feature parity across platforms
+- 100% feature parity
 
 ## Support
 
-- **Repository**: https://github.com/epicpast/marketplace
-- **Issues**: https://github.com/epicpast/marketplace/issues
-- **Discussions**: https://github.com/epicpast/marketplace/discussions
+- **Repository:** https://github.com/zircote/marketplace
+- **Issues:** https://github.com/zircote/marketplace/issues
 
 ## License
 
-This marketplace is licensed under the MIT License. Individual plugins may have their own licenses - check each plugin's README for details.
+MIT License. Individual plugins may have their own licenses - see each plugin's README.
 
 ## Version
 
-Current marketplace version: **1.3.0**
+**Marketplace:** 1.5.0
 
-Last updated: October 2025
+---
 
-## Acknowledgments
-
-This marketplace structure is inspired by [claude-code-templates](https://github.com/davila7/claude-code-templates) by Daniel Avila.
-
-## Related Resources
-
-- [Claude Code Documentation](https://docs.claude.com/claude-code)
-- [NSIP Database](http://nsipsearch.nsip.org/)
-- [epic pastures on GitHub](https://github.com/epicpast)
+*This marketplace structure follows patterns from [claude-code-templates](https://github.com/davila7/claude-code-templates).*

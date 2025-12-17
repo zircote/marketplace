@@ -5,7 +5,8 @@ Git workflow commands and GitHub ecosystem integration skills for streamlined ve
 ## Installation
 
 ```bash
-claude /plugin install ./plugins/git
+claude /plugin marketplace add zircote/marketplace
+claude /plugin install git
 ```
 
 ## Contents
@@ -43,6 +44,7 @@ Located in `ecosystem/skills/`:
 ## Usage Examples
 
 ### Daily Workflow
+
 ```bash
 # Stage and commit with conventional commit message
 claude /git:cm
@@ -55,11 +57,12 @@ claude /git:pr main feature-branch
 ```
 
 ### Branch Management
+
 ```bash
 # Sync with remote (fetch, rebase, push)
 claude /git:sync origin main
 
-# Clean up merged branches
+# Clean up merged branches (dry-run first)
 claude /git:prune
 
 # Force clean (skip dry-run)
@@ -67,6 +70,7 @@ claude /git:prune --force
 ```
 
 ### Rebase Workflow
+
 ```bash
 # Fetch and rebase onto main
 claude /git:fr origin main
@@ -78,12 +82,25 @@ claude /git:ff origin main
 ## Commit Format
 
 The `/git:cm` command generates commits following conventional commit format:
-- `feat:` for new features
-- `fix:` for bug fixes
-- `docs:` for documentation
-- `refactor:` for code refactoring
-- `test:` for test additions
-- `chore:` for maintenance tasks
+
+| Type | Description |
+|------|-------------|
+| `feat:` | New features |
+| `fix:` | Bug fixes |
+| `docs:` | Documentation changes |
+| `refactor:` | Code refactoring |
+| `test:` | Test additions or modifications |
+| `chore:` | Maintenance tasks |
+
+All commits include proper attribution:
+```
+feat: Add user authentication
+
+Implements OAuth2 login flow with token refresh.
+
+Generated with Claude Code
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
 
 ## GitHub CLI Integration
 
@@ -91,9 +108,19 @@ PR commands require the GitHub CLI (`gh`) to be installed and authenticated:
 
 ```bash
 # Install gh
-brew install gh  # macOS
-sudo apt install gh  # Ubuntu
+brew install gh        # macOS
+sudo apt install gh    # Ubuntu/Debian
+winget install gh      # Windows
 
 # Authenticate
 gh auth login
 ```
+
+## Integration with Other Plugins
+
+- **z plugin**: Use `code-reviewer` agent before `/git:pr`
+- **cs plugin**: Commit specification documents with `/git:cm`
+
+## Version
+
+**Plugin:** 1.0.0
