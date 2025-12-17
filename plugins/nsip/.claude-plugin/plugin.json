@@ -1,9 +1,0 @@
-{
-  "name": "nsip",
-  "description": "Access NSIP sheep breeding data with MCP tools and slash commands",
-  "author": {
-    "name": "epic pastures",
-    "email": "bob@epicpastures.com",
-    "url": "https://github.com/epicpast"
-  }
-}

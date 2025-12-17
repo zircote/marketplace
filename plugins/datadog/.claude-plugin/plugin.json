@@ -1,8 +1,0 @@
-{
-  "name": "datadog",
-  "description": "DataDog API specialists for monitoring setup and dashboard creation",
-  "author": {
-    "name": "zircote",
-    "url": "https://github.com/zircote"
-  }
-}
