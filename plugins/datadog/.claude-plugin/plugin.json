@@ -3,7 +3,10 @@
   "name": "datadog",
   "version": "1.0.0",
   "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration with production-ready code patterns",
-  "author": "zircote",
+  "author": {
+    "name": "zircote",
+    "url": "https://github.com/zircote"
+  },
   "repository": "https://github.com/zircote/marketplace",
   "license": "MIT",
   "keywords": [

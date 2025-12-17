@@ -3,7 +3,10 @@
   "name": "copilot",
   "version": "1.0.0",
   "description": "GitHub Copilot coding agent onboarding tools for configuring repositories with copilot-instructions.md and setup workflows",
-  "author": "zircote",
+  "author": {
+    "name": "zircote",
+    "url": "https://github.com/zircote"
+  },
   "repository": "https://github.com/zircote/marketplace",
   "license": "MIT",
   "keywords": [
