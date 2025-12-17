@@ -1,6 +1,6 @@
 # z Plugin
 
-Comprehensive agent library featuring 116 specialized Opus 4.5 agents organized by domain, 46 development skills, and powerful exploration commands for enhanced Claude Code workflows.
+Comprehensive agent library featuring 116 specialized Opus 4.5 agents organized by domain, 54 development skills, and powerful exploration and code review commands for enhanced Claude Code workflows.
 
 ## Installation
 
@@ -29,23 +29,22 @@ Specialized agents organized by domain in `agents/`:
 | Research & Analysis | 6 | `10-research-analysis/` | research-analyst, competitive-analyst, market-researcher, trend-analyst |
 | Templates | 1 | `templates/` | Agent creation templates |
 
-### Skills (46 total)
+### Skills (54 total)
 
 Development skills in `skills/`:
 
 | Category | Skills |
 |----------|--------|
 | **AI/Prompting** | anthropic-prompt-engineer, anthropic-architect, claude-code, prompt-engineer |
-| **Frontend** | frontend-development, frontend-design, aesthetic, ui-styling, canvas-design, web-artifacts-builder, web-frameworks |
+| **Frontend** | frontend-development, frontend-design, aesthetic, ui-styling, canvas-design, web-artifacts-builder, web-frameworks, artifacts-builder |
 | **Backend** | backend-development, databases, devops |
-| **Document Processing** | chrome-devtools, repomix |
-| **Code Quality** | code-review, debugging, problem-solving |
-| **Tools & Utilities** | mcp-builder, changelog-generator, skill-creator, engineer-skill-creator, template-skill |
-| **Media** | ai-multimodal, image-enhancer, video-downloader, slack-gif-creator |
+| **Code Quality** | code-review, debugging (5 sub-skills), problem-solving (6 sub-skills) |
+| **Tools & Utilities** | mcp-builder, changelog-generator, skill-creator, engineer-skill-creator, template-skill, skill-share, repomix, sequential-thinking |
+| **Media** | ai-multimodal, image-enhancer, video-downloader, slack-gif-creator, chrome-devtools |
 | **Business** | brand-guidelines, competitive-ads-extractor, content-research-writer, internal-comms, lead-research-assistant, shopify |
-| **Specialized** | better-auth, datadog-entity-generator, invoice-organizer, file-organizer, python-deprecation-fixer, python-project-skel, raffle-winner-picker, sequential-thinking, theme-factory, webapp-testing |
+| **Specialized** | better-auth, datadog-entity-generator, invoice-organizer, file-organizer, python-deprecation-fixer, python-project-skel, raffle-winner-picker, theme-factory, webapp-testing |
 
-### Commands
+### Commands (4 total)
 
 Located in `commands/`:
 
@@ -53,6 +52,8 @@ Located in `commands/`:
 |---------|-------------|
 | `/explore <path\|pattern\|question>` | Exhaustive codebase exploration with parallel subagents and anti-hallucination enforcement |
 | `/deep-research <topic\|url>` | Multi-phase research protocol with structured deliverables and quality gates |
+| `/code:review [path\|--focus=security\|performance\|maintainability]` | Comprehensive code review using 6 parallel specialist agents |
+| `/code:review-fix [CODE_REVIEW.md\|--quick\|--severity=critical]` | Interactive remediation of code review findings |
 
 ## Agent Format
 
@@ -146,6 +147,57 @@ claude /deep-research "Best practices for GraphQL authentication"
 claude /deep-research ./legacy-system
 ```
 
+### /code:review
+
+Comprehensive code review using 6 parallel specialist agents.
+
+**Specialist Agents:**
+- Security Analyst - OWASP Top 10, auth, secrets, vulnerabilities
+- Performance Engineer - N+1 queries, caching, algorithms
+- Architecture Reviewer - SOLID, patterns, dependencies
+- Code Quality Analyst - DRY, complexity, naming
+- Test Coverage Analyst - Missing tests, edge cases
+- Documentation Reviewer - Docstrings, README, API docs
+
+**Output Artifacts:**
+- `CODE_REVIEW.md` - Full review report with health scores
+- `REVIEW_SUMMARY.md` - Executive summary
+- `REMEDIATION_TASKS.md` - Actionable checklist by priority
+
+**Focus Modes:**
+```bash
+claude /code:review                        # Full review
+claude /code:review src/                   # Review specific path
+claude /code:review --focus=security       # Security-focused review
+claude /code:review --focus=performance    # Performance-focused review
+claude /code:review --focus=maintainability # Maintainability-focused review
+```
+
+### /code:review-fix
+
+Interactive remediation of code review findings with verification.
+
+**Features:**
+- User input at key decision points (severity filter, categories, verification depth)
+- `--quick` mode for automated defaults
+- Routes findings to appropriate specialist agents
+- Verification with pr-review-toolkit agents
+
+**Modes:**
+```bash
+claude /code:review-fix                    # Interactive mode
+claude /code:review-fix --quick            # Quick mode with defaults
+claude /code:review-fix --severity=critical # Only critical issues
+claude /code:review-fix --category=security # Only security fixes
+```
+
+**Interactive Decision Points:**
+1. Severity filter (Critical/High/Medium/Low)
+2. Category selection (Security/Performance/Architecture/Quality)
+3. Conflict resolution for overlapping fixes
+4. Verification depth (Full/Quick/Tests only/Skip)
+5. Commit strategy (Review first/Single commit/Separate commits)
+
 ## Templates
 
 Agent templates in `agents/templates/` provide starting points for creating new agents following Opus 4.5 conventions.
@@ -160,7 +212,7 @@ The z plugin agents integrate with other marketplace plugins:
 
 ## Version
 
-**Plugin:** 1.0.0
+**Plugin:** 1.0.1
 **Agents:** 116
-**Skills:** 46
-**Commands:** 2
+**Skills:** 54
+**Commands:** 4

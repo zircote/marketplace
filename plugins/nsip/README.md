@@ -16,13 +16,13 @@ claude /plugin install nsip
 - 9 MCP tools for sheep breeding data
 - 10 slash commands for quick workflows
 - 1 expert agent for breeding consultation
-- 15 automatic hooks for enhanced functionality
+- 14 automatic hooks for enhanced functionality
 - Automatic package installation via `uvx`
 - No manual setup required
 
 ## Enhanced Features (Hooks)
 
-The NSIP plugin includes 15 intelligent hooks that automatically enhance your workflow:
+The NSIP plugin includes 14 intelligent hooks that automatically enhance your workflow:
 
 ### Hook Categories
 
@@ -43,15 +43,14 @@ The NSIP plugin includes 15 intelligent hooks that automatically enhance your wo
 - Smart LPN ID detection in prompts
 - Comparative analysis suggestions
 
-**Core Operations (6 hooks)**
+**Core Operations (5 hooks)**
 - API health monitoring
 - LPN format validation
 - Query logging
 - Result caching
 - CSV exports
-- Performance tracking
 
-See [hooks/README.md](./hooks/README.md) for detailed documentation on all 15 hooks.
+See [hooks/README.md](./hooks/README.md) for detailed documentation on all 14 hooks.
 
 ## How It Works
 
@@ -242,7 +241,7 @@ plugins/nsip/
 │   └── traits.md
 ├── agents/                      # Expert agents
 │   └── shepherd.md             # Sheep breeding expert
-├── hooks/                       # Plugin hooks (15 total)
+├── hooks/                       # Plugin hooks (14 total)
 │   ├── README.md               # Hook documentation
 │   └── scripts/                # Hook implementations
 │       ├── api_health_check.py
@@ -342,5 +341,5 @@ Works identically on:
 ## Version
 
 - **Plugin**: 1.3.0
-- **Hooks**: 2.0.0 (15 hooks across 4 lifecycle events)
+- **Hooks**: 2.0.0 (14 hooks across 4 lifecycle events)
 - **Tests**: 78 tests with 98.7% success rate

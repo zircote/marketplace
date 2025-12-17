@@ -28,18 +28,68 @@ Git workflow automation in `commands/`:
 ### Skills
 
 #### ADR (Architecture Decision Records)
-Located in `adr/skills/`:
-- Create and manage ADRs
-- Link ADRs to code and commits
-- Generate ADR indexes
+
+Located in `adr/skills/`: Manage Architecture Decision Records using the git-adr CLI tool.
+
+**Key Features:**
+- ADRs as Machine Memory - decisions persist across Claude sessions
+- Auto-loads ADR summaries at session start in any git repository
+- Supports multiple formats: MADR, Nygard, Y-Statement, Alexandrian, Business Case, Planguage
+- All git-adr CLI commands: init, new, edit, list, show, search, sync, supersede, link, attach, stats, export
+
+**Trigger Phrases:**
+- "architecture decisions", "ADR", "decision record"
+- "what did we decide", "record this decision", "document this decision"
+
+**Installation:**
+```bash
+# macOS (Homebrew) - Recommended
+brew tap zircote/git-adr && brew install git-adr
+
+# Any platform (pip)
+pip install git-adr
+
+# With AI features
+pip install 'git-adr[ai]'
+```
+
+**Quick Commands:**
+```bash
+git adr init                          # Initialize ADR tracking
+git adr new "Use PostgreSQL"          # Create new ADR
+git adr list                          # List all ADRs
+git adr show <id>                     # Display an ADR
+git adr search "<query>"              # Search ADRs
+git adr sync push                     # Push ADRs to remote
+```
 
 #### GitHub Ecosystem
-Located in `ecosystem/skills/`:
-- GitHub Actions workflow generation
-- Issue and PR template creation
-- CODEOWNERS configuration
-- Dependabot setup
-- Copilot instructions generation
+
+Located in `ecosystem/skills/`: Generate comprehensive GitHub configuration for any project.
+
+**Components Generated:**
+- **GitHub Actions** - CI/CD workflows with multi-version testing, security scanning, coverage
+- **Issue Templates** - Bug reports, feature requests, template chooser
+- **PR Templates** - PR checklist with change types
+- **CODEOWNERS** - Code ownership definitions
+- **Dependabot** - Automated dependency updates
+- **Copilot Instructions** - GitHub Copilot context
+
+**Supported Languages:**
+| Language | Detection | CI Tools |
+|----------|-----------|----------|
+| Python | pyproject.toml, setup.py | ruff, mypy, bandit, pytest |
+| Go | go.mod | golangci-lint, go test |
+| TypeScript | package.json + tsconfig.json | eslint, prettier, tsc, vitest |
+
+**Usage:**
+```bash
+# Auto-detect language and generate all config
+python scripts/generate_github_config.py --project-path .
+
+# Generate specific components
+python scripts/generate_github_config.py --components workflows,templates
+```
 
 ## Usage Examples
 
@@ -77,6 +127,22 @@ claude /git:fr origin main
 
 # Fast-forward only (no merge commits)
 claude /git:ff origin main
+```
+
+### ADR Workflow
+
+```bash
+# Start using ADRs
+git adr init
+
+# Record a decision
+git adr new "Use PostgreSQL for persistence"
+
+# Find past decisions
+git adr search "database"
+
+# Share with team
+git adr sync push
 ```
 
 ## Commit Format
@@ -120,6 +186,7 @@ gh auth login
 
 - **z plugin**: Use `code-reviewer` agent before `/git:pr`
 - **cs plugin**: Commit specification documents with `/git:cm`
+- **z plugin**: Use `technical-writer` for CHANGELOG updates before releases
 
 ## Version
 
