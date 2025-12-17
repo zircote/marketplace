@@ -40,3 +40,6 @@ Thumbs.db
 .git
 __pycache__/
 test-results.json
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.windsurf/rules/snyk_rules.md
