@@ -16,7 +16,7 @@
     "alerts"
   ],
   "agents": [
-    "agents/datadog-pro.md",
-    "agents/datadog-api-expert.md"
+    "./agents/datadog-pro.md",
+    "./agents/datadog-api-expert.md"
   ]
 }

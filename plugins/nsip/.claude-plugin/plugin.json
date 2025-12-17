@@ -17,10 +17,10 @@
     "genetics"
   ],
   "agents": [
-    "agents/shepherd.md"
+    "./agents/shepherd.md"
   ],
   "commands": [
-    "commands/consult.md"
+    "./commands/consult.md"
   ],
-  "hooks": "hooks/hooks.json"
+  "hooks": "./hooks/hooks.json"
 }

@@ -17,9 +17,9 @@
     "analysis"
   ],
   "skills": [
-    "pdf/SKILL.md",
-    "docx/SKILL.md",
-    "xlsx/SKILL.md",
-    "pptx/SKILL.md"
+    "./pdf/SKILL.md",
+    "./docx/SKILL.md",
+    "./xlsx/SKILL.md",
+    "./pptx/SKILL.md"
   ]
 }

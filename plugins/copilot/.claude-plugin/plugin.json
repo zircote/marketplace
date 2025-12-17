@@ -14,9 +14,9 @@
     "configuration"
   ],
   "agents": [
-    "onboard/agents/onboard.md"
+    "./onboard/agents/onboard.md"
   ],
   "commands": [
-    "onboard/commands/onboard.md"
+    "./onboard/commands/onboard.md"
   ]
 }
