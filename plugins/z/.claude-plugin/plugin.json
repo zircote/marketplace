@@ -25,12 +25,14 @@
     "./agents/07-specialized-domains/*.md",
     "./agents/08-business-product/*.md",
     "./agents/09-meta-orchestration/*.md",
-    "./agents/10-research-analysis/*.md"
+    "./agents/10-research-analysis/*.md",
+    "./agents/templates/*.md"
   ],
   "skills": [
     "./skills/*/SKILL.md"
   ],
   "commands": [
-    "./commands/*.md"
+    "./commands/*.md",
+    "./commands/code/*.md"
   ]
 }
