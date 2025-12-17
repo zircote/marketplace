@@ -254,8 +254,8 @@
     },
     {
       "name": "z",
-      "source": "./plugins/z",
-      "description": "Comprehensive agent library featuring 100+ specialized Opus 4.5 agents organized by domain, plus development skills and commands",
+      "source": "./",
+      "description": "Comprehensive agent library featuring 100+ specialized Opus 4.5 agents organized by domain",
       "version": "1.0.0",
       "author": {
         "name": "zircote",
@@ -287,7 +287,7 @@
     },
     {
       "name": "git",
-      "source": "./plugins/git",
+      "source": "./",
       "description": "Git workflow commands for commits, pushes, PRs, and syncing, plus GitHub ecosystem integration skills",
       "version": "1.0.0",
       "author": {
@@ -313,7 +313,7 @@
     },
     {
       "name": "datadog",
-      "source": "./plugins/datadog",
+      "source": "./",
       "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration",
       "version": "1.0.0",
       "author": {
@@ -330,7 +330,7 @@
     },
     {
       "name": "copilot",
-      "source": "./plugins/copilot",
+      "source": "./",
       "description": "GitHub Copilot coding agent onboarding tools for configuring repositories with copilot-instructions.md",
       "version": "1.0.0",
       "author": {
@@ -349,7 +349,7 @@
     },
     {
       "name": "document-skills",
-      "source": "./plugins/document-skills",
+      "source": "./",
       "description": "Document processing skills for PDF, DOCX, XLSX, and PPTX file manipulation with AI-powered analysis",
       "version": "1.0.0",
       "author": {

@@ -1,7 +1,6 @@
 {
   "$schema": "https://claude.ai/schemas/plugin.json",
   "name": "nsip",
-  "source": "./",
   "description": "Access NSIP sheep breeding data with MCP tools and slash commands",
   "version": "1.3.0",
   "author": {
