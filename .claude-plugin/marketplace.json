@@ -251,6 +251,105 @@
           }
         ]
       }
+    },
+    {
+      "name": "z",
+      "source": "./plugins/z",
+      "description": "Comprehensive agent library featuring 100+ specialized Opus 4.5 agents organized by domain, plus development skills and commands",
+      "version": "1.0.0",
+      "author": "zircote",
+      "license": "MIT",
+      "keywords": ["agents", "opus-4.5", "development", "skills", "commands", "specialists", "subagents"],
+      "strict": false,
+      "agents": [
+        "./plugins/z/agents/01-core-development/*.md",
+        "./plugins/z/agents/02-language-specialists/*.md",
+        "./plugins/z/agents/03-infrastructure/*.md",
+        "./plugins/z/agents/04-quality-security/*.md",
+        "./plugins/z/agents/05-data-ai/*.md",
+        "./plugins/z/agents/06-developer-experience/*.md",
+        "./plugins/z/agents/07-specialized-domains/*.md",
+        "./plugins/z/agents/08-business-product/*.md",
+        "./plugins/z/agents/09-meta-orchestration/*.md",
+        "./plugins/z/agents/10-research-analysis/*.md",
+        "./plugins/z/agents/templates/*.md"
+      ],
+      "skills": [
+        "./plugins/z/skills/*/SKILL.md"
+      ],
+      "commands": [
+        "./plugins/z/commands/*.md",
+        "./plugins/z/commands/code/*.md"
+      ]
+    },
+    {
+      "name": "git",
+      "source": "./plugins/git",
+      "description": "Git workflow commands for commits, pushes, PRs, and syncing, plus GitHub ecosystem integration skills",
+      "version": "1.0.0",
+      "author": "zircote",
+      "license": "MIT",
+      "keywords": ["git", "github", "version-control", "adr", "workflows", "ci-cd", "commits"],
+      "strict": false,
+      "skills": [
+        "./plugins/git/adr/skills/SKILL.md",
+        "./plugins/git/ecosystem/skills/SKILL.md"
+      ],
+      "commands": [
+        "./plugins/git/commands/cm.md",
+        "./plugins/git/commands/cp.md",
+        "./plugins/git/commands/ff.md",
+        "./plugins/git/commands/fr.md",
+        "./plugins/git/commands/pr.md",
+        "./plugins/git/commands/prune.md",
+        "./plugins/git/commands/sync.md"
+      ]
+    },
+    {
+      "name": "datadog",
+      "source": "./plugins/datadog",
+      "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration",
+      "version": "1.0.0",
+      "author": "zircote",
+      "license": "MIT",
+      "keywords": ["datadog", "monitoring", "observability", "apm", "metrics", "dashboards", "alerts"],
+      "strict": false,
+      "agents": [
+        "./plugins/datadog/agents/datadog-pro.md",
+        "./plugins/datadog/agents/datadog-api-expert.md"
+      ]
+    },
+    {
+      "name": "copilot",
+      "source": "./plugins/copilot",
+      "description": "GitHub Copilot coding agent onboarding tools for configuring repositories with copilot-instructions.md",
+      "version": "1.0.0",
+      "author": "zircote",
+      "license": "MIT",
+      "keywords": ["copilot", "github", "onboarding", "ai-agents", "configuration"],
+      "strict": false,
+      "agents": [
+        "./plugins/copilot/onboard/agents/onboard.md"
+      ],
+      "commands": [
+        "./plugins/copilot/onboard/commands/onboard.md"
+      ]
+    },
+    {
+      "name": "document-skills",
+      "source": "./plugins/document-skills",
+      "description": "Document processing skills for PDF, DOCX, XLSX, and PPTX file manipulation with AI-powered analysis",
+      "version": "1.0.0",
+      "author": "zircote",
+      "license": "MIT",
+      "keywords": ["documents", "pdf", "docx", "xlsx", "pptx", "office", "extraction", "analysis"],
+      "strict": false,
+      "skills": [
+        "./plugins/document-skills/pdf/SKILL.md",
+        "./plugins/document-skills/docx/SKILL.md",
+        "./plugins/document-skills/xlsx/SKILL.md",
+        "./plugins/document-skills/pptx/SKILL.md"
+      ]
     }
   ]
 }
