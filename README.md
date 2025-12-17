@@ -16,7 +16,7 @@ claude /plugin marketplace add zircote/marketplace
 claude /plugin list
 
 # Install a specific plugin
-claude /plugin install z          # 115+ specialized agents
+claude /plugin install z          # 116 specialized agents
 claude /plugin install git        # Git workflow commands
 claude /plugin install datadog    # DataDog monitoring agents
 claude /plugin install copilot    # GitHub Copilot onboarding
@@ -29,12 +29,12 @@ claude /plugin install cs         # Project specification lifecycle
 
 ### z - Agent Library
 
-**115+ specialized Opus 4.5 agents** organized by domain, plus 46 skills and powerful commands.
+**116 specialized Opus 4.5 agents** organized by domain, plus 54 skills and powerful commands.
 
 | Category | Agents | Examples |
 |----------|--------|----------|
 | Core Development | 11 | frontend-developer, backend-developer, api-designer |
-| Language Specialists | 24 | python-pro, typescript-pro, golang-pro, rust-engineer |
+| Language Specialists | 23 | python-pro, typescript-pro, golang-pro, rust-engineer |
 | Infrastructure | 12 | devops-engineer, sre-engineer, kubernetes-specialist |
 | Quality & Security | 12 | code-reviewer, security-auditor, penetration-tester |
 | Data & AI | 12 | data-scientist, ml-engineer, llm-architect, postgres-pro |
@@ -47,8 +47,10 @@ claude /plugin install cs         # Project specification lifecycle
 **Commands:**
 - `/explore <path|pattern|question>` - Exhaustive codebase exploration with parallel subagents
 - `/deep-research <topic>` - Multi-phase research protocol with structured deliverables
+- `/code:review [path|--focus=security]` - Comprehensive code review with 6 specialist agents
+- `/code:review-fix [--quick]` - Interactive remediation of code review findings
 
-**Skills:** 46 specialized skills including `claude-code`, `anthropic-prompt-engineer`, `databases`, `devops`, `debugging`, and more.
+**Skills:** 54 specialized skills including `claude-code`, `anthropic-prompt-engineer`, `databases`, `devops`, `debugging`, and more.
 
 ```bash
 claude /plugin install z
@@ -71,7 +73,7 @@ Streamlined version control operations and GitHub ecosystem integration.
 | `/git:prune [--force]` | Clean up stale local branches |
 
 **Skills:**
-- **ADR** - Architecture Decision Records management
+- **ADR** - Architecture Decision Records management with git-adr CLI
 - **GitHub Ecosystem** - Actions, templates, CODEOWNERS, Dependabot setup
 
 ```bash
@@ -103,7 +105,7 @@ claude /plugin install datadog
 
 Bridge Claude Code and GitHub Copilot configurations for consistent AI behavior.
 
-**Command:** `/onboard [repository-path]`
+**Command:** `/copilot:onboard [repository-path]`
 
 **Generated Files:**
 - `.github/copilot-instructions.md` - Repository-wide instructions
@@ -161,7 +163,7 @@ Access National Sheep Improvement Program breeding data with MCP tools.
 
 **Agent:** `shepherd` - Expert sheep breeding advisor
 
-**Hooks:** 15 intelligent hooks for error resilience, caching, and exports
+**Hooks:** 14 intelligent hooks for error resilience, caching, and exports
 
 ```bash
 claude /plugin install nsip
@@ -201,10 +203,10 @@ marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # Central plugin registry
 ├── plugins/
-│   ├── z/                        # Agent library (115+ agents, 46 skills)
+│   ├── z/                        # Agent library (116 agents, 54 skills)
 │   │   ├── agents/               # Organized by domain (01-10)
 │   │   ├── skills/               # Development skills
-│   │   └── commands/             # explore, deep-research
+│   │   └── commands/             # explore, deep-research, code review
 │   ├── git/                      # Git workflow
 │   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune
 │   │   ├── adr/                  # ADR skills
@@ -221,7 +223,7 @@ marketplace/
 │   └── nsip/                     # Sheep breeding data
 │       ├── agents/               # shepherd
 │       ├── commands/             # 10 commands
-│       └── hooks/                # 15 hooks
+│       └── hooks/                # 14 hooks
 └── README.md                     # This file
 ```
 

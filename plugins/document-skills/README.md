@@ -19,7 +19,7 @@ claude /plugin install document-skills
 - Extract tables and images
 - Handle multi-page documents
 - OCR support for scanned documents
-- Form field extraction
+- Form field extraction and filling
 
 #### Word Documents (`docx/`)
 - Read and modify DOCX files
@@ -76,6 +76,8 @@ claude "Summarize the key points from presentation.pptx"
 | Metadata | Author, dates, keywords, document properties |
 | Form Fields | Extract and analyze form field values |
 | Bookmarks | Navigate document structure |
+| Merge/Split | Combine or separate PDF documents |
+| Watermarks | Add text or image watermarks |
 
 ### DOCX Skill
 
@@ -87,6 +89,7 @@ claude "Summarize the key points from presentation.pptx"
 | Comments | Read and process document comments |
 | Revisions | Track changes and revision history |
 | Tables | Table manipulation and extraction |
+| Images | Extract and insert images |
 
 ### XLSX Skill
 
@@ -98,6 +101,7 @@ claude "Summarize the key points from presentation.pptx"
 | Conditional Formatting | Analyze formatting rules |
 | Data Validation | Read validation rules |
 | Multiple Sheets | Handle workbook structure |
+| Pivot Tables | Access pivot table data |
 
 ### PPTX Skill
 
@@ -109,31 +113,60 @@ claude "Summarize the key points from presentation.pptx"
 | Images | Extract embedded media |
 | Animations | View animation settings |
 | Masters | Access master slide templates |
+| Transitions | Slide transition information |
 
 ## Usage Examples
 
 ### Extract Data from PDF
 
 ```bash
+# Basic text extraction
+claude "Extract all text from financial-report.pdf"
+
+# Table extraction with analysis
 claude "Extract all tables from financial-report.pdf and summarize the key metrics"
+
+# Form field extraction
+claude "List all form fields in application.pdf with their values"
 ```
 
 ### Analyze Excel Data
 
 ```bash
+# Data summary
 claude "Read sales.xlsx and identify trends in the Q4 data"
+
+# Multi-sheet analysis
+claude "Compare the data in Sheet1 and Sheet2 of workbook.xlsx"
+
+# Formula analysis
+claude "Explain the formulas in the budget spreadsheet"
 ```
 
 ### Review Word Document
 
 ```bash
+# Content analysis
 claude "Review contract.docx for legal terms and summarize key obligations"
+
+# Extract structure
+claude "Create an outline of the chapters in thesis.docx"
+
+# Track changes review
+claude "Summarize all tracked changes in proposal.docx"
 ```
 
 ### Summarize Presentation
 
 ```bash
+# Content summary
 claude "Create an executive summary from quarterly-review.pptx"
+
+# Speaker notes extraction
+claude "Extract all speaker notes from training.pptx"
+
+# Slide count and structure
+claude "Describe the structure of presentation.pptx including slide titles"
 ```
 
 ## Dependencies
@@ -142,20 +175,100 @@ Skills may require Python packages for full functionality:
 
 ```bash
 # PDF processing
-pip install pypdf2 pdfplumber
+pip install pypdf pdfplumber
 
 # Office documents
 pip install python-docx openpyxl python-pptx
 
-# Optional: OCR support
+# Optional: OCR support for scanned PDFs
 pip install pytesseract pdf2image
+
+# Optional: Advanced PDF creation
+pip install reportlab
 ```
+
+## Tool Selection Guide
+
+| Task | Recommended Tool |
+|------|------------------|
+| Extract text from PDF | pdfplumber |
+| Extract tables from PDF | pdfplumber |
+| Merge/split PDFs | pypdf |
+| Create PDFs from scratch | reportlab |
+| Fill PDF forms | pypdf or pdf-lib (JS) |
+| OCR scanned PDFs | pytesseract + pdf2image |
+| Read DOCX | python-docx |
+| Read XLSX | openpyxl |
+| Read PPTX | python-pptx |
+
+## Best Practices
+
+### PDF Processing
+- Use `pdfplumber` for text/table extraction (better layout preservation)
+- Use `pypdf` for document manipulation (merge, split, rotate)
+- For scanned documents, convert to images first then OCR
+
+### Excel Processing
+- Specify sheet names when working with multi-sheet workbooks
+- Handle formulas vs. calculated values explicitly
+- Consider data types when extracting (dates, currencies)
+
+### Word Processing
+- Track changes are preserved when reading
+- Styles provide structure hints for content organization
+- Comments can contain important review feedback
+
+### PowerPoint Processing
+- Speaker notes often contain more detail than slides
+- Master slides define consistent styling
+- Check for hidden slides
 
 ## Integration with Other Plugins
 
 - **z plugin**: Use `data-analyst` for spreadsheet analysis workflows
 - **z plugin**: Use `technical-writer` for document review and improvement
 - **git plugin**: Commit extracted data with `/git:cm`
+- **nsip plugin**: Export breeding data to XLSX format
+
+## Troubleshooting
+
+### PDF Text Extraction Returns Empty
+
+**Possible causes:**
+- Scanned PDF (image-based, not text)
+- Encrypted or protected PDF
+- Corrupt file
+
+**Solutions:**
+```bash
+# Check if PDF is image-based
+pdftotext input.pdf - | head -20
+
+# If empty, use OCR
+pip install pytesseract pdf2image
+```
+
+### Excel Formula Values Not Showing
+
+**Cause:** Reading formulas instead of calculated values
+
+**Solution:** Use `data_only=True` when opening:
+```python
+from openpyxl import load_workbook
+wb = load_workbook('file.xlsx', data_only=True)
+```
+
+### DOCX Formatting Lost
+
+**Cause:** Reading plain text instead of preserving styles
+
+**Solution:** Access paragraph styles explicitly:
+```python
+from docx import Document
+doc = Document('file.docx')
+for para in doc.paragraphs:
+    print(f"Style: {para.style.name}, Text: {para.text}")
+```
 
 ## Version
 
