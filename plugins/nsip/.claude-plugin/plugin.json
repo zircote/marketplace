@@ -1,0 +1,26 @@
+{
+  "$schema": "https://claude.ai/schemas/plugin.json",
+  "name": "nsip",
+  "version": "1.0.0",
+  "description": "National Sheep Improvement Program integration with AI-powered farm consulting agents for EBV analysis, breeding decisions, and flock management",
+  "author": "zircote",
+  "repository": "https://github.com/zircote/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "nsip",
+    "sheep",
+    "farming",
+    "livestock",
+    "agriculture",
+    "ebv",
+    "breeding",
+    "genetics"
+  ],
+  "agents": [
+    "agents/shepherd.md"
+  ],
+  "commands": [
+    "commands/consult.md"
+  ],
+  "hooks": "hooks/hooks.json"
+}

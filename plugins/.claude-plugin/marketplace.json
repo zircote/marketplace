@@ -1,0 +1,53 @@
+{
+  "$schema": "https://claude.ai/schemas/marketplace.json",
+  "name": "zircote-marketplace",
+  "description": "Claude Code plugin marketplace featuring specialized agents, skills, commands, and hooks for enhanced development workflows",
+  "version": "1.0.0",
+  "author": "zircote",
+  "repository": "https://github.com/zircote/marketplace",
+  "license": "MIT",
+  "plugins": [
+    {
+      "name": "nsip",
+      "path": "nsip",
+      "description": "National Sheep Improvement Program integration with AI-powered farm consulting agents",
+      "version": "1.0.0",
+      "keywords": ["nsip", "sheep", "farming", "livestock", "agriculture"]
+    },
+    {
+      "name": "z",
+      "path": "z",
+      "description": "Comprehensive agent library with 100+ specialized Opus 4.5 agents and development skills",
+      "version": "1.0.0",
+      "keywords": ["agents", "opus-4.5", "development", "skills", "commands"]
+    },
+    {
+      "name": "document-skills",
+      "path": "document-skills",
+      "description": "Document processing skills for PDF, DOCX, XLSX, and PPTX file manipulation",
+      "version": "1.0.0",
+      "keywords": ["documents", "pdf", "docx", "xlsx", "pptx", "office"]
+    },
+    {
+      "name": "git",
+      "path": "git",
+      "description": "Git workflow commands and GitHub ecosystem integration skills",
+      "version": "1.0.0",
+      "keywords": ["git", "github", "version-control", "adr", "workflows"]
+    },
+    {
+      "name": "datadog",
+      "path": "datadog",
+      "description": "DataDog API specialists for monitoring, observability, and APM integration",
+      "version": "1.0.0",
+      "keywords": ["datadog", "monitoring", "observability", "apm", "metrics"]
+    },
+    {
+      "name": "copilot",
+      "path": "copilot",
+      "description": "GitHub Copilot coding agent onboarding and configuration tools",
+      "version": "1.0.0",
+      "keywords": ["copilot", "github", "onboarding", "ai-agents"]
+    }
+  ]
+}
