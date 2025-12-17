@@ -1,28 +1,8 @@
 {
-  "$schema": "https://claude.ai/schemas/plugin.json",
   "name": "git",
-  "version": "1.0.0",
-  "description": "Git workflow commands for commits, pushes, PRs, and syncing, plus GitHub ecosystem integration skills for CI/CD and repository management",
+  "description": "Git workflow commands for commits, pushes, PRs, and syncing",
   "author": {
     "name": "zircote",
     "url": "https://github.com/zircote"
-  },
-  "repository": "https://github.com/zircote/marketplace",
-  "license": "MIT",
-  "keywords": [
-    "git",
-    "github",
-    "version-control",
-    "adr",
-    "workflows",
-    "ci-cd",
-    "commits"
-  ],
-  "skills": [
-    "./adr/skills/SKILL.md",
-    "./ecosystem/skills/SKILL.md"
-  ],
-  "commands": [
-    "./commands/*.md"
-  ]
+  }
 }
