@@ -1,28 +1,8 @@
 {
-  "$schema": "https://claude.ai/schemas/plugin.json",
   "name": "document-skills",
-  "version": "1.0.0",
-  "description": "Document processing skills for PDF, DOCX, XLSX, and PPTX file manipulation with AI-powered analysis and extraction capabilities",
+  "description": "Document processing skills for PDF, DOCX, XLSX, and PPTX files",
   "author": {
     "name": "zircote",
     "url": "https://github.com/zircote"
-  },
-  "repository": "https://github.com/zircote/marketplace",
-  "license": "MIT",
-  "keywords": [
-    "documents",
-    "pdf",
-    "docx",
-    "xlsx",
-    "pptx",
-    "office",
-    "extraction",
-    "analysis"
-  ],
-  "skills": [
-    "./pdf/SKILL.md",
-    "./docx/SKILL.md",
-    "./xlsx/SKILL.md",
-    "./pptx/SKILL.md"
-  ]
+  }
 }
