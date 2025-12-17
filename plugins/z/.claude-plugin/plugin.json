@@ -16,21 +16,21 @@
     "subagents"
   ],
   "agents": [
-    "agents/01-core-development/*.md",
-    "agents/02-language-specialists/*.md",
-    "agents/03-infrastructure/*.md",
-    "agents/04-quality-security/*.md",
-    "agents/05-data-ai/*.md",
-    "agents/06-developer-experience/*.md",
-    "agents/07-specialized-domains/*.md",
-    "agents/08-business-product/*.md",
-    "agents/09-meta-orchestration/*.md",
-    "agents/10-research-analysis/*.md"
+    "./agents/01-core-development/*.md",
+    "./agents/02-language-specialists/*.md",
+    "./agents/03-infrastructure/*.md",
+    "./agents/04-quality-security/*.md",
+    "./agents/05-data-ai/*.md",
+    "./agents/06-developer-experience/*.md",
+    "./agents/07-specialized-domains/*.md",
+    "./agents/08-business-product/*.md",
+    "./agents/09-meta-orchestration/*.md",
+    "./agents/10-research-analysis/*.md"
   ],
   "skills": [
-    "skills/*/SKILL.md"
+    "./skills/*/SKILL.md"
   ],
   "commands": [
-    "commands/*.md"
+    "./commands/*.md"
   ]
 }

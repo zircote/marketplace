@@ -16,10 +16,10 @@
     "commits"
   ],
   "skills": [
-    "adr/skills/SKILL.md",
-    "ecosystem/skills/SKILL.md"
+    "./adr/skills/SKILL.md",
+    "./ecosystem/skills/SKILL.md"
   ],
   "commands": [
-    "commands/*.md"
+    "./commands/*.md"
   ]
 }
