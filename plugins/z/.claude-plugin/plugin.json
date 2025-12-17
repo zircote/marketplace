@@ -3,7 +3,10 @@
   "name": "z",
   "version": "1.0.0",
   "description": "Comprehensive agent library featuring 100+ specialized Opus 4.5 agents organized by domain, plus development skills and commands for enhanced workflows",
-  "author": "zircote",
+  "author": {
+    "name": "zircote",
+    "url": "https://github.com/zircote"
+  },
   "repository": "https://github.com/zircote/marketplace",
   "license": "MIT",
   "keywords": [

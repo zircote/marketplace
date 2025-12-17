@@ -3,7 +3,10 @@
   "name": "git",
   "version": "1.0.0",
   "description": "Git workflow commands for commits, pushes, PRs, and syncing, plus GitHub ecosystem integration skills for CI/CD and repository management",
-  "author": "zircote",
+  "author": {
+    "name": "zircote",
+    "url": "https://github.com/zircote"
+  },
   "repository": "https://github.com/zircote/marketplace",
   "license": "MIT",
   "keywords": [

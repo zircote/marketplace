@@ -257,7 +257,10 @@
       "source": "./plugins/z",
       "description": "Comprehensive agent library featuring 100+ specialized Opus 4.5 agents organized by domain, plus development skills and commands",
       "version": "1.0.0",
-      "author": "zircote",
+      "author": {
+        "name": "zircote",
+        "url": "https://github.com/zircote"
+      },
       "license": "MIT",
       "keywords": ["agents", "opus-4.5", "development", "skills", "commands", "specialists", "subagents"],
       "strict": false,
@@ -287,7 +290,10 @@
       "source": "./plugins/git",
       "description": "Git workflow commands for commits, pushes, PRs, and syncing, plus GitHub ecosystem integration skills",
       "version": "1.0.0",
-      "author": "zircote",
+      "author": {
+        "name": "zircote",
+        "url": "https://github.com/zircote"
+      },
       "license": "MIT",
       "keywords": ["git", "github", "version-control", "adr", "workflows", "ci-cd", "commits"],
       "strict": false,
@@ -310,7 +316,10 @@
       "source": "./plugins/datadog",
       "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration",
       "version": "1.0.0",
-      "author": "zircote",
+      "author": {
+        "name": "zircote",
+        "url": "https://github.com/zircote"
+      },
       "license": "MIT",
       "keywords": ["datadog", "monitoring", "observability", "apm", "metrics", "dashboards", "alerts"],
       "strict": false,
@@ -324,7 +333,10 @@
       "source": "./plugins/copilot",
       "description": "GitHub Copilot coding agent onboarding tools for configuring repositories with copilot-instructions.md",
       "version": "1.0.0",
-      "author": "zircote",
+      "author": {
+        "name": "zircote",
+        "url": "https://github.com/zircote"
+      },
       "license": "MIT",
       "keywords": ["copilot", "github", "onboarding", "ai-agents", "configuration"],
       "strict": false,
@@ -340,7 +352,10 @@
       "source": "./plugins/document-skills",
       "description": "Document processing skills for PDF, DOCX, XLSX, and PPTX file manipulation with AI-powered analysis",
       "version": "1.0.0",
-      "author": "zircote",
+      "author": {
+        "name": "zircote",
+        "url": "https://github.com/zircote"
+      },
       "license": "MIT",
       "keywords": ["documents", "pdf", "docx", "xlsx", "pptx", "office", "extraction", "analysis"],
       "strict": false,
