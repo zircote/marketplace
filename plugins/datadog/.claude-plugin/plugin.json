@@ -7,5 +7,9 @@
     "url": "https://github.com/zircote"
   },
   "license": "MIT",
-  "keywords": ["datadog", "monitoring", "observability", "apm", "metrics", "dashboards", "alerts"]
+  "keywords": ["datadog", "monitoring", "observability", "apm", "metrics", "dashboards", "alerts"],
+  "agents": [
+    "./agents/datadog-pro.md",
+    "./agents/datadog-api-expert.md"
+  ]
 }
