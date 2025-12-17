@@ -1,0 +1,36 @@
+{
+  "$schema": "https://claude.ai/schemas/plugin.json",
+  "name": "z",
+  "version": "1.0.0",
+  "description": "Comprehensive agent library featuring 100+ specialized Opus 4.5 agents organized by domain, plus development skills and commands for enhanced workflows",
+  "author": "zircote",
+  "repository": "https://github.com/zircote/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "opus-4.5",
+    "development",
+    "skills",
+    "commands",
+    "specialists",
+    "subagents"
+  ],
+  "agents": [
+    "agents/01-core-development/*.md",
+    "agents/02-language-specialists/*.md",
+    "agents/03-infrastructure/*.md",
+    "agents/04-quality-security/*.md",
+    "agents/05-data-ai/*.md",
+    "agents/06-developer-experience/*.md",
+    "agents/07-specialized-domains/*.md",
+    "agents/08-business-product/*.md",
+    "agents/09-meta-orchestration/*.md",
+    "agents/10-research-analysis/*.md"
+  ],
+  "skills": [
+    "skills/*/SKILL.md"
+  ],
+  "commands": [
+    "commands/*.md"
+  ]
+}
