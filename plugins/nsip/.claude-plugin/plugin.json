@@ -1,6 +1,6 @@
 {
   "name": "nsip",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Access NSIP sheep breeding data with MCP tools and slash commands",
   "author": {
     "name": "epic pastures",
@@ -34,11 +34,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/lpn_validator.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/trait_dictionary.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
           }
         ]
       },
@@ -47,11 +47,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/lpn_validator.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/trait_dictionary.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
           }
         ]
       },
@@ -60,7 +60,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/lpn_validator.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
           }
         ]
       },
@@ -69,7 +69,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/lpn_validator.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
           }
         ]
       },
@@ -78,11 +78,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/breed_context_injector.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breed_context_injector.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/trait_dictionary.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
           }
         ]
       },
@@ -91,11 +91,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/breed_context_injector.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breed_context_injector.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/trait_dictionary.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
           }
         ]
       }
@@ -106,11 +106,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/auto_retry.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/auto_retry.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/error_notifier.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/error_notifier.py"
           }
         ]
       },
@@ -119,19 +119,19 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/fallback_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/query_logger.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/result_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/breeding_report.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breeding_report.py"
           }
         ]
       },
@@ -140,19 +140,19 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/fallback_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/query_logger.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/result_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/breeding_report.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breeding_report.py"
           }
         ]
       },
@@ -161,15 +161,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/fallback_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/query_logger.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/csv_exporter.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/csv_exporter.py"
           }
         ]
       },
@@ -178,19 +178,19 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/fallback_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/query_logger.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/result_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/pedigree_visualizer.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/pedigree_visualizer.py"
           }
         ]
       },
@@ -199,15 +199,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/fallback_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/query_logger.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/result_cache.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
           }
         ]
       }
@@ -217,7 +217,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/api_health_check.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/api_health_check.py"
           }
         ]
       }
@@ -227,11 +227,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/smart_search_detector.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/smart_search_detector.py"
           },
           {
             "type": "command",
-            "command": "${PLUGIN_DIR}/hooks/scripts/comparative_analyzer.py"
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/comparative_analyzer.py"
           }
         ]
       }
