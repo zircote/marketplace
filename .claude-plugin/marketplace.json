@@ -22,7 +22,7 @@
       },
       "license": "MIT",
       "keywords": ["nsip", "sheep", "breeding", "MCP", "claude-code"],
-      "strict": false,
+      "strict": true,
       "commands": [
         "./commands/consult.md",
         "./commands/discover.md",
@@ -263,7 +263,7 @@
       },
       "license": "MIT",
       "keywords": ["agents", "opus-4.5", "development", "skills", "commands", "specialists", "subagents"],
-      "strict": false,
+      "strict": true,
       "agents": [
         "./agents/01-core-development/*.md",
         "./agents/02-language-specialists/*.md",
@@ -296,7 +296,7 @@
       },
       "license": "MIT",
       "keywords": ["git", "github", "version-control", "adr", "workflows", "ci-cd", "commits"],
-      "strict": false,
+      "strict": true,
       "skills": [
         "./adr/skills/SKILL.md",
         "./ecosystem/skills/SKILL.md"
@@ -322,7 +322,7 @@
       },
       "license": "MIT",
       "keywords": ["datadog", "monitoring", "observability", "apm", "metrics", "dashboards", "alerts"],
-      "strict": false,
+      "strict": true,
       "agents": [
         "./agents/datadog-pro.md",
         "./agents/datadog-api-expert.md"
@@ -339,7 +339,7 @@
       },
       "license": "MIT",
       "keywords": ["copilot", "github", "onboarding", "ai-agents", "configuration"],
-      "strict": false,
+      "strict": true,
       "agents": [
         "./onboard/agents/onboard.md"
       ],
@@ -358,7 +358,7 @@
       },
       "license": "MIT",
       "keywords": ["documents", "pdf", "docx", "xlsx", "pptx", "office", "extraction", "analysis"],
-      "strict": false,
+      "strict": true,
       "skills": [
         "./pdf/SKILL.md",
         "./docx/SKILL.md",
