@@ -1,8 +1,0 @@
-{
-  "name": "git",
-  "description": "Git workflow commands for commits, pushes, PRs, and syncing",
-  "author": {
-    "name": "zircote",
-    "url": "https://github.com/zircote"
-  }
-}
