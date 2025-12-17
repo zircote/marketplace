@@ -1,0 +1,22 @@
+{
+  "$schema": "https://claude.ai/schemas/plugin.json",
+  "name": "datadog",
+  "version": "1.0.0",
+  "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration with production-ready code patterns",
+  "author": "zircote",
+  "repository": "https://github.com/zircote/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "datadog",
+    "monitoring",
+    "observability",
+    "apm",
+    "metrics",
+    "dashboards",
+    "alerts"
+  ],
+  "agents": [
+    "agents/datadog-pro.md",
+    "agents/datadog-api-expert.md"
+  ]
+}
