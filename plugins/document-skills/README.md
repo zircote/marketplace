@@ -5,7 +5,8 @@ Document processing skills for PDF, DOCX, XLSX, and PPTX file manipulation with 
 ## Installation
 
 ```bash
-claude /plugin install ./plugins/document-skills
+claude /plugin marketplace add zircote/marketplace
+claude /plugin install document-skills
 ```
 
 ## Contents
@@ -17,28 +18,37 @@ claude /plugin install ./plugins/document-skills
 - Analyze PDF structure and metadata
 - Extract tables and images
 - Handle multi-page documents
+- OCR support for scanned documents
+- Form field extraction
 
 #### Word Documents (`docx/`)
 - Read and modify DOCX files
 - Extract text, tables, and images
 - Preserve formatting during edits
 - Track changes support
+- Header/footer handling
+- Comments and revision tracking
 
 #### Excel Spreadsheets (`xlsx/`)
 - Read and write Excel files
 - Process formulas and cell references
 - Handle multiple worksheets
 - Data extraction and analysis
+- Named range support
+- Chart data extraction
+- Conditional formatting analysis
 
 #### PowerPoint Presentations (`pptx/`)
 - Read and modify presentations
 - Extract slide content and notes
 - Work with shapes and images
 - Analyze presentation structure
+- Animation and transition info
+- Master slide analysis
 
 ## Skill Activation
 
-Each skill activates when working with its respective file type:
+Each skill activates automatically when working with its respective file type:
 
 ```bash
 # PDF analysis
@@ -54,46 +64,99 @@ claude "Update the contract template.docx"
 claude "Summarize the key points from presentation.pptx"
 ```
 
-## Features
+## Features by Format
 
 ### PDF Skill
-- Page-by-page text extraction
-- Table detection and extraction
-- Image extraction with OCR support
-- Metadata analysis (author, dates, keywords)
-- Form field extraction
+
+| Feature | Description |
+|---------|-------------|
+| Text Extraction | Page-by-page text extraction with layout preservation |
+| Table Detection | Identify and extract tabular data |
+| Image Extraction | Extract embedded images with OCR support |
+| Metadata | Author, dates, keywords, document properties |
+| Form Fields | Extract and analyze form field values |
+| Bookmarks | Navigate document structure |
 
 ### DOCX Skill
-- Full document text extraction
-- Style and formatting preservation
-- Header/footer handling
-- Comments and revision tracking
-- Table manipulation
+
+| Feature | Description |
+|---------|-------------|
+| Full Text | Complete document text extraction |
+| Styles | Formatting and style preservation |
+| Headers/Footers | Access header and footer content |
+| Comments | Read and process document comments |
+| Revisions | Track changes and revision history |
+| Tables | Table manipulation and extraction |
 
 ### XLSX Skill
-- Cell value and formula reading
-- Named range support
-- Chart data extraction
-- Conditional formatting analysis
-- Data validation rules
+
+| Feature | Description |
+|---------|-------------|
+| Cell Values | Read values and formulas |
+| Named Ranges | Access defined names |
+| Charts | Extract chart data |
+| Conditional Formatting | Analyze formatting rules |
+| Data Validation | Read validation rules |
+| Multiple Sheets | Handle workbook structure |
 
 ### PPTX Skill
-- Slide content extraction
-- Speaker notes access
-- Shape and image handling
-- Animation and transition info
-- Master slide analysis
 
-## Integration
+| Feature | Description |
+|---------|-------------|
+| Slide Content | Text and media extraction |
+| Speaker Notes | Access presenter notes |
+| Shapes | Work with shapes and SmartArt |
+| Images | Extract embedded media |
+| Animations | View animation settings |
+| Masters | Access master slide templates |
 
-These skills complement:
-- `ai-multimodal` for visual document analysis
-- `media-processing` for document conversion
-- Data analysis workflows for spreadsheet processing
+## Usage Examples
+
+### Extract Data from PDF
+
+```bash
+claude "Extract all tables from financial-report.pdf and summarize the key metrics"
+```
+
+### Analyze Excel Data
+
+```bash
+claude "Read sales.xlsx and identify trends in the Q4 data"
+```
+
+### Review Word Document
+
+```bash
+claude "Review contract.docx for legal terms and summarize key obligations"
+```
+
+### Summarize Presentation
+
+```bash
+claude "Create an executive summary from quarterly-review.pptx"
+```
 
 ## Dependencies
 
-Skills may require Python packages:
+Skills may require Python packages for full functionality:
+
 ```bash
-pip install pypdf2 python-docx openpyxl python-pptx
+# PDF processing
+pip install pypdf2 pdfplumber
+
+# Office documents
+pip install python-docx openpyxl python-pptx
+
+# Optional: OCR support
+pip install pytesseract pdf2image
 ```
+
+## Integration with Other Plugins
+
+- **z plugin**: Use `data-analyst` for spreadsheet analysis workflows
+- **z plugin**: Use `technical-writer` for document review and improvement
+- **git plugin**: Commit extracted data with `/git:cm`
+
+## Version
+
+**Plugin:** 1.0.0

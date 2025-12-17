@@ -5,7 +5,8 @@ DataDog API specialists for monitoring setup, dashboard creation, metric queries
 ## Installation
 
 ```bash
-claude /plugin install ./plugins/datadog
+claude /plugin marketplace add zircote/marketplace
+claude /plugin install datadog
 ```
 
 ## Contents
@@ -58,6 +59,7 @@ Both agents provide:
 ## Usage Examples
 
 ### Create a Monitor
+
 ```python
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.monitors_api import MonitorsApi
@@ -78,6 +80,7 @@ with ApiClient(configuration) as api_client:
 ```
 
 ### Query Metrics
+
 ```python
 from datadog_api_client.v1.api.metrics_api import MetricsApi
 import time
@@ -91,9 +94,27 @@ response = api_instance.query_metrics(
 )
 ```
 
+### Create a Dashboard
+
+```python
+from datadog_api_client.v1.api.dashboards_api import DashboardsApi
+from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
+
+dashboard = Dashboard(
+    title="Application Metrics",
+    layout_type=DashboardLayoutType.ORDERED,
+    widgets=[
+        # Widget definitions...
+    ],
+)
+response = api_instance.create_dashboard(body=dashboard)
+```
+
 ## Authentication
 
 Set environment variables:
+
 ```bash
 export DD_API_KEY="your-api-key"
 export DD_APP_KEY="your-app-key"
@@ -116,9 +137,16 @@ configuration.server_variables["site"] = "datadoghq.eu"  # For EU region
 # - ddog-gov.com (US Government)
 ```
 
-## Integration
+## Integration with Other Plugins
 
 These agents integrate with:
-- `sre-engineer` for reliability engineering
-- `devops-engineer` for infrastructure setup
-- `performance-monitor` for observability workflows
+
+| Plugin | Integration |
+|--------|-------------|
+| **z plugin** | `sre-engineer` for reliability engineering |
+| **z plugin** | `devops-engineer` for infrastructure setup |
+| **z plugin** | `performance-engineer` for observability workflows |
+
+## Version
+
+**Plugin:** 1.0.0
