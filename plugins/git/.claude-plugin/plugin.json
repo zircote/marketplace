@@ -1,0 +1,24 @@
+{
+  "name": "git",
+  "version": "1.0.0",
+  "description": "Git workflow commands for commits, pushes, PRs, and syncing, plus GitHub ecosystem integration skills",
+  "author": {
+    "name": "zircote",
+    "url": "https://github.com/zircote"
+  },
+  "license": "MIT",
+  "keywords": ["git", "github", "version-control", "adr", "workflows", "ci-cd", "commits"],
+  "skills": [
+    "./adr/skills/SKILL.md",
+    "./ecosystem/skills/SKILL.md"
+  ],
+  "commands": [
+    "./commands/cm.md",
+    "./commands/cp.md",
+    "./commands/ff.md",
+    "./commands/fr.md",
+    "./commands/pr.md",
+    "./commands/prune.md",
+    "./commands/sync.md"
+  ]
+}

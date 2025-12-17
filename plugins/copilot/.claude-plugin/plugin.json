@@ -1,0 +1,17 @@
+{
+  "name": "copilot",
+  "version": "1.0.0",
+  "description": "GitHub Copilot coding agent onboarding tools for configuring repositories with copilot-instructions.md",
+  "author": {
+    "name": "zircote",
+    "url": "https://github.com/zircote"
+  },
+  "license": "MIT",
+  "keywords": ["copilot", "github", "onboarding", "ai-agents", "configuration"],
+  "agents": [
+    "./onboard/agents/onboard.md"
+  ],
+  "commands": [
+    "./onboard/commands/onboard.md"
+  ]
+}
