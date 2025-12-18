@@ -35,7 +35,7 @@
       "source": "./plugins/document-skills"
     },
     {
-      "name": "cs",
+      "name": "claude-spec",
       "source": {
         "source": "github",
         "repo": "zircote/claude-spec"
