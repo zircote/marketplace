@@ -46,6 +46,3 @@ test-results.json
 
 # Memory capture data
 .memory/
-
-# Plugin development (local only)
-plugins/gh/
