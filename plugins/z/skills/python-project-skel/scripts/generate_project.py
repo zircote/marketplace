@@ -238,7 +238,7 @@ replace = '__version__ = "{{new_version}}"'
 
 def template_makefile(cfg: ProjectConfig) -> str:
     """Generate Makefile content."""
-    return f'''.PHONY: help install install-dev test test-cov lint typecheck security coverage format format-check clean build quality bump bump-patch bump-minor bump-major bump-dry version
+    return f'''.PHONY: help install install-dev test test-cov lint typecheck security coverage format format-check clean build quality bump bump-patch bump-minor bump-major bump-dry version release
 
 .DEFAULT_GOAL := help
 
@@ -262,7 +262,7 @@ help:  ## Show this help message
 	@grep -E '^(build|clean):.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {{FS = ":.*?## "}}; {{printf "  \\033[36m%-18s\\033[0m %s\\n", $$1, $$2}}'
 	@echo ''
 	@echo 'Release:'
-	@grep -E '^(bump|bump-patch|bump-minor|bump-major|bump-dry|version):.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {{FS = ":.*?## "}}; {{printf "  \\033[36m%-18s\\033[0m %s\\n", $$1, $$2}}'
+	@grep -E '^(bump|bump-patch|bump-minor|bump-major|bump-dry|version|release):.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {{FS = ":.*?## "}}; {{printf "  \\033[36m%-18s\\033[0m %s\\n", $$1, $$2}}'
 	@echo ''
 
 install:  ## Install package
@@ -363,6 +363,21 @@ bump-dry:  ## Show what would be bumped (dry run)
 	@echo "Dry run - showing what would change for patch bump:"
 	@echo ""
 	uv run bump-my-version bump patch --dry-run --verbose --allow-dirty
+
+release:  ## Create and push release tag (bumps if tag exists)
+	@VERSION=$$(uv run bump-my-version show current_version) && \\
+	TAG="v$$VERSION" && \\
+	if git rev-parse "$$TAG" >/dev/null 2>&1; then \\
+		echo "Tag $$TAG already exists. Bumping patch version..." && \\
+		uv run bump-my-version bump patch && \\
+		VERSION=$$(uv run bump-my-version show current_version) && \\
+		TAG="v$$VERSION"; \\
+	fi && \\
+	echo "Creating release $$TAG..." && \\
+	git tag -a "$$TAG" -m "Release $$TAG" && \\
+	git push origin "$$TAG" && \\
+	echo "" && \\
+	echo "✓ Release $$TAG pushed successfully!"
 '''
 
 
