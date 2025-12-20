@@ -75,6 +75,7 @@ The skill prompts for required info and generates a complete project structure.
 - `bump-minor` - Bump minor version (0.1.0 → 0.2.0)
 - `bump-major` - Bump major version (0.1.0 → 1.0.0)
 - `bump-dry` - Preview version bump (dry run)
+- `release` - Create and push release tag (auto-bumps if tag exists)
 
 ## Output Modes
 
@@ -114,7 +115,7 @@ make bump-dry              # Preview what would change
 make bump-patch            # 0.1.0 → 0.1.1
 make bump-minor            # 0.1.0 → 0.2.0
 make bump-major            # 0.1.0 → 1.0.0
-git push && git push --tags  # Push changes and tags
+make release               # Create tag and push (auto-bumps if tag exists)
 ```
 
 Version bumps automatically:
