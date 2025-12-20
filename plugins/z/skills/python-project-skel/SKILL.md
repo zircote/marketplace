@@ -1,6 +1,6 @@
 ---
 name: python-project-skel
-description: Generate production-ready Python project skeletons with Astral UV package manager, Hatchling build backend with dynamic versioning, and modern tooling (ruff, mypy, pytest, bandit). Use when creating new Python projects, initializing Python packages, setting up src-layout projects, scaffolding Python libraries, or starting a new Python application. Supports Python 3.14+ by default with configurable version. Output to current directory, specified path, or tarball.
+description: Generate production-ready Python project skeletons with Astral UV package manager, Hatchling build backend with dynamic versioning, bump-my-version for semantic version management, and modern tooling (ruff, mypy, pytest, bandit). Use when creating new Python projects, initializing Python packages, setting up src-layout projects, scaffolding Python libraries, or starting a new Python application. Supports Python 3.14+ by default with configurable version. Output to current directory, specified path, or tarball.
 ---
 
 # Python Project Skeleton Generator
@@ -60,6 +60,7 @@ The skill prompts for required info and generates a complete project structure.
 - `[tool.pytest]` - Native TOML (pytest 9.0+)
 - `[tool.coverage]` - 80% threshold
 - `[tool.bandit]` - Security scanning
+- `[tool.bumpversion]` - Semantic versioning with bump-my-version
 
 **Makefile targets:**
 - `help` - Categorized target list
@@ -69,6 +70,11 @@ The skill prompts for required info and generates a complete project structure.
 - `format`, `format-check` - Ruff formatting
 - `quality` - All checks combined
 - `build`, `clean` - Package building
+- `version` - Show current version
+- `bump`, `bump-patch` - Bump patch version (0.1.0 → 0.1.1)
+- `bump-minor` - Bump minor version (0.1.0 → 0.2.0)
+- `bump-major` - Bump major version (0.1.0 → 1.0.0)
+- `bump-dry` - Preview version bump (dry run)
 
 ## Output Modes
 
@@ -97,6 +103,24 @@ uv sync                    # Install dependencies
 make test                  # Run tests
 make quality               # Run all quality checks
 ```
+
+## Version Management
+
+The generated project includes **bump-my-version** for semantic versioning:
+
+```bash
+make version               # Show current version
+make bump-dry              # Preview what would change
+make bump-patch            # 0.1.0 → 0.1.1
+make bump-minor            # 0.1.0 → 0.2.0
+make bump-major            # 0.1.0 → 1.0.0
+git push && git push --tags  # Push changes and tags
+```
+
+Version bumps automatically:
+- Update `__version__` in `src/{package_name}/__init__.py`
+- Create a git commit with conventional message
+- Create a git tag (e.g., `v0.1.1`)
 
 ## Customization
 
