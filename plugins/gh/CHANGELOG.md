@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2025-12-21
+
+### Added
+- `review-comments` command for processing GitHub PR review comments
+  - Validity assessment with confidence scoring (0-100%)
+  - Interactive mode (default) with AskUserQuestion prompts
+  - Auto mode (`--auto`) for batch processing with configurable thresholds
+  - Specialist agent routing for complex remediations (security, performance, etc.)
+  - Response generation with templates for accept/reject/question cases
+  - Dry-run support (`--dry-run`) for previewing actions
+  - Conversation resolution via GitHub GraphQL API
+
 ## [0.3.2] - 2025-12-20
 
 ## [0.3.1] - 2025-12-20

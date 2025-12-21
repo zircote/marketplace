@@ -29,7 +29,7 @@ You should see the prune command show stale branches (if any) and confirmation t
 ## Overview
 
 This plugin provides:
-- **9 Git workflow commands** for daily development operations
+- **10 Git workflow commands** for daily development operations
 - **1 Copilot onboarding agent** for GitHub Copilot configuration
 - **1 GitHub ecosystem skill** for comprehensive repo setup
 
@@ -46,13 +46,14 @@ This plugin provides:
 | `/git:ff` | Fast-forward merge only | `[remote] [branch]` |
 | `/git:prune` | Clean up stale local branches | `[--force]` |
 
-### Copilot & Migration Commands
+### Copilot, Migration & Review Commands
 
 | Command | Description | Arguments |
 |---------|-------------|-----------|
 | `/gh:copilot-onboard` | Configure repo for GitHub Copilot coding agent | `[repository-path]` |
 | `/gh:onboard` | Alias for copilot-onboard | `[repository-path]` |
 | `/gh:migrate` | Migrate multi-CI to GitHub Actions | `[--ci=TYPE]` |
+| `/gh:review-comments` | Process PR review comments with assessment & remediation | `[pr-number] [--auto\|--interactive]` |
 
 ## Command Details
 
@@ -156,6 +157,45 @@ Migrates from various CI systems to GitHub Actions:
 
 Supports: Jenkins, CircleCI, GitLab CI, Travis CI, Azure Pipelines, Bitbucket Pipelines, Concourse, Drone, TeamCity
 
+### `/gh:review-comments` - Process PR Review Comments
+
+Processes GitHub PR review comments with validity assessment, remediation, and response generation:
+
+```bash
+/gh:review-comments              # Current branch's PR, interactive mode
+/gh:review-comments 123          # Specific PR, interactive mode
+/gh:review-comments 123 --auto   # Auto-process with default thresholds
+/gh:review-comments --dry-run    # Preview actions without executing
+```
+
+**Flags:**
+- `--auto` - Non-interactive: auto-accept findings with ≥85% confidence
+- `--interactive` - Prompt at each decision (default)
+- `--confidence=N` - Set auto-accept threshold (0-100, default: 85)
+- `--dry-run` - Show proposed actions without executing
+
+**Workflow:**
+
+1. **Fetches all review comments** from the PR
+2. **Categorizes** into: Code Review, Questions, Suggestions, Blockers, Approvals
+3. **Assesses validity** with confidence scoring (0-100%)
+4. **Prompts for decisions** (in interactive mode) or auto-processes
+5. **Remediates accepted findings** using appropriate specialist agents
+6. **Posts responses** to all comments with explanations
+7. **Resolves conversations** where appropriate
+
+**Confidence scoring dimensions:**
+- Technical Accuracy (40%)
+- Relevance (25%)
+- Impact (20%)
+- Feasibility (15%)
+
+**Response types:**
+- ✅ Accepted & Fixed - with change description
+- ✅ Accepted with Modification - alternative approach with rationale
+- 💭 Rejected - with detailed reasoning and citations
+- 📝 Question Answered - with code examples if helpful
+
 ## Agent
 
 ### copilot-assistant
@@ -240,4 +280,4 @@ If push fails after rebase:
 
 ## Version
 
-**Plugin:** 0.3.2
+**Plugin:** 0.4.0
