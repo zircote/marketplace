@@ -240,4 +240,4 @@ If push fails after rebase:
 
 ## Version
 
-**Plugin:** 0.3.0
+**Plugin:** 0.3.1
