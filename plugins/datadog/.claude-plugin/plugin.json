@@ -27,8 +27,5 @@
   "agents": [
     "./agents/datadog-pro.md",
     "./agents/datadog-api-expert.md"
-  ],
-  "references": [
-    "./references/*.md"
   ]
 }
