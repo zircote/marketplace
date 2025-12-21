@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 7 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 6 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -16,10 +16,9 @@ claude /plugin marketplace add zircote/marketplace
 claude /plugin list
 
 # Install a specific plugin
-claude /plugin install z          # 116 specialized agents
-claude /plugin install git        # Git workflow commands
+claude /plugin install zircote    # 116 specialized agents
+claude /plugin install gh         # Git workflow + Copilot onboarding
 claude /plugin install datadog    # DataDog monitoring agents
-claude /plugin install copilot    # GitHub Copilot onboarding
 claude /plugin install document-skills  # PDF/DOCX/XLSX/PPTX processing
 claude /plugin install nsip       # Sheep breeding data (NSIP)
 claude /plugin install cs         # Project specification lifecycle
@@ -58,9 +57,9 @@ claude /plugin install z
 
 ---
 
-### git - Git Workflow Commands
+### gh - Git Workflow & GitHub Ecosystem
 
-Streamlined version control operations and GitHub ecosystem integration.
+Streamlined version control operations, GitHub ecosystem integration, and Copilot configuration.
 
 | Command | Description |
 |---------|-------------|
@@ -71,13 +70,16 @@ Streamlined version control operations and GitHub ecosystem integration.
 | `/git:sync [remote] [branch]` | Full sync: fetch, rebase, push |
 | `/git:ff [remote] [branch]` | Fast-forward merge only |
 | `/git:prune [--force]` | Clean up stale local branches |
+| `/gh:copilot-onboard [path]` | Generate Copilot config from CLAUDE.md |
+| `/gh:migrate [--ci=TYPE]` | Multi-CI to GitHub Actions migration |
+
+**Agent:** `copilot-assistant` - Bridge Claude Code and GitHub Copilot configurations
 
 **Skills:**
-- **ADR** - Architecture Decision Records management with git-adr CLI
 - **GitHub Ecosystem** - Actions, templates, CODEOWNERS, Dependabot setup
 
 ```bash
-claude /plugin install git
+claude /plugin install gh
 ```
 
 ---
@@ -97,25 +99,6 @@ Expert agents for monitoring setup, dashboard creation, and APM integration.
 
 ```bash
 claude /plugin install datadog
-```
-
----
-
-### copilot - GitHub Copilot Onboarding
-
-Bridge Claude Code and GitHub Copilot configurations for consistent AI behavior.
-
-**Command:** `/copilot:onboard [repository-path]`
-
-**Generated Files:**
-- `.github/copilot-instructions.md` - Repository-wide instructions
-- `.github/workflows/copilot-setup-steps.yml` - Environment setup
-- `.github/instructions/*.instructions.md` - Scoped instructions by file type
-
-Automatically extracts settings from CLAUDE.md to create Copilot-compatible configuration.
-
-```bash
-claude /plugin install copilot
 ```
 
 ---
@@ -203,18 +186,15 @@ marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # Central plugin registry
 ├── plugins/
-│   ├── z/                        # Agent library (116 agents, 54 skills)
+│   ├── zircote/                  # Agent library (116 agents, 54 skills)
 │   │   ├── agents/               # Organized by domain (01-10)
-│   │   ├── skills/               # Development skills
-│   │   └── commands/             # explore, deep-research, code review
-│   ├── git/                      # Git workflow
-│   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune
-│   │   ├── adr/                  # ADR skills
-│   │   └── ecosystem/            # GitHub ecosystem skills
+│   │   └── skills/               # Development skills
+│   ├── gh/                       # Git workflow + Copilot
+│   │   ├── agents/               # copilot-assistant
+│   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune, migrate
+│   │   └── skills/               # GitHub ecosystem
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
-│   ├── copilot/                  # Copilot onboarding
-│   │   └── onboard/              # Agent and command
 │   ├── document-skills/          # Document processing
 │   │   ├── pdf/                  # PDF skill
 │   │   ├── docx/                 # Word skill

@@ -1,0 +1,203 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      plugins:
+        description: 'Plugins to bump (comma-separated, or "changed" for auto-detect, or "all")'
+        required: true
+        default: 'changed'
+        type: string
+      dry_run:
+        description: 'Dry run (no actual changes)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Bump Versions and Release
+    runs-on: ubuntu-latest
+    # Use environment variables for all inputs to prevent injection
+    env:
+      BUMP_TYPE: ${{ inputs.bump_type }}
+      PLUGINS_INPUT: ${{ inputs.plugins }}
+      DRY_RUN: ${{ inputs.dry_run }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install bump-my-version
+        run: pip install bump-my-version
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Determine plugins to bump
+        id: plugins
+        run: |
+          # Validate bump type is one of expected values
+          case "$BUMP_TYPE" in
+            patch|minor|major) ;;
+            *) echo "Invalid bump type"; exit 1 ;;
+          esac
+
+          # Validate and process plugins input
+          if [ "$PLUGINS_INPUT" = "changed" ]; then
+            # Get last tag and find changed plugins
+            LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+            if [ -z "$LAST_TAG" ]; then
+              echo "No previous tags found, bumping all plugins"
+              PLUGINS="zircote,gh,nsip,datadog,document-skills"
+            else
+              echo "Finding plugins changed since $LAST_TAG"
+              CHANGED=""
+              for plugin in zircote gh nsip datadog document-skills; do
+                if git diff --name-only "$LAST_TAG" HEAD | grep -q "^plugins/$plugin/"; then
+                  CHANGED="$CHANGED$plugin,"
+                fi
+              done
+              PLUGINS="${CHANGED%,}"
+            fi
+          elif [ "$PLUGINS_INPUT" = "all" ]; then
+            PLUGINS="zircote,gh,nsip,datadog,document-skills"
+          else
+            # Validate plugins input contains only allowed characters
+            if ! echo "$PLUGINS_INPUT" | grep -qE '^[a-z,-]+$'; then
+              echo "Invalid plugins input"
+              exit 1
+            fi
+            PLUGINS="$PLUGINS_INPUT"
+          fi
+
+          echo "plugins=$PLUGINS" >> "$GITHUB_OUTPUT"
+          echo "Will bump: $PLUGINS"
+
+      - name: Bump versions
+        if: env.DRY_RUN != 'true'
+        env:
+          PLUGINS_TO_BUMP: ${{ steps.plugins.outputs.plugins }}
+        run: |
+          IFS=',' read -ra PLUGINS <<< "$PLUGINS_TO_BUMP"
+
+          for plugin in "${PLUGINS[@]}"; do
+            plugin=$(echo "$plugin" | xargs)  # Trim whitespace
+            # Validate plugin name
+            case "$plugin" in
+              zircote|gh|nsip|datadog|document-skills)
+                if [ -d "plugins/$plugin" ]; then
+                  echo "Bumping $plugin..."
+                  cd "plugins/$plugin"
+                  bump-my-version bump "$BUMP_TYPE" --allow-dirty
+                  cd ../..
+                fi
+                ;;
+              "") ;;  # Skip empty
+              *) echo "Skipping invalid plugin name: $plugin" ;;
+            esac
+          done
+
+      - name: Dry run - show what would be bumped
+        if: env.DRY_RUN == 'true'
+        env:
+          PLUGINS_TO_BUMP: ${{ steps.plugins.outputs.plugins }}
+        run: |
+          IFS=',' read -ra PLUGINS <<< "$PLUGINS_TO_BUMP"
+
+          echo "DRY RUN - Would bump the following plugins:"
+          for plugin in "${PLUGINS[@]}"; do
+            plugin=$(echo "$plugin" | xargs)
+            case "$plugin" in
+              zircote|gh|nsip|datadog|document-skills)
+                if [ -d "plugins/$plugin" ]; then
+                  VERSION=$(grep -o '"version": "[^"]*"' "plugins/$plugin/.claude-plugin/plugin.json" | cut -d'"' -f4)
+                  echo "  - $plugin: $VERSION -> (next $BUMP_TYPE)"
+                fi
+                ;;
+            esac
+          done
+
+      - name: Commit and tag
+        if: env.DRY_RUN != 'true'
+        env:
+          PLUGINS_TO_BUMP: ${{ steps.plugins.outputs.plugins }}
+        run: |
+          # Check if there are changes
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          # Commit all changes
+          git add -A
+          git commit -m "chore(release): bump plugin versions [$BUMP_TYPE]
+
+          Plugins: $PLUGINS_TO_BUMP
+
+          🤖 Generated by GitHub Actions"
+
+          # Create tags for each bumped plugin
+          IFS=',' read -ra PLUGINS <<< "$PLUGINS_TO_BUMP"
+          for plugin in "${PLUGINS[@]}"; do
+            plugin=$(echo "$plugin" | xargs)
+            case "$plugin" in
+              zircote|gh|nsip|datadog|document-skills)
+                if [ -d "plugins/$plugin" ]; then
+                  VERSION=$(grep -o '"version": "[^"]*"' "plugins/$plugin/.claude-plugin/plugin.json" | cut -d'"' -f4)
+                  TAG="${plugin}-v${VERSION}"
+                  echo "Creating tag: $TAG"
+                  git tag -a "$TAG" -m "Release $plugin v$VERSION"
+                fi
+                ;;
+            esac
+          done
+
+      - name: Push changes
+        if: env.DRY_RUN != 'true'
+        run: |
+          git push
+          git push --tags
+
+      - name: Create release notes
+        if: env.DRY_RUN != 'true'
+        env:
+          PLUGINS_TO_BUMP: ${{ steps.plugins.outputs.plugins }}
+        run: |
+          echo "## Released Plugins" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          IFS=',' read -ra PLUGINS <<< "$PLUGINS_TO_BUMP"
+          for plugin in "${PLUGINS[@]}"; do
+            plugin=$(echo "$plugin" | xargs)
+            case "$plugin" in
+              zircote|gh|nsip|datadog|document-skills)
+                if [ -d "plugins/$plugin" ]; then
+                  VERSION=$(grep -o '"version": "[^"]*"' "plugins/$plugin/.claude-plugin/plugin.json" | cut -d'"' -f4)
+                  echo "- **$plugin** v$VERSION" >> "$GITHUB_STEP_SUMMARY"
+                fi
+                ;;
+            esac
+          done
