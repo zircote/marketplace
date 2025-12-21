@@ -4,7 +4,9 @@
 
 .PHONY: help version bump-changed bump-all release release-minor release-major
 .PHONY: bump-zircote bump-gh bump-nsip bump-datadog bump-document-skills
-.PHONY: validate demos demo-clean
+.PHONY: validate validate-json validate-fields validate-version validate-readme
+.PHONY: validate-commands validate-agents validate-skills
+.PHONY: ci quality lint demos demo-clean
 
 PYTHON := python3
 SCRIPTS := scripts
@@ -98,21 +100,42 @@ bump-document-skills-minor:  ## Bump document-skills plugin minor version
 	cd plugins/document-skills && bump-my-version bump minor
 
 # ============================================================================
+# CI & Quality (matches .github/workflows/ci.yml)
+# ============================================================================
+
+ci: validate  ## Run all CI checks (same as GitHub Actions)
+
+quality: ci  ## Alias for ci
+
+lint: validate-readme  ## Run linting checks
+
+# ============================================================================
 # Validation
 # ============================================================================
 
-validate:  ## Validate all plugin.json files
-	@echo "Validating plugin manifests..."
-	@for plugin in zircote gh nsip datadog document-skills; do \
-		$(PYTHON) -c "import json; json.load(open('plugins/$$plugin/.claude-plugin/plugin.json'))" && \
-		echo "  ✅ $$plugin/plugin.json" || \
-		echo "  ❌ $$plugin/plugin.json"; \
-	done
-	@echo ""
-	@echo "Validating marketplace.json..."
-	@$(PYTHON) -c "import json; json.load(open('.claude-plugin/marketplace.json'))" && \
-		echo "  ✅ marketplace.json" || \
-		echo "  ❌ marketplace.json"
+validate:  ## Run all plugin validations
+	@$(PYTHON) $(SCRIPTS)/validate.py
+
+validate-json:  ## Validate JSON syntax only
+	@$(PYTHON) $(SCRIPTS)/validate.py --check json
+
+validate-fields:  ## Check required fields only
+	@$(PYTHON) $(SCRIPTS)/validate.py --check fields
+
+validate-version:  ## Validate semantic versions only
+	@$(PYTHON) $(SCRIPTS)/validate.py --check version
+
+validate-readme:  ## Check README files exist
+	@$(PYTHON) $(SCRIPTS)/validate.py --check readme
+
+validate-commands:  ## Validate command file references
+	@$(PYTHON) $(SCRIPTS)/validate.py --check commands
+
+validate-agents:  ## Validate agent file references
+	@$(PYTHON) $(SCRIPTS)/validate.py --check agents
+
+validate-skills:  ## Validate skill file references
+	@$(PYTHON) $(SCRIPTS)/validate.py --check skills
 
 # ============================================================================
 # Demo Generation
