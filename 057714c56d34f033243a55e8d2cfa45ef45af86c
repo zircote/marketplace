@@ -6,3 +6,12 @@ summary: '[{''type'': ''thinking'', ''thinking'': ''Ah, macOS sed issue with the
 ---
 
 [{'type': 'thinking', 'thinking': 'Ah, macOS sed issue with the -i flag. I need to provide an empty string as the backup extension.', 'signature': 'EogCCkYIChgCKkD6qlRLLvJ2iUUKt82k...
+
+---
+type: blockers
+timestamp: '2025-12-21T04:05:11.729401+00:00'
+summary: '[{''type'': ''text'', ''text'': "I''ll fix these plugin manifest errors
+  right now. The issue is that `refer'
+---
+
+[{'type': 'text', 'text': "I'll fix these plugin manifest errors right now. The issue is that `references` and `scripts` are not valid keys in the plugin.json schema."}]
