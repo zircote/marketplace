@@ -47,7 +47,7 @@
       "name": "memory-capture",
       "source": {
         "source": "github",
-        "repo": "zircote/git-notes-memory-manager"
+        "repo": "zircote/git-notes-memory"
       },
       "description": "Git-backed memory system for Claude Code. Captures decisions, learnings, and context as git notes with semantic search and automatic recall."
     },
