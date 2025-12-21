@@ -145,6 +145,10 @@
     "./agents/10-research-analysis/trend-analyst.md",
     "./agents/templates/opus-4-5-template.md"
   ],
+  "commands": [
+    "./commands/deep-research.md",
+    "./commands/deep-explore.md"
+  ],
   "skills": [
     "./skills/aesthetic/SKILL.md",
     "./skills/ai-multimodal/SKILL.md",
