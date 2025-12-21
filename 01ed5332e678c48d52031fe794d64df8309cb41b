@@ -79,3 +79,28 @@ Created `/gh:review-comments` command for GitHub PR review processing
 ## Related Files
 - plugins/gh/commands/review-comments.md:1-350
 - plugins/gh/.claude-plugin/plugin.json:34-45
+
+---
+type: progress
+timestamp: '2025-12-21T13:52:11.172337+00:00'
+summary: Created `/gh:review-comments` command for GitHub PR review processing
+---
+
+Created `/gh:review-comments` command for GitHub PR review processing
+## Files Created/Modified
+- **Created**: `plugins/gh/commands/review-comments.md` - 350+ line command
+- **Modified**: `plugins/gh/.claude-plugin/plugin.json` - registered command, bumped to v0.4.0
+- **Modified**: `plugins/gh/CHANGELOG.md` - documented new feature
+- **Modified**: `plugins/gh/README.md` - added command documentation
+
+## Command Features
+1. **Validity Assessment** - Confidence scoring (0-100%) across 4 dimensions
+2. **Interactive Mode** (default) - `AskUserQuestion` prompts at decision points
+3. **Auto Mode** (`--auto`) - Batch processing with configurable thresholds
+4. **Specialist Routing** - Routes to security-engineer, performance-engineer, etc.
+5. **Response Generation** - Templates for accept/reject/question responses
+6. **Dry-Run** - Preview actions without executing
+
+## Related Files
+- plugins/gh/commands/review-comments.md:1-350
+- plugins/gh/.claude-plugin/plugin.json:34-45
