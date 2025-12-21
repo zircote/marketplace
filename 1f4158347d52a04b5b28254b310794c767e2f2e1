@@ -1,0 +1,8 @@
+---
+type: patterns
+timestamp: '2025-12-21T03:34:53.809697+00:00'
+summary: '...this |\n| No `hooks` key + `hooks/hooks.json` exists | ✅ Works (auto-discovery)
+  | Standard patter'
+---
+
+...this |\n| No `hooks` key + `hooks/hooks.json` exists | ✅ Works (auto-discovery) | Standard pattern |\n| `"hooks": "./custom/path.json"` | ✅ Works (non-default path, must be declared) | For non-standard...
