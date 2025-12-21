@@ -37,3 +37,13 @@ summary: '...**Phased Execution** - 6 phases from context gathering → resoluti
 
 ...**Phased Execution** - 6 phases from context gathering → resolution, following the migrate.md pattern
 3. **Confidence-based classification** - Borrowed from ML patterns (Strong Accept ≥90%, Accept...
+
+---
+type: patterns
+timestamp: '2025-12-21T14:06:52.034425+00:00'
+summary: '...**Phased Execution** - 6 phases from context gathering → resolution,
+  following the migrate.md pat'
+---
+
+...**Phased Execution** - 6 phases from context gathering → resolution, following the migrate.md pattern
+3. **Confidence-based classification** - Borrowed from ML patterns (Strong Accept ≥90%, Accept...
