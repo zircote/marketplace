@@ -15,3 +15,12 @@ summary: '[{''type'': ''text'', ''text'': "I''ll fix these plugin manifest error
 ---
 
 [{'type': 'text', 'text': "I'll fix these plugin manifest errors right now. The issue is that `references` and `scripts` are not valid keys in the plugin.json schema."}]
+
+---
+type: blockers
+timestamp: '2025-12-21T04:03:48.316440+00:00'
+summary: '[{''type'': ''text'', ''text'': "I''ll fix these plugin manifest errors
+  right now. The issue is that `refer'
+---
+
+[{'type': 'text', 'text': "I'll fix these plugin manifest errors right now. The issue is that `references` and `scripts` are not valid keys in the plugin.json schema."}]
