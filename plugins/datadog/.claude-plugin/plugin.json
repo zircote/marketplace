@@ -1,15 +1,34 @@
 {
   "name": "datadog",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration",
   "author": {
     "name": "zircote",
+    "email": "zircote@gmail.com",
     "url": "https://github.com/zircote"
   },
   "license": "MIT",
-  "keywords": ["datadog", "monitoring", "observability", "apm", "metrics", "dashboards", "alerts"],
+  "keywords": [
+    "datadog",
+    "monitoring",
+    "observability",
+    "apm",
+    "metrics",
+    "dashboards",
+    "alerts",
+    "traces",
+    "logs",
+    "slo",
+    "incidents",
+    "dd-api",
+    "monitors",
+    "queries"
+  ],
   "agents": [
     "./agents/datadog-pro.md",
     "./agents/datadog-api-expert.md"
+  ],
+  "references": [
+    "./references/*.md"
   ]
 }

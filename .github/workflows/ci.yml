@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Plugins
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating plugin manifests..."
+          for plugin in zircote gh nsip datadog document-skills; do
+            if [ -f "plugins/$plugin/.claude-plugin/plugin.json" ]; then
+              python -c "import json; json.load(open('plugins/$plugin/.claude-plugin/plugin.json'))" && \
+                echo "✅ $plugin/plugin.json" || \
+                { echo "❌ $plugin/plugin.json"; exit 1; }
+            fi
+          done
+
+          echo ""
+          echo "Validating marketplace.json..."
+          python -c "import json; json.load(open('.claude-plugin/marketplace.json'))" && \
+            echo "✅ marketplace.json" || \
+            { echo "❌ marketplace.json"; exit 1; }
+
+      - name: Check required fields
+        run: |
+          echo "Checking required fields in plugin.json files..."
+          python << 'EOF'
+          import json
+          import sys
+
+          required_fields = ['name', 'version', 'description', 'author', 'license']
+          author_fields = ['name', 'email', 'url']
+          plugins = ['zircote', 'gh', 'nsip', 'datadog', 'document-skills']
+
+          errors = []
+          for plugin in plugins:
+              path = f'plugins/{plugin}/.claude-plugin/plugin.json'
+              try:
+                  with open(path) as f:
+                      data = json.load(f)
+
+                  for field in required_fields:
+                      if field not in data:
+                          errors.append(f"{plugin}: missing required field '{field}'")
+
+                  if 'author' in data:
+                      for field in author_fields:
+                          if field not in data['author']:
+                              errors.append(f"{plugin}: author missing '{field}'")
+
+                  print(f"✅ {plugin} - all required fields present")
+              except FileNotFoundError:
+                  errors.append(f"{plugin}: plugin.json not found")
+              except json.JSONDecodeError as e:
+                  errors.append(f"{plugin}: invalid JSON - {e}")
+
+          if errors:
+              print("\n❌ Validation errors:")
+              for error in errors:
+                  print(f"  - {error}")
+              sys.exit(1)
+          EOF
+
+      - name: Validate semantic versions
+        run: |
+          echo "Checking version format..."
+          python << 'EOF'
+          import json
+          import re
+          import sys
+
+          semver_pattern = r'^\d+\.\d+\.\d+$'
+          plugins = ['zircote', 'gh', 'nsip', 'datadog', 'document-skills']
+
+          for plugin in plugins:
+              path = f'plugins/{plugin}/.claude-plugin/plugin.json'
+              with open(path) as f:
+                  data = json.load(f)
+
+              version = data.get('version', '')
+              if not re.match(semver_pattern, version):
+                  print(f"❌ {plugin}: invalid version '{version}' (expected X.Y.Z)")
+                  sys.exit(1)
+              print(f"✅ {plugin} v{version}")
+          EOF
+
+  lint-markdown:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check README files exist
+        run: |
+          for plugin in zircote gh nsip datadog document-skills; do
+            if [ ! -f "plugins/$plugin/README.md" ]; then
+              echo "❌ Missing README.md for $plugin"
+              exit 1
+            fi
+            echo "✅ $plugin/README.md exists"
+          done

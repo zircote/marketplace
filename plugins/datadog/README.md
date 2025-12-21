@@ -9,6 +9,63 @@ claude /plugin marketplace add zircote/marketplace
 claude /plugin install datadog
 ```
 
+## Quick Start
+
+Get started with common DataDog tasks:
+
+### Create a Monitor
+```
+Using the datadog-api-expert agent, create a monitor for:
+- High CPU usage (>80% for 5 minutes)
+- Alert via Slack to #alerts channel
+- Include runbook link in notification
+```
+
+### Query Metrics
+```
+Using the datadog-pro agent, show me:
+- Average response time for my-service over last hour
+- Error rate trend for the past 24 hours
+- P95 latency broken down by endpoint
+```
+
+### Build a Dashboard
+```
+Using the datadog-pro agent, create a dashboard with:
+- Service health overview (request rate, error rate, latency)
+- Infrastructure metrics (CPU, memory, disk)
+- Top 10 slowest endpoints table
+```
+
+### Search Logs
+```
+Using the datadog-api-expert agent:
+- Search for errors in production over the last hour
+- Aggregate logs by service and status
+- Find all 5xx responses for my-api
+```
+
+## Common Query Patterns
+
+| Use Case | Query |
+|----------|-------|
+| High CPU | `avg:system.cpu.user{*} > 80` |
+| Memory pressure | `avg:system.mem.used{*} / avg:system.mem.total{*} > 0.9` |
+| Error rate | `sum:trace.http.request.errors{service:my-service}.as_rate()` |
+| Request latency P95 | `p95:trace.http.request.duration{service:my-service}` |
+| Disk usage | `avg:system.disk.in_use{*} > 0.85` |
+| Container restarts | `sum:kubernetes.containers.restarts{*}` |
+
+## Verify Installation
+
+After installing, test the agents are working:
+
+```bash
+claude "Using the datadog-pro agent, explain how to authenticate with the DataDog API"
+```
+
+You should see a complete response with code examples and documentation links.
+
 ## Contents
 
 ### Agents
