@@ -22,3 +22,43 @@ Created `/gh:review-comments` command for GitHub PR review processing
 ## Related Files
 - plugins/gh/commands/review-comments.md:1-350
 - plugins/gh/.claude-plugin/plugin.json:34-45
+
+---
+type: progress
+timestamp: '2025-12-21T14:08:49.233909+00:00'
+summary: '**CI/Quality parity complete**'
+---
+
+**CI/Quality parity complete**
+## Changes Summary
+
+| File | Change |
+|------|--------|
+| `scripts/validate.py` | **New** - Shared validation script (7 checks) |
+| `.github/workflows/ci.yml` | Refactored to use shared script |
+| `Makefile` | Added `ci`, `quality`, `lint`, and `validate-*` targets |
+| `plugins/zircote/.claude-plugin/plugin.json` | Removed invalid commands reference |
+| `plugins/gh/commands/review-comments.md` | **New** - PR review command |
+| `plugins/gh/.claude-plugin/plugin.json` | Registered new command, v0.4.0 |
+| `plugins/gh/{CHANGELOG,README}.md` | Updated docs |
+
+## New Make Targets
+
+```
+make ci                  # Run all CI checks (same as GitHub Actions)
+make quality             # Alias for ci
+make lint                # Run linting checks
+make validate            # Run all plugin validations
+make validate-json       # Validate JSON syntax only
+make validate-fields     # Check required fields only
+make validate-version    # Validate semantic versions only
+make validate-readme     # Check README files exist
+make validate-commands   # Validate command file references
+make validate-agents     # Validate agent file references
+make validate-skills     # Validate skill file references
+```
+
+## Related Files
+- scripts/validate.py:1-230
+- .github/workflows/ci.yml:1-40
+- Makefile:102-138
