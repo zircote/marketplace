@@ -1,0 +1,8 @@
+---
+type: blockers
+timestamp: '2025-12-21T03:43:08.759251+00:00'
+summary: '...1/.claude/plugins/cache/zircote-claude-marketplace/memory-capture/0.5.2/hooks/hooks.json`\n\nSo
+  t'
+---
+
+...1/.claude/plugins/cache/zircote-claude-marketplace/memory-capture/0.5.2/hooks/hooks.json`\n\nSo the issue is that there are cached versions that have these invalid keys, but the source files in the marketplace...
