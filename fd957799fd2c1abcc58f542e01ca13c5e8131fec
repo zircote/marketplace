@@ -24,3 +24,12 @@ summary: '...loaded automatically, so manifest.hooks should only reference addit
 ---
 
 ...loaded automatically, so manifest.hooks should only reference additional hook files."\n\nThe key insight here is: "The standard hooks/hooks.json is loaded automatically" - meaning if you have a file...
+
+---
+type: learnings
+timestamp: '2025-12-21T03:26:20.760404+00:00'
+summary: '...loaded automatically, so manifest.hooks should only reference additional
+  hook files."\n\nThe key '
+---
+
+...loaded automatically, so manifest.hooks should only reference additional hook files."\n\nThe key insight here is: "The standard hooks/hooks.json is loaded automatically" - meaning if you have a file...
