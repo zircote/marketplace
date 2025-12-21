@@ -283,9 +283,9 @@ pip install reportlab
 
 ## Integration with Other Plugins
 
-- **z plugin**: Use `data-analyst` for spreadsheet analysis workflows
-- **z plugin**: Use `technical-writer` for document review and improvement
-- **git plugin**: Commit extracted data with `/git:cm`
+- **zircote plugin**: Use `data-analyst` for spreadsheet analysis workflows
+- **zircote plugin**: Use `technical-writer` for document review and improvement
+- **gh plugin**: Commit extracted data with `/git:cp`
 - **nsip plugin**: Export breeding data to XLSX format
 
 ## Troubleshooting

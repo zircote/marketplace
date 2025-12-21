@@ -200,9 +200,9 @@ These agents integrate with:
 
 | Plugin | Integration |
 |--------|-------------|
-| **z plugin** | `sre-engineer` for reliability engineering |
-| **z plugin** | `devops-engineer` for infrastructure setup |
-| **z plugin** | `performance-engineer` for observability workflows |
+| **zircote plugin** | `sre-engineer` for reliability engineering |
+| **zircote plugin** | `devops-engineer` for infrastructure setup |
+| **zircote plugin** | `performance-engineer` for observability workflows |
 
 ## Version
 
