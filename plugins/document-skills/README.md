@@ -9,6 +9,64 @@ claude /plugin marketplace add zircote/marketplace
 claude /plugin install document-skills
 ```
 
+## Quick Start
+
+Get started in under 2 minutes with these common tasks:
+
+### PDF Analysis
+```bash
+claude "Analyze the contents of ./report.pdf"
+claude "Extract all tables from ./data.pdf"
+claude "What are the form fields in ./application.pdf"
+claude "OCR this scanned document: ./scan.pdf"
+```
+
+### Excel Processing
+```bash
+claude "Read the data from ./sales.xlsx"
+claude "What formulas are in ./budget.xlsx"
+claude "List all sheets in ./workbook.xlsx"
+claude "Compare Sheet1 and Sheet2 in ./data.xlsx"
+```
+
+### Word Documents
+```bash
+claude "Extract text from ./document.docx"
+claude "What comments are in ./review.docx"
+claude "Summarize the tracked changes in ./draft.docx"
+claude "Create an outline from ./thesis.docx"
+```
+
+### PowerPoint
+```bash
+claude "Summarize the slides in ./presentation.pptx"
+claude "Extract speaker notes from ./talk.pptx"
+claude "List all slide titles in ./quarterly.pptx"
+```
+
+## Common Use Cases
+
+| Use Case | Example Command |
+|----------|-----------------|
+| **Extract invoice data** | `claude "Extract vendor, date, and amount from ./invoice.pdf"` |
+| **Analyze financial report** | `claude "Summarize key metrics from ./annual-report.pdf"` |
+| **Review contract** | `claude "Find all obligations and deadlines in ./contract.docx"` |
+| **Prepare meeting summary** | `claude "Create executive summary from ./meeting.pptx"` |
+| **Data validation** | `claude "Check for missing values in ./data.xlsx"` |
+| **Compare documents** | `claude "What changed between v1.docx and v2.docx"` |
+| **Extract images** | `claude "Extract all charts and diagrams from ./report.pdf"` |
+| **Batch processing** | `claude "Summarize all PDFs in ./reports/ folder"` |
+
+## Verify Installation
+
+After installing, verify the skills are active:
+
+```bash
+claude "What document processing skills are available?"
+```
+
+You should see PDF, DOCX, XLSX, and PPTX skills listed.
+
 ## Contents
 
 ### Skills

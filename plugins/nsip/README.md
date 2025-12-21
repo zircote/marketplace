@@ -20,6 +20,23 @@ claude /plugin install nsip
 - Automatic package installation via `uvx`
 - No manual setup required
 
+## Verify Installation
+
+After installing, verify the MCP tools and commands are working:
+
+```bash
+# Test API connectivity
+claude "/nsip:test-api"
+
+# Get database info (should show last update date)
+claude "/nsip:discover"
+
+# Verify MCP tools are available
+claude "Use nsip_list_breeds to show available sheep breeds"
+```
+
+You should see a successful API connection, the last update date, and a list of sheep breeds including Katahdin, Dorper, and others.
+
 ## Enhanced Features (Hooks)
 
 The NSIP plugin includes 14 intelligent hooks that automatically enhance your workflow:

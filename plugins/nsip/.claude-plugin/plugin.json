@@ -8,7 +8,20 @@
     "url": "https://github.com/epicpast"
   },
   "license": "MIT",
-  "keywords": ["nsip", "sheep", "breeding", "MCP", "claude-code"],
+  "keywords": [
+    "nsip",
+    "sheep",
+    "breeding",
+    "MCP",
+    "claude-code",
+    "livestock",
+    "genetics",
+    "pedigree",
+    "EBV",
+    "traits",
+    "agriculture",
+    "farming"
+  ],
   "commands": [
     "./commands/consult.md",
     "./commands/discover.md",

@@ -1,0 +1,33 @@
+# Changelog
+
+All notable changes to the gh plugin will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+- Comprehensive error handling to pr.md command
+- Pre-flight checks for gh CLI, authentication, and branch state
+
+### Changed
+- Rewrote README.md to document all 9 commands, agent, and skill
+- Updated plugin.json description and keywords
+
+## [0.2.0] - 2025-12-19
+
+### Added
+- copilot-onboard command (merged from copilot plugin)
+- copilot-assistant agent
+- migrate command for multi-CI migration
+- github-ecosystem skill for comprehensive repo setup
+
+### Changed
+- Merged copilot plugin functionality into gh plugin
+
+## [0.1.0] - 2025-12-18
+
+### Added
+- Initial release with git workflow commands
+- cp, pr, fr, sync, ff, prune commands

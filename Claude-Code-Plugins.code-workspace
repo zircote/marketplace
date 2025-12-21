@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "path": "./"
+        },
+        {
+            "path": "../claude-spec"
+        },
+        {
+            "path": "../git-adr"
+        },
+        {
+            "path": "../git-notes-memory-manager"
+        },
+        {
+            "path": "../../epicpast/marketplace/nsip-api-client"
+        }
+    ]
+}
