@@ -1,4 +1,4 @@
-# z Plugin
+# zircote Plugin
 
 Comprehensive agent library featuring 116 specialized Opus 4.5 agents organized by domain, 54 development skills, and powerful exploration and code review commands for enhanced Claude Code workflows.
 
@@ -6,7 +6,7 @@ Comprehensive agent library featuring 116 specialized Opus 4.5 agents organized 
 
 ```bash
 claude /plugin marketplace add zircote/marketplace
-claude /plugin install z
+claude /plugin install zircote
 ```
 
 ## Verify Installation
@@ -21,7 +21,7 @@ claude "Using the python-pro agent, explain Python's GIL in one sentence"
 claude "/explore --help"
 
 # Verify agent count in Task tool
-claude "List 3 available subagent types from the z plugin"
+claude "List 3 available subagent types from the zircote plugin"
 ```
 
 You should see agents like `python-pro`, `frontend-developer`, `code-reviewer` in the Task tool's available subagents.
@@ -221,7 +221,7 @@ Agent templates in `agents/templates/` provide starting points for creating new 
 
 ## Integration with Other Plugins
 
-The z plugin agents integrate with other marketplace plugins:
+The zircote plugin agents integrate with other marketplace plugins:
 
 - **git plugin**: Use `code-reviewer` before `/git:pr`
 - **datadog plugin**: Combine `sre-engineer` with DataDog agents for monitoring setup

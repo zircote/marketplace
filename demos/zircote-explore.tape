@@ -10,7 +10,7 @@ Set Width 900
 Set Height 500
 Set TypingSpeed 50ms
 
-Type "# z Plugin - Codebase Exploration"
+Type "# zircote - Codebase Exploration"
 Enter
 Sleep 500ms
 
