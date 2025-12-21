@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2025-12-20
+
 ### Added
 - Comprehensive error handling to pr.md command
 - Pre-flight checks for gh CLI, authentication, and branch state

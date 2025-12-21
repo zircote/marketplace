@@ -1,6 +1,6 @@
 {
   "name": "gh",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "GitHub ecosystem integration with git workflows, Copilot configuration, and multi-CI migration",
   "author": {
     "name": "zircote",
