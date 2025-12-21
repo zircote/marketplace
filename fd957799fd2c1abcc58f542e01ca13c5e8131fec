@@ -24,3 +24,12 @@ summary: '...{''todos'': [{''content'': "Fix datadog plugin - remove ''reference
 ---
 
 ...{'todos': [{'content': "Fix datadog plugin - remove 'references' key from manifest", 'status': 'completed', 'activeForm': 'Fixing datadog plugin manifest'}, {'content': 'Fix memory-capture duplicate...
+
+---
+type: progress
+timestamp: '2025-12-21T03:22:29.701220+00:00'
+summary: '...datadog plugin manifest''}, {''content'': ''Fix memory-capture duplicate
+  hooks issue'', ''status'': ''com'
+---
+
+...datadog plugin manifest'}, {'content': 'Fix memory-capture duplicate hooks issue', 'status': 'completed', 'activeForm': 'Fixing memory-capture hooks'}, {'content': 'Clean up invalid plugin references...
