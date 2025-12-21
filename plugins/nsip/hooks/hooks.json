@@ -1,210 +1,212 @@
 {
-    "PreToolUse": [
-        {
-            "matcher": "mcp__nsip__nsip_get_animal",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_search_by_lpn",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_get_lineage",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_get_progeny",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_search_animals",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breed_context_injector.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_get_trait_ranges",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breed_context_injector.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
-                }
-            ]
-        }
-    ],
-    "PostToolUse": [
-        {
-            "matcher": "mcp__nsip__.*",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/auto_retry.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/error_notifier.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_get_animal",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breeding_report.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_search_by_lpn",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breeding_report.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_search_animals",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/csv_exporter.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_get_lineage",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/pedigree_visualizer.py"
-                }
-            ]
-        },
-        {
-            "matcher": "mcp__nsip__nsip_get_progeny",
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
-                }
-            ]
-        }
-    ],
-    "SessionStart": [
-        {
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/api_health_check.py"
-                }
-            ]
-        }
-    ],
-    "UserPromptSubmit": [
-        {
-            "hooks": [
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/smart_search_detector.py"
-                },
-                {
-                    "type": "command",
-                    "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/comparative_analyzer.py"
-                }
-            ]
-        }
-    ]
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "mcp__nsip__nsip_get_animal",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_search_by_lpn",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_get_lineage",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_get_progeny",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/lpn_validator.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_search_animals",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breed_context_injector.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_get_trait_ranges",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breed_context_injector.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/trait_dictionary.py"
+                    }
+                ]
+            }
+        ],
+        "PostToolUse": [
+            {
+                "matcher": "mcp__nsip__.*",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/auto_retry.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/error_notifier.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_get_animal",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breeding_report.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_search_by_lpn",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/breeding_report.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_search_animals",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/csv_exporter.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_get_lineage",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/pedigree_visualizer.py"
+                    }
+                ]
+            },
+            {
+                "matcher": "mcp__nsip__nsip_get_progeny",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/fallback_cache.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/query_logger.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/result_cache.py"
+                    }
+                ]
+            }
+        ],
+        "SessionStart": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/api_health_check.py"
+                    }
+                ]
+            }
+        ],
+        "UserPromptSubmit": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/smart_search_detector.py"
+                    },
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/hooks/scripts/comparative_analyzer.py"
+                    }
+                ]
+            }
+        ]
+    }
 }
