@@ -223,7 +223,7 @@ Agent templates in `agents/templates/` provide starting points for creating new 
 
 The zircote plugin agents integrate with other marketplace plugins:
 
-- **git plugin**: Use `code-reviewer` before `/git:pr`
+- **gh plugin**: Use `code-reviewer` before `/git:pr`
 - **datadog plugin**: Combine `sre-engineer` with DataDog agents for monitoring setup
 - **document-skills**: Use `technical-writer` for documentation processing workflows
 

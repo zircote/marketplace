@@ -345,8 +345,8 @@ Works identically on:
 
 ## Integration with Other Plugins
 
-- **z plugin**: Use `data-analyst` for breeding data analysis
-- **git plugin**: Commit breeding reports with `/git:cm`
+- **zircote plugin**: Use `data-analyst` for breeding data analysis
+- **gh plugin**: Commit breeding reports with `/git:cp`
 - **document-skills**: Export pedigrees to PDF/XLSX
 
 ## Support
