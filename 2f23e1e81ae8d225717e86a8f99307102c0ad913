@@ -24,3 +24,12 @@ summary: '[{''type'': ''thinking'', ''thinking'': "No results - so there are no 
 ---
 
 [{'type': 'thinking', 'thinking': "No results - so there are no directories with that name pattern anymore. The earlier removal worked. Let me also check the install paths in installed_plugins.json...
+
+---
+type: patterns
+timestamp: '2025-12-21T04:12:48.565111+00:00'
+summary: '...Something weird is going on.\n\nLet me check if there''s a permissions
+  issue or if the glob patter'
+---
+
+...Something weird is going on.\n\nLet me check if there's a permissions issue or if the glob pattern isn't matching for some reason. Let me also check what the plugin loader is actually seeing.",...
