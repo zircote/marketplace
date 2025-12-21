@@ -42,3 +42,12 @@ summary: '...Something weird is going on.\n\nLet me check if there''s a permissi
 ---
 
 ...Something weird is going on.\n\nLet me check if there's a permissions issue or if the glob pattern isn't matching for some reason. Let me also check what the plugin loader is actually seeing.",...
+
+---
+type: patterns
+timestamp: '2025-12-21T04:33:49.109462+00:00'
+summary: '[{''type'': ''thinking'', ''thinking'': "Files exist, they''re valid UTF-8
+  text files. The glob pattern `./'
+---
+
+[{'type': 'thinking', 'thinking': "Files exist, they're valid UTF-8 text files. The glob pattern `./commands/*.md` should work. Let me check if maybe there's an issue with the .orphaned_at...
