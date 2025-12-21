@@ -33,11 +33,5 @@
   ],
   "commands": [
     "./commands/*.md"
-  ],
-  "references": [
-    "./references/*.md"
-  ],
-  "scripts": [
-    "./scripts/*.py"
   ]
 }
