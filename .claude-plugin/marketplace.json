@@ -11,28 +11,29 @@
   },
   "plugins": [
     {
-      "name": "nsip",
-      "source": "./plugins/nsip"
-    },
-    {
-      "name": "z",
-      "source": "./plugins/z"
-    },
-    {
-      "name": "git",
-      "source": "./plugins/git"
-    },
-    {
       "name": "datadog",
-      "source": "./plugins/datadog"
-    },
-    {
-      "name": "copilot",
-      "source": "./plugins/copilot"
+      "source": "./plugins/datadog",
+      "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration"
     },
     {
       "name": "document-skills",
-      "source": "./plugins/document-skills"
+      "source": "./plugins/document-skills",
+      "description": "AI-powered document processing for PDF, DOCX, XLSX, and PPTX files with text extraction and analysis"
+    },
+    {
+      "name": "gh",
+      "source": "./plugins/gh",
+      "description": "Git workflow commands, GitHub Copilot configuration, and multi-CI migration to GitHub Actions"
+    },
+    {
+      "name": "nsip",
+      "source": "./plugins/nsip",
+      "description": "National Sheep Improvement Program breeding data with MCP tools, expert advisor agent, and smart hooks"
+    },
+    {
+      "name": "zircote",
+      "source": "./plugins/zircote",
+      "description": "116 specialized Opus 4.5 agents organized by domain with 54 skills for comprehensive development workflows"
     },
     {
       "name": "claude-spec",
@@ -49,6 +50,14 @@
         "repo": "zircote/git-notes-memory-manager"
       },
       "description": "Git-backed memory system for Claude Code. Captures decisions, learnings, and context as git notes with semantic search and automatic recall."
+    },
+    {
+      "name": "git-adr",
+      "source": {
+        "source": "github",
+        "repo": "zircote/git-adr"
+      },
+      "description": "`git-adr` is a command-line tool that integrates Architecture Decision Record management directly into your git workflow. Unlike file-based ADR tools, `git-adr` stores ADRs in **git notes**,"
     }
   ]
 }

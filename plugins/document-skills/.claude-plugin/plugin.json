@@ -1,13 +1,30 @@
 {
   "name": "document-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Document processing skills for PDF, DOCX, XLSX, and PPTX file manipulation with AI-powered analysis",
   "author": {
     "name": "zircote",
+    "email": "zircote@gmail.com",
     "url": "https://github.com/zircote"
   },
   "license": "MIT",
-  "keywords": ["documents", "pdf", "docx", "xlsx", "pptx", "office", "extraction", "analysis"],
+  "keywords": [
+    "documents",
+    "pdf",
+    "docx",
+    "xlsx",
+    "pptx",
+    "office",
+    "extraction",
+    "analysis",
+    "word",
+    "excel",
+    "powerpoint",
+    "spreadsheet",
+    "presentation",
+    "ocr",
+    "tables"
+  ],
   "skills": [
     "./docx/SKILL.md",
     "./pdf/SKILL.md",
