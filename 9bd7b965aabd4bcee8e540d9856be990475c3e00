@@ -1250,3 +1250,22 @@ tags:
 **PRIMARY PATTERN: useSuspenseQuery**
 - Use with Suspense boundaries
 - Cache-first strategy (check grid cache...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:59:37.663699+00:00'
+summary: '...components/:**'
+tags:
+- auto-captured
+- post-tool-use
+- file:SKILL.md
+---
+
+...components/:**
+- `features/`: Domain-specific (posts, comments, auth)
+- `components/`: Truly reusable (SuspenseLoader, CustomAppBar)
+
+**Feature Subdirectories:**
+```
+features/
+  my-feature/...
