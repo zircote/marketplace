@@ -7558,3 +7558,19 @@ tags:
 </checklist>
 
 <output_format...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:23.376963+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:devops-incident-responder.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Incident response system completed. Reduced MTTR from 2 hours to 28 minutes, achieved 85% runbook coverage, and implemented 42%...
