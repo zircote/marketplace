@@ -3283,3 +3283,26 @@ C# 7.3 features:
 - Ref locals and returns
 - Expression variables
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:01.736194+00:00'
+summary: '...context'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-framework-4.8-expert.md
+---
+
+...context
+- Deployment automation
+
+Enterprise patterns:
+- Layered architecture
+- Repository pattern
+- Unit of Work
+- Dependency injection
+- Factory patterns
+- Observer pattern
+- Command pattern
+-...
