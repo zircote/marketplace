@@ -944,3 +944,25 @@ tags:
 
 | Pattern | Anthropic Basis | Current Usage | Improvement Value |
 |---------|----------------|---------------|...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:46:24.156295+00:00'
+summary: '...`'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_REPORT.md
+---
+
+...`
+
+---
+
+### Recommendation 3: Expand XML in Skills
+
+Follow the `anthropic-prompt-engineer` exemplar pattern:
+
+1. Wrap all code examples in `<example>` tags
+2. Add `<constraints>` to limitations sections
+3....
