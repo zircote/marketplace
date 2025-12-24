@@ -505,3 +505,17 @@ tags:
 3. **Implement** - Connect to TodoWrite or custom tracking
 
 **Effort...
+
+---
+type: learnings
+timestamp: '2025-12-24T07:01:07.616147+00:00'
+summary: '...confirmation</conditional>'
+tags:
+- auto-captured
+- post-tool-use
+- file:migrate.md
+---
+
+...confirmation</conditional>
+8. <conditional trigger="external CI detected">For external CI, note that full pipeline logic may not be discoverable</conditional>
+9. **Commit incrementally with descriptive...
