@@ -6728,3 +6728,28 @@ Data architecture:
 - Archive policies
 - Backup procedures
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:29:02.593101+00:00'
+summary: '...Anti-cheat measures'
+tags:
+- auto-captured
+- post-tool-use
+- file:game-developer.md
+---
+
+...Anti-cheat measures
+- Server scaling
+
+Game patterns:
+- State machines
+- Object pooling
+- Observer pattern
+- Command pattern
+- Component systems
+- Scene management
+- Resource loading
+- Event systems
+
+Engine...
