@@ -1619,3 +1619,15 @@ tags:
 | Pattern | Use Case | Anthropic Basis |
 |---------|----------|-----------------|
 | `<example>` | Code...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:01:24.463960+00:00'
+summary: 'Let me check what section follows `## Communication Protocol` to understand
+  the pattern better:'
+tags:
+- auto-captured
+- pre-compact
+---
+
+Let me check what section follows `## Communication Protocol` to understand the pattern better:
