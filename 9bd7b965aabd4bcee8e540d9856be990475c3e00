@@ -2682,3 +2682,16 @@ Learning & improvement:
 - Optimization opportunities
 - Team effectiveness
 - Workflow...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:24.601384+00:00'
+summary: '...PROACTIVELY for error correlation, cascade prevention, recovery orchestration,
+  and resilience pat'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-coordinator.md
+---
+
+...PROACTIVELY for error correlation, cascade prevention, recovery orchestration, and resilience pattern implementation. Integrates with performance-monitor, workflow-orchestrator, multi-agent-coordinator....
