@@ -1465,3 +1465,21 @@ tags:
 | `template:` | Reusable workflows |
 | `resources: repositories:` | `actions/checkout` with `repository:` |
 | `$(Build.*)`...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:01:07.596777+00:00'
+summary: '...------------|'
+tags:
+- auto-captured
+- post-tool-use
+- file:migrate.md
+---
+
+...------------|
+| `Pipeline` | Workflow file |
+| `PipelineRun` | Workflow trigger |
+| `Task` | Job or reusable workflow |
+| `TaskRun` | Job execution |
+| `steps:` in Task | `steps:` |
+| `params:` | `inputs:`...
