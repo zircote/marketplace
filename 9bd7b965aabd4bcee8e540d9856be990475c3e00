@@ -3306,3 +3306,26 @@ Enterprise patterns:
 - Observer pattern
 - Command pattern
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:01.761202+00:00'
+summary: '...architecture'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-framework-4.8-expert.md
+---
+
+...architecture
+- Repository pattern
+- Unit of Work
+- Dependency injection
+- Factory patterns
+- Observer pattern
+- Command pattern
+- Strategy pattern
+
+Entity Framework 6:
+- Code-first approach
+- Database-first...
