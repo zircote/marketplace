@@ -1415,3 +1415,20 @@ tags:
 | Shared libraries | Reusable workflows (`.github/workflows/*.yml` with `workflow_call`) |
 
 <conditional trigger="Jenkins...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:01:07.541466+00:00'
+summary: '...download-artifact` + `needs:` |'
+tags:
+- auto-captured
+- post-tool-use
+- file:migrate.md
+---
+
+...download-artifact` + `needs:` |
+| `needs:` | `needs:` |
+| `parallel:` | `strategy.matrix` |
+| `extends:` | Reusable workflows or YAML anchors |
+| `include:` | Reusable workflows |
+| `variables:` | `env:` or...
