@@ -415,3 +415,37 @@ Added comprehensive documentation for `--focus=MAX` and `--focus=MAXALL` to the 
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md
 - /Users/AllenR1_1/Projects/zircote/claude-spec/README.md
 - /Users/AllenR1_1/Projects/zircote/claude-spec/CHANGELOG.md
+
+---
+type: progress
+timestamp: '2025-12-24T19:21:25.569646+00:00'
+summary: '▶ progress ─────────────────────────────────────
+
+  Added `--focus=MAX` argument to code-cleanup com...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+Added `--focus=MAX` argument to code-cleanup command
+## Summary
+Implemented maximum coverage mode that deploys 11+ specialist agents for the most thorough code review possible.
+
+## Changes Made
+- Updated argument-hint to include `--focus=MAX`
+- Enhanced help section with all options documented
+- Added `--focus=MAX` focus mode with:
+  - 6 base agents with ALL enhancements combined
+  - 5 additional specialists (postgres-pro, penetration-tester, compliance-auditor, chaos-engineer, accessibility-tester)
+  - Parallel deployment instructions
+  - Announcement template
+
+## Flag Combinations
+| Command | Review | Remediation |
+|---------|--------|-------------|
+| `--focus=MAX` | 11+ agents | Interactive |
+| `--all` | 6 agents | Auto (all findings) |
+| `--focus=MAX --all` | 11+ agents | Auto (all findings) |
+
+## Related Files
+- ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:815-918
