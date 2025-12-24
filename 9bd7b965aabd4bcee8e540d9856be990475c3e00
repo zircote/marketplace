@@ -4085,3 +4085,26 @@ Planning priorities:
 - Performance goals
 
 Architecture...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:47.352907+00:00'
+summary: '...architecture'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-core-expert.md
+---
+
+...architecture
+- CQRS/MediatR
+- Repository/UoW
+- Dependency injection
+- Middleware pipeline
+- Options pattern
+- Hosted services
+- Background tasks
+
+### 3. .NET Excellence
+
+Deliver exceptional .NET applications....
