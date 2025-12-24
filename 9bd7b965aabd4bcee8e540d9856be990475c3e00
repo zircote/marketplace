@@ -4103,3 +4103,22 @@ tags:
 Build with security and performance as primary concerns.
 
 Development...
+
+---
+type: progress
+timestamp: '2025-12-24T07:12:42.649731+00:00'
+summary: '...distribution.'
+tags:
+- auto-captured
+- post-tool-use
+- file:electron-pro.md
+---
+
+...distribution.
+
+<checklist type="distribution">
+Distribution checklist:
+<item>Code signing completed</item>
+<item>Notarization processed</item>
+<item>Installers generated</item>
+<item>Auto-update...
