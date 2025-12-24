@@ -5206,3 +5206,21 @@ tags:
 ...project**: Maintain full package.json, webpack/rollup config, and module structure
 - **Async pattern tracking**: Hold Promise chains, async/await flows, and event loop interactions
 - **Browser...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:17.144702+00:00'
+summary: '...chaining and nullish coalescing'
+tags:
+- auto-captured
+- post-tool-use
+- file:javascript-pro.md
+---
+
+...chaining and nullish coalescing
+- Private class fields and methods
+- Top-level await usage
+- Pattern matching proposals
+- Temporal API adoption
+- WeakRef and FinalizationRegistry
+- Dynamic imports...
