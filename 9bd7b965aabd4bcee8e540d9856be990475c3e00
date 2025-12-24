@@ -2128,3 +2128,55 @@ tags:
 - Memoization where appropriate
 - Accessible form validation
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T06:59:32.625470+00:00'
+summary: '▶ progress ─────────────────────────────────────
+
+  Updated 4 commands to integrate LSP tools when a...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+Updated 4 commands to integrate LSP tools when available
+## Context
+The lsp-tools plugin provides semantic code intelligence via LSP operations (goToDefinition, findReferences, hover, documentSymbol, workspaceSymbol, incomingCalls, outgoingCalls). These commands were not leveraging LSP when available.
+
+## Changes Made
+
+### 1. deep-explore.md (49 LSP mentions)
+- Added LSP to allowed-tools
+- Added `<lsp_integration>` section with availability check and decision matrix
+- Updated Phase 2 to include LSP-based symbol discovery
+- Added 5th parallel subagent for call graph analysis using LSP
+- Updated output structure to track LSP methodology
+- Added LSP decision tree in execution instruction
+
+### 2. deep-research.md (25 LSP mentions)
+- Added LSP to allowed-tools
+- Updated `<codebase_research>` section with LSP-first approach
+- Added LSP operations for architecture discovery and pattern analysis
+- Updated output structure to track LSP availability
+- Added LSP decision tree in execution instruction
+
+### 3. cr.md (35 LSP mentions)
+- Added LSP to allowed-tools
+- Added `<lsp_integration>` section with decision matrix
+- Updated all 6 specialist subagents with LSP guidance
+- Updated execution sequence with LSP availability check
+- Updated report metadata to include LSP methodology
+
+### 4. cr-fx.md (31 LSP mentions)
+- Added LSP to allowed-tools
+- Added `<lsp_integration>` section with remediation protocol
+- Updated 4 remediation agents with LSP guidance
+- Updated execution sequence with Step 0.5 LSP check
+- Updated remediation report to track LSP usage
+
+## Related Files
+- /Users/AllenR1_1/Projects/zircote/claude-spec/commands/deep-explore.md
+- /Users/AllenR1_1/Projects/zircote/claude-spec/commands/deep-research.md
+- /Users/AllenR1_1/.claude/commands/cr.md
+- /Users/AllenR1_1/.claude/commands/cr-fx.md
