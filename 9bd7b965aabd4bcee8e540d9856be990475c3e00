@@ -2318,3 +2318,24 @@ tags:
 ...────────────────────`
 
 Let me create a Python script to batch-update all commands with the `--help` pattern:
+
+---
+type: patterns
+timestamp: '2025-12-24T07:10:42.647207+00:00'
+summary: '...Health check endpoints'
+tags:
+- auto-captured
+- post-tool-use
+- file:microservices-architect.md
+---
+
+...Health check endpoints
+- Chaos engineering tests
+
+Data management:
+- Database per service pattern
+- Event sourcing approach
+- CQRS implementation
+- Distributed transactions
+- Eventual consistency
+-...
