@@ -199,3 +199,23 @@ tags:
 ```
 1. Glob: Find relevant files (*.service.ts)
 2. LSP documentSymbol:...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:43.883887+00:00'
+summary: '...documentSymbol: Get file structure'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-decision-matrix.md
+---
+
+...documentSymbol: Get file structure
+3. LSP goToDefinition: Navigate to specific symbol
+```
+
+### Pattern 2: Search Then Verify
+
+```
+1. Grep: Find potential matches
+2. LSP findReferences: Verify actual...
