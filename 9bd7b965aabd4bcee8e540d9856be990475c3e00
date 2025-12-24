@@ -3878,3 +3878,17 @@ tags:
 ---
 
 ...and analyzing diverse data sources. Use PROACTIVELY for data mining, statistical analysis, pattern recognition, and insight extraction from complex datasets. Integrates with research-analyst,...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:32.464505+00:00'
+summary: '...databases, and web sources simultaneously'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-researcher.md
+---
+
+...databases, and web sources simultaneously
+- **Analysis context**: Hold statistical results, pattern discoveries, and validation outcomes
+- **Research context**: Manage research questions, hypotheses,...
