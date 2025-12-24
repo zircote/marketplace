@@ -6225,3 +6225,19 @@ tags:
 ...4.5's extended context for:
 - **Complete error landscape**: Maintain full error inventories, pattern catalogs, and correlation matrices
 - **Cross-service analysis**: Track errors across microservices,...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.104173+00:00'
+summary: '...reporting error findings:'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...reporting error findings:
+<enforcement_rules>
+<rule>Aggregate errors from all sources before pattern analysis</rule>
+<rule>Verify correlations statistically before claiming causation</rule>
+<rule>Trace...
