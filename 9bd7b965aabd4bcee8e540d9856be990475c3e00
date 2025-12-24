@@ -5268,3 +5268,18 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "C++ implementation completed. Delivered high-performance system achieving 10x throughput improvement with zero-overhead...
+
+---
+type: progress
+timestamp: '2025-12-24T07:19:01.641255+00:00'
+summary: '...Utilization'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-framework-4.8-expert.md
+---
+
+...Utilization
+Leverage Opus 4.5's extended context for:
+- **Complete enterprise architecture**: Maintain full solution structure, Web.config hierarchies, and assembly dependencies
+- **WCF service landscape**: Hold...
