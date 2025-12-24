@@ -6085,3 +6085,19 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Search operation completed. Executed 147 queries across 43 sources yielding 2.3K results with 94% precision rate. Identified...
+
+---
+type: progress
+timestamp: '2025-12-24T07:23:59.075557+00:00'
+summary: '...</checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:trend-analyst.md
+---
+
+...</checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Trend analysis completed. Identified 34 emerging trends from 12.3K signals. Developed 6 future scenarios with 8.7/10...
