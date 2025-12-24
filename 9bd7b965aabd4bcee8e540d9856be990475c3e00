@@ -6096,3 +6096,24 @@ tags:
 - Knowledge documentation
 
 Debugging...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:05.632861+00:00'
+summary: '...trace interpretation'
+tags:
+- auto-captured
+- post-tool-use
+- file:debugger.md
+---
+
+...trace interpretation
+- Core dump analysis
+- Memory dump examination
+- Log correlation
+- Error pattern detection
+- Exception analysis
+- Crash report investigation
+- Performance profiling
+
+Memory...
