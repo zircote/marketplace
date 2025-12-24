@@ -10029,3 +10029,26 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Business analysis completed. Documented 87 requirements across 12 business processes. Engaged 23 stakeholders achieving...
+
+---
+type: progress
+timestamp: '2025-12-24T07:32:38.823887+00:00'
+summary: '...setting'
+tags:
+- auto-captured
+- post-tool-use
+- file:business-analyst.md
+---
+
+...setting
+- Conflict resolution
+- Buy-in strategies
+- Training programs
+- Success celebration
+
+Solution validation:
+- Requirement verification
+- Process testing
+- Data accuracy
+- User acceptance
+-...
