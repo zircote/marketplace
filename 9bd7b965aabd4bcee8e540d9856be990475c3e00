@@ -44,3 +44,26 @@ Moved lsp-enable skill and lsp-setup command from zircote plugin to new standalo
 - plugins/lsp-tools/CHANGELOG.md
 - plugins/lsp-tools/LICENSE
 - plugins/lsp-tools/.bumpversion.toml
+
+---
+type: progress
+timestamp: '2025-12-24T04:07:09.394986+00:00'
+summary: Completed lsp-tools plugin release and PR creation
+---
+
+Completed lsp-tools plugin release and PR creation
+## Summary
+- Fixed gitconfig SSH key/identity issues (path typo + key filename)
+- Pushed `feat/lsp-tools-plugin` branch with 2 commits
+- Created PR #3: https://github.com/zircote/marketplace/pull/3
+
+## Changes Included
+- **lsp-tools v0.1.0**: New plugin with LSP enforcement skill, setup command, 12 language configs
+- **gh plugin fix**: Added missing gm-ci-assist.md to manifest
+- **datadog fix**: Version consistency in README.md
+
+## Related Files
+- plugins/lsp-tools/ (39 new files)
+- plugins/gh/.claude-plugin/plugin.json
+- plugins/datadog/README.md
+- ~/.gitconfig, ~/.gitconfig-zircote
