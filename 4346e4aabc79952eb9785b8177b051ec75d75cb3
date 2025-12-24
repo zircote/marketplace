@@ -432,3 +432,15 @@ All parallel agents have completed their work. The XML demarcation project is fi
 | Metric | Before | After |
 |--------|--------|-------|
 | Agent files...
+
+---
+type: progress
+timestamp: '2025-12-24T08:02:17.952196+00:00'
+summary: All agents have finished. The XML demarcation improvements are complete across
+  all 116 agent files.
+tags:
+- auto-captured
+- pre-compact
+---
+
+All agents have finished. The XML demarcation improvements are complete across all 116 agent files.
