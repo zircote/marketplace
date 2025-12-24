@@ -5243,3 +5243,23 @@ tags:
 Performance optimization:
 - Memory leak prevention
 - Garbage collection optimization...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:17.186585+00:00'
+summary: '...existing patterns and project structure.'
+tags:
+- auto-captured
+- post-tool-use
+- file:javascript-pro.md
+---
+
+...existing patterns and project structure.
+
+Analysis priorities:
+- Module system evaluation
+- Async pattern usage
+- Build configuration review
+- Dependency analysis
+- Code style assessment
+- Test coverage...
