@@ -234,3 +234,45 @@ User requested complete remediation of all remaining issues identified in the ag
 ## Related Files
 - plugins/zircote/agents/AGENT_REVIEW_REPORT.md (updated with final status)
 - plugins/zircote/agents/*/*.md (116 agent files modified)
+
+---
+type: progress
+timestamp: '2025-12-24T08:02:17.539958+00:00'
+summary: '▶ progress ─────────────────────────────────────
+
+  XML demarcation improvements completed for all 1...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+XML demarcation improvements completed for all 116 agent files
+## Context
+Applied Anthropic-recommended XML best practices across entire agent ecosystem to improve Claude's prompt parsing accuracy.
+
+## Final Coverage Summary
+
+| Directory | Files | Status |
+|-----------|-------|--------|
+| 01-core-development | 11/11 | ✅ |
+| 02-language-specialists | 23/23 | ✅ |
+| 03-infrastructure | 12/12 | ✅ |
+| 04-quality-security | 12/12 | ✅ |
+| 05-data-ai | 12/12 | ✅ |
+| 06-developer-experience | 10/10 | ✅ |
+| 07-specialized-domains | 11/11 | ✅ |
+| 08-business-product | 10/10 | ✅ |
+| 09-meta-orchestration | 8/8 | ✅ |
+| 10-research-analysis | 6/6 | ✅ |
+| templates | 1/1 | ✅ |
+| **TOTAL** | **116/116** | **100%** |
+
+## XML Tags Applied
+- `<execution_strategy>` with `<parallel>` and `<sequential>` task blocks
+- `<deliberate_protocol name="domain">` with `<enforcement_rules>`
+- `<checklist type="development">` with `<item>` elements
+- `<output_format type="completion_notification">` for delivery messages
+
+## Related Files
+- plugins/zircote/agents/**/*.md (all 116 files)
+- .claude/xml-templates.md (reference templates)
