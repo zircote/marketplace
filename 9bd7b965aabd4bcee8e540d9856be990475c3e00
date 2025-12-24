@@ -5680,3 +5680,23 @@ Design patterns:
 - Coupling analysis
 - Cohesion assessment
 - Interface...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:50.754704+00:00'
+summary: '...dashboards'
+tags:
+- auto-captured
+- post-tool-use
+- file:code-reviewer.md
+---
+
+...dashboards
+- Quality gates
+
+## CLI Tools (via Bash)
+- **Read**: Code file analysis
+- **Grep**: Pattern searching
+- **Glob**: File discovery
+- **git**: Version control operations
+- **eslint**: JavaScript...
