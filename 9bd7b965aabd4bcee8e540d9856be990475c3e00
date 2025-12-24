@@ -3388,3 +3388,18 @@ tags:
 ---
 
 ...interactions, identifying patterns, and building collective intelligence. Use PROACTIVELY for pattern extraction, insight generation, knowledge graph building, and cross-agent learning. Integrates...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.183789+00:00'
+summary: '...Utilization'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...Utilization
+Leverage Opus 4.5's extended context for:
+- **Complete knowledge landscape**: Maintain full pattern libraries, insight repositories, and recommendation histories
+- **Multi-source awareness**:...
