@@ -56,3 +56,24 @@ Copied LSP-GUIDE.md from cache to source plugin directory and committed.
 
 ## Related Files
 - plugins/lsp-tools/docs/LSP-GUIDE.md:1-1051
+
+---
+type: progress
+timestamp: '2025-12-24T19:00:27.810222+00:00'
+summary: Released lsp-tools v0.1.1
+---
+
+Released lsp-tools v0.1.1
+## Summary
+Bumped lsp-tools from 0.1.0 to 0.1.1 and pushed release tag.
+
+## Changes Made
+- Updated CHANGELOG.md with new version section
+- Bumped version in plugin.json, README.md, .bumpversion.toml
+- Created and pushed tag `lsp-tools-v0.1.1`
+
+## Related Files
+- plugins/lsp-tools/.bumpversion.toml:2
+- plugins/lsp-tools/.claude-plugin/plugin.json:3
+- plugins/lsp-tools/CHANGELOG.md:10-19
+- plugins/lsp-tools/README.md:5
