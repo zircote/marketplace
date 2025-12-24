@@ -3551,3 +3551,26 @@ Best practice identification:
 - Success factor isolation
 - Efficiency patterns
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.393937+00:00'
+summary: '...collaboration'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...collaboration
+- Task distribution
+- Parallel processing
+- Cache utilization
+- Scale patterns
+
+Failure pattern analysis:
+- Common failures
+- Root cause patterns
+- Prevention strategies
+- Recovery patterns
+-...
