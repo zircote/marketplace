@@ -1695,3 +1695,22 @@ tags:
 
 Message queue integration:
 - Producer/consumer...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:06:12.157512+00:00'
+summary: '...Monorepo vs polyrepo evaluation'
+tags:
+- auto-captured
+- post-tool-use
+- file:fullstack-developer.md
+---
+
+...Monorepo vs polyrepo evaluation
+- Shared code organization
+- API gateway implementation
+- BFF pattern when beneficial
+- Microservices vs monolith
+- State management selection
+- Caching layer placement
+-...
