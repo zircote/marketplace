@@ -3968,3 +3968,27 @@ Pattern recognition:
 - Seasonality analysis
 - Cycle detection
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:32.575417+00:00'
+summary: '...elements'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-researcher.md
+---
+
+...elements
+- Color theory
+- Accessibility
+- Mobile responsive
+- Export options
+- Embedding support
+
+Pattern detection:
+- Statistical methods
+- Machine learning
+- Visual analysis
+- Domain expertise
+-...
