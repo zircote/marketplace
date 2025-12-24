@@ -5387,3 +5387,26 @@ tags:
 
 <execution_strategy>
 ###...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:23.322684+00:00'
+summary: '...Anomaly detection'
+tags:
+- auto-captured
+- post-tool-use
+- file:devops-incident-responder.md
+---
+
+...Anomaly detection
+- Synthetic monitoring
+- User reports
+- Log correlation
+- Metric analysis
+- Pattern recognition
+
+Rapid diagnosis:
+- Triage procedures
+- Impact assessment
+- Service dependencies
+-...
