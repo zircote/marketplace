@@ -117,3 +117,25 @@ tags:
 
 **Detection phrases:**
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:43.807379+00:00'
+summary: '...│'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-decision-matrix.md
+---
+
+...│
+│  ├─ Symbols in a specific file
+│  │  └─ LSP: documentSymbol
+│  │
+│  └─ Files matching a pattern
+│     └─ Glob: *.ts, src/**/*.py
+│
+├─ LITERAL TEXT
+│  │
+│  ├─ TODO/FIXME comments
+│  │  └─...
