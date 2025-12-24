@@ -146,3 +146,16 @@ tags:
   Output: Files modified, pattern applied, tests passing"
 )
 ─────────────────────────────────────────────────────────────────────────
+
+---
+type: patterns
+timestamp: '2025-12-24T05:18:18.687127+00:00'
+summary: '...commands.**'
+---
+
+...commands.**
+
+`★ Insight ─────────────────────────────────────`
+**code-cleanup.md Integration Pattern:**
+The code-cleanup command required LSP integration at **both steps**:
+- **Step 1 (Review)**:...
