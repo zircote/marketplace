@@ -5410,3 +5410,25 @@ Rapid diagnosis:
 - Impact assessment
 - Service dependencies
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:23.341052+00:00'
+summary: '...paths'
+tags:
+- auto-captured
+- post-tool-use
+- file:devops-incident-responder.md
+---
+
+...paths
+- Recovery procedures
+
+Response evaluation:
+- Historical incident review
+- MTTR analysis
+- Pattern identification
+- Tool effectiveness
+- Team performance
+- Communication gaps
+- Automation opportunities...
