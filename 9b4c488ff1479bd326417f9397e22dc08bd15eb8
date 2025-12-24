@@ -17,3 +17,24 @@ User chose to enhance the existing lsp-enable directory rather than create a new
 ## Related Files
 - plugins/zircote/skills/lsp-enable/reference/ (existing reference files)
 - plugins/zircote/skills/debugging/systematic-debugging/SKILL.md (pattern reference)
+
+---
+type: decisions
+timestamp: '2025-12-24T04:03:27.104282+00:00'
+summary: Implementing LSP enforcement skill with all three iron laws and comprehensive
+  triggers
+---
+
+Implementing LSP enforcement skill with all three iron laws and comprehensive triggers
+## Context
+User confirmed: all trigger phrases, all three enforcement scenarios as iron laws, warn-and-fix fallback strategy, and lean SKILL.md with references.
+
+## Rationale
+- Strong enforcement matches proven patterns from systematic-debugging skill
+- Comprehensive triggers ensure skill activates on all LSP-relevant scenarios
+- Warn-and-fix fallback provides guidance without blocking
+- Reference-based structure keeps SKILL.md lean while leveraging existing language files
+
+## Related Files
+- plugins/zircote/skills/lsp-enable/SKILL.md (to create)
+- plugins/zircote/skills/lsp-enable/references/ (to create)
