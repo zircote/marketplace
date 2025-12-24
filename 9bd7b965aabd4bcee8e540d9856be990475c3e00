@@ -4600,3 +4600,25 @@ Analysis methodologies:
 - Cross-impact analysis
 - Systems thinking
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:23:59.056667+00:00'
+summary: '...Communicate findings'
+tags:
+- auto-captured
+- post-tool-use
+- file:trend-analyst.md
+---
+
+...Communicate findings
+
+Analysis patterns:
+- Systematic scanning
+- Multi-source validation
+- Pattern recognition
+- Impact assessment
+- Future projection
+- Scenario development
+- Strategic translation
+-...
