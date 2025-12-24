@@ -2777,3 +2777,23 @@ Learning integration:
 - Alert tuning
 - Threshold adjustment
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:24.693099+00:00'
+summary: '...alerting'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-coordinator.md
+---
+
+...alerting
+- **error-tracking**: Custom error aggregation
+- **circuit-breaker**: Resilience pattern implementation
+
+## Development Workflow
+
+Execute error coordination through systematic phases:
+
+###...
