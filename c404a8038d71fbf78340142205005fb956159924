@@ -28,3 +28,24 @@ The "Placeholder/Fictional Tools" critical finding should be reclassified. The r
 ## Related Files
 - plugins/zircote/agents/AGENT_REVIEW_REPORT.md:89-102
 - plugins/zircote/agents/01-core-development/frontend-developer.md:7
+
+---
+type: learnings
+timestamp: '2025-12-24T08:00:08.222694+00:00'
+summary: '...in_reply_to_id: .in_reply_to_id,'
+tags:
+- auto-captured
+- post-tool-use
+- file:review-comments.md
+---
+
+...in_reply_to_id: .in_reply_to_id,
+    html_url: .html_url,
+    diff_hunk: .diff_hunk
+  }
+'
+```
+
+**IMPORTANT: Fetch GraphQL Thread IDs for Resolution**
+
+The REST API comment IDs cannot be used to resolve...
