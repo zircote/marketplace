@@ -2479,3 +2479,22 @@ Go development checklist:
 <item>Idiomatic code following effective Go guidelines</item>
 <item>gofmt and golangci-lint compliance</item>
 <item...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:13:08.789234+00:00'
+summary: '...condition free code</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:golang-pro.md
+---
+
+...condition free code</item>
+<item>Documentation for all exported items</item>
+</checklist>
+
+Idiomatic Go patterns:
+- Interface composition over inheritance
+- Accept interfaces, return structs
+-...
