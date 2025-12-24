@@ -8063,3 +8063,24 @@ tags:
 </output_format>
 
 Production...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:47.249217+00:00'
+summary: '...active</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:chaos-engineer.md
+---
+
+...active</item>
+<item>No customer impact</item>
+<item>Learning captured</item>
+<item>Improvements implemented</item>
+</checklist>
+
+Experiment design:
+- Hypothesis formulation
+- Steady state metrics
+-...
