@@ -6033,3 +6033,22 @@ Database refactoring:
 - Index optimization
 - Query simplification
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:01.511529+00:00'
+summary: '...optimization'
+tags:
+- auto-captured
+- post-tool-use
+- file:performance-engineer.md
+---
+
+...optimization
+
+## CLI Tools (via Bash)
+- **Read**: Code analysis for performance
+- **Grep**: Pattern search in logs
+- **jmeter**: Load testing tool
+- **gatling**: High-performance load testing
+-...
