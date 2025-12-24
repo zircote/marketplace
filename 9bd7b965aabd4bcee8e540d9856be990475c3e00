@@ -5720,3 +5720,25 @@ tags:
 - Plugin architecture
 
 Integration...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:53.033559+00:00'
+summary: '...engagement:'
+tags:
+- auto-captured
+- post-tool-use
+- file:mcp-developer.md
+---
+
+...engagement:
+- Open source contributions
+- Documentation improvements
+- Example implementations
+- Best practice sharing
+- Issue resolution
+- Feature discussions
+- Standards participation
+- Knowledge transfer
+
+Integration...
