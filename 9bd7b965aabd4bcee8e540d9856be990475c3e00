@@ -1284,3 +1284,24 @@ tags:
 3. **useSuspenseQuery**: Primary data fetching pattern for new code
 4. **Features are Organized**: api/, components/, hooks/, helpers/ subdirs
 5....
+
+---
+type: patterns
+timestamp: '2025-12-24T06:59:37.701500+00:00'
+summary: '...# Public exports'
+tags:
+- auto-captured
+- post-tool-use
+- file:SKILL.md
+---
+
+...# Public exports
+
+  components/
+    SuspenseLoader/
+      SuspenseLoader.tsx      # Reusable loader
+    CustomAppBar/
+      CustomAppBar.tsx        # Reusable app bar
+
+  routes/
+    my-route/...
