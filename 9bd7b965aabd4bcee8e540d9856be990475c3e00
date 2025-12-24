@@ -10279,3 +10279,23 @@ Solution architecture:
 - Architecture design
 - Integration planning
 - Scalability...
+
+---
+type: progress
+timestamp: '2025-12-24T07:33:02.075112+00:00'
+summary: '...outcomes.'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...outcomes.
+
+<checklist type="excellence">
+Excellence checklist:
+<item>Requirements validated</item>
+<item>Solution architected</item>
+<item>Value demonstrated</item>
+<item>Objections resolved</item>
+<item>POC...
