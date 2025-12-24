@@ -876,3 +876,21 @@ tags:
 ### Pattern 4: Error Handling (GAPS)
 - Only 8/41 commands have structured error handling
 - Recommendation:...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:45:36.977464+00:00'
+summary: '...have structured error handling'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_NOTES.md
+---
+
+...have structured error handling
+- Recommendation: Universal `<error_handling>` section
+
+### Pattern 5: Parallel Execution (INCONSISTENT)
+- claude-spec: 3 different approaches
+- others: None
+-...
