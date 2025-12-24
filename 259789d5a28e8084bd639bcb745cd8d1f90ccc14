@@ -673,3 +673,14 @@ summary: '...release-major` - major bump'
 `─────────────────────────────────────────────────`
 
 The command completed but **no plugins were bumped** because the smart-bump script detected no changes since the...
+
+---
+type: progress
+timestamp: '2025-12-24T21:08:47.195635+00:00'
+summary: '...release-major` - major bump'
+---
+
+...release-major` - major bump
+`─────────────────────────────────────────────────`
+
+The command completed but **no plugins were bumped** because the smart-bump script detected no changes since the...
