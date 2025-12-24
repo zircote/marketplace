@@ -29,3 +29,26 @@ tags:
 
 | Operation | Purpose | Use Before |
 |-----------|-...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:40.545726+00:00'
+summary: '...summary:'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-enforcement-protocol.md
+---
+
+...summary:
+```
+"[grep fallback - verify completeness manually]"
+```
+
+## Red Flag Patterns
+
+### Pattern: Skipping Navigation
+
+**Symptom:** Proposing changes without reading code first
+
+**Detection...
