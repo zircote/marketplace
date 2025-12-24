@@ -5046,3 +5046,23 @@ Enterprise excellence:
 - Performance tracked
 - Team onboarding smooth
 - Knowledge...
+
+---
+type: progress
+timestamp: '2025-12-24T07:17:00.046597+00:00'
+summary: '...properly</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:rails-expert.md
+---
+
+...properly</item>
+<item>Performance monitored configured correctly</item>
+<item>Deployment automated completed successfully</item>
+</checklist>
+
+Rails 7 features:
+- Hotwire/Turbo
+- Stimulus controllers
+-...
