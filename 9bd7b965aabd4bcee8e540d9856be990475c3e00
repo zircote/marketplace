@@ -10485,3 +10485,20 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Documentation completed. Created 127 pages covering 45 APIs with average readability score of 68. User satisfaction...
+
+---
+type: progress
+timestamp: '2025-12-24T07:33:12.595858+00:00'
+summary: '...item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:ux-researcher.md
+---
+
+...item>
+</checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"UX research completed. Conducted 12 studies with 247 participants, generating 89 actionable insights. Improved task...
