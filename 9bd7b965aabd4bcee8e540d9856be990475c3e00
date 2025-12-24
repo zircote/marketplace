@@ -1714,3 +1714,17 @@ tags:
 - State management selection
 - Caching layer placement
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:06:16.629411+00:00'
+summary: '...context for:'
+tags:
+- auto-captured
+- post-tool-use
+- file:ui-designer.md
+---
+
+...context for:
+- **Complete design system**: Maintain full component libraries, tokens, and pattern documentation in context
+- **Cross-platform consistency**: Track design patterns across web,...
