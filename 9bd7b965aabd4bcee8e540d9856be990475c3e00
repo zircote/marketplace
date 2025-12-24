@@ -2560,3 +2560,21 @@ Architecture excellence:
 - Errors handled gracefully
 - Performance monitored
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:15:09.387638+00:00'
+summary: '...Domain-Driven Design implementation'
+tags:
+- auto-captured
+- post-tool-use
+- file:java-architect.md
+---
+
+...Domain-Driven Design implementation
+- Hexagonal architecture setup
+- CQRS and Event Sourcing
+- Saga pattern for distributed transactions
+- Repository and Unit of Work
+- Specification pattern
+- Strategy...
