@@ -7345,3 +7345,25 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Sales engineering completed. Delivered 47 technical demonstrations with 82% technical win rate. POC success rate at 78%,...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:37.471732+00:00'
+summary: '...comparisons'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...comparisons
+- Risk mitigation
+- Reference selling
+- Win/loss analysis
+
+Technical documentation:
+- Solution proposals
+- Architecture diagrams
+- Integration guides
+- Security whitepapers
+- Performance...
