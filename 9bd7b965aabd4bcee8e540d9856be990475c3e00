@@ -6052,3 +6052,25 @@ tags:
 - **jmeter**: Load testing tool
 - **gatling**: High-performance load testing
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:01.531166+00:00'
+summary: '...priorities:'
+tags:
+- auto-captured
+- post-tool-use
+- file:performance-engineer.md
+---
+
+...priorities:
+- Baseline measurement
+- Bottleneck identification
+- Resource analysis
+- Load pattern study
+- Architecture review
+- Tool evaluation
+- Gap assessment
+- Goal definition
+
+Performance...
