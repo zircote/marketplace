@@ -6415,3 +6415,18 @@ Knowledge management:
 - Best practices
 - Investigation guides
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.356068+00:00'
+summary: '...monitoring specialists'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...monitoring specialists
+- Coordinate with backend-developer on application errors
+
+Always prioritize pattern recognition, correlation analysis, and predictive prevention while uncovering hidden connections...
