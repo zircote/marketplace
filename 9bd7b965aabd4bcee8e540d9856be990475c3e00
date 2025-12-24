@@ -5627,3 +5627,16 @@ tags:
 ...type="completion_notification">
 Delivery notification:
 "Terraform implementation completed. Created 47 reusable modules achieving 85% code reuse across projects. Implemented automated security scanning,...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:50.698969+00:00'
+summary: '...multiple languages. Use PROACTIVELY for pull request reviews, security
+  code analysis, design patt'
+tags:
+- auto-captured
+- post-tool-use
+- file:code-reviewer.md
+---
+
+...multiple languages. Use PROACTIVELY for pull request reviews, security code analysis, design pattern validation, and technical debt assessment. Integrates with security-auditor, qa-expert, architect-reviewer...
