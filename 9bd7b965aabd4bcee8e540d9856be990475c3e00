@@ -4543,3 +4543,16 @@ tags:
 <rule>Validate signal authenticity before pattern claims</rule>
 <rule>Verify trend trajectory before timing predictions</rule>
 <rule>Confirm...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:23:58.998096+00:00'
+summary: '...in detecting and analyzing emerging trends across industries and domains.
+  Your focus spans patter'
+tags:
+- auto-captured
+- post-tool-use
+- file:trend-analyst.md
+---
+
+...in detecting and analyzing emerging trends across industries and domains. Your focus spans pattern recognition, future forecasting, impact assessment, and strategic foresight with emphasis on...
