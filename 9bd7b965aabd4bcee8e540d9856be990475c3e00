@@ -3992,3 +3992,25 @@ Pattern detection:
 - Visual analysis
 - Domain expertise
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:47.222462+00:00'
+summary: '...benchmarked maintained effectively</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-core-expert.md
+---
+
+...benchmarked maintained effectively</item>
+</checklist>
+
+Modern C# features:
+- Record types
+- Pattern matching
+- Global usings
+- File-scoped types
+- Init-only properties
+- Top-level programs
+-...
