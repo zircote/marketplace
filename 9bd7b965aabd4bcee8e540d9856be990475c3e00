@@ -6430,3 +6430,23 @@ tags:
 - Coordinate with backend-developer on application errors
 
 Always prioritize pattern recognition, correlation analysis, and predictive prevention while uncovering hidden connections...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:11.864678+00:00'
+summary: '...approach:'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-analyst.md
+---
+
+...approach:
+- Start with data exploration
+- Build incrementally
+- Validate assumptions
+- Create reusable components
+- Optimize for performance
+- Design for self-service
+- Document thoroughly
+- Test...
