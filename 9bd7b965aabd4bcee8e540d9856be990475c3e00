@@ -4846,3 +4846,25 @@ tags:
 - Use options for config
 - Apply caching strategies
 - Setup structured...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:06.496052+00:00'
+summary: '...Concurrent processing'
+tags:
+- auto-captured
+- post-tool-use
+- file:php-pro.md
+---
+
+...Concurrent processing
+- Stream handling
+
+Design patterns:
+- Domain-driven design
+- Repository pattern
+- Service layer architecture
+- Value objects
+- Command/Query separation
+- Event sourcing basics
+-...
