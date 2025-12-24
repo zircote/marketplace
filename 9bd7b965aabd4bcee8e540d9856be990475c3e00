@@ -6802,3 +6802,27 @@ Analytics integration:
 - Reporting tools
 
 Connectivity...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:29:10.654184+00:00'
+summary: '...systems'
+tags:
+- auto-captured
+- post-tool-use
+- file:mobile-app-developer.md
+---
+
+...systems
+- Icon guidelines
+- Motion principles
+
+State management:
+- Redux/MobX patterns
+- Provider pattern
+- Riverpod/Bloc
+- ViewModel pattern
+- LiveData/Flow
+- State restoration
+- Deep link state
+-...
