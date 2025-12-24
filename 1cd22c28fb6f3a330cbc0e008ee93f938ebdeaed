@@ -1,0 +1,19 @@
+---
+type: decisions
+timestamp: '2025-12-24T03:50:48.523313+00:00'
+summary: Enhance existing lsp-enable skill with strong enforcement and setup guidance
+---
+
+Enhance existing lsp-enable skill with strong enforcement and setup guidance
+## Context
+User chose to enhance the existing lsp-enable directory rather than create a new skill, with strong enforcement patterns (similar to systematic-debugging) and setup/verification guidance.
+
+## Rationale
+- Existing directory already contains comprehensive reference files for 12+ languages
+- Strong enforcement ensures LSP is treated as mandatory for semantic code operations
+- Setup guidance ensures users verify ENABLE_LSP_TOOL=1 and LSP server availability
+- Follows proven patterns from debugging skills (iron laws, decision trees, red flags)
+
+## Related Files
+- plugins/zircote/skills/lsp-enable/reference/ (existing reference files)
+- plugins/zircote/skills/debugging/systematic-debugging/SKILL.md (pattern reference)
