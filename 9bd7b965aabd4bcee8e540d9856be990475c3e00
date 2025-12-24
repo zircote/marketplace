@@ -6967,3 +6967,19 @@ tags:
 Contract best practices:
 - Clear terms
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:17.058046+00:00'
+summary: '...Value realized'
+tags:
+- auto-captured
+- post-tool-use
+- file:project-manager.md
+---
+
+...Value realized
+
+<output_format type="completion_notification">
+Delivery notification:
+"Project completed successfully. Delivered 73% ahead of original timeline with 5% under budget. Mitigated 14...
