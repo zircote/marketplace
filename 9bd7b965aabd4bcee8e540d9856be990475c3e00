@@ -4431,3 +4431,18 @@ tags:
 ---
 
 Now I understand the current structure. Let me design the `--help` pattern and apply it systematically:
+
+---
+type: patterns
+timestamp: '2025-12-24T07:22:58.821501+00:00'
+summary: '...────────────────────`
+
+  Let me create a Python script to batch-update all commands with the `--...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+...────────────────────`
+
+Let me create a Python script to batch-update all commands with the `--help` pattern:
