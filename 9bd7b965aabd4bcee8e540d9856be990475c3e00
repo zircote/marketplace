@@ -4702,3 +4702,24 @@ UIKit integration:
 - Collection view composition
 - Auto Layout in code
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:25:59.666942+00:00'
+summary: '...patterns.'
+tags:
+- auto-captured
+- post-tool-use
+- file:swift-expert.md
+---
+
+...patterns.
+
+Analysis priorities:
+- Platform target evaluation
+- Dependency analysis
+- Architecture pattern review
+- Concurrency model assessment
+- Memory management audit
+- Performance baseline check
+-...
