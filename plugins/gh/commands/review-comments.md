@@ -126,7 +126,7 @@ Parse `$ARGUMENTS` for:
 
 ## 1.2 Fetch Review Comments
 
-Retrieve all review comments:
+Retrieve all review comments via REST API:
 
 ```bash
 gh api repos/{owner}/{repo}/pulls/${PR_NUMBER}/comments --paginate | jq -r '
@@ -145,6 +145,52 @@ gh api repos/{owner}/{repo}/pulls/${PR_NUMBER}/comments --paginate | jq -r '
   }
 '
 ```
+
+**IMPORTANT: Fetch GraphQL Thread IDs for Resolution**
+
+The REST API comment IDs cannot be used to resolve threads. You MUST fetch the GraphQL node IDs for review threads:
+
+```bash
+gh api graphql -f query='
+  query($owner: String!, $repo: String!, $pr: Int!) {
+    repository(owner: $owner, name: $repo) {
+      pullRequest(number: $pr) {
+        reviewThreads(first: 100) {
+          nodes {
+            id
+            isResolved
+            isOutdated
+            path
+            line
+            comments(first: 1) {
+              nodes {
+                id
+                databaseId
+                body
+                author { login }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+' -f owner="${OWNER}" -f repo="${REPO}" -F pr="${PR_NUMBER}"
+```
+
+**Store a mapping of comment `databaseId` to thread `id`** for use in Phase 6 resolution.
+
+<thread_mapping_example>
+Build a lookup table:
+```
+THREAD_MAP = {
+  comment_database_id_1: "thread_node_id_1",
+  comment_database_id_2: "thread_node_id_2",
+  ...
+}
+```
+Where `databaseId` corresponds to the REST API `id` field.
+</thread_mapping_example>
 
 Also get general PR comments (issue-style):
 
@@ -311,9 +357,9 @@ Maintain a remediation log:
 ```markdown
 ## Remediation Log
 
-| Comment ID | File | Change | Status |
-|------------|------|--------|--------|
-| {id} | {path}:{line} | {description} | Fixed |
+| Comment ID | Thread ID | File | Change | Status |
+|------------|-----------|------|--------|--------|
+| {id} | {thread_id} | {path}:{line} | {description} | Fixed |
 ```
 </phase>
 
@@ -409,17 +455,123 @@ gh api repos/{owner}/{repo}/pulls/${PR_NUMBER}/comments/${COMMENT_ID}/replies \
 
 ## 6.1 Mark Conversations Resolved
 
-After addressing a comment, if the PR supports conversation resolution:
+After addressing a comment thread, resolve it using the GraphQL API.
+
+<resolution_requirements>
+**Prerequisites:**
+- You MUST have the GraphQL thread node ID (not the REST API comment ID)
+- Thread IDs start with a prefix like `PRRT_` and are base64-encoded
+- Use the thread mapping created in Phase 1.2
+</resolution_requirements>
+
+<resolution_command>
+**Correct GraphQL mutation syntax:**
 
 ```bash
-gh api graphql -f query='
+# Using variables (recommended - avoids escaping issues)
+gh api graphql \
+  -f query='
+    mutation($threadId: ID!) {
+      resolveReviewThread(input: {threadId: $threadId}) {
+        thread {
+          id
+          isResolved
+        }
+      }
+    }
+  ' \
+  -f threadId="${THREAD_NODE_ID}"
+```
+
+**Alternative inline syntax (for simple cases):**
+
+```bash
+# Note: Thread ID must be properly escaped in the query
+gh api graphql -f query="
   mutation {
-    resolveReviewThread(input: {threadId: "${THREAD_ID}"}) {
-      thread { isResolved }
+    resolveReviewThread(input: {threadId: \"${THREAD_NODE_ID}\"}) {
+      thread {
+        id
+        isResolved
+      }
     }
   }
-'
+"
 ```
+</resolution_command>
+
+<resolution_error_handling>
+**Error Handling for Thread Resolution:**
+
+| Error | Cause | Resolution |
+|-------|-------|------------|
+| `Could not resolve to a node` | Invalid thread ID | Verify thread ID from Phase 1.2 GraphQL query |
+| `Resource not accessible` | Permission denied | User may not have write access to the PR |
+| `Thread is already resolved` | Previously resolved | Skip with note (not an error) |
+| `Variable $threadId was provided invalid value` | Malformed ID | Ensure ID is the full GraphQL node ID |
+
+```bash
+# Resolution with error handling
+resolve_thread() {
+  local thread_id="$1"
+  local result
+
+  result=$(gh api graphql \
+    -f query='
+      mutation($threadId: ID!) {
+        resolveReviewThread(input: {threadId: $threadId}) {
+          thread {
+            id
+            isResolved
+          }
+        }
+      }
+    ' \
+    -f threadId="${thread_id}" 2>&1)
+
+  if echo "$result" | grep -q '"isResolved":true'; then
+    echo "SUCCESS: Thread ${thread_id} resolved"
+    return 0
+  elif echo "$result" | grep -q "already resolved"; then
+    echo "SKIPPED: Thread ${thread_id} was already resolved"
+    return 0
+  else
+    echo "FAILED: Could not resolve thread ${thread_id}"
+    echo "Error: $result"
+    return 1
+  fi
+}
+```
+</resolution_error_handling>
+
+<resolution_workflow>
+**Complete Resolution Workflow:**
+
+1. **Look up thread ID** from the mapping created in Phase 1.2
+2. **Skip if already resolved** (check `isResolved` from Phase 1.2 data)
+3. **Execute the mutation** with proper error handling
+4. **Log the result** in the remediation log
+
+```bash
+# For each addressed comment
+COMMENT_DB_ID="12345678"  # REST API comment ID
+THREAD_NODE_ID="${THREAD_MAP[$COMMENT_DB_ID]}"  # GraphQL node ID from Phase 1.2
+
+if [ -n "$THREAD_NODE_ID" ]; then
+  gh api graphql \
+    -f query='
+      mutation($threadId: ID!) {
+        resolveReviewThread(input: {threadId: $threadId}) {
+          thread { id isResolved }
+        }
+      }
+    ' \
+    -f threadId="$THREAD_NODE_ID"
+else
+  echo "Warning: No thread ID found for comment $COMMENT_DB_ID"
+fi
+```
+</resolution_workflow>
 
 ## 6.2 Generate Summary Report
 
@@ -442,6 +594,8 @@ Create a summary of all actions taken:
 | Rejected | {rejected} |
 | Questions Answered | {questions} |
 | Deferred | {deferred} |
+| **Threads Resolved** | {resolved_count} |
+| Resolution Failures | {resolution_failures} |
 
 ## Changes Made
 
@@ -451,15 +605,16 @@ Create a summary of all actions taken:
 
 ## Responses Posted
 
-| Comment | Reviewer | Response Type |
-|---------|----------|---------------|
-| {summary} | @{user} | {type} |
+| Comment | Reviewer | Response Type | Thread Resolved |
+|---------|----------|---------------|-----------------|
+| {summary} | @{user} | {type} | {yes/no/failed} |
 
 ## Next Steps
 
 - [ ] Review deferred items: {count}
 - [ ] Run full test suite
 - [ ] Request re-review if significant changes
+- [ ] Verify all threads show as resolved in GitHub UI
 ```
 
 ## 6.3 Dry Run Output
@@ -476,8 +631,22 @@ If `--dry-run` specified, output all proposed actions without executing:
 ## Proposed Responses
 {list_of_responses}
 
+## Threads to Resolve
+| Thread ID | Comment | Path | Line |
+|-----------|---------|------|------|
+| {thread_id} | {comment_preview} | {path} | {line} |
+
 ## Commands That Would Execute
 {list_of_gh_commands}
+
+### Resolution Commands
+```bash
+# Thread 1
+gh api graphql -f query='mutation($threadId: ID!) { resolveReviewThread(input: {threadId: $threadId}) { thread { isResolved } } }' -f threadId="PRRT_xxx..."
+
+# Thread 2
+gh api graphql -f query='mutation($threadId: ID!) { resolveReviewThread(input: {threadId: $threadId}) { thread { isResolved } } }' -f threadId="PRRT_yyy..."
+```
 ```
 </conditional>
 </phase>
@@ -495,6 +664,8 @@ If `--dry-run` specified, output all proposed actions without executing:
 | Merge conflict during edit | Abort remediation, notify user |
 | Permission denied on PR | Verify repository access with `gh auth status` |
 | Comment already resolved | Skip, note as "previously addressed" |
+| Thread resolution failed | Log error, continue with other threads, report in summary |
+| Invalid thread ID | Verify thread mapping from Phase 1.2; may need to re-fetch |
 
 <conditional trigger="error occurs during execution">
 When an error occurs:
@@ -516,6 +687,7 @@ When an error occurs:
 4. **Preserve reviewer attribution** - Always credit the reviewer in responses
 5. **Never force-push** - If commits are needed, use normal push
 6. **Commit incrementally** - Group related fixes into logical commits
+7. **Resolve threads after responding** - Always attempt thread resolution for addressed comments
 
 ## Commit Strategy
 
