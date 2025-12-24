@@ -3375,3 +3375,16 @@ Entity Framework 6:
 - Database-first approach
 - Model-first approach
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.160927+00:00'
+summary: '...interactions, identifying patterns, and building collective intelligence.
+  Use PROACTIVELY for pat'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...interactions, identifying patterns, and building collective intelligence. Use PROACTIVELY for pattern extraction, insight generation, knowledge graph building, and cross-agent learning. Integrates...
