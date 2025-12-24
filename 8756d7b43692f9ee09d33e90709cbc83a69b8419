@@ -7,3 +7,25 @@ summary: '...**Phased Execution** - 6 phases from context gathering → resoluti
 
 ...**Phased Execution** - 6 phases from context gathering → resolution, following the migrate.md pattern
 3. **Confidence-based classification** - Borrowed from ML patterns (Strong Accept ≥90%, Accept...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:20:59.510477+00:00'
+summary: '...(TODOs, strings, config)'
+tags:
+- auto-captured
+- post-tool-use
+- file:SKILL.md
+---
+
+...(TODOs, strings, config)
+│  └─ USE: Grep (LSP doesn't do text matching)
+│
+└─ File discovery by pattern
+   └─ USE: Glob
+```
+
+## The Nine LSP Operations
+
+| Operation | Purpose | Use Before |
+|-----------|-...
