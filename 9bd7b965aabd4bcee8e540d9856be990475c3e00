@@ -430,3 +430,18 @@ The "Placeholder/Fictional Tools" critical finding should be reclassified. The r
 ## Related Files
 - plugins/zircote/agents/AGENT_REVIEW_REPORT.md:89-102
 - plugins/zircote/agents/01-core-development/frontend-developer.md:7
+
+---
+type: learnings
+timestamp: '2025-12-24T06:55:56.055620+00:00'
+summary: '...Contains "decided", "chose", "will use" → `decisions`'
+tags:
+- auto-captured
+- post-tool-use
+- file:capture.md
+---
+
+...Contains "decided", "chose", "will use" → `decisions`
+- Contains "learned", "discovered", "TIL", "found out" → `learnings`
+- Contains "blocked", "stuck", "cannot", "impediment" → `blockers`
+-...
