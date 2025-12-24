@@ -394,3 +394,21 @@ tags:
 ---
 
 The agent for 02-language-specialists completed. Let me check its output and see the current status of all the work.
+
+---
+type: progress
+timestamp: '2025-12-24T08:02:17.905596+00:00'
+summary: 'All parallel agents have completed their work. The XML demarcation project
+  is finished.
+
+  **Final ...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+All parallel agents have completed their work. The XML demarcation project is finished.
+
+**Final Summary:**
+
+| Metric | Before...
