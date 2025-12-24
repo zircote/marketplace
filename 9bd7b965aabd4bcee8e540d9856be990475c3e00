@@ -8894,3 +8894,19 @@ tags:
 ---
 
 ...average improvement. Reduced P95 latency from 420ms to 47ms. Increased cache hit rate to 94%. Implemented 23 strategic indexes and removed 15 redundant ones. System now handles 3x traffic with 50%...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:23.244834+00:00'
+summary: '...testing checklist:'
+tags:
+- auto-captured
+- post-tool-use
+- file:penetration-tester.md
+---
+
+...testing checklist:
+<item>Scope clearly defined and authorized</item>
+<item>Reconnaissance completed thoroughly</item>
+<item>Vulnerabilities identified systematically</item>
+<item>Exploits validated...
