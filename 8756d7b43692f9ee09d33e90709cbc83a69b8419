@@ -73,3 +73,25 @@ tags:
 **Symptom:** Renaming or restructuring without impact analysis
 
 **Detection...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:40.583849+00:00'
+summary: '...this to..."'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-enforcement-protocol.md
+---
+
+...this to..."
+- "We can delete this..."
+
+**Correction:** STOP. Use findReferences first.
+
+### Pattern: Unverified Claims
+
+**Symptom:** Claiming success without evidence
+
+**Detection phrases:**
+-...
