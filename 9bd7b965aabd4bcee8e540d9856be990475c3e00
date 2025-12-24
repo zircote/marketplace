@@ -6283,3 +6283,25 @@ tags:
 - Machine learning insights
 
 Distributed...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.165326+00:00'
+summary: '...tracking'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...tracking
+
+Anomaly detection:
+- Baseline establishment
+- Deviation detection
+- Threshold analysis
+- Pattern recognition
+- Predictive modeling
+- Alert optimization
+- False positive reduction
+- Severity...
