@@ -8103,3 +8103,19 @@ Improvement checklist:
 <item>Alerts tuned</item>
 <item>Runbooks updated</item>
 <item...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:47.290569+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:chaos-engineer.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Chaos engineering program completed. Executed 47 experiments discovering 12 critical failure modes. Implemented fixes reducing...
