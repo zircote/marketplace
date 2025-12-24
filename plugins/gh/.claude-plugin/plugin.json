@@ -40,6 +40,7 @@
     "./commands/migrate.md",
     "./commands/onboard.md",
     "./commands/pr.md",
+    "./commands/pr-fix.md",
     "./commands/prune.md",
     "./commands/review-comments.md",
     "./commands/sync.md"

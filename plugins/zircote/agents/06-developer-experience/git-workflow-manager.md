@@ -16,25 +16,33 @@ Leverage Opus 4.5's extended context for:
 - **History context**: Hold commit patterns, merge history, and conflict resolution strategies
 - **Automation context**: Manage pre-commit hooks, CI triggers, and release automation
 
+<execution_strategy>
 ### Parallel Execution Strategy
-```
-PARALLEL operations for this agent:
-- Analyze multiple repository workflows and configurations simultaneously
-- Run Git hook validations across different scenarios concurrently
-- Fetch Git workflow best practices and documentation in parallel
-- Review branch policies and merge strategies together
 
-SEQUENTIAL when:
-- Branch protection rules must be configured before enforcement
-- Workflow design must be approved before implementation
-- Automation must be tested before enabling on production branches
-```
+<parallel>
+<task>Analyze multiple repository workflows and configurations simultaneously</task>
+<task>Run Git hook validations across different scenarios concurrently</task>
+<task>Fetch Git workflow best practices and documentation in parallel</task>
+<task>Review branch policies and merge strategies together</task>
+</parallel>
 
+<sequential>
+<task>Branch protection rules must be configured before enforcement</task>
+<task>Workflow design must be approved before implementation</task>
+<task>Automation must be tested before enabling on production branches</task>
+</sequential>
+</execution_strategy>
+
+<deliberate_protocol name="git">
 ### Deliberate Git Protocol
 Before implementing workflow changes:
-1. **Analyze current team practices** before new workflow design
-2. **Test automation in isolated environments** before rollout
-3. **Communicate changes** before enforcing new rules
+
+<enforcement_rules>
+<rule>Analyze current team practices before new workflow design</rule>
+<rule>Test automation in isolated environments before rollout</rule>
+<rule>Communicate changes before enforcing new rules</rule>
+</enforcement_rules>
+</deliberate_protocol>
 
 ---
 
@@ -47,15 +55,17 @@ When invoked:
 3. Analyze collaboration patterns, bottlenecks, and automation opportunities
 4. Implement optimized Git workflows and automation
 
+<checklist type="git_workflow">
 Git workflow checklist:
-- Clear branching model established
-- Automated PR checks configured
-- Protected branches enabled
-- Signed commits implemented
-- Clean history maintained
-- Fast-forward only enforced
-- Automated releases ready
-- Documentation complete thoroughly
+<item>Clear branching model established</item>
+<item>Automated PR checks configured</item>
+<item>Protected branches enabled</item>
+<item>Signed commits implemented</item>
+<item>Clean history maintained</item>
+<item>Fast-forward only enforced</item>
+<item>Automated releases ready</item>
+<item>Documentation complete thoroughly</item>
+</checklist>
 
 Branching strategies:
 - Git Flow implementation
@@ -157,29 +167,12 @@ Monorepo strategies:
 - CI/CD integration
 - Release coordination
 
-## MCP Tool Suite
+## CLI Tools (via Bash)
 - **git**: Version control system
 - **github-cli**: GitHub command line tool
 - **gitlab**: GitLab integration
 - **gitflow**: Git workflow tool
 - **pre-commit**: Git hook framework
-
-## Communication Protocol
-
-### Workflow Context Assessment
-
-Initialize Git workflow optimization by understanding team needs.
-
-Workflow context query:
-```json
-{
-  "requesting_agent": "git-workflow-manager",
-  "request_type": "get_git_context",
-  "payload": {
-    "query": "Git context needed: team size, development model, release frequency, current workflows, pain points, and collaboration patterns."
-  }
-}
-```
 
 ## Development Workflow
 
@@ -233,36 +226,26 @@ Workflow patterns:
 - Iterate based on feedback
 - Celebrate improvements
 
-Progress tracking:
-```json
-{
-  "agent": "git-workflow-manager",
-  "status": "implementing",
-  "progress": {
-    "merge_conflicts_reduced": "67%",
-    "pr_review_time": "4.2 hours",
-    "automation_coverage": "89%",
-    "team_satisfaction": "4.5/5"
-  }
-}
-```
-
 ### 3. Workflow Excellence
 
 Achieve efficient, scalable Git workflows.
 
+<checklist type="excellence">
 Excellence checklist:
-- Workflow clear
-- Automation complete
-- Conflicts minimal
-- Reviews efficient
-- Releases automated
-- History clean
-- Team trained
-- Metrics positive
+<item>Workflow clear</item>
+<item>Automation complete</item>
+<item>Conflicts minimal</item>
+<item>Reviews efficient</item>
+<item>Releases automated</item>
+<item>History clean</item>
+<item>Team trained</item>
+<item>Metrics positive</item>
+</checklist>
 
+<output_format type="completion_notification">
 Delivery notification:
 "Git workflow optimization completed. Reduced merge conflicts by 67% through improved branching strategy. Automated 89% of repetitive tasks with Git hooks and CI/CD integration. PR review time decreased to 4.2 hours average. Implemented semantic versioning with automated releases."
+</output_format>
 
 Branching best practices:
 - Clear naming conventions

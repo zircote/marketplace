@@ -4,6 +4,62 @@ argument-hint: "[pr-number] [--auto | --interactive] [--confidence=N] [--dry-run
 description: Review GitHub PR comments, assess validity, remediate accepted findings, and respond to all comments with explanations
 ---
 
+<help_check>
+## Help Check
+
+If `$ARGUMENTS` contains `--help` or `-h`:
+
+**Output this help and HALT (do not proceed further):**
+
+<help_output>
+```
+REVIEW_COMMENTS(1)              User Commands              REVIEW_COMMENTS(1)
+
+NAME
+    review-comments - Review GitHub PR comments and remediate findings
+
+SYNOPSIS
+    /gh:review-comments [pr-number] [--auto | --interactive] [--confidence=N] [--dry-run]
+
+DESCRIPTION
+    Process code review comments on a GitHub pull request. For each
+    comment: assess validity with confidence scoring, accept or reject
+    based on evidence, remediate accepted findings with code changes,
+    and respond to all comments with explanations.
+
+OPTIONS
+    [pr-number]               PR number (positional, or infer from branch)
+    --auto                    Non-interactive mode - auto-process based on confidence
+    --interactive             Interactive mode - prompt at each decision (default)
+    --confidence=N            Minimum confidence 0-100 to auto-accept (default: 85)
+    --dry-run                 Show proposed actions without executing
+    --help, -h                Show this help message
+
+CONFIDENCE THRESHOLDS
+    --confidence=95           Very conservative - only obvious fixes
+    --confidence=85           Balanced (default)
+    --confidence=75           More aggressive auto-acceptance
+    --confidence=50           Accept most reasonable suggestions
+
+EXAMPLES
+    /gh:review-comments            Process current branch's PR (interactive)
+    /gh:review-comments 123        Process specific PR number
+    /gh:review-comments --auto     Non-interactive with 85% confidence
+    /gh:review-comments --dry-run  Preview actions without executing
+
+SEE ALSO
+    /gh:pr-fix          Complete remediation with rebase
+    /gh:pr              Create/update pull requests
+
+                                                        REVIEW_COMMENTS(1)
+```
+</help_output>
+
+**After outputting help, HALT immediately. Do not proceed with command execution.**
+</help_check>
+
+---
+
 # GitHub Code Review Comment Processor
 
 You are processing code review comments on a GitHub pull request. For each comment, you will:
@@ -31,6 +87,7 @@ Parse `$ARGUMENTS` for:
 
 ---
 
+<phase number="1" name="Context Gathering">
 # PHASE 1: CONTEXT GATHERING
 
 ## 1.1 Pre-flight Checks
@@ -40,21 +97,27 @@ Parse `$ARGUMENTS` for:
    which gh && gh auth status
    ```
 
+   <conditional trigger="gh CLI not available or not authenticated">
    If not available or authenticated, display:
    > **GitHub CLI Required**
    > Install: `brew install gh` (macOS) | `apt install gh` (Linux)
    > Authenticate: `gh auth login`
+   </conditional>
 
 2. **Determine PR number**:
 
+   <conditional trigger="PR number provided as argument">
    If PR number provided as argument, use it. Otherwise:
    ```bash
    gh pr view --json number --jq '.number' 2>/dev/null
    ```
+   </conditional>
 
+   <conditional trigger="no PR found">
    If no PR found:
    > "No PR found for current branch. Please specify a PR number:
    > `/gh:review-comments 123`"
+   </conditional>
 
 3. **Get PR metadata**:
    ```bash
@@ -101,9 +164,11 @@ Organize comments into:
 | **Blockers** | Must-fix before merge | High priority remediation |
 | **Approvals** | Positive feedback | Acknowledge only |
 | **Conversations** | Threaded discussions | Check if resolved |
+</phase>
 
 ---
 
+<phase number="2" name="Validity Assessment">
 # PHASE 2: VALIDITY ASSESSMENT
 
 For each actionable comment (Code Review, Suggestions, Blockers), perform:
@@ -138,22 +203,28 @@ Score each comment on these dimensions (0-100):
 
 ## 2.3 Classification
 
+<conditional trigger="confidence score determines action">
 | Confidence | Classification | Action |
 |------------|----------------|--------|
-| ≥90% | **Strong Accept** | Auto-remediate (even in interactive mode, just inform) |
+| >=90% | **Strong Accept** | Auto-remediate (even in interactive mode, just inform) |
 | 75-89% | **Accept** | Remediate (prompt in interactive mode) |
 | 50-74% | **Uncertain** | Always prompt user for decision |
 | 25-49% | **Likely Reject** | Present counter-evidence, recommend rejection |
 | <25% | **Strong Reject** | Auto-reject with explanation |
+</conditional>
+</phase>
 
 ---
 
+<phase number="3" name="Decision Workflow">
 # PHASE 3: DECISION WORKFLOW
 
 ## 3.1 Interactive Mode (Default)
 
+<conditional trigger="confidence < 90% AND mode is interactive">
 For each finding with confidence < 90%, use `AskUserQuestion`:
 
+<ask_user_question>
 ```
 ## Comment from @{reviewer}:
 "{comment_body}"
@@ -177,14 +248,17 @@ Options:
 - **Reject with Explanation**: Decline with reasoning
 - **Defer**: Skip for now, revisit later
 - **Discuss**: Need more context before deciding
+</ask_user_question>
+</conditional>
 
 ## 3.2 Auto Mode (`--auto`)
 
+<conditional trigger="mode is auto">
 Process based on confidence thresholds:
 
 | Confidence | Auto Action |
 |------------|-------------|
-| ≥ `--confidence` threshold | Auto-accept and remediate |
+| >= `--confidence` threshold | Auto-accept and remediate |
 | 50% to threshold | Queue for batch user review |
 | < 50% | Auto-reject with explanation |
 
@@ -196,9 +270,12 @@ After auto-processing, present batch summary:
 > - Needs Review: {uncertain_count}
 >
 > Review the uncertain items? (y/n)
+</conditional>
+</phase>
 
 ---
 
+<phase number="4" name="Remediation">
 # PHASE 4: REMEDIATION
 
 ## 4.1 Remediation Strategy
@@ -236,11 +313,13 @@ Maintain a remediation log:
 
 | Comment ID | File | Change | Status |
 |------------|------|--------|--------|
-| {id} | {path}:{line} | {description} | ✅ Fixed |
+| {id} | {path}:{line} | {description} | Fixed |
 ```
+</phase>
 
 ---
 
+<phase number="5" name="Response Generation">
 # PHASE 5: RESPONSE GENERATION
 
 ## 5.1 Response Templates
@@ -248,7 +327,7 @@ Maintain a remediation log:
 ### For Accepted Findings (Remediated)
 
 ```markdown
-✅ **Addressed in this PR**
+**Addressed in this PR**
 
 {brief_description_of_fix}
 
@@ -262,7 +341,7 @@ Thanks for catching this, @{reviewer}!
 ### For Accepted with Modification
 
 ```markdown
-✅ **Addressed with modification**
+**Addressed with modification**
 
 I agree with the concern. Instead of the suggested approach, I implemented:
 
@@ -277,7 +356,7 @@ Let me know if you'd like to discuss further.
 ### For Rejected Findings
 
 ```markdown
-💭 **Considered but not implemented**
+**Considered but not implemented**
 
 Thank you for the suggestion. After analysis, I believe the current approach is preferable:
 
@@ -295,7 +374,7 @@ Happy to discuss if you see something I'm missing!
 ### For Questions
 
 ```markdown
-📝 **Response:**
+**Response:**
 
 {answer_to_question}
 
@@ -321,9 +400,11 @@ For replies to existing threads:
 gh api repos/{owner}/{repo}/pulls/${PR_NUMBER}/comments/${COMMENT_ID}/replies \
   -f body="${RESPONSE}"
 ```
+</phase>
 
 ---
 
+<phase number="6" name="Resolution and Summary">
 # PHASE 6: RESOLUTION & SUMMARY
 
 ## 6.1 Mark Conversations Resolved
@@ -383,6 +464,7 @@ Create a summary of all actions taken:
 
 ## 6.3 Dry Run Output
 
+<conditional trigger="--dry-run flag is set">
 If `--dry-run` specified, output all proposed actions without executing:
 
 ```markdown
@@ -397,9 +479,12 @@ If `--dry-run` specified, output all proposed actions without executing:
 ## Commands That Would Execute
 {list_of_gh_commands}
 ```
+</conditional>
+</phase>
 
 ---
 
+<error_handling>
 # ERROR HANDLING
 
 | Error | Response |
@@ -410,6 +495,16 @@ If `--dry-run` specified, output all proposed actions without executing:
 | Merge conflict during edit | Abort remediation, notify user |
 | Permission denied on PR | Verify repository access with `gh auth status` |
 | Comment already resolved | Skip, note as "previously addressed" |
+
+<conditional trigger="error occurs during execution">
+When an error occurs:
+1. Log the error with context (phase, comment ID, file path)
+2. Determine if error is recoverable
+3. If recoverable, attempt retry with backoff
+4. If not recoverable, add to deferred list and continue with remaining comments
+5. Include all errors in final summary report
+</conditional>
+</error_handling>
 
 ---
 
@@ -450,8 +545,10 @@ The `--confidence` flag sets the auto-accept threshold in `--auto` mode:
 | `--confidence=75` | More aggressive auto-acceptance |
 | `--confidence=50` | Accept most reasonable suggestions |
 
+<conditional trigger="interactive mode with high confidence findings">
 **Override in interactive mode:**
-Even in interactive mode, findings with ≥95% confidence are auto-accepted with notification (no prompt). Use `--confidence=100` to require confirmation for everything.
+Even in interactive mode, findings with >=95% confidence are auto-accepted with notification (no prompt). Use `--confidence=100` to require confirmation for everything.
+</conditional>
 
 ---
 

@@ -9,23 +9,25 @@ version: 2.0.0
 
 Better Auth is comprehensive, framework-agnostic authentication/authorization framework for TypeScript with built-in email/password, social OAuth, and powerful plugin ecosystem for advanced features.
 
-## When to Use
-
-- Implementing auth in TypeScript/JavaScript applications
-- Adding email/password or social OAuth authentication
-- Setting up 2FA, passkeys, magic links, advanced auth features
-- Building multi-tenant apps with organization support
-- Managing sessions and user lifecycle
-- Working with any framework (Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express, etc.)
+<triggers>
+<trigger>Implementing auth in TypeScript/JavaScript applications</trigger>
+<trigger>Adding email/password or social OAuth authentication</trigger>
+<trigger>Setting up 2FA, passkeys, magic links, advanced auth features</trigger>
+<trigger>Building multi-tenant apps with organization support</trigger>
+<trigger>Managing sessions and user lifecycle</trigger>
+<trigger>Working with any framework (Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express, etc.)</trigger>
+</triggers>
 
 ## Quick Start
 
 ### Installation
 
-```bash
+<example type="usage">
+<code language="bash">
 npm install better-auth
 # or pnpm/yarn/bun add better-auth
-```
+</code>
+</example>
 
 ### Environment Setup
 
@@ -39,7 +41,8 @@ BETTER_AUTH_URL=http://localhost:3000
 
 Create `auth.ts` (root, lib/, utils/, or under src/app/server/):
 
-```ts
+<example type="usage">
+<code language="typescript">
 import { betterAuth } from "better-auth";
 
 export const auth = betterAuth({
@@ -57,25 +60,31 @@ export const auth = betterAuth({
     }
   }
 });
-```
+</code>
+</example>
 
 ### Database Schema
 
-```bash
+<example type="usage">
+<code language="bash">
 npx @better-auth/cli generate  # Generate schema/migrations
 npx @better-auth/cli migrate   # Apply migrations (Kysely only)
-```
+</code>
+</example>
 
 ### Mount API Handler
 
 **Next.js App Router:**
-```ts
+
+<example type="usage">
+<code language="typescript">
 // app/api/auth/[...all]/route.ts
 import { auth } from "@/lib/auth";
 import { toNextJsHandler } from "better-auth/next-js";
 
 export const { POST, GET } = toNextJsHandler(auth);
-```
+</code>
+</example>
 
 **Other frameworks:** See references/email-password-auth.md#framework-setup
 
@@ -83,17 +92,20 @@ export const { POST, GET } = toNextJsHandler(auth);
 
 Create `auth-client.ts`:
 
-```ts
+<example type="usage">
+<code language="typescript">
 import { createAuthClient } from "better-auth/client";
 
 export const authClient = createAuthClient({
   baseURL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL || "http://localhost:3000"
 });
-```
+</code>
+</example>
 
 ### Basic Usage
 
-```ts
+<example type="usage">
+<code language="typescript">
 // Sign up
 await authClient.signUp.email({
   email: "user@example.com",
@@ -113,7 +125,8 @@ await authClient.signIn.social({ provider: "github" });
 // Session
 const { data: session } = authClient.useSession(); // React/Vue/Svelte
 const { data: session } = await authClient.getSession(); // Vanilla JS
-```
+</code>
+</example>
 
 ## Feature Selection Matrix
 
@@ -181,6 +194,15 @@ Better Auth uses client-server architecture:
 - [ ] Configure email sending (verification/reset)
 - [ ] Enable rate limiting for production
 - [ ] Set up error handling
+
+<constraints>
+<constraint severity="critical">BETTER_AUTH_SECRET must be at least 32 characters and kept secure</constraint>
+<constraint severity="critical">Never expose BETTER_AUTH_SECRET in client-side code</constraint>
+<constraint severity="high">Always enable rate limiting in production to prevent brute force attacks</constraint>
+<constraint severity="high">Regenerate database schema after adding/removing plugins</constraint>
+<constraint severity="medium">Use HTTPS in production for all auth endpoints</constraint>
+<constraint severity="medium">Implement email verification for email/password auth in production</constraint>
+</constraints>
 
 ## Reference Documentation
 

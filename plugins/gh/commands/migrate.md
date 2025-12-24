@@ -4,6 +4,56 @@ argument-hint: [--ci=TYPE] [--copilot-only] [--dry-run] [--interactive]
 description: Onboard repository to GitHub ecosystem with Copilot integration. Auto-detects and migrates CI/CD from Concourse, Jenkins, GitLab CI, CircleCI, Travis, Azure Pipelines, Bamboo, TeamCity, Drone, Buildkite, or infers external CI from artifacts. Creates GitHub Actions, Copilot config, issue/PR templates. Run in any repo for enterprise cloud migration.
 ---
 
+<help_check>
+## Help Check
+
+If `$ARGUMENTS` contains `--help` or `-h`:
+
+**Output this help and HALT (do not proceed further):**
+
+<help_output>
+```
+MIGRATE(1)                      User Commands                      MIGRATE(1)
+
+NAME
+    migrate - Onboard repository to GitHub ecosystem with CI migration
+
+SYNOPSIS
+    /gh:migrate [--ci=TYPE] [--copilot-only] [--dry-run] [--interactive]
+
+DESCRIPTION
+    Onboard repository to GitHub ecosystem with Copilot integration.
+    Auto-detects and migrates CI/CD from: Concourse, Jenkins, GitLab CI,
+    CircleCI, Travis, Azure Pipelines, Bamboo, TeamCity, Drone, Buildkite.
+    Creates GitHub Actions workflows, Copilot config, issue/PR templates.
+
+OPTIONS
+    --ci=TYPE                 Force CI type (concourse|jenkins|gitlab|...)
+    --copilot-only            Only configure Copilot, skip CI migration
+    --dry-run                 Generate plan without creating files
+    --interactive             Prompt for confirmation at each phase
+    --help, -h                Show this help message
+
+EXAMPLES
+    /gh:migrate                       Auto-detect and migrate CI
+    /gh:migrate --dry-run             Preview without changes
+    /gh:migrate --copilot-only        Only configure Copilot
+    /gh:migrate --ci=jenkins          Force Jenkins migration
+    /gh:migrate --interactive         Step-by-step with confirmations
+
+SEE ALSO
+    /gh:ci-assist         Extended CI migration with batch support
+    /gh:copilot-onboard   Copilot-only configuration
+
+                                                                  MIGRATE(1)
+```
+</help_output>
+
+**After outputting help, HALT immediately. Do not proceed with command execution.**
+</help_check>
+
+---
+
 # GitHub Ecosystem Onboarding & Multi-CI Migration
 
 You are performing comprehensive onboarding of this repository into the GitHub ecosystem. This command:
@@ -26,6 +76,7 @@ Parse `$ARGUMENTS` for flags:
 
 ---
 
+<phase number="1" name="Codebase Exploration">
 # PHASE 1: CODEBASE EXPLORATION
 
 **Goal**: Build comprehensive understanding before making any changes.
@@ -61,9 +112,11 @@ Read for project context and CI references:
 - CONTRIBUTING.md
 - docs/ or documentation/
 - CLAUDE.md (if exists)
+</phase>
 
 ---
 
+<phase number="2" name="CI/CD Detection">
 # PHASE 2: CI/CD DETECTION
 
 ## 2.1 In-Repository CI Detection
@@ -97,7 +150,7 @@ echo "=== Woodpecker ===" && ls -la .woodpecker.yml .woodpecker/ 2>/dev/null
 ### 2.2.1 Script Pattern Analysis
 
 ```bash
-echo "=== CI-specific scripts ===" 
+echo "=== CI-specific scripts ==="
 find . -type f \( -name "*jenkins*" -o -name "*bamboo*" -o -name "*teamcity*" -o -name "*ci-*" -o -name "*-ci.*" -o -name "build.*" -o -name "deploy.*" \) 2>/dev/null | grep -v node_modules | head -20
 
 echo "=== Makefile CI targets ==="
@@ -135,6 +188,7 @@ grep -rih --include="*.md" -E "(jenkins|bamboo|teamcity|concourse|travis|circlec
 
 ## 2.3 CI Detection Summary
 
+<conditional trigger="CI detection complete">
 After running detection, classify as one of:
 
 | Detection Level | Meaning | Action |
@@ -143,9 +197,12 @@ After running detection, classify as one of:
 | **INFERRED** | Strong artifact signals | Present findings, ask for confirmation if `--interactive` |
 | **SUSPECTED** | Weak signals | Note in migration report, create generic workflows |
 | **NONE** | No CI detected | Create fresh GitHub Actions from scratch |
+</conditional>
+</phase>
 
 ---
 
+<phase number="3" name="CI-Specific Analysis and Translation">
 # PHASE 3: CI-SPECIFIC ANALYSIS & TRANSLATION
 
 Based on detected CI system, apply the appropriate translation guide.
@@ -161,7 +218,7 @@ Based on detected CI system, apply the appropriate translation guide.
 | `resources:` with `type: s3` | `aws-actions/configure-aws-credentials@v4` + `aws s3` |
 | `resources:` with `type: slack-notification` | `slackapi/slack-github-action@v2` |
 | `resource_types:` | Custom actions or marketplace equivalents |
-| `jobs:` → `plan:` | `jobs:` → `steps:` |
+| `jobs:` -> `plan:` | `jobs:` -> `steps:` |
 | `get:` with `trigger: true` | `on: push` / `on: pull_request` |
 | `get:` with `passed: [job-a]` | `needs: [job-a]` |
 | `put:` | Upload/deploy actions |
@@ -187,7 +244,7 @@ Based on detected CI system, apply the appropriate translation guide.
 | `pipeline { }` | `jobs:` |
 | `agent any` / `agent { docker { } }` | `runs-on: ubuntu-latest` / container jobs |
 | `stages { stage('X') { } }` | `jobs:` with `needs:` |
-| `steps { sh 'cmd' }` | `steps:` → `- run: cmd` |
+| `steps { sh 'cmd' }` | `steps:` -> `- run: cmd` |
 | `when { branch 'main' }` | `on: push: branches: [main]` |
 | `post { always { } }` | `if: always()` |
 | `post { failure { } }` | `if: failure()` |
@@ -201,11 +258,13 @@ Based on detected CI system, apply the appropriate translation guide.
 | `emailext` | Custom notification action |
 | Shared libraries | Reusable workflows (`.github/workflows/*.yml` with `workflow_call`) |
 
+<conditional trigger="Jenkins detected but minimal Jenkinsfile">
 **External Jenkins inference signals**:
 - `Jenkinsfile` present but minimal (calls shared library)
 - Scripts referencing `$BUILD_NUMBER`, `$JENKINS_URL`, `$JOB_NAME`
 - Makefile with `jenkins-*` targets
 - README mentions Jenkins URL
+</conditional>
 
 ## 3.3 GitLab CI
 
@@ -215,7 +274,7 @@ Based on detected CI system, apply the appropriate translation guide.
 |-----------|----------------|
 | `stages:` | Job dependencies via `needs:` |
 | `image:` | `container:` or setup action |
-| `script:` | `steps:` → `- run:` |
+| `script:` | `steps:` -> `- run:` |
 | `before_script:` | Early steps in job |
 | `after_script:` | Steps with `if: always()` |
 | `only: / except:` | `on:` with path/branch filters |
@@ -332,7 +391,7 @@ Based on detected CI system, apply the appropriate translation guide.
 
 | Buildkite | GitHub Actions |
 |-----------|----------------|
-| `steps:` | `jobs:` → `steps:` |
+| `steps:` | `jobs:` -> `steps:` |
 | `command:` | `- run:` |
 | `plugins:` | Marketplace actions |
 | `agents:` | `runs-on:` with labels |
@@ -361,11 +420,13 @@ Based on detected CI system, apply the appropriate translation guide.
 | Agent requirements | `runs-on:` |
 | Artifact paths | `actions/upload-artifact@v4` |
 
+<conditional trigger="TeamCity detected via external signals">
 **External TeamCity inference signals**:
 - Scripts referencing `$TEAMCITY_*` env vars
 - `.teamcity/` directory with minimal config (references server)
 - README/docs mentioning TeamCity server URL
 - Build status badges pointing to TeamCity
+</conditional>
 
 ## 3.10 Bamboo (Often External)
 
@@ -382,11 +443,13 @@ Based on detected CI system, apply the appropriate translation guide.
 | Triggers | `on:` events |
 | Deployment projects | Deployment workflows |
 
+<conditional trigger="Bamboo detected via external signals">
 **External Bamboo inference signals**:
 - Scripts referencing `$bamboo_*` or `$BAMBOO_*` variables
 - Makefile targets like `bamboo-build`, `bamboo-deploy`
 - README mentioning Bamboo
 - `bamboo-specs/` with Java/YAML specs that reference plan keys
+</conditional>
 
 ## 3.11 Tekton
 
@@ -431,9 +494,11 @@ Based on detected CI system, apply the appropriate translation guide.
 | Environments | `environment:` |
 | Connectors | Secrets + OIDC |
 | Input sets | `workflow_dispatch: inputs:` |
+</phase>
 
 ---
 
+<phase number="4" name="GitHub Actions Generation">
 # PHASE 4: GITHUB ACTIONS GENERATION
 
 ## 4.1 Workflow Structure
@@ -487,7 +552,7 @@ on:
 jobs:
   codeql:
     # If supported language detected
-  
+
   dependency-review:
     # For PRs
 ```
@@ -507,9 +572,11 @@ Apply appropriate setup and caching:
 | .NET | `actions/setup-dotnet@v4` | `actions/cache` for NuGet |
 | PHP | `shivammathur/setup-php@v2` | `actions/cache` for Composer |
 | Elixir | `erlef/setup-beam@v1` | `actions/cache` for mix |
+</phase>
 
 ---
 
+<phase number="5" name="GitHub Copilot Configuration">
 # PHASE 5: GITHUB COPILOT CONFIGURATION
 
 ## 5.1 Create copilot-instructions.md
@@ -559,9 +626,11 @@ jobs:
       - uses: actions/checkout@v5
       # Language-specific setup from detection
 ```
+</phase>
 
 ---
 
+<phase number="6" name="Templates and Infrastructure">
 # PHASE 6: TEMPLATES & INFRASTRUCTURE
 
 ## 6.1 Issue Templates
@@ -579,9 +648,11 @@ Create `.pre-commit-config.yaml` with language-appropriate hooks.
 ## 6.4 Dependabot
 
 Create `.github/dependabot.yml` for detected package ecosystems.
+</phase>
 
 ---
 
+<phase number="7" name="Migration Summary">
 # PHASE 7: MIGRATION SUMMARY
 
 Create `.github/MIGRATION_SUMMARY.md`:
@@ -646,6 +717,7 @@ If CI was inferred rather than confirmed, document the signals:
 
 ## External CI Decommissioning
 
+<conditional trigger="migrating from external CI system">
 If migrating from external CI (Jenkins, TeamCity, Bamboo, etc.):
 
 ### Server-Side Actions Required
@@ -660,11 +732,12 @@ If migrating from external CI (Jenkins, TeamCity, Bamboo, etc.):
 2. [ ] Update README badges to GitHub Actions
 3. [ ] Update CONTRIBUTING.md with new CI instructions
 4. [ ] Remove any CI-specific configuration files
+</conditional>
 
 ## Manual Steps
 
 1. [ ] Add secrets to GitHub repository settings
-2. [ ] Enable Copilot code review (Settings → Rules → Rulesets)
+2. [ ] Enable Copilot code review (Settings -> Rules -> Rulesets)
 3. [ ] Configure branch protection rules
 4. [ ] Verify workflows pass on test branch
 5. [ ] Notify team of CI migration
@@ -678,6 +751,31 @@ If migrating from external CI (Jenkins, TeamCity, Bamboo, etc.):
 - [ ] Branch protection configured
 - [ ] External CI decommissioned or archived
 ```
+</phase>
+
+---
+
+<error_handling>
+# ERROR HANDLING
+
+| Error | Response |
+|-------|----------|
+| Permission denied | Verify repository write access |
+| File exists | Prompt before overwriting if `--interactive` |
+| Invalid YAML | Validate syntax before writing |
+| Unknown CI type | Fall back to generic workflow templates |
+| Missing dependencies | Note in migration summary for manual resolution |
+| API rate limit | Pause and retry with exponential backoff |
+
+<conditional trigger="error occurs during migration">
+When an error occurs:
+1. Log the error with phase and file context
+2. Determine if error is blocking or recoverable
+3. If recoverable, continue with remaining phases
+4. If blocking, generate partial migration summary
+5. Include all errors and incomplete items in MIGRATION_SUMMARY.md
+</conditional>
+</error_handling>
 
 ---
 
@@ -685,16 +783,17 @@ If migrating from external CI (Jenkins, TeamCity, Bamboo, etc.):
 
 1. **Complete Phase 1-2 before any file creation**
 2. **Report CI detection findings with confidence level before proceeding**
-3. **If INFERRED or SUSPECTED, explain evidence found**
-4. **If `--interactive`, confirm CI type with user**
-5. **If `--dry-run`, output all files to stdout with `--- FILE: path ---` headers**
+3. <conditional trigger="detection level is INFERRED or SUSPECTED">If INFERRED or SUSPECTED, explain evidence found</conditional>
+4. <conditional trigger="--interactive flag is set">If `--interactive`, confirm CI type with user</conditional>
+5. <conditional trigger="--dry-run flag is set">If `--dry-run`, output all files to stdout with `--- FILE: path ---` headers</conditional>
 6. **Validate all YAML before writing**
-7. **Never overwrite existing `.github/workflows/` without confirmation**
-8. **For external CI, note that full pipeline logic may not be discoverable**
+7. <conditional trigger="existing workflows found">Never overwrite existing `.github/workflows/` without confirmation</conditional>
+8. <conditional trigger="external CI detected">For external CI, note that full pipeline logic may not be discoverable</conditional>
 9. **Commit incrementally with descriptive messages**
 
 ## Handling External CI Limitations
 
+<conditional trigger="CI configuration lives on external server">
 When CI configuration lives on an external server (Jenkins, TeamCity, Bamboo, etc.):
 
 1. **Acknowledge the limitation**: State that full pipeline cannot be reverse-engineered
@@ -707,5 +806,6 @@ When CI configuration lives on an external server (Jenkins, TeamCity, Bamboo, et
    - Artifact handling
 4. **Generate reasonable defaults**: Based on language detection and common patterns
 5. **Document gaps**: Note in MIGRATION_SUMMARY what couldn't be determined
+</conditional>
 
 Begin with Phase 1 exploration now.

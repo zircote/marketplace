@@ -9,19 +9,18 @@ version: 1.0.0
 
 Comprehensive guide for deploying and managing cloud infrastructure across Cloudflare edge platform, Docker containerization, and Google Cloud Platform.
 
-## When to Use This Skill
-
-Use this skill when:
-- Deploying serverless applications to Cloudflare Workers
-- Containerizing applications with Docker
-- Managing Google Cloud infrastructure with gcloud CLI
-- Setting up CI/CD pipelines across platforms
-- Optimizing cloud infrastructure costs
-- Implementing multi-region deployments
-- Building edge-first architectures
-- Managing container orchestration with Kubernetes
-- Configuring cloud storage solutions (R2, Cloud Storage)
-- Automating infrastructure with scripts and IaC
+<triggers>
+<trigger>Deploying serverless applications to Cloudflare Workers</trigger>
+<trigger>Containerizing applications with Docker</trigger>
+<trigger>Managing Google Cloud infrastructure with gcloud CLI</trigger>
+<trigger>Setting up CI/CD pipelines across platforms</trigger>
+<trigger>Optimizing cloud infrastructure costs</trigger>
+<trigger>Implementing multi-region deployments</trigger>
+<trigger>Building edge-first architectures</trigger>
+<trigger>Managing container orchestration with Kubernetes</trigger>
+<trigger>Configuring cloud storage solutions (R2, Cloud Storage)</trigger>
+<trigger>Automating infrastructure with scripts and IaC</trigger>
+</triggers>
 
 ## Platform Selection Guide
 
@@ -91,7 +90,8 @@ Use this skill when:
 
 ### Cloudflare Workers
 
-```bash
+<example type="usage">
+<code language="bash">
 # Install Wrangler CLI
 npm install -g wrangler
 
@@ -99,13 +99,15 @@ npm install -g wrangler
 wrangler init my-worker
 cd my-worker
 wrangler deploy
-```
+</code>
+</example>
 
 See: `references/cloudflare-workers-basics.md`
 
 ### Docker Container
 
-```bash
+<example type="usage">
+<code language="bash">
 # Create Dockerfile
 cat > Dockerfile <<EOF
 FROM node:20-alpine
@@ -120,13 +122,15 @@ EOF
 # Build and run
 docker build -t myapp .
 docker run -p 3000:3000 myapp
-```
+</code>
+</example>
 
 See: `references/docker-basics.md`
 
 ### Google Cloud Deployment
 
-```bash
+<example type="usage">
+<code language="bash">
 # Install and authenticate
 curl https://sdk.cloud.google.com | bash
 gcloud init
@@ -136,7 +140,8 @@ gcloud auth login
 gcloud run deploy my-service \
   --image gcr.io/project/image \
   --region us-central1
-```
+</code>
+</example>
 
 See: `references/gcloud-platform.md`
 
@@ -167,7 +172,8 @@ See: `references/gcloud-platform.md`
 
 ### Edge + Container Hybrid
 
-```yaml
+<example type="usage">
+<code language="yaml">
 # Cloudflare Workers (API Gateway)
 # -> Docker containers on Cloud Run (Backend Services)
 # -> R2 (Object Storage)
@@ -176,11 +182,13 @@ See: `references/gcloud-platform.md`
 # - Edge caching and routing
 # - Containerized business logic
 # - Global distribution
-```
+</code>
+</example>
 
 ### Multi-Stage Docker Build
 
-```dockerfile
+<example type="usage">
+<code language="dockerfile">
 # Build stage
 FROM node:20-alpine AS build
 WORKDIR /app
@@ -196,17 +204,20 @@ COPY --from=build /app/dist ./dist
 COPY --from=build /app/node_modules ./node_modules
 USER node
 CMD ["node", "dist/server.js"]
-```
+</code>
+</example>
 
 ### CI/CD Pipeline Pattern
 
-```yaml
+<example type="usage">
+<code language="yaml">
 # 1. Build: Docker multi-stage build
 # 2. Test: Run tests in container
 # 3. Push: Push to registry (GCR, Docker Hub)
 # 4. Deploy: Deploy to Cloudflare Workers / Cloud Run
 # 5. Verify: Health checks and smoke tests
-```
+</code>
+</example>
 
 ## Best Practices
 
@@ -237,6 +248,15 @@ CMD ["node", "dist/server.js"]
 - Named gcloud configurations for multi-environment
 - Version control infrastructure code
 - Implement automated testing in CI/CD
+
+<constraints>
+<constraint severity="critical">Never commit secrets, API keys, or credentials to version control</constraint>
+<constraint severity="critical">Always run containers as non-root user in production</constraint>
+<constraint severity="high">Scan container images for vulnerabilities before deployment</constraint>
+<constraint severity="high">Implement health checks for all containerized services</constraint>
+<constraint severity="medium">Use multi-stage Docker builds to minimize image size</constraint>
+<constraint severity="medium">Set resource limits (CPU, memory) for all containers</constraint>
+</constraints>
 
 ## Decision Matrix
 
