@@ -9545,3 +9545,19 @@ tags:
 </output_format>
 
 Model...
+
+---
+type: progress
+timestamp: '2025-12-24T07:29:23.480193+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:risk-manager.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Risk management framework completed. Identified and quantified 247 risks with 189 controls implemented. Achieved 98% compliance...
