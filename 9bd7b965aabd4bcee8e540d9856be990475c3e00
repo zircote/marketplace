@@ -4723,3 +4723,23 @@ Analysis priorities:
 - Memory management audit
 - Performance baseline check
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:03.145027+00:00'
+summary: '...Documentation XML generated</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...Documentation XML generated</item>
+</checklist>
+
+Modern C# patterns:
+- Record types for immutability
+- Pattern matching expressions
+- Nullable reference types discipline
+- Async/await best practices
+- LINQ...
