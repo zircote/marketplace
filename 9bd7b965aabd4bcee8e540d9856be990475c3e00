@@ -3228,3 +3228,23 @@ tags:
 - Concept-based overloading
 
 Memory...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:18:57.011170+00:00'
+summary: '...Custom allocator design'
+tags:
+- auto-captured
+- post-tool-use
+- file:cpp-pro.md
+---
+
+...Custom allocator design
+- Move semantics optimization
+- Copy elision understanding
+- RAII pattern enforcement
+- Stack vs heap allocation
+- Memory pool implementation
+- Alignment requirements
+
+Performance...
