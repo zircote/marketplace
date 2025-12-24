@@ -535,3 +535,36 @@ Added comprehensive documentation for `--focus=MAX` and `--focus=MAXALL` to the 
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md
 - /Users/AllenR1_1/Projects/zircote/claude-spec/README.md
 - /Users/AllenR1_1/Projects/zircote/claude-spec/CHANGELOG.md
+
+---
+type: progress
+timestamp: '2025-12-24T19:21:25.738367+00:00'
+summary: '▶ progress ─────────────────────────────────────
+
+  Added Prompt Engineer specialist to code-cleanup...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+Added Prompt Engineer specialist to code-cleanup MAX modes
+## Summary
+Added a Prompt Engineer specialist that uses `claude-code-guide` to review prompts in the codebase for Anthropic best practices and Claude patterns.
+
+## Changes Made
+- `commands/code-cleanup.md`: Added Prompt Engineer to specialist table, deployment instructions, and announcements
+- `README.md`: Updated agent counts (11+ → 12+), added Prompt Engineer to specialists list
+- `CHANGELOG.md`: Updated feature description to include Prompt Engineer
+
+## Agent Configuration
+| Agent | subagent_type | Focus |
+|-------|---------------|-------|
+| Prompt Engineer | `claude-code-guide` | Anthropic best practices, Claude patterns |
+
+## Trigger Condition
+Activated when prompts are detected in the codebase (commands, skills, agents, system prompts, etc.)
+
+## Related Files
+- /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md:714
+- /Users/AllenR1_1/Projects/zircote/claude-spec/README.md:153
+- /Users/AllenR1_1/Projects/zircote/claude-spec/CHANGELOG.md:10-11
