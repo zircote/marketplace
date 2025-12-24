@@ -10346,3 +10346,23 @@ The lsp-tools plugin provides semantic code intelligence via LSP operations (goT
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/deep-research.md
 - /Users/AllenR1_1/.claude/commands/cr.md
 - /Users/AllenR1_1/.claude/commands/cr-fx.md
+
+---
+type: progress
+timestamp: '2025-12-24T07:33:02.096116+00:00'
+summary: '...resolved</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...resolved</item>
+<item>POC successful</item>
+<item>Proposal delivered</item>
+<item>Handoff completed</item>
+<item>Customer enabled</item>
+</checklist>
+
+<output_format type="completion_notification">
+Delivery...
