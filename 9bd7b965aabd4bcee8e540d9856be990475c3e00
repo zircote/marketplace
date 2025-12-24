@@ -9378,3 +9378,19 @@ tags:
 </output_format>
 
 Transaction...
+
+---
+type: progress
+timestamp: '2025-12-24T07:29:02.633887+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:game-developer.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Game development completed. Achieved stable 72 FPS across all platforms with 2.3s load times. Implemented ECS architecture...
