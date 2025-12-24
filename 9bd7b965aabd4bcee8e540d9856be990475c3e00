@@ -3910,3 +3910,20 @@ tags:
 
 <sequential>
 <task>Data collection...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:32.501386+00:00'
+summary: '.../parallel>'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-researcher.md
+---
+
+.../parallel>
+
+<sequential>
+<task>Data collection must complete before quality assessment</task>
+<task>Pattern validation must pass before insight generation</task>
+<task>Statistical significance must be...
