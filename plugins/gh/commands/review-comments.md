@@ -151,32 +151,28 @@ gh api repos/{owner}/{repo}/pulls/${PR_NUMBER}/comments --paginate | jq -r '
 The REST API comment IDs cannot be used to resolve threads. You MUST fetch the GraphQL node IDs for review threads:
 
 ```bash
-gh api graphql -f query='
-  query($owner: String!, $repo: String!, $pr: Int!) {
-    repository(owner: $owner, name: $repo) {
-      pullRequest(number: $pr) {
-        reviewThreads(first: 100) {
-          nodes {
-            id
-            isResolved
-            isOutdated
-            path
-            line
-            comments(first: 1) {
-              nodes {
-                id
-                databaseId
-                body
-                author { login }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-' -f owner="${OWNER}" -f repo="${REPO}" -F pr="${PR_NUMBER}"
+# IMPORTANT: GraphQL variables ($owner, $repo, $pr) must be escaped with backslashes
+# to prevent shell expansion while allowing -F flags to pass values
+gh api graphql \
+  -F owner="${OWNER}" \
+  -F repo="${REPO}" \
+  -F pr="${PR_NUMBER}" \
+  -f query="query(\$owner: String!, \$repo: String!, \$pr: Int!) { repository(owner: \$owner, name: \$repo) { pullRequest(number: \$pr) { reviewThreads(first: 100) { nodes { id isResolved isOutdated path line comments(first: 1) { nodes { id databaseId body author { login } } } } } } } }"
 ```
+
+<graphql_escaping_rules>
+**Critical escaping rules for `gh api graphql`:**
+
+1. **Use double quotes** around the query (not single quotes)
+2. **Escape GraphQL variables** with backslashes: `\$owner`, `\$repo`, `\$pr`
+3. **Shell variables expand normally**: `${OWNER}`, `${REPO}`, `${PR_NUMBER}`
+4. **Pass values via -F (numeric) or -f (string) flags**
+
+**Why this works:**
+- Double quotes allow shell variable expansion (`${OWNER}`)
+- Backslash escaping prevents shell from consuming GraphQL's `$` markers
+- GraphQL receives the proper variable declarations
+</graphql_escaping_rules>
 
 **Store a mapping of comment `databaseId` to thread `id`** for use in Phase 6 resolution.
 
