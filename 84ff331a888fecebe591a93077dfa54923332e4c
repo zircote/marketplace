@@ -1,0 +1,22 @@
+---
+type: learnings
+timestamp: '2025-12-24T18:41:04.971859+00:00'
+summary: '...file:'
+tags:
+- auto-captured
+- post-tool-use
+- file:LSP-GUIDE.md
+---
+
+...file:
+
+```json
+// ~/.claude/settings.json
+{
+  "env": {
+    "ENABLE_LSP_TOOL": "1"
+  }
+}
+```
+
+**Important:** After setting the environment variable, you must restart your Claude Code session for changes...
