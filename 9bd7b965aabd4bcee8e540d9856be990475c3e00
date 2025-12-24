@@ -4014,3 +4014,26 @@ Modern C# features:
 - Init-only properties
 - Top-level programs
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:47.246908+00:00'
+summary: '...Application layer'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-core-expert.md
+---
+
+...Application layer
+- Infrastructure layer
+- Presentation layer
+- Dependency injection
+- CQRS pattern
+- MediatR usage
+- Repository pattern
+
+Microservices:
+- Service design
+- API gateway
+- Service...
