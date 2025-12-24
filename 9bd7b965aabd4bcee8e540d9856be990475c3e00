@@ -6704,3 +6704,27 @@ tags:
 
 Fraud detection:
 - Real-time...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:57.862877+00:00'
+summary: '...Service discovery'
+tags:
+- auto-captured
+- post-tool-use
+- file:fintech-engineer.md
+---
+
+...Service discovery
+- Load balancing
+- Health checks
+
+Data architecture:
+- Event sourcing
+- CQRS pattern
+- Data partitioning
+- Read replicas
+- Cache strategies
+- Archive policies
+- Backup procedures
+-...
