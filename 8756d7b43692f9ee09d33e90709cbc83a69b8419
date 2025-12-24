@@ -62,3 +62,22 @@ make validate-skills     # Validate skill file references
 - scripts/validate.py:1-230
 - .github/workflows/ci.yml:1-40
 - Makefile:102-138
+
+---
+type: progress
+timestamp: '2025-12-24T03:23:40.524738+00:00'
+summary: '...Violations:**'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-enforcement-protocol.md
+---
+
+...Violations:**
+- "Looks good to me" (looking ≠ verifying)
+- "Should work now" (should = unverified)
+- "Fixed the bug" (without confirming symptom gone)
+
+## Enforcement Scenarios
+
+### Scenario 1: Modifying...
