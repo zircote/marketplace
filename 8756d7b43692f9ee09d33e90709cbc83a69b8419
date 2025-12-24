@@ -219,3 +219,25 @@ tags:
 ```
 1. Grep: Find potential matches
 2. LSP findReferences: Verify actual...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:43.902462+00:00'
+summary: '...potential matches'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-decision-matrix.md
+---
+
+...potential matches
+2. LSP findReferences: Verify actual usages
+3. LSP hover: Confirm types
+```
+
+### Pattern 3: Refactor Flow
+
+```
+1. LSP findReferences: Get all usages
+2. Glob: Confirm file list
+3. LSP...
