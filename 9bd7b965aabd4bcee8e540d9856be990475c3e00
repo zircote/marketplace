@@ -546,3 +546,21 @@ tags:
     # Look for code blocks with command invocations
     pattern = rf'(?:```[^\n]*\n)?(/[\w:]+[^\n]*)\n'
     for match in re.finditer(pattern, content):...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:19:11.817421+00:00'
+summary: '...content'
+tags:
+- auto-captured
+- post-tool-use
+- file:add_help_pattern.py
+---
+
+...content
+
+def add_help_to_command(filepath: Path, dry_run: bool = False) -> bool:
+    """Add --help pattern to a command file."""
+    content = filepath.read_text()
+
+    # Skip if already has help...
