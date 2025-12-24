@@ -102,3 +102,21 @@ tags:
 **Correction:** STOP. Run verification first.
 
 ### Pattern:...
+
+---
+type: progress
+timestamp: '2025-12-24T03:23:46.938568+00:00'
+summary: '...after start'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-setup-verification.md
+---
+
+...after start
+
+**Known Issue:** LSP Manager may initialize before plugins load (bug #13952)
+
+**Workaround:**
+1. Wait a few seconds after starting Claude Code
+2. Or downgrade to version 2.0.67 if persistent...
