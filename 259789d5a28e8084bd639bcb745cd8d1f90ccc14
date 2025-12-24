@@ -662,3 +662,14 @@ Added comprehensive documentation for `--focus=MAX` and `--focus=MAXALL` to the 
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md
 - /Users/AllenR1_1/Projects/zircote/claude-spec/README.md
 - /Users/AllenR1_1/Projects/zircote/claude-spec/CHANGELOG.md
+
+---
+type: progress
+timestamp: '2025-12-24T20:03:42.429448+00:00'
+summary: '...release-major` - major bump'
+---
+
+...release-major` - major bump
+`─────────────────────────────────────────────────`
+
+The command completed but **no plugins were bumped** because the smart-bump script detected no changes since the...
