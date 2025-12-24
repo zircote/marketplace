@@ -3686,3 +3686,24 @@ Innovation enablement:
 - Emergence facilitation
 - Experiment suggestions
 - Hypothesis...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:14.123373+00:00'
+summary: '...Benchmark comparisons'
+tags:
+- auto-captured
+- post-tool-use
+- file:performance-monitor.md
+---
+
+...Benchmark comparisons
+
+Anomaly detection:
+- Statistical methods
+- Machine learning models
+- Pattern recognition
+- Outlier detection
+- Clustering analysis
+- Time-series forecasting
+- Alert suppression...
