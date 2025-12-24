@@ -634,3 +634,20 @@ tags:
         return content
 
     fm = parse_frontmatter(content)...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:27:19.988882+00:00'
+summary: '...proceed with command execution.**'
+tags:
+- auto-captured
+- post-tool-use
+- file:fix_help_sections.py
+---
+
+...proceed with command execution.**
+</help_check>'''
+
+    # Replace the existing help section
+    pattern = r'<help_check>.*?</help_check>'
+    new_content = re.sub(pattern, new_help, content, flags=re.DOTALL...
