@@ -2013,3 +2013,19 @@ tags:
   <completion>
     <success_message>Workflow completed successfully</success_message>
     <artifacts>List of created/modified files</artifacts>...
+
+---
+type: progress
+timestamp: '2025-12-24T06:55:56.079308+00:00'
+summary: '...`learnings`'
+tags:
+- auto-captured
+- post-tool-use
+- file:capture.md
+---
+
+...`learnings`
+- Contains "blocked", "stuck", "cannot", "impediment" → `blockers`
+- Contains "completed", "finished", "milestone" → `progress`
+- Contains "pattern", "recurring", "often" → `patterns`
+-...
