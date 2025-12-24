@@ -5499,3 +5499,25 @@ Continuous improvement:
 - Training enhancement
 - Playbook updates
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:45.725547+00:00'
+summary: '...dependency mapping'
+tags:
+- auto-captured
+- post-tool-use
+- file:sre-engineer.md
+---
+
+...dependency mapping
+- SLI/SLO assessment
+- Error budget analysis
+- Toil quantification
+- Incident pattern review
+- Automation coverage
+- Team capacity
+- Tool effectiveness
+
+Technical evaluation:
+-...
