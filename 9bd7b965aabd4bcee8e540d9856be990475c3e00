@@ -4927,3 +4927,25 @@ Technical assessment:
 - Review coroutine design
 - Assess DSL implementations
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:09.816655+00:00'
+summary: '...delegated properties'
+tags:
+- auto-captured
+- post-tool-use
+- file:kotlin-specialist.md
+---
+
+...delegated properties
+- Use inline classes
+- Test continuously
+
+### 3. Quality Assurance
+
+Ensure idiomatic Kotlin and cross-platform compatibility.
+
+<checklist type="verification">
+Quality verification:
+<item...
