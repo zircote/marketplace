@@ -276,3 +276,26 @@ Single flag that combines `--focus=MAX` + `--all` for fully autonomous maximum c
 
 ## Related Files
 - ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:920-970
+
+---
+type: progress
+timestamp: '2025-12-24T19:13:45.771126+00:00'
+summary: Applied MAX and MAXALL to claude-spec source
+---
+
+Applied MAX and MAXALL to claude-spec source
+## Summary
+Added `--focus=MAX` and `--focus=MAXALL` to the actual source repository, not the plugin cache.
+
+## Changes Made
+- `/Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md`:
+  - Line 3: Updated argument-hint
+  - Lines 670-825: Added MAX and MAXALL focus mode definitions
+
+## Next Steps
+- Commit changes in claude-spec repo
+- Bump version and release
+- Plugin cache will update on next install
+
+## Related Files
+- /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md:670-825
