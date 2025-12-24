@@ -966,3 +966,21 @@ Follow the `anthropic-prompt-engineer` exemplar pattern:
 1. Wrap all code examples in `<example>` tags
 2. Add `<constraints>` to limitations sections
 3....
+
+---
+type: patterns
+timestamp: '2025-12-24T06:48:08.143318+00:00'
+summary: Agents structured for MCP tools vs CLI tools
+---
+
+Agents structured for MCP tools vs CLI tools
+## Pattern
+Frontmatter `tools:` should only list actual MCP integrations. CLI tools should be documented in body text with "accessed via Bash" clarification.
+
+## Evidence
+All 116 agents mix MCP tools (Read, Write, Glob) with CLI tools (docker, kubectl, go) in the same `tools:` field, creating ambiguity about what's integrated vs what requires shell execution.
+
+## Related Files
+- plugins/zircote/agents/02-language-specialists/golang-pro.md:7
+- plugins/zircote/agents/03-infrastructure/network-engineer.md:7
+- plugins/zircote/agents/04-quality-security/code-reviewer.md:7
