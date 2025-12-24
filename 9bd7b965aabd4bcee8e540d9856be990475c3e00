@@ -6138,3 +6138,25 @@ tags:
 - **gdb**: GNU debugger
 - **lldb**: LLVM debugger
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:05.669725+00:00'
+summary: '...details'
+tags:
+- auto-captured
+- post-tool-use
+- file:debugger.md
+---
+
+...details
+- Reproduction steps
+- Timeline construction
+- Impact assessment
+- Change correlation
+- Pattern identification
+
+Information gathering:
+- Collect error logs
+- Review stack traces
+- Check system...
