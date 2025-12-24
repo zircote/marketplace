@@ -3740,3 +3740,26 @@ tags:
 <rule>Verify cross-references before pattern confirmation</rule>
 <rule>Confirm insight actionability before recommendations</rule>
 </enforcement_rules...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:29.067285+00:00'
+summary: '...definition'
+tags:
+- auto-captured
+- post-tool-use
+- file:research-analyst.md
+---
+
+...definition
+- Source identification
+- Data collection
+- Quality assessment
+- Information synthesis
+- Pattern recognition
+- Insight extraction
+- Report generation
+
+Information gathering:
+- Primary research
+-...
