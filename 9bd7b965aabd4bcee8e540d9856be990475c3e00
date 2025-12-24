@@ -6826,3 +6826,28 @@ State management:
 - State restoration
 - Deep link state
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:29:10.673015+00:00'
+summary: '...principles'
+tags:
+- auto-captured
+- post-tool-use
+- file:mobile-app-developer.md
+---
+
+...principles
+
+State management:
+- Redux/MobX patterns
+- Provider pattern
+- Riverpod/Bloc
+- ViewModel pattern
+- LiveData/Flow
+- State restoration
+- Deep link state
+- Background state
+
+Testing strategies:
+-...
