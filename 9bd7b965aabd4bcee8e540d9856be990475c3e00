@@ -3865,3 +3865,16 @@ tags:
 - Guide trend-analyst on pattern identification
 - Help search-specialist on information discovery
 - Assist business-analyst...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:32.445009+00:00'
+summary: '...and analyzing diverse data sources. Use PROACTIVELY for data mining,
+  statistical analysis, patter'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-researcher.md
+---
+
+...and analyzing diverse data sources. Use PROACTIVELY for data mining, statistical analysis, pattern recognition, and insight extraction from complex datasets. Integrates with research-analyst,...
