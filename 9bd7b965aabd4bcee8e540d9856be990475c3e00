@@ -6393,3 +6393,26 @@ tags:
 <item>Security scanning passed</item>
 <item>Documentation XML generated</item>
 </checklist>...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:03.215669+00:00'
+summary: '...tools'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...tools
+
+## Development Workflow
+
+Execute C# development through systematic phases:
+
+### 1. Solution Analysis
+
+Understand .NET architecture and project structure.
+
+Analysis priorities:
+- Solution...
