@@ -6160,3 +6160,26 @@ Information gathering:
 - Collect error logs
 - Review stack traces
 - Check system...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:05.806650+00:00'
+summary: '...additions'
+tags:
+- auto-captured
+- post-tool-use
+- file:debugger.md
+---
+
+...additions
+- Prevention strategies
+
+Knowledge management:
+- Bug databases
+- Solution libraries
+- Pattern documentation
+- Tool guides
+- Best practices
+- Team training
+- Debugging playbooks
+- Lesson...
