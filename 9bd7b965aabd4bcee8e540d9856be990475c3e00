@@ -2353,3 +2353,23 @@ tags:
 
 ...entire GraphQL schema with 200+ types, interfaces, unions, and their relationships
 - **Query pattern analysis**: Track resolver chains, N+1 patterns, and DataLoader batching across complex query...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:10:49.890594+00:00'
+summary: '...responsibility assignment'
+tags:
+- auto-captured
+- post-tool-use
+- file:graphql-architect.md
+---
+
+...responsibility assignment
+- Service boundary definition
+- Shared type identification
+- Query pattern analysis
+- Mutation design patterns
+- Subscription event modeling
+
+Design validation:
+- Type...
