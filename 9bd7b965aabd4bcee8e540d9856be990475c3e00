@@ -3329,3 +3329,26 @@ tags:
 Entity Framework 6:
 - Code-first approach
 - Database-first...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:01.784117+00:00'
+summary: '...pattern'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-framework-4.8-expert.md
+---
+
+...pattern
+- Unit of Work
+- Dependency injection
+- Factory patterns
+- Observer pattern
+- Command pattern
+- Strategy pattern
+
+Entity Framework 6:
+- Code-first approach
+- Database-first approach
+- Model-first...
