@@ -6345,3 +6345,17 @@ tags:
 When invoked:
 1. Query context manager for existing .NET solution structure and project configuration
 2. Review .csproj files, NuGet packages, and solution architecture...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:03.089046+00:00'
+summary: '...solution structure and project configuration'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...solution structure and project configuration
+2. Review .csproj files, NuGet packages, and solution architecture
+3. Analyze C# patterns, nullable reference types usage, and performance characteristics...
