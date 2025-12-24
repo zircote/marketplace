@@ -2529,3 +2529,31 @@ Addressed critical findings from agent review, implementing all recommended fixe
 - 3 meta-orchestration agents (added Bash, Glob, Grep)
 - 7 agents with MultiEdit (added Glob, Grep)
 - AGENT_REVIEW_REPORT.md (updated metrics and added remediation summary)
+
+---
+type: progress
+timestamp: '2025-12-24T07:01:24.204054+00:00'
+summary: '▶ progress ─────────────────────────────────────
+
+  Completed full remediation of all 116 zircote ag...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+Completed full remediation of all 116 zircote agents
+## Context
+User requested complete remediation of all remaining issues identified in the agent review report. All five remediation tasks have been successfully completed.
+
+## Summary
+| Task | Files Modified |
+|------|----------------|
+| MCP Tool Provenance | 4 agents |
+| Context Manager Protocol Removal | 116 agents |
+| Status Reporting JSON Removal | 115 agents |
+| Opus 4.5 Section Verification | All 116 verified |
+| Agent Cross-Reference Fixes | 8 agents |
+
+## Related Files
+- plugins/zircote/agents/AGENT_REVIEW_REPORT.md (updated with final status)
+- plugins/zircote/agents/*/*.md (116 agent files modified)
