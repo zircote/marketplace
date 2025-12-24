@@ -95,3 +95,25 @@ tags:
 
 **Detection phrases:**
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:40.621472+00:00'
+summary: '..."Fixed the issue"'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-enforcement-protocol.md
+---
+
+..."Fixed the issue"
+- "Changes are complete"
+
+**Correction:** STOP. Run verification first.
+
+### Pattern: Grep for Semantics
+
+**Symptom:** Using grep for semantic code operations
+
+**Detection phrases:**
+-...
