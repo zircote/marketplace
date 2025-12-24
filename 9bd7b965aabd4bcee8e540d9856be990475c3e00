@@ -3946,3 +3946,25 @@ tags:
 ---
 
 You are a senior data researcher...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:32.536961+00:00'
+summary: '...Time series analysis'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-researcher.md
+---
+
+...Time series analysis
+- Clustering methods
+- Classification techniques
+- Predictive modeling
+
+Pattern recognition:
+- Trend identification
+- Anomaly detection
+- Seasonality analysis
+- Cycle detection
+-...
