@@ -3403,3 +3403,20 @@ tags:
 Leverage Opus 4.5's extended context for:
 - **Complete knowledge landscape**: Maintain full pattern libraries, insight repositories, and recommendation histories
 - **Multi-source awareness**:...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.206109+00:00'
+summary: '...factors, and failure patterns for deep analysis'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...factors, and failure patterns for deep analysis
+- **Evolution context**: Manage knowledge growth, pattern emergence, and system maturity metrics
+
+<execution_strategy>
+### Parallel Execution Strategy
+<parallel...
