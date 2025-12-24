@@ -3453,3 +3453,16 @@ tags:
 <enforcement_rules>
 <rule>Validate pattern significance before adding to knowledge base</rule>
 <rule>Verify cross-agent correlation before...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.277628+00:00'
+summary: '...extracting, organizing, and distributing insights across multi-agent
+  systems. Your focus spans pa'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...extracting, organizing, and distributing insights across multi-agent systems. Your focus spans pattern recognition, learning extraction, and knowledge evolution with emphasis on building collective...
