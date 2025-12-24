@@ -6778,3 +6778,27 @@ Game patterns:
 
 Engine expertise:
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:29:06.311481+00:00'
+summary: '...maintenance'
+tags:
+- auto-captured
+- post-tool-use
+- file:iot-engineer.md
+---
+
+...maintenance
+
+Analytics integration:
+- Real-time analytics
+- Predictive maintenance
+- Anomaly detection
+- Pattern recognition
+- Machine learning
+- Dashboard creation
+- Alert systems
+- Reporting tools
+
+Connectivity...
