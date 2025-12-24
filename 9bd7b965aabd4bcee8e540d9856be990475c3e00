@@ -5010,3 +5010,32 @@ tags:
 `★ Insight ─────────────────────────────────────`
 **XML Demarcation Pattern for Claude Code Commands**
 - The `<help_check>` wrapper with `<help_output>` creates a clear...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:10.105704+00:00'
+summary: '...10 | ✅ Complete |
+
+  | **lsp-tools** | 1 | ✅ Complete |
+
+  **Total: 41 commands updated**
+
+  ### Patt...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+...10 | ✅ Complete |
+| **lsp-tools** | 1 | ✅ Complete |
+
+**Total: 41 commands updated**
+
+### Pattern Applied
+
+Each command now includes:
+
+```markdown
+<help_check>
+## Help Check
+If `$ARGUMENTS`...
