@@ -2578,3 +2578,23 @@ tags:
 - Repository and Unit of Work
 - Specification pattern
 - Strategy...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:15:09.411008+00:00'
+summary: '...Sourcing'
+tags:
+- auto-captured
+- post-tool-use
+- file:java-architect.md
+---
+
+...Sourcing
+- Saga pattern for distributed transactions
+- Repository and Unit of Work
+- Specification pattern
+- Strategy and Factory patterns
+- Dependency injection mastery
+
+Spring ecosystem mastery:
+-...
