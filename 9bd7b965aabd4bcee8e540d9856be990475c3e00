@@ -1432,3 +1432,19 @@ tags:
 | `extends:` | Reusable workflows or YAML anchors |
 | `include:` | Reusable workflows |
 | `variables:` | `env:` or...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:01:07.559568+00:00'
+summary: '...parallel:` | `strategy.matrix` |'
+tags:
+- auto-captured
+- post-tool-use
+- file:migrate.md
+---
+
+...parallel:` | `strategy.matrix` |
+| `extends:` | Reusable workflows or YAML anchors |
+| `include:` | Reusable workflows |
+| `variables:` | `env:` or `${{ vars.* }}` |
+| `$CI_*` variables | `${{ github.*...
