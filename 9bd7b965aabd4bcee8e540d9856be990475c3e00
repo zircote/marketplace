@@ -560,3 +560,23 @@ tags:
 ## Agent Review Complete
 
 I've completed the comprehensive review of all **116 agents** across 10 categories in `plugins/zircote/agents/`....
+
+---
+type: progress
+timestamp: '2025-12-24T05:48:06.760502+00:00'
+summary: '...Summary (2025-12-24)'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...Summary (2025-12-24)
+
+The following critical and high-severity issues have been remediated:
+
+### Completed Fixes
+
+| Issue | Status | Files Modified |
+|-------|--------|----------------|
+| Add LSP to...
