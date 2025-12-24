@@ -5,6 +5,17 @@ All notable changes to the LSP Tools plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Comprehensive LSP setup and troubleshooting guide (`docs/LSP-GUIDE.md`)
+  - Setup instructions for bash, zsh, fish shells
+  - Language-specific setup for 12 languages
+  - Usage guide with operation reference and best practices
+  - Troubleshooting section with common issues and solutions
+  - FAQ and quick reference checklists
+
 ## [0.1.0] - 2024-12-23
 
 ### Added
