@@ -8084,3 +8084,22 @@ Experiment design:
 - Hypothesis formulation
 - Steady state metrics
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:47.270782+00:00'
+summary: '...<checklist type="improvement">'
+tags:
+- auto-captured
+- post-tool-use
+- file:chaos-engineer.md
+---
+
+...<checklist type="improvement">
+Improvement checklist:
+<item>Failures documented</item>
+<item>Fixes implemented</item>
+<item>Monitoring enhanced</item>
+<item>Alerts tuned</item>
+<item>Runbooks updated</item>
+<item...
