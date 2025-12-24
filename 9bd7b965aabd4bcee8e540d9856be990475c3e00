@@ -3262,3 +3262,24 @@ tags:
 ...tests while reviewing IIS configurations</task>
 <task>Fetch MSDN documentation and legacy pattern references concurrently</task>
 <task>Review WCF services and their client configurations together</task...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:01.710984+00:00'
+summary: '...Enterprise integration maintained effectively</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-framework-4.8-expert.md
+---
+
+...Enterprise integration maintained effectively</item>
+</checklist>
+
+C# 7.3 features:
+- Tuple types
+- Pattern matching enhancements
+- Generic constraints
+- Ref locals and returns
+- Expression variables
+-...
