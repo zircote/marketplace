@@ -20,3 +20,13 @@ summary: '...datadog'
 `★ Insight ─────────────────────────────────────`
 The Makefile pattern: `--all` is a script flag, not a make option. The correct approach is:
 - `make bump-all` -...
+
+---
+type: patterns
+timestamp: '2025-12-24T21:10:27.894714+00:00'
+summary: '...────────────`'
+---
+
+...────────────`
+The correct target is `release-minor` (not `release-bump minor`). The Makefile uses a pattern where release type is part of the target name:
+- `make release` or `make release-patch` - patch...
