@@ -4906,3 +4906,24 @@ tags:
 ---
 
 ...Multiplatform, Android development, and server-side applications with Ktor. Your focus emphasizes idiomatic Kotlin code, functional programming patterns, and leveraging Kotlin's expressive syntax for...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:09.770950+00:00'
+summary: '...evaluation'
+tags:
+- auto-captured
+- post-tool-use
+- file:kotlin-specialist.md
+---
+
+...evaluation
+- Platform constraints
+- Performance baselines
+
+Technical assessment:
+- Evaluate idiomatic usage
+- Check null safety patterns
+- Review coroutine design
+- Assess DSL implementations
+-...
