@@ -97,3 +97,19 @@ tags:
   Output: Files modified, pattern applied, tests passing"
 )
 ─────────────────────────────────────────────────────────────────────────
+
+---
+type: patterns
+timestamp: '2025-12-24T05:14:07.914661+00:00'
+summary: '...NOT available:'
+tags:
+- auto-captured
+- post-tool-use
+- file:code-cleanup.md
+---
+
+...NOT available:
+1. Note in report: "LSP unavailable - using Grep fallback"
+2. Use Grep for pattern matching
+3. Manually verify references to avoid false positives
+4. Document any uncertainty...
