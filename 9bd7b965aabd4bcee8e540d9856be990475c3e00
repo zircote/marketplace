@@ -6933,3 +6933,19 @@ tags:
 
 Performance excellence:
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:13.624104+00:00'
+summary: '...enabled'
+tags:
+- auto-captured
+- post-tool-use
+- file:legal-advisor.md
+---
+
+...enabled
+
+<output_format type="completion_notification">
+Delivery notification:
+"Legal framework completed. Reviewed 89 contracts identifying $2.3M in risk reduction. Updated 23 policies achieving...
