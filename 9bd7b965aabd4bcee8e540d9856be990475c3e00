@@ -912,3 +912,18 @@ tags:
 ### Pattern 6: User Interaction (UNSTANDARDIZED)
 - AskUserQuestion used in 8+ commands
 - No consistent...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:45:37.018873+00:00'
+summary: '..."magic" tags exist | HIGH | Explicitly stated |'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_NOTES.md
+---
+
+..."magic" tags exist | HIGH | Explicitly stated |
+| Nesting for hierarchy | HIGH | Official best practice |
+| Agents would benefit | MEDIUM | Logical extension, no explicit guidance |
+| 40+ tags in...
