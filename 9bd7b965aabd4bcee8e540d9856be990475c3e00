@@ -9561,3 +9561,16 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Risk management framework completed. Identified and quantified 247 risks with 189 controls implemented. Achieved 98% compliance...
+
+---
+type: progress
+timestamp: '2025-12-24T07:29:23.514737+00:00'
+summary: '...notification:'
+tags:
+- auto-captured
+- post-tool-use
+- file:risk-manager.md
+---
+
+...notification:
+"Risk management framework completed. Identified and quantified 247 risks with 189 controls implemented. Achieved 98% compliance score across all regulations. Reduced operational losses by 67% through...
