@@ -8410,3 +8410,25 @@ tags:
 
 Performance patterns:
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:01.588530+00:00'
+summary: '...approach'
+tags:
+- auto-captured
+- post-tool-use
+- file:performance-engineer.md
+---
+
+...approach
+- Tool utilization
+- Data correlation
+- Hypothesis testing
+- Root cause analysis
+- Solution validation
+- Impact assessment
+- Prevention planning
+
+Integration with other agents:
+- Collaborate...
