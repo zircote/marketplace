@@ -2995,3 +2995,21 @@ tags:
 ...────────────────────`
 
 Let me create a Python script to batch-update all commands with the `--help` pattern:
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:53.095068+00:00'
+summary: '...type="excellence">'
+tags:
+- auto-captured
+- post-tool-use
+- file:vue-expert.md
+---
+
+...type="excellence">
+Excellence checklist:
+<item>Reactivity optimized</item>
+<item>Components reusable</item>
+<item>Tests comprehensive</item>
+<item>Performance excellent</item>
+<item>Bundle minimized</item...
