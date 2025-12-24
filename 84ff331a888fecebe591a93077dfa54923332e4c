@@ -73,3 +73,22 @@ Configured ENABLE_LSP_TOOL=1 in ~/.bashrc and verified the LSP tool is operation
 ## Related Files
 - ~/.bashrc (added export)
 - plugins/nsip/hooks/scripts/lpn_validator.py (test file)
+
+---
+type: progress
+timestamp: '2025-12-24T18:45:44.056924+00:00'
+summary: Created LSP setup and troubleshooting documentation
+---
+
+Created LSP setup and troubleshooting documentation
+## Summary
+Documentation engineer agent created comprehensive LSP guide for Claude Code users.
+
+## Changes Made
+- Created docs/LSP-GUIDE.md (1,051 lines)
+- Covers setup for 12 languages (Python, TypeScript, Go, Rust, Java, C/C++, C#, PHP, Ruby, HTML/CSS, Kotlin, LaTeX)
+- Includes troubleshooting for common errors
+- Added diagnostic commands and health check scripts
+
+## Related Files
+- ~/.claude/plugins/cache/zircote-claude-marketplace/lsp-tools/0.1.0/docs/LSP-GUIDE.md
