@@ -3104,3 +3104,22 @@ tags:
 ### 3. Rails Excellence
 
 Deliver exceptional Rails...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:17:33.189236+00:00'
+summary: '...types'
+tags:
+- auto-captured
+- post-tool-use
+- file:rust-engineer.md
+---
+
+...types
+- Generic trait implementations
+- Trait objects and dynamic dispatch
+- Extension traits pattern
+- Marker traits usage
+- Default implementations
+- Supertraits and trait aliases
+- Const trait...
