@@ -3161,3 +3161,26 @@ Implementation approach:
 - Apply const generics
 - Leverage trait system
 - Minimize...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:17:47.701347+00:00'
+summary: '...assessment'
+tags:
+- auto-captured
+- post-tool-use
+- file:task-distributor.md
+---
+
+...assessment
+- Priority analysis
+- Deadline mapping
+- Resource requirements
+- Capacity evaluation
+- Pattern identification
+- Optimization planning
+
+Workload evaluation:
+- Analyze tasks
+- Profile workloads
+-...
