@@ -57,6 +57,8 @@ release:  ## Bump changed plugins (patch) and push tags
 	$(PYTHON) $(SCRIPTS)/smart-bump.py patch
 	git push --follow-tags
 
+release-patch: release  ## Alias for 'release' (bump patch and push tags)
+
 release-minor:  ## Bump changed plugins (minor) and push tags
 	$(PYTHON) $(SCRIPTS)/smart-bump.py minor
 	git push --follow-tags
