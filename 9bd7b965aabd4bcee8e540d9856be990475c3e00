@@ -1324,3 +1324,26 @@ tags:
     my-route/
       index.tsx               # Route component
       create/...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:59:47.086258+00:00'
+summary: '..../node_modules'
+tags:
+- auto-captured
+- post-tool-use
+- file:SKILL.md
+---
+
+..../node_modules
+USER node
+CMD ["node", "dist/server.js"]
+</code>
+</example>
+
+### CI/CD Pipeline Pattern
+
+<example type="usage">
+<code language="yaml">
+# 1. Build: Docker multi-stage build
+# 2. Test:...
