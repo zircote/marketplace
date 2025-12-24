@@ -234,3 +234,16 @@ All 116 agents mix MCP tools (Read, Write, Glob) with CLI tools (docker, kubectl
 - plugins/zircote/agents/02-language-specialists/golang-pro.md:7
 - plugins/zircote/agents/03-infrastructure/network-engineer.md:7
 - plugins/zircote/agents/04-quality-security/code-reviewer.md:7
+
+---
+type: patterns
+timestamp: '2025-12-24T05:25:01.243726+00:00'
+summary: '...commands.**'
+---
+
+...commands.**
+
+`★ Insight ─────────────────────────────────────`
+**code-cleanup.md Integration Pattern:**
+The code-cleanup command required LSP integration at **both steps**:
+- **Step 1 (Review)**:...
