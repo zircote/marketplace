@@ -858,3 +858,21 @@ tags:
 ### Pattern 3: Conditional Logic (NEEDS FORMALIZATION)
 - Currently: Embedded in prose
 - Recommendation:...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:45:36.957332+00:00'
+summary: '...FORMALIZATION)'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_NOTES.md
+---
+
+...FORMALIZATION)
+- Currently: Embedded in prose
+- Recommendation: `<conditional>` or `<when>` tags
+
+### Pattern 4: Error Handling (GAPS)
+- Only 8/41 commands have structured error handling
+- Recommendation:...
