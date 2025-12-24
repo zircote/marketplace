@@ -7307,3 +7307,25 @@ Excellence checklist:
 - POC successful
 - Proposal delivered
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:37.430044+00:00'
+summary: '...architected'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...architected
+- Value demonstrated
+- Objections resolved
+- POC successful
+- Proposal delivered
+- Handoff completed
+- Customer enabled
+
+<output_format type="completion_notification">
+Delivery notification:
+"Sales...
