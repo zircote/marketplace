@@ -1384,3 +1384,18 @@ tags:
 ```bash
 echo "=== CI-specific scripts ==="
 find . -type f \( -name "*jenkins*" -o...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:01:07.502698+00:00'
+summary: '...secrets.VARIABLE }}` or `${{ vars.VARIABLE }}` |'
+tags:
+- auto-captured
+- post-tool-use
+- file:migrate.md
+---
+
+...secrets.VARIABLE }}` or `${{ vars.VARIABLE }}` |
+| `set_pipeline:` | Workflow dispatch or reusable workflows |
+
+**Vault/CredHub secrets**: Document all `((var))` references for manual migration...
