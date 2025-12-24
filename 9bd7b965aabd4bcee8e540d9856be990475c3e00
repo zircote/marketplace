@@ -7158,3 +7158,25 @@ tags:
 <checklist type="business_analysis">
 Business analysis checklist:
 <item>Requirements...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:32.642840+00:00'
+summary: '...assessment'
+tags:
+- auto-captured
+- post-tool-use
+- file:business-analyst.md
+---
+
+...assessment
+- Process mapping
+- Data modeling
+- Statistical analysis
+- Predictive modeling
+
+Solution design:
+- Requirements documentation
+- Functional specifications
+- System architecture
+- Integration...
