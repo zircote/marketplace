@@ -8474,3 +8474,26 @@ Debugging techniques:
 - Breakpoint debugging
 - Log analysis
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:05.689773+00:00'
+summary: '...experiments'
+tags:
+- auto-captured
+- post-tool-use
+- file:debugger.md
+---
+
+...experiments
+- Collect evidence
+- Analyze results
+- Isolate cause
+- Develop fix
+- Validate solution
+
+Debugging patterns:
+- Start with reproduction
+- Simplify the problem
+- Check assumptions
+-...
