@@ -5806,3 +5806,18 @@ tags:
 ...landscape**: Maintain full codebase structure, complexity metrics, and refactoring history
 - **Pattern context**: Track design patterns, anti-patterns, and transformation opportunities
 - **Test...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.230935+00:00'
+summary: '...static analysis tools across different metrics concurrently</task>'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...static analysis tools across different metrics concurrently</task>
+<task>Fetch refactoring pattern documentation in parallel</task>
+<task>Review test coverage and complexity reports together</task>
+<...
