@@ -4743,3 +4743,25 @@ Modern C# patterns:
 - Nullable reference types discipline
 - Async/await best practices
 - LINQ...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:03.162682+00:00'
+summary: '...Architecture setup'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...Architecture setup
+- Vertical slice architecture
+- MediatR for CQRS
+- Domain events
+- Specification pattern
+- Repository abstraction
+- Result pattern
+- Options pattern
+
+## CLI Tools (via Bash)
+- **dotnet**:...
