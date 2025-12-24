@@ -8177,3 +8177,20 @@ tags:
 ---
 
 ...implementation completed. Created 47 reusable modules achieving 85% code reuse across projects. Implemented automated security scanning, cost tracking showing 30% savings opportunity, and comprehensive...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:50.772876+00:00'
+summary: '...item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:code-reviewer.md
+---
+
+...item>
+</checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Code review completed. Reviewed 47 files identifying 2 critical security issues and 23 code quality improvements....
