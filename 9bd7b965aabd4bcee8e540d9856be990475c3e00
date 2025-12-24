@@ -3903,3 +3903,22 @@ tags:
 <item>Distributed tracing enabled</item>
 <item>Monitoring and alerting ready</item>
 <item>Deployment...
+
+---
+type: progress
+timestamp: '2025-12-24T07:10:42.666060+00:00'
+summary: '...scalability.'
+tags:
+- auto-captured
+- post-tool-use
+- file:microservices-architect.md
+---
+
+...scalability.
+
+<checklist type="production_readiness">
+Production checklist:
+<item>Load testing completed</item>
+<item>Failure scenarios tested</item>
+<item>Monitoring dashboards live</item>
+<item>Runbooks...
