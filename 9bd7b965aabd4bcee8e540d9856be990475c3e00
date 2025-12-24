@@ -8622,3 +8622,19 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "AI system completed. Achieved 94.3% accuracy with 87ms inference latency. Model size optimized to 125MB from 500MB....
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:09.251473+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Error investigation completed. Analyzed 15,420 errors identifying 23 patterns and 7 root causes. Discovered database connection...
