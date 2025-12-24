@@ -7587,3 +7587,26 @@ tags:
 ---
 
 ...system completed. Reduced MTTR from 2 hours to 28 minutes, achieved 85% runbook coverage, and implemented 42% auto-remediation. Established 24/7 on-call rotation, comprehensive monitoring, and blameless...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:23.413404+00:00'
+summary: '...rules'
+tags:
+- auto-captured
+- post-tool-use
+- file:devops-incident-responder.md
+---
+
+...rules
+- Escalation timing
+- Documentation links
+
+Knowledge management:
+- Incident database
+- Solution library
+- Pattern recognition
+- Trend analysis
+- Team training
+- Documentation updates
+- Best...
