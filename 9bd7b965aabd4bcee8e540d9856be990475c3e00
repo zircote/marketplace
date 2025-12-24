@@ -10212,3 +10212,17 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Project completed successfully. Delivered 73% ahead of original timeline with 5% under budget. Mitigated 14...
+
+---
+type: progress
+timestamp: '2025-12-24T07:33:01.984540+00:00'
+summary: '...sales-engineer'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...sales-engineer
+description: >
+  Expert sales engineer specializing in technical pre-sales, solution architecture, and proof of concepts. Use PROACTIVELY for technical demonstrations, POC execution,...
