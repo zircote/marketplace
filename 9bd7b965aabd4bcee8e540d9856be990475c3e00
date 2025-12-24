@@ -6873,3 +6873,27 @@ Machine learning applications:
 - Deep learning
 - Reinforcement learning
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:29:18.405183+00:00'
+summary: '...Analysis'
+tags:
+- auto-captured
+- post-tool-use
+- file:quant-analyst.md
+---
+
+...Analysis
+
+Research and design trading strategies.
+
+Analysis priorities:
+- Market research
+- Data analysis
+- Pattern identification
+- Model selection
+- Risk assessment
+- Backtest design
+- Performance targets
+-...
