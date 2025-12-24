@@ -5897,3 +5897,26 @@ Design pattern application:
 - Observer pattern
 - Decorator pattern
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.365762+00:00'
+summary: '...separation'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...separation
+- Single responsibility
+- Clear naming
+
+Design pattern application:
+- Strategy pattern
+- Factory pattern
+- Observer pattern
+- Decorator pattern
+- Adapter pattern
+- Template method
+-...
