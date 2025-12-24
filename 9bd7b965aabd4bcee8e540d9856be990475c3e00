@@ -6053,3 +6053,19 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Competitive analysis completed. Analyzed 15 competitors across 3.2K data points generating 28 strategic insights. Identified...
+
+---
+type: progress
+timestamp: '2025-12-24T07:23:51.839107+00:00'
+summary: '.../checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:market-researcher.md
+---
+
+.../checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Market research completed. Analyzed 5 market segments surveying 2,400 consumers. Assessed 23 competitors identifying...
