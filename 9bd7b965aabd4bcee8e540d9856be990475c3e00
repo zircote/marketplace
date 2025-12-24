@@ -5455,3 +5455,24 @@ Knowledge management:
 - Documentation updates
 - Best practices
 - Lessons...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:27.918760+00:00'
+summary: '...Performance regression detection'
+tags:
+- auto-captured
+- post-tool-use
+- file:build-engineer.md
+---
+
+...Performance regression detection
+- A/B testing builds
+- Feedback collection
+- Tool evaluation
+- Best practice updates
+- Team training
+- Process refinement
+- Innovation tracking
+
+Integration with other...
