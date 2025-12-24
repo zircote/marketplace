@@ -1,0 +1,45 @@
+{
+  "$schema": "https://claude.ai/hooks-schema.json",
+  "hooks": [
+    {
+      "name": "compile-check-maven",
+      "description": "Run Maven compile check after Java edits",
+      "event": "PostToolUse",
+      "matcher": "Write|Edit|str_replace_editor",
+      "type": "command",
+      "command": "if [ -f pom.xml ]; then mvn compile -q 2>&1 | grep -E '\\[ERROR\\]' | head -10; fi || true",
+      "conditions": {
+        "fileExtensions": [".java"]
+      }
+    },
+    {
+      "name": "compile-check-gradle",
+      "description": "Run Gradle compile check after Java edits",
+      "event": "PostToolUse",
+      "matcher": "Write|Edit|str_replace_editor",
+      "type": "command",
+      "command": "if [ -f build.gradle ] || [ -f build.gradle.kts ]; then ./gradlew compileJava --console=plain 2>&1 | grep -E '^e:' | head -10; fi || true",
+      "conditions": {
+        "fileExtensions": [".java"]
+      }
+    },
+    {
+      "name": "pre-commit-quality-gate-maven",
+      "description": "Full Maven quality check before git commits",
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "type": "command",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit' && [ -f pom.xml ]; then mvn compile test -q; fi",
+      "blocking": true
+    },
+    {
+      "name": "pre-commit-quality-gate-gradle",
+      "description": "Full Gradle quality check before git commits",
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "type": "command",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit' && [ -f build.gradle ]; then ./gradlew build --console=plain; fi",
+      "blocking": true
+    }
+  ]
+}
