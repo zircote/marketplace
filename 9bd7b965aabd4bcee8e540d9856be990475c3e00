@@ -3707,3 +3707,21 @@ Anomaly detection:
 - Clustering analysis
 - Time-series forecasting
 - Alert suppression...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:29.027636+00:00'
+summary: '...before synthesis</task>'
+tags:
+- auto-captured
+- post-tool-use
+- file:research-analyst.md
+---
+
+...before synthesis</task>
+<task>Fact verification must pass before insight claims</task>
+<task>Pattern validation must precede strategic recommendations</task>
+</sequential>
+</execution_strategy>
+
+<deliberate...
