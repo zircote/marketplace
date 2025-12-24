@@ -2598,3 +2598,24 @@ tags:
 
 Spring ecosystem mastery:
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:15:09.434137+00:00'
+summary: '...Observability setup'
+tags:
+- auto-captured
+- post-tool-use
+- file:java-architect.md
+---
+
+...Observability setup
+
+Modern Java features:
+- Records for data carriers
+- Sealed classes for domain
+- Pattern matching usage
+- Virtual threads adoption
+- Text blocks for queries
+- Switch expressions
+-...
