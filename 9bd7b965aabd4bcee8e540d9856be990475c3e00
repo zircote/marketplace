@@ -7264,3 +7264,25 @@ tags:
 ...Query context manager for prospect requirements and technical landscape
 2. Review existing solution capabilities, competitive landscape, and use cases
 3. Analyze technical requirements, integration...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:37.393733+00:00'
+summary: '...migration'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...migration
+- Integration setup
+- Performance testing
+- Security validation
+- Results documentation
+
+Solution architecture:
+- Requirements gathering
+- Architecture design
+- Integration planning
+- Scalability...
