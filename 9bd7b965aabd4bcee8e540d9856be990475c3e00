@@ -1019,3 +1019,18 @@ tags:
 | Issue | Status | Files Modified |
 |-------|--------|----------------|
 | Add LSP to...
+
+---
+type: progress
+timestamp: '2025-12-24T06:04:49.889951+00:00'
+summary: '...Files Modified |'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...Files Modified |
+|-------|--------|----------------|
+| Add LSP to language specialists | ✅ Completed | 23 agents in `02-language-specialists/` |
+| Rename "MCP Tool Suite" → "CLI Tools (via Bash)"...
