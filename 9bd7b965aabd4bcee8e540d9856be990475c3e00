@@ -5224,3 +5224,22 @@ tags:
 - Temporal API adoption
 - WeakRef and FinalizationRegistry
 - Dynamic imports...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:17.165428+00:00'
+summary: '...field encapsulation'
+tags:
+- auto-captured
+- post-tool-use
+- file:javascript-pro.md
+---
+
+...field encapsulation
+- Static methods and properties
+- Inheritance vs composition
+- Design pattern implementation
+
+Performance optimization:
+- Memory leak prevention
+- Garbage collection optimization...
