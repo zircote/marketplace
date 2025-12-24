@@ -5434,3 +5434,18 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Data research completed. Processed 23 datasets containing 4.7M records. Discovered 18 significant patterns with 95%...
+
+---
+type: progress
+timestamp: '2025-12-24T07:20:47.147623+00:00'
+summary: '...Utilization'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-core-expert.md
+---
+
+...Utilization
+Leverage Opus 4.5's extended context for:
+- **Complete .NET architecture**: Maintain full solution structure, project dependencies, and configuration files
+- **Microservices topology**: Track...
