@@ -7,9 +7,14 @@
   },
   "metadata": {
     "description": "Curated collection of Claude Code plugins: NSIP breeding data, agents, git workflows, monitoring, document processing, and project specification lifecycle",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "plugins": [
+    {
+      "name": "lsp-tools",
+      "source": "./plugins/lsp-tools",
+      "description": "LSP-first code intelligence enforcing Language Server Protocol usage for all code operations across 12 languages"
+    },
     {
       "name": "datadog",
       "source": "./plugins/datadog",

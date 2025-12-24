@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 6 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 7 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -18,6 +18,7 @@ claude /plugin list
 # Install a specific plugin
 claude /plugin install zircote    # 116 specialized agents
 claude /plugin install gh         # Git workflow + Copilot onboarding
+claude /plugin install lsp-tools  # LSP-first code intelligence
 claude /plugin install datadog    # DataDog monitoring agents
 claude /plugin install document-skills  # PDF/DOCX/XLSX/PPTX processing
 claude /plugin install nsip       # Sheep breeding data (NSIP)
@@ -80,6 +81,48 @@ Streamlined version control operations, GitHub ecosystem integration, and Copilo
 
 ```bash
 claude /plugin install gh
+```
+
+---
+
+### lsp-tools - LSP-First Code Intelligence
+
+LSP-first code intelligence for Claude Code - enforces Language Server Protocol usage for all code operations.
+
+**Command:**
+| Command | Description |
+|---------|-------------|
+| `/lsp-setup` | Copies language-specific hooks to project's `.claude/hooks.json` |
+
+**Skill:** `lsp-enable` - Enforces the "Three Iron Laws" of LSP-first development:
+1. **Never guess** - Always use LSP for definitions, references, and symbols
+2. **Never assume** - Verify imports, types, and dependencies via LSP
+3. **Never skip** - Run LSP diagnostics before and after every change
+
+**Language Support (12 languages):**
+| Language | LSP Server | Key Operations |
+|----------|------------|----------------|
+| TypeScript/JavaScript | typescript-language-server | Go to definition, find references, rename |
+| Python | pylsp, pyright | Type checking, import resolution |
+| Go | gopls | Package navigation, interface implementation |
+| Rust | rust-analyzer | Trait resolution, macro expansion |
+| Java | jdtls | Maven/Gradle integration, refactoring |
+| Kotlin | kotlin-language-server | Null safety, coroutine support |
+| C# | omnisharp | .NET integration, NuGet packages |
+| C/C++ | clangd | Header navigation, compile commands |
+| Ruby | solargraph | Gem resolution, YARD documentation |
+| PHP | intelephense | Composer packages, PSR standards |
+| HTML/CSS | vscode-html-language-server | Class references, selector validation |
+| LaTeX | texlab | Citation resolution, reference checking |
+
+**Reference Documentation:**
+- LSP Operations Guide
+- Enforcement Protocol
+- Decision Matrix
+- Setup Verification
+
+```bash
+claude /plugin install lsp-tools
 ```
 
 ---
@@ -193,6 +236,9 @@ marketplace/
 │   │   ├── agents/               # copilot-assistant
 │   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune, migrate
 │   │   └── skills/               # GitHub ecosystem
+│   ├── lsp-tools/                # LSP-first code intelligence
+│   │   ├── commands/             # lsp-setup
+│   │   └── skills/               # lsp-enable
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
 │   ├── document-skills/          # Document processing
@@ -316,7 +362,7 @@ MIT License. Individual plugins may have their own licenses - see each plugin's 
 
 ## Version
 
-**Marketplace:** 1.5.0
+**Marketplace:** 1.6.0
 
 ---
 

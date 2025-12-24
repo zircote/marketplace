@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2025-12-23
+
 ### Added
+- **lsp-tools plugin v0.1.0** - LSP-first code intelligence for Claude Code
+  - `lsp-enable` skill enforcing "Three Iron Laws" of LSP-first development
+  - `/lsp-setup` command for language-specific hook installation
+  - Support for 12 languages: TypeScript/JavaScript, Python, Go, Rust, Java, Kotlin, C#, C/C++, Ruby, PHP, HTML/CSS, LaTeX
+  - Reference documentation: Operations Guide, Enforcement Protocol, Decision Matrix, Setup Verification
 - CONTRIBUTING.md with comprehensive plugin development guidelines
 - Descriptions for all local plugins in marketplace.json
 - Anti-hallucination rules to shepherd.md agent
@@ -20,6 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Standardized author email field across all plugin.json files
 
 ### Fixed
+- gh plugin: Added missing `gm-ci-assist.md` command to plugin.json manifest
+- datadog plugin: Corrected README.md version (0.2.1) to match plugin.json
 - Removed non-existent commands array from zircote plugin.json
 - Fixed gh plugin.json description (was incorrectly claiming 115+ agents)
 - Fixed gh plugin.json keywords (were copied from wrong plugin)
