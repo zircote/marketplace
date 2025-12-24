@@ -5657,3 +5657,26 @@ tags:
 
 <execution_strategy>
 ###...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:50.736281+00:00'
+summary: '...effectiveness'
+tags:
+- auto-captured
+- post-tool-use
+- file:code-reviewer.md
+---
+
+...effectiveness
+- Async patterns
+- Resource leaks
+
+Design patterns:
+- SOLID principles
+- DRY compliance
+- Pattern appropriateness
+- Abstraction levels
+- Coupling analysis
+- Cohesion assessment
+- Interface...
