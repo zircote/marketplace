@@ -6329,3 +6329,19 @@ tags:
 <output_format type="completion_notification">
 Delivery message:
 "Swift implementation completed. Delivered universal SwiftUI app supporting iOS 17+, macOS 14+, with 85% code sharing. Features...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:03.070227+00:00'
+summary: '...code and architectural patterns.'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...code and architectural patterns.
+
+When invoked:
+1. Query context manager for existing .NET solution structure and project configuration
+2. Review .csproj files, NuGet packages, and solution architecture...
