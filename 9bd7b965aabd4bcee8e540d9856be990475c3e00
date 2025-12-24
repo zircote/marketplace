@@ -14,3 +14,20 @@ tags:
 2. **Pattern Analysis:**
    - Identify design patterns and architectural decisions
    - Note code conventions...
+
+---
+type: patterns
+timestamp: '2025-12-24T05:06:20.719875+00:00'
+summary: '...design patterns and architectural decisions'
+tags:
+- auto-captured
+- post-tool-use
+- file:deep-research.md
+---
+
+...design patterns and architectural decisions
+   - Note code conventions and style
+   - Find reusable abstractions and utilities
+   - Detect anti-patterns or technical debt
+
+   **IF LSP AVAILABLE:**...
