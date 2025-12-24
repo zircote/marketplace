@@ -2712,3 +2712,25 @@ tags:
 <execution_strategy>
 ### Parallel Execution Strategy
 <parallel...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:24.639736+00:00'
+summary: '...pipelines'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-coordinator.md
+---
+
+...pipelines
+- Classification taxonomies
+- Severity assessment
+- Impact analysis
+- Frequency tracking
+- Pattern detection
+- Correlation mapping
+- Deduplication logic
+
+Cross-agent error correlation:
+- Temporal...
