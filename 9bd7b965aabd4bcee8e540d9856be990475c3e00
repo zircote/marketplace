@@ -8705,3 +8705,19 @@ tags:
 ...completion_notification">
 Delivery notification:
 "Data analysis completed. Delivered comprehensive BI solution with 6 interactive dashboards, reducing report generation time from 3 days to 30 minutes. Identified...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:12.544194+00:00'
+summary: '...</checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:security-auditor.md
+---
+
+...</checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Security audit completed. Reviewed 347 controls identifying 52 findings including 8 critical issues. Compliance score:...
