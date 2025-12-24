@@ -3309,3 +3309,22 @@ tags:
 ## Agent Review Complete
 
 I've completed the comprehensive review of all **116 agents** across 10 categories in `plugins/zircote/agents/`....
+
+---
+type: progress
+timestamp: '2025-12-24T07:06:36.016183+00:00'
+summary: '...────────────────
+
+  All remediation tasks are complete. Here''s a summary of what was accomplishe...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+...────────────────
+
+All remediation tasks are complete. Here's a summary of what was accomplished:
+
+**Completed Remediations:**
+
+1. **MCP Tool Provenance (4 agents)** - Added clarifying documentation to...
