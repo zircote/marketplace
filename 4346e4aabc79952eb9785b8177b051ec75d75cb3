@@ -102,3 +102,17 @@ tags:
 **IMPORTANT: Fetch GraphQL Thread IDs for Resolution**
 
 The REST API comment IDs cannot be used to resolve...
+
+---
+type: learnings
+timestamp: '2025-12-24T08:04:51.035022+00:00'
+summary: '```bash'
+tags:
+- auto-captured
+- post-tool-use
+- file:review-comments.md
+---
+
+```bash
+# IMPORTANT: GraphQL variables ($owner, $repo, $pr) must be escaped with backslashes
+# to prevent shell...
