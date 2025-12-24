@@ -2373,3 +2373,24 @@ tags:
 
 Design validation:
 - Type...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:10:53.672981+00:00'
+summary: '...machine'
+tags:
+- auto-captured
+- post-tool-use
+- file:websocket-engineer.md
+---
+
+...machine
+- Automatic reconnection
+- Exponential backoff
+- Message queueing
+- Event emitter pattern
+- Promise-based API
+- TypeScript definitions
+- React/Vue/Angular integration
+
+Monitoring and...
