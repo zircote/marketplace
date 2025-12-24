@@ -3763,3 +3763,26 @@ tags:
 Information gathering:
 - Primary research
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:29.085391+00:00'
+summary: '...validation'
+tags:
+- auto-captured
+- post-tool-use
+- file:research-analyst.md
+---
+
+...validation
+- Accuracy confirmation
+- Relevance scoring
+
+Data synthesis:
+- Information organization
+- Pattern identification
+- Trend analysis
+- Correlation finding
+- Causation assessment
+- Gap identification
+-...
