@@ -5521,3 +5521,25 @@ tags:
 
 Technical evaluation:
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:48.842260+00:00'
+summary: '...metrics'
+tags:
+- auto-captured
+- post-tool-use
+- file:legacy-modernizer.md
+---
+
+...metrics
+- Rollback strategies
+- Communication plan
+
+Migration strategies:
+- Strangler fig pattern
+- Branch by abstraction
+- Parallel run approach
+- Event interception
+- Asset capture
+- Database...
