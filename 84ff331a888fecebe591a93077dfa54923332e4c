@@ -1,0 +1,17 @@
+---
+type: patterns
+timestamp: '2025-12-24T18:41:04.991830+00:00'
+summary: '...|'
+tags:
+- auto-captured
+- post-tool-use
+- file:LSP-GUIDE.md
+---
+
+...|
+| Search for string literals | Grep |
+| Find configuration values | Grep |
+| Find files by pattern | Glob |
+| Read a known file | Read |
+
+**Rule of thumb:** Use LSP for semantic operations (symbols,...
