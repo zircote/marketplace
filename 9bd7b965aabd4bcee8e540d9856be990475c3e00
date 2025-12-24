@@ -2070,3 +2070,26 @@ tags:
 - [ ] Code follows project conventions
 - [ ] Documentation updated (if applicable)
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T06:56:34.289265+00:00'
+summary: '...REMOTE}/${BRANCH}'
+tags:
+- auto-captured
+- post-tool-use
+- file:fr.md
+---
+
+...REMOTE}/${BRANCH}
+   ```
+</step>
+
+<step number="4">
+**Report success**:
+   <conditional>
+   If rebase completed successfully:
+   > "Successfully rebased onto ${REMOTE}/${BRANCH}"
+   </conditional>
+
+   Show...
