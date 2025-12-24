@@ -9407,3 +9407,20 @@ tags:
 
 ...notification:
 "Game development completed. Achieved stable 72 FPS across all platforms with 2.3s load times. Implemented ECS architecture supporting 1000+ entities. Multiplayer supports 64 players with 45ms average...
+
+---
+type: progress
+timestamp: '2025-12-24T07:29:06.331788+00:00'
+summary: '...item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:iot-engineer.md
+---
+
+...item>
+</checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"IoT platform completed. Connected 50,000 devices with 99.95% uptime. Processing 100K messages/second with 234ms average...
