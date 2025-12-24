@@ -3529,3 +3529,25 @@ Pattern recognition systems:
 - Success patterns
 - Failure patterns
 - Communication...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.371113+00:00'
+summary: '...patterns'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...patterns
+- Resource patterns
+- Optimization patterns
+- Evolution patterns
+- Emergence detection
+
+Best practice identification:
+- Performance analysis
+- Success factor isolation
+- Efficiency patterns
+-...
