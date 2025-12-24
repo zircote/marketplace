@@ -449,3 +449,30 @@ Implemented maximum coverage mode that deploys 11+ specialist agents for the mos
 
 ## Related Files
 - ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:815-918
+
+---
+type: progress
+timestamp: '2025-12-24T19:21:25.612485+00:00'
+summary: '▶ progress ─────────────────────────────────────
+
+  Added `--focus=MAXALL` convenience wrapper
+
+  ## S...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+Added `--focus=MAXALL` convenience wrapper
+## Summary
+Single flag that combines `--focus=MAX` + `--all` for fully autonomous maximum coverage review and remediation.
+
+## Changes Made
+- Added `MAXALL` to argument-hint
+- Added `MAXALL` to help OPTIONS section
+- Added `--focus=MAXALL` section with behavior definition
+- Updated combination table to show equivalence
+- Added distinct announcement message
+
+## Related Files
+- ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:920-970
