@@ -3248,3 +3248,17 @@ tags:
 - Alignment requirements
 
 Performance...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:01.665820+00:00'
+summary: '...tests while reviewing IIS configurations</task>'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-framework-4.8-expert.md
+---
+
+...tests while reviewing IIS configurations</task>
+<task>Fetch MSDN documentation and legacy pattern references concurrently</task>
+<task>Review WCF services and their client configurations together</task...
