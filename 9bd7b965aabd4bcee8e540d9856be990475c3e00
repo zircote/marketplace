@@ -7141,3 +7141,20 @@ tags:
 <task>Requirements must be validated before solution design</task>
 <task>Stakeholder approval must be obtained before implementation</task>
 </sequential>...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:32.624191+00:00'
+summary: '...Analyze gaps, opportunities, and improvement potential'
+tags:
+- auto-captured
+- post-tool-use
+- file:business-analyst.md
+---
+
+...Analyze gaps, opportunities, and improvement potential
+4. Deliver actionable insights and solution recommendations
+
+<checklist type="business_analysis">
+Business analysis checklist:
+<item>Requirements...
