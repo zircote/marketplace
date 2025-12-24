@@ -4806,3 +4806,24 @@ tags:
 ## CLI Tools (via Bash)
 - **dotnet**: CLI for building, testing, and publishing
 - **msbuild**:...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:03.252424+00:00'
+summary: '...features.'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...features.
+
+Implementation focus:
+- Use primary constructors
+- Apply file-scoped namespaces
+- Leverage pattern matching
+- Implement with records
+- Use nullable reference types
+- Apply LINQ efficiently
+-...
