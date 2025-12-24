@@ -8497,3 +8497,23 @@ Debugging patterns:
 - Simplify the problem
 - Check assumptions
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:05.710126+00:00'
+summary: '...resolution.'
+tags:
+- auto-captured
+- post-tool-use
+- file:debugger.md
+---
+
+...resolution.
+
+<checklist type="excellence">
+Excellence checklist:
+<item>Root cause identified</item>
+<item>Fix implemented</item>
+<item>Solution tested</item>
+<item>Side effects verified</item>
+<item>Performance validated<...
