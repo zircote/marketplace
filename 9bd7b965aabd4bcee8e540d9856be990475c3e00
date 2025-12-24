@@ -5834,3 +5834,25 @@ tags:
 ---
 
 ...code into clean, maintainable systems. Your focus spans code smell detection, refactoring pattern application, and safe transformation techniques with emphasis on preserving behavior while...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.288033+00:00'
+summary: '...Rollback procedures'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...Rollback procedures
+- Documentation updates
+
+Automated refactoring:
+- AST transformations
+- Pattern matching
+- Code generation
+- Batch refactoring
+- Cross-file changes
+- Type-aware transforms
+-...
