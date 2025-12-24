@@ -8803,3 +8803,16 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Compliance audit completed. Achieved SOC 2 Type II readiness with 94% control effectiveness. Implemented automated evidence...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:16.177629+00:00'
+summary: '...notification:'
+tags:
+- auto-captured
+- post-tool-use
+- file:compliance-auditor.md
+---
+
+...notification:
+"Compliance audit completed. Achieved SOC 2 Type II readiness with 94% control effectiveness. Implemented automated evidence collection for 87% of controls, reducing audit preparation from 3 months...
