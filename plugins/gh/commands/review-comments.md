@@ -449,6 +449,16 @@ gh api repos/{owner}/{repo}/pulls/${PR_NUMBER}/comments/${COMMENT_ID}/replies \
 <phase number="6" name="Resolution and Summary">
 # PHASE 6: RESOLUTION & SUMMARY
 
+<mandatory_resolution>
+**⚠️ MANDATORY: Thread Resolution Required**
+
+You MUST resolve all addressed comment threads before completing this command. This is NOT optional.
+
+**Failure mode to avoid:** Responding to comments but leaving threads unresolved. This defeats the purpose of the command.
+
+**Verification requirement:** After resolution attempts, you MUST run a verification query to confirm all threads are resolved.
+</mandatory_resolution>
+
 ## 6.1 Mark Conversations Resolved
 
 After addressing a comment thread, resolve it using the GraphQL API.
@@ -569,6 +579,43 @@ fi
 ```
 </resolution_workflow>
 
+<resolution_verification>
+## 6.1.1 MANDATORY: Verify All Threads Resolved
+
+**After all resolution attempts, you MUST verify that threads are actually resolved:**
+
+```bash
+# Verify all threads are resolved
+gh api graphql \
+  -F owner="${OWNER}" \
+  -F repo="${REPO}" \
+  -F pr="${PR_NUMBER}" \
+  -f query='
+    query($owner: String!, $repo: String!, $pr: Int!) {
+      repository(owner: $owner, name: $repo) {
+        pullRequest(number: $pr) {
+          reviewThreads(first: 100) {
+            nodes {
+              id
+              isResolved
+              path
+              line
+            }
+          }
+        }
+      }
+    }
+  ' | jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)'
+```
+
+**If any unresolved threads remain that you addressed:**
+1. Retry resolution for those specific threads
+2. If retry fails, report the failure explicitly to the user
+3. Do NOT mark the command as complete until all addressed threads are resolved or explicitly failed
+
+**Success criteria:** The verification query returns empty (no unresolved threads for comments you addressed).
+</resolution_verification>
+
 ## 6.2 Generate Summary Report
 
 Create a summary of all actions taken:
@@ -683,7 +730,21 @@ When an error occurs:
 4. **Preserve reviewer attribution** - Always credit the reviewer in responses
 5. **Never force-push** - If commits are needed, use normal push
 6. **Commit incrementally** - Group related fixes into logical commits
-7. **Resolve threads after responding** - Always attempt thread resolution for addressed comments
+7. **⚠️ MANDATORY: Resolve ALL threads** - Every addressed comment thread MUST be resolved via GraphQL mutation
+8. **⚠️ MANDATORY: Verify resolution** - Run verification query to confirm threads are resolved before completing
+
+<execution_checklist>
+**Before marking this command complete, verify ALL of the following:**
+
+- [ ] All comments have been assessed
+- [ ] All accepted findings have been remediated
+- [ ] All responses have been posted
+- [ ] **All addressed threads have been resolved via GraphQL mutation**
+- [ ] **Verification query confirms no unresolved threads remain**
+- [ ] Summary report has been generated
+
+**If thread resolution fails:** Do NOT silently continue. Report the failure explicitly.
+</execution_checklist>
 
 ## Commit Strategy
 
@@ -719,5 +780,16 @@ Even in interactive mode, findings with >=95% confidence are auto-accepted with 
 </conditional>
 
 ---
+
+<final_reminder>
+**⚠️ CRITICAL REMINDER: Thread Resolution is MANDATORY**
+
+Before completing this command:
+1. You MUST resolve all addressed comment threads using GraphQL mutations
+2. You MUST verify resolution with a verification query
+3. You MUST report any resolution failures explicitly
+
+**DO NOT** end this command with unresolved threads that you addressed. This is the #1 failure mode to avoid.
+</final_reminder>
 
 Begin with Phase 1: Context Gathering.
