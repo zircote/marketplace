@@ -4061,3 +4061,27 @@ Microservices:
 - Service discovery
 - Health checks
 - Resilience...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:47.326025+00:00'
+summary: '...architecture.'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-core-expert.md
+---
+
+...architecture.
+
+Planning priorities:
+- Solution structure
+- Project organization
+- Architecture pattern
+- Database design
+- API structure
+- Testing strategy
+- Deployment pipeline
+- Performance goals
+
+Architecture...
