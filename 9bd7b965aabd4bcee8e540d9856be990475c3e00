@@ -31,3 +31,20 @@ tags:
    - Detect anti-patterns or technical debt
 
    **IF LSP AVAILABLE:**...
+
+---
+type: patterns
+timestamp: '2025-12-24T05:06:20.737664+00:00'
+summary: '...understand impact of changes'
+tags:
+- auto-captured
+- post-tool-use
+- file:deep-research.md
+---
+
+...understand impact of changes
+
+   **Grep Fallback (when LSP unavailable):**
+   - Use `Grep` for pattern matching across files
+   - Use `Glob` for file discovery
+   - Note: Grep may return false positives;...
