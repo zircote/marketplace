@@ -4786,3 +4786,23 @@ tags:
 ## CLI Tools (via Bash)
 - **dotnet**: CLI for building, testing, and publishing
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:03.198034+00:00'
+summary: '...Domain events'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...Domain events
+- Specification pattern
+- Repository abstraction
+- Result pattern
+- Options pattern
+
+## CLI Tools (via Bash)
+- **dotnet**: CLI for building, testing, and publishing
+- **msbuild**:...
