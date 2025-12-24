@@ -2044,3 +2044,29 @@ tags:
 - Contains "completed", "finished", "milestone" → `progress`
 - Contains "pattern", "recurring", "often" → `patterns`
 - Default...
+
+---
+type: progress
+timestamp: '2025-12-24T06:55:57.880103+00:00'
+summary: '...Changes'
+tags:
+- auto-captured
+- post-tool-use
+- file:pr.md
+---
+
+...Changes
+
+[Commit list]
+
+## Testing
+
+- [ ] Tests pass locally
+- [ ] Linting passes
+- [ ] Manual testing completed
+
+## Checklist
+
+- [ ] Code follows project conventions
+- [ ] Documentation updated (if applicable)
+-...
