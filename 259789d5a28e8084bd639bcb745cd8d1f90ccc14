@@ -155,3 +155,32 @@ Single flag that combines `--focus=MAX` + `--all` for fully autonomous maximum c
 
 ## Related Files
 - ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:920-970
+
+---
+type: progress
+timestamp: '2025-12-24T19:11:34.987250+00:00'
+summary: Added `--focus=MAX` argument to code-cleanup command
+---
+
+Added `--focus=MAX` argument to code-cleanup command
+## Summary
+Implemented maximum coverage mode that deploys 11+ specialist agents for the most thorough code review possible.
+
+## Changes Made
+- Updated argument-hint to include `--focus=MAX`
+- Enhanced help section with all options documented
+- Added `--focus=MAX` focus mode with:
+  - 6 base agents with ALL enhancements combined
+  - 5 additional specialists (postgres-pro, penetration-tester, compliance-auditor, chaos-engineer, accessibility-tester)
+  - Parallel deployment instructions
+  - Announcement template
+
+## Flag Combinations
+| Command | Review | Remediation |
+|---------|--------|-------------|
+| `--focus=MAX` | 11+ agents | Interactive |
+| `--all` | 6 agents | Auto (all findings) |
+| `--focus=MAX --all` | 11+ agents | Auto (all findings) |
+
+## Related Files
+- ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:815-918
