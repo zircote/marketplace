@@ -10390,3 +10390,19 @@ The code-cleanup.md command was missing from the original update. It's a compreh
 
 ## Related Files
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md
+
+---
+type: progress
+timestamp: '2025-12-24T07:33:02.136498+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Sales engineering completed. Delivered 47 technical demonstrations with 82% technical win rate. POC success rate at 78%,...
