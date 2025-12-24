@@ -616,3 +616,21 @@ def add_help_to_command(filepath: Path, dry_run: bool = False) -> bool:
     content = filepath.read_text()
 
     # Skip if already has help...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:27:19.970623+00:00'
+summary: '...the help section in a command file."""'
+tags:
+- auto-captured
+- post-tool-use
+- file:fix_help_sections.py
+---
+
+...the help section in a command file."""
+
+    # Check if file has the malformed help section pattern
+    if '<help_check>' not in content:
+        return content
+
+    fm = parse_frontmatter(content)...
