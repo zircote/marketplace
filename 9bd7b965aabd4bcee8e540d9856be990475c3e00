@@ -7057,3 +7057,25 @@ tags:
 
 Integration with other agents:
 - Work with...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:33:12.576155+00:00'
+summary: '...mapping'
+tags:
+- auto-captured
+- post-tool-use
+- file:ux-researcher.md
+---
+
+...mapping
+- Best practices
+
+Research synthesis:
+- Data triangulation
+- Theme identification
+- Pattern recognition
+- Insight generation
+- Framework development
+- Recommendation prioritization
+-...
