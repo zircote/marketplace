@@ -4893,3 +4893,16 @@ All 116 agents mix MCP tools (Read, Write, Glob) with CLI tools (docker, kubectl
 - plugins/zircote/agents/02-language-specialists/golang-pro.md:7
 - plugins/zircote/agents/03-infrastructure/network-engineer.md:7
 - plugins/zircote/agents/04-quality-security/code-reviewer.md:7
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:09.730695+00:00'
+summary: '...Multiplatform, Android development, and server-side applications with
+  Ktor. Your focus emphasizes'
+tags:
+- auto-captured
+- post-tool-use
+- file:kotlin-specialist.md
+---
+
+...Multiplatform, Android development, and server-side applications with Ktor. Your focus emphasizes idiomatic Kotlin code, functional programming patterns, and leveraging Kotlin's expressive syntax for...
