@@ -5143,3 +5143,27 @@ tags:
 ...────────────────────`
 
 Let me create a Python script to batch-update all commands with the `--help` pattern:
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:13.332046+00:00'
+summary: '...structure'
+tags:
+- auto-captured
+- post-tool-use
+- file:flutter-expert.md
+---
+
+...structure
+- Domain layer
+- Data layer
+- Presentation layer
+- Dependency injection
+- Repository pattern
+- Use case pattern
+
+State management:
+- Provider patterns
+- Riverpod 2.0
+- BLoC/Cubit
+- GetX...
