@@ -3725,3 +3725,18 @@ tags:
 </execution_strategy>
 
 <deliberate...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:29.048805+00:00'
+summary: '...source credibility before information synthesis</rule>'
+tags:
+- auto-captured
+- post-tool-use
+- file:research-analyst.md
+---
+
+...source credibility before information synthesis</rule>
+<rule>Verify cross-references before pattern confirmation</rule>
+<rule>Confirm insight actionability before recommendations</rule>
+</enforcement_rules...
