@@ -9611,3 +9611,19 @@ tags:
 <item>XML sitemap generated</item>
 <item>Robots.txt configured</item>
 <item>Content...
+
+---
+type: progress
+timestamp: '2025-12-24T07:29:28.079894+00:00'
+summary: '...roadmap'
+tags:
+- auto-captured
+- post-tool-use
+- file:seo-specialist.md
+---
+
+...roadmap
+
+<output_format type="completion_notification">
+Completion message format:
+"SEO optimization completed successfully. Improved Core Web Vitals scores by 40%, implemented comprehensive schema markup,...
