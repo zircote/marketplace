@@ -1125,3 +1125,34 @@ The "Placeholder/Fictional Tools" critical finding should be reclassified. The r
 ## Related Files
 - plugins/zircote/agents/AGENT_REVIEW_REPORT.md:89-102
 - plugins/zircote/agents/01-core-development/frontend-developer.md:7
+
+---
+type: learnings
+timestamp: '2025-12-24T07:32:18.197204+00:00'
+summary: MCP tools in agent frontmatter may be conditionally available, not fictional
+---
+
+MCP tools in agent frontmatter may be conditionally available, not fictional
+## Context
+During the agent review, I incorrectly flagged tools like `magic`, `context7`, `agent-registry`, etc. as "fictional" because they weren't in the core Claude Code toolset. However, MCP tools can be dynamically enabled/disabled based on context management needs.
+
+## Clarification
+The tools field in agent frontmatter can reference:
+1. **Core MCP tools** - Always available (Read, Write, Bash, Glob, Grep)
+2. **Plugin-provided MCP tools** - Available when their MCP server is enabled
+3. **CLI tools** - Require Bash execution (go, docker, kubectl, etc.)
+
+Tools like `magic`, `context7`, `playwright` may be legitimate MCP servers that are:
+- Enabled only when specific plugins are active
+- Loaded on-demand to manage context window usage
+- Environment-specific (dev vs prod)
+
+## Impact on Report
+The "Placeholder/Fictional Tools" critical finding should be reclassified. The real issue is **documentation** - agents should indicate whether tools are:
+- Always available
+- Conditionally available (which plugin/condition enables them)
+- CLI tools accessed via Bash
+
+## Related Files
+- plugins/zircote/agents/AGENT_REVIEW_REPORT.md:89-102
+- plugins/zircote/agents/01-core-development/frontend-developer.md:7
