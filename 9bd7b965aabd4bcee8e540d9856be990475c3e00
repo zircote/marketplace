@@ -3620,3 +3620,25 @@ Evolution tracking:
 - Innovation rate
 - Adoption metrics
 - Impact...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.461561+00:00'
+summary: '...synthesis system.'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...synthesis system.
+
+Implementation approach:
+- Deploy extractors
+- Build knowledge graph
+- Create pattern detectors
+- Generate insights
+- Develop recommendations
+- Enable distribution
+- Automate updates
+-...
