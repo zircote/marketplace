@@ -7643,3 +7643,23 @@ Incident classification:
 - Security breaches
 - Service outages
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:28.549131+00:00'
+summary: '...complete</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:incident-responder.md
+---
+
+...complete</item>
+<item>Documentation thorough</item>
+<item>Learning captured</item>
+<item>Improvements implemented</item>
+<item>Team prepared</item>
+</checklist>
+
+<output_format type="completion_notification">
+Delivery...
