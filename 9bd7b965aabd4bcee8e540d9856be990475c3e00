@@ -7219,3 +7219,17 @@ Solution validation:
 - Data accuracy
 - User acceptance
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:37.336693+00:00'
+summary: '...sales-engineer'
+tags:
+- auto-captured
+- post-tool-use
+- file:sales-engineer.md
+---
+
+...sales-engineer
+description: >
+  Expert sales engineer specializing in technical pre-sales, solution architecture, and proof of concepts. Use PROACTIVELY for technical demonstrations, POC execution,...
