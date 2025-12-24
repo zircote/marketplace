@@ -3892,3 +3892,21 @@ tags:
 ...databases, and web sources simultaneously
 - **Analysis context**: Hold statistical results, pattern discoveries, and validation outcomes
 - **Research context**: Manage research questions, hypotheses,...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:32.483047+00:00'
+summary: '...concurrently</task>'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-researcher.md
+---
+
+...concurrently</task>
+<task>Fetch validation data and reference datasets in parallel</task>
+<task>Process pattern detection and statistical tests together</task>
+</parallel>
+
+<sequential>
+<task>Data collection...
