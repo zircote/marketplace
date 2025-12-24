@@ -481,3 +481,27 @@ The "Placeholder/Fictional Tools" critical finding should be reclassified. The r
 ## Related Files
 - plugins/zircote/agents/AGENT_REVIEW_REPORT.md:89-102
 - plugins/zircote/agents/01-core-development/frontend-developer.md:7
+
+---
+type: learnings
+timestamp: '2025-12-24T06:59:32.813800+00:00'
+summary: '...etc.).
+
+  **Options:**
+
+  1. **Remove** - Clean up unused sections
+
+  2. **Keep as examples** - Add no...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+...etc.).
+
+**Options:**
+1. **Remove** - Clean up unused sections
+2. **Keep as examples** - Add note that these show expected output format
+3. **Implement** - Connect to TodoWrite or custom tracking
+
+**Effort...
