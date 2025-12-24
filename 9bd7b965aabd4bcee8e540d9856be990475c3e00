@@ -1305,3 +1305,22 @@ tags:
 
   routes/
     my-route/...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:59:37.719254+00:00'
+summary: '...SuspenseLoader.tsx      # Reusable loader'
+tags:
+- auto-captured
+- post-tool-use
+- file:SKILL.md
+---
+
+...SuspenseLoader.tsx      # Reusable loader
+    CustomAppBar/
+      CustomAppBar.tsx        # Reusable app bar
+
+  routes/
+    my-route/
+      index.tsx               # Route component
+      create/...
