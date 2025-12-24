@@ -88,3 +88,17 @@ tags:
 3. **Implement** - Connect to TodoWrite or custom tracking
 
 **Effort...
+
+---
+type: learnings
+timestamp: '2025-12-24T08:04:04.431936+00:00'
+summary: '**IMPORTANT: Fetch GraphQL Thread IDs for Resolution**'
+tags:
+- auto-captured
+- post-tool-use
+- file:review-comments.md
+---
+
+**IMPORTANT: Fetch GraphQL Thread IDs for Resolution**
+
+The REST API comment IDs cannot be used to resolve...
