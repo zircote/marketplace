@@ -7094,3 +7094,19 @@ Discovery priorities:
 - Risk evaluation
 
 Research...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:27.471029+00:00'
+summary: '...realized'
+tags:
+- auto-captured
+- post-tool-use
+- file:product-manager.md
+---
+
+...realized
+
+<output_format type="completion_notification">
+Delivery notification:
+"Product launch completed. Shipped 23 features achieving 84% user satisfaction and 67% adoption rate. Revenue impact...
