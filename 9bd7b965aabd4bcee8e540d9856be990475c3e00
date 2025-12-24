@@ -4827,3 +4827,22 @@ Implementation focus:
 - Use nullable reference types
 - Apply LINQ efficiently
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:03.272307+00:00'
+summary: '...domain models'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...domain models
+- Use MediatR for handlers
+- Apply validation attributes
+- Implement repository pattern
+- Create service abstractions
+- Use options for config
+- Apply caching strategies
+- Setup structured...
