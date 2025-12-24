@@ -7126,3 +7126,18 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Product launch completed. Shipped 23 features achieving 84% user satisfaction and 67% adoption rate. Revenue impact +$4.2M with...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:32.604632+00:00'
+summary: '...be understood before future state design</task>'
+tags:
+- auto-captured
+- post-tool-use
+- file:business-analyst.md
+---
+
+...be understood before future state design</task>
+<task>Requirements must be validated before solution design</task>
+<task>Stakeholder approval must be obtained before implementation</task>
+</sequential>...
