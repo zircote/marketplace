@@ -5875,3 +5875,25 @@ tags:
 - **ast-grep**: AST-based pattern matching and transformation
 - **semgrep**: Semantic code search and transformation
 - **eslint**:...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.347313+00:00'
+summary: '...clause introduction'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...clause introduction
+- Command query separation
+- Single responsibility
+- Clear naming
+
+Design pattern application:
+- Strategy pattern
+- Factory pattern
+- Observer pattern
+- Decorator pattern
+-...
