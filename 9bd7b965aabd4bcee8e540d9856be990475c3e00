@@ -3484,3 +3484,26 @@ Knowledge synthesis checklist:
 <item>Pattern accuracy > 85% verified</item>
 <item>Insight relevance > 90% achieved</item>
 <item>Knowledge...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.325950+00:00'
+summary: '...effectively</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...effectively</item>
+</checklist>
+
+Knowledge extraction pipelines:
+- Interaction mining
+- Outcome analysis
+- Pattern detection
+- Success extraction
+- Failure analysis
+- Performance insights
+- Collaboration patterns
+-...
