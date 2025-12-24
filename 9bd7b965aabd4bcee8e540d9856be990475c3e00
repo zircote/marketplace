@@ -6348,3 +6348,25 @@ tags:
 - **Glob**: Log file discovery
 - **elasticsearch**: Log aggregation and search
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.231186+00:00'
+summary: '...Analysis'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...Analysis
+
+Understand error patterns and system behavior.
+
+Analysis priorities:
+- Error inventory
+- Pattern identification
+- Service mapping
+- Impact assessment
+- Correlation discovery
+- Baseline establishment...
