@@ -4963,3 +4963,15 @@ tags:
 
 `★ Insight ─────────────────────────────────────`
 The `--help` pattern needs to be Claude-interpretable since these are prompt files, not bash scripts. I'm designing...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:09.930732+00:00'
+summary: '...agent files with Context Manager Protocol sections (plus the report file).
+  Let me examine the ...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+...agent files with Context Manager Protocol sections (plus the report file). Let me examine the pattern to understand what needs to be removed:
