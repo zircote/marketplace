@@ -10549,3 +10549,27 @@ The lsp-tools plugin provides semantic code intelligence via LSP operations (goT
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/deep-research.md
 - /Users/AllenR1_1/.claude/commands/cr.md
 - /Users/AllenR1_1/.claude/commands/cr-fx.md
+
+---
+type: progress
+timestamp: '2025-12-24T07:33:38.168006+00:00'
+summary: Added code-cleanup.md to LSP integration update
+---
+
+Added code-cleanup.md to LSP integration update
+## Context
+The code-cleanup.md command was missing from the original update. It's a comprehensive two-step command that combines code review (Step 1) and remediation (Step 2).
+
+## Changes Made to code-cleanup.md (52 LSP mentions)
+- Added LSP to allowed-tools in frontmatter
+- Added LSP-First Navigation principle to Core Principles
+- Added `<lsp_integration>` section with availability check and decision matrix
+- Updated all 6 Step 1 review subagents with LSP guidance
+- Updated all 4 Step 2 remediation agents with LSP guidance
+- Added LSP availability check to Step 1 execution (Step 0)
+- Added LSP availability check to Step 2 execution (Step 0.5)
+- Updated CODE_REVIEW.md report metadata to track LSP
+- Updated REMEDIATION_REPORT.md to track LSP methodology
+
+## Related Files
+- /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md
