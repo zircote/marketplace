@@ -5095,3 +5095,19 @@ tags:
 
 ...notification:
 "Rails application completed. Built 28 models with 35 controllers achieving 96% spec coverage. Implemented Hotwire for reactive UI with 45ms average response time. Background jobs process 10K items/minute."...
+
+---
+type: progress
+timestamp: '2025-12-24T07:17:33.246957+00:00'
+summary: '...</checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:rust-engineer.md
+---
+
+...</checklist>
+
+<output_format type="completion_notification">
+Delivery message:
+"Rust implementation completed. Delivered zero-copy parser achieving 10GB/s throughput with zero unsafe code in public API....
