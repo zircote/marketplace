@@ -241,3 +241,22 @@ tags:
 1. LSP findReferences: Get all usages
 2. Glob: Confirm file list
 3. LSP...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:29:30.302169+00:00'
+summary: '....claude'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-setup.md
+---
+
+....claude
+cp ${HOOKS_SOURCE} .claude/hooks.json
+```
+
+For multiple languages, merge hooks using this pattern:
+```bash
+# Read both files and combine hooks arrays
+jq -s '{ hooks: [ .[0].hooks[], .[1].hooks[]...
