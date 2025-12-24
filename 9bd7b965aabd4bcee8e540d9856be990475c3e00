@@ -4446,3 +4446,25 @@ tags:
 ...────────────────────`
 
 Let me create a Python script to batch-update all commands with the `--help` pattern:
+
+---
+type: patterns
+timestamp: '2025-12-24T07:23:46.985974+00:00'
+summary: '...patterns:'
+tags:
+- auto-captured
+- post-tool-use
+- file:competitive-analyst.md
+---
+
+...patterns:
+- Systematic collection
+- Multi-source validation
+- Objective analysis
+- Strategic focus
+- Pattern recognition
+- Opportunity identification
+- Risk assessment
+- Continuous monitoring
+
+### 3....
