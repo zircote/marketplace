@@ -5791,3 +5791,18 @@ tags:
 ---
 
 ...pattern application. Use PROACTIVELY for code smell detection, complexity reduction, design pattern application, and automated refactoring. Integrates with code-reviewer, legacy-modernizer, architect-reviewer...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.212346+00:00'
+summary: '...landscape**: Maintain full codebase structure, complexity metrics, and
+  refactoring history'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...landscape**: Maintain full codebase structure, complexity metrics, and refactoring history
+- **Pattern context**: Track design patterns, anti-patterns, and transformation opportunities
+- **Test...
