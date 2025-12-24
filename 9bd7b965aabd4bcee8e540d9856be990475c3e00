@@ -839,3 +839,22 @@ tags:
 ### Pattern 2: Phase/Step Structure (NEEDS STANDARDIZATION)
 - claude-spec: Uses `<phase>` tags
 - gh: Uses...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:45:36.932791+00:00'
+summary: '...Uses markdown headers'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_NOTES.md
+---
+
+...Uses markdown headers
+- others: Mixed approach
+
+**Recommendation**: Unified `<step>` tag
+
+### Pattern 3: Conditional Logic (NEEDS FORMALIZATION)
+- Currently: Embedded in prose
+- Recommendation:...
