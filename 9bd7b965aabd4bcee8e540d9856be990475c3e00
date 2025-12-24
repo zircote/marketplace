@@ -5191,3 +5191,18 @@ State management:
 - BLoC/Cubit
 - GetX reactive
 - Redux...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:17.122816+00:00'
+summary: '...project**: Maintain full package.json, webpack/rollup config, and module
+  structure'
+tags:
+- auto-captured
+- post-tool-use
+- file:javascript-pro.md
+---
+
+...project**: Maintain full package.json, webpack/rollup config, and module structure
+- **Async pattern tracking**: Hold Promise chains, async/await flows, and event loop interactions
+- **Browser...
