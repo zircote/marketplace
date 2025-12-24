@@ -3980,3 +3980,21 @@ tags:
 ...completion_notification">
 Delivery summary:
 "Mobile app delivered successfully. Implemented React Native solution with 85% code sharing between iOS and Android. Features biometric authentication, offline sync,...
+
+---
+type: progress
+timestamp: '2025-12-24T07:10:49.908019+00:00'
+summary: '...optimization">'
+tags:
+- auto-captured
+- post-tool-use
+- file:graphql-architect.md
+---
+
+...optimization">
+Optimization checklist:
+<item>Query complexity limits set</item>
+<item>DataLoader patterns implemented</item>
+<item>Caching strategy deployed</item>
+<item>Persisted queries configured</item>
+<item>Schema...
