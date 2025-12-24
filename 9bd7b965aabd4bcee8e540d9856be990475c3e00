@@ -927,3 +927,20 @@ tags:
 | Nesting for hierarchy | HIGH | Official best practice |
 | Agents would benefit | MEDIUM | Logical extension, no explicit guidance |
 | 40+ tags in...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:46:24.133848+00:00'
+summary: '...Provide Highest Value'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_REPORT.md
+---
+
+...Provide Highest Value
+
+**Evidence**: Cross-referencing Anthropic guidance with audit findings
+
+| Pattern | Anthropic Basis | Current Usage | Improvement Value |
+|---------|----------------|---------------|...
