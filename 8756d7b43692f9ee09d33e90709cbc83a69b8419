@@ -260,3 +260,27 @@ For multiple languages, merge hooks using this pattern:
 ```bash
 # Read both files and combine hooks arrays
 jq -s '{ hooks: [ .[0].hooks[], .[1].hooks[]...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:37:20.838816+00:00'
+summary: '...outgoingCalls'
+tags:
+- auto-captured
+- post-tool-use
+- file:README.md
+---
+
+...outgoingCalls
+│
+├─ Literal text search (TODOs, strings, config)
+│  └─ USE: Grep
+│
+└─ File discovery by pattern
+   └─ USE: Glob
+```
+
+## Supported Languages
+
+| Language | LSP Server | Hooks File |
+|----------|----...
