@@ -4995,3 +4995,18 @@ tags:
 **code-cleanup.md Integration Pattern:**
 The code-cleanup command required LSP integration at **both steps**:
 - **Step 1 (Review)**:...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:10.083178+00:00'
+summary: '`★ Insight ─────────────────────────────────────`
+
+  **XML Demarcation Pattern for Claude Code Comma...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+`★ Insight ─────────────────────────────────────`
+**XML Demarcation Pattern for Claude Code Commands**
+- The `<help_check>` wrapper with `<help_output>` creates a clear...
