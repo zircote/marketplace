@@ -1751,3 +1751,27 @@ tags:
 
 Typography approach:
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:06:16.666257+00:00'
+summary: '...states'
+tags:
+- auto-captured
+- post-tool-use
+- file:ui-designer.md
+---
+
+...states
+- Loading states
+- Empty states
+- Error states
+- Success feedback
+
+Component design:
+- Reusable patterns
+- Flexible variants
+- State definitions
+- Prop documentation
+- Usage examples
+- Accessibility...
