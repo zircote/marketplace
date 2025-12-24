@@ -198,3 +198,21 @@ tags:
 
 **Examples:**
 ```yaml...
+
+---
+type: patterns
+timestamp: '2025-12-24T05:24:31.813638+00:00'
+summary: '...agents)'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...agents)
+
+**Critical:** network-engineer lists CLI tools as MCP tools with incorrect categorization.
+
+**Pattern:** Many reference cloud CLIs (aws-cli, gcloud, azure-cli) correctly as Bash tools.
+
+### 04-quality-security...
