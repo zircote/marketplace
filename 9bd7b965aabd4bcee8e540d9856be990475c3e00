@@ -6450,3 +6450,28 @@ tags:
 - Design for self-service
 - Document thoroughly
 - Test...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:15.517214+00:00'
+summary: '...pooling'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-engineer.md
+---
+
+...pooling
+
+Data architecture:
+- Lambda architecture
+- Kappa architecture
+- Data mesh
+- Lakehouse pattern
+- Medallion architecture
+- Hub and spoke
+- Event-driven
+- Microservices
+
+Performance tuning:
+-...
