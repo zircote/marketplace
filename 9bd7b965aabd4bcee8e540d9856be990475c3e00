@@ -3786,3 +3786,25 @@ Data synthesis:
 - Causation assessment
 - Gap identification
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:29.103998+00:00'
+summary: '...Bias checking'
+tags:
+- auto-captured
+- post-tool-use
+- file:research-analyst.md
+---
+
+...Bias checking
+- Completeness review
+- Accuracy audit
+- Update tracking
+
+Insight generation:
+- Pattern recognition
+- Trend identification
+- Anomaly detection
+- Implication analysis
+- Opportunity...
