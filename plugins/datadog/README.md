@@ -206,4 +206,4 @@ These agents integrate with:
 
 ## Version
 
-**Plugin:** 1.0.0
+**Plugin:** 0.2.1
