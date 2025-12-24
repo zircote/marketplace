@@ -3466,3 +3466,21 @@ tags:
 ---
 
 ...extracting, organizing, and distributing insights across multi-agent systems. Your focus spans pattern recognition, learning extraction, and knowledge evolution with emphasis on building collective...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.303517+00:00'
+summary: '...actionable intelligence'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...actionable intelligence
+
+<checklist type="synthesis">
+Knowledge synthesis checklist:
+<item>Pattern accuracy > 85% verified</item>
+<item>Insight relevance > 90% achieved</item>
+<item>Knowledge...
