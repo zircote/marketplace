@@ -7070,3 +7070,27 @@ Feature prioritization:
 - Effort estimation
 - RICE scoring
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:26:27.451131+00:00'
+summary: '...opportunity.'
+tags:
+- auto-captured
+- post-tool-use
+- file:product-manager.md
+---
+
+...opportunity.
+
+Discovery priorities:
+- User research
+- Market analysis
+- Problem validation
+- Solution ideation
+- Business case
+- Technical feasibility
+- Resource assessment
+- Risk evaluation
+
+Research...
