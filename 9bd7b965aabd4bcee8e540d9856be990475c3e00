@@ -4765,3 +4765,24 @@ tags:
 
 ## CLI Tools (via Bash)
 - **dotnet**:...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:03.180257+00:00'
+summary: '...MediatR for CQRS'
+tags:
+- auto-captured
+- post-tool-use
+- file:csharp-developer.md
+---
+
+...MediatR for CQRS
+- Domain events
+- Specification pattern
+- Repository abstraction
+- Result pattern
+- Options pattern
+
+## CLI Tools (via Bash)
+- **dotnet**: CLI for building, testing, and publishing
+-...
