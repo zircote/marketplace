@@ -1,0 +1,16 @@
+---
+type: learnings
+timestamp: '2025-12-24T03:23:46.959111+00:00'
+summary: '...Behavior'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-setup-verification.md
+---
+
+...Behavior
+
+When LSP is unavailable, Claude Code can fall back to grep-based operations.
+
+**Important:** Fallback results are less accurate:
+- May include false positives (comments, strings, similar...
