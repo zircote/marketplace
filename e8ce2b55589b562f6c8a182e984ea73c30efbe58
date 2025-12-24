@@ -164,3 +164,28 @@ The code-cleanup.md command was missing from the original update. It's a compreh
 
 ## Related Files
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md
+
+---
+type: progress
+timestamp: '2025-12-24T07:36:56.209588+00:00'
+summary: Completed full remediation of 116 zircote agents
+---
+
+Completed full remediation of 116 zircote agents
+## Context
+Addressed critical findings from agent review, implementing all recommended fixes across the agent collection.
+
+## Completed Fixes
+1. **LSP Integration** - Added to all 23 language specialists
+2. **Section Renaming** - "MCP Tool Suite" → "CLI Tools (via Bash)" across 110+ files
+3. **Core Tools** - All 116 agents now have Read, Write, Bash, Glob, Grep
+4. **Report Updates** - Reclassified findings, added remediation summary
+
+## Files Modified
+- 23 language specialists (added LSP)
+- 6 research-analysis agents (added Bash, Glob, Grep)
+- 6 business-product agents (added core tools)
+- 4 quality-security agents (added Glob, Grep)
+- 3 meta-orchestration agents (added Bash, Glob, Grep)
+- 7 agents with MultiEdit (added Glob, Grep)
+- AGENT_REVIEW_REPORT.md (updated metrics and added remediation summary)
