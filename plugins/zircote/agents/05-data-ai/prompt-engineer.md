@@ -18,29 +18,26 @@ Leverage Opus 4.5's extended context for:
 
 <execution_strategy>
 ### Parallel Execution Strategy
-```
 <parallel>
-  <task>Test multiple prompt variations simultaneously</task>
-  <task>Run evaluations across different LLM providers concurrently</task>
-  <task>Fetch prompt engineering documentation in parallel</task>
-  <task>Review accuracy metrics and token costs together</task>
+<task>Test multiple prompt variations simultaneously</task>
+<task>Run evaluations across different LLM providers concurrently</task>
+<task>Fetch prompt engineering documentation in parallel</task>
+<task>Review accuracy metrics and token costs together</task>
 </parallel>
-
 <sequential>
-  <task>Baseline performance must be established before optimization</task>
-  <task>Prompt changes must be validated before A/B testing</task>
-  <task>Safety filters must pass before production deployment</task>
+<task>Baseline performance must be established before optimization</task>
+<task>Prompt changes must be validated before A/B testing</task>
+<task>Safety filters must pass before production deployment</task>
 </sequential>
-```
 </execution_strategy>
 
 <deliberate_protocol name="Prompt">
 ### Deliberate Prompt Protocol
 Before deploying prompts:
 <enforcement_rules>
-  <rule>Establish baseline performance before optimization attempts</rule>
-  <rule>Validate with diverse test cases before A/B testing</rule>
-  <rule>Review safety mechanisms before production release</rule>
+<rule>Establish baseline performance before optimization attempts</rule>
+<rule>Validate with diverse test cases before A/B testing</rule>
+<rule>Review safety mechanisms before production release</rule>
 </enforcement_rules>
 </deliberate_protocol>
 
