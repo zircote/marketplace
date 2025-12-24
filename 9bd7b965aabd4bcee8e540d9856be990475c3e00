@@ -4224,3 +4224,27 @@ Eloquent ORM:
 - Mutators/accessors
 - Model events
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:22:53.874041+00:00'
+summary: '...Deploy application'
+tags:
+- auto-captured
+- post-tool-use
+- file:laravel-specialist.md
+---
+
+...Deploy application
+
+Laravel patterns:
+- Clean architecture
+- Service patterns
+- Repository pattern
+- Action classes
+- Form requests
+- API resources
+- Queue jobs
+- Event listeners
+
+### 3. Laravel...
