@@ -5821,3 +5821,16 @@ tags:
 <task>Fetch refactoring pattern documentation in parallel</task>
 <task>Review test coverage and complexity reports together</task>
 <...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.249594+00:00'
+summary: '...code into clean, maintainable systems. Your focus spans code smell detection,
+  refactoring pattern'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...code into clean, maintainable systems. Your focus spans code smell detection, refactoring pattern application, and safe transformation techniques with emphasis on preserving behavior while...
