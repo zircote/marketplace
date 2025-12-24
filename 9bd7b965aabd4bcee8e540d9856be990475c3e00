@@ -4037,3 +4037,27 @@ Microservices:
 - Service design
 - API gateway
 - Service...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:47.272074+00:00'
+summary: '...layer'
+tags:
+- auto-captured
+- post-tool-use
+- file:dotnet-core-expert.md
+---
+
+...layer
+- Presentation layer
+- Dependency injection
+- CQRS pattern
+- MediatR usage
+- Repository pattern
+
+Microservices:
+- Service design
+- API gateway
+- Service discovery
+- Health checks
+- Resilience...
