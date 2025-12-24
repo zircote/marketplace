@@ -4513,3 +4513,17 @@ Analysis best practices:
 - Narrative flow
 - Strategic focus
 - Decision...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:23:58.957868+00:00'
+summary: '...4.5''s extended context for:'
+tags:
+- auto-captured
+- post-tool-use
+- file:trend-analyst.md
+---
+
+...4.5's extended context for:
+- **Complete trend landscape**: Maintain full signal inventories, pattern libraries, and trend trajectories
+- **Multi-domain awareness**: Track trends across technology,...
