@@ -6069,3 +6069,19 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Market research completed. Analyzed 5 market segments surveying 2,400 consumers. Assessed 23 competitors identifying...
+
+---
+type: progress
+timestamp: '2025-12-24T07:23:55.500440+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:search-specialist.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Search operation completed. Executed 147 queries across 43 sources yielding 2.3K results with 94% precision rate. Identified...
