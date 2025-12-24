@@ -1399,3 +1399,19 @@ tags:
 | `set_pipeline:` | Workflow dispatch or reusable workflows |
 
 **Vault/CredHub secrets**: Document all `((var))` references for manual migration...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:01:07.522255+00:00'
+summary: '...Pages action or artifact |'
+tags:
+- auto-captured
+- post-tool-use
+- file:migrate.md
+---
+
+...Pages action or artifact |
+| `emailext` | Custom notification action |
+| Shared libraries | Reusable workflows (`.github/workflows/*.yml` with `workflow_call`) |
+
+<conditional trigger="Jenkins...
