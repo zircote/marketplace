@@ -19,3 +19,28 @@ Created comprehensive LSP enforcement skill based on reference materials and dee
 - plugins/zircote/skills/lsp-enable/references/lsp-enforcement-protocol.md
 - plugins/zircote/skills/lsp-enable/references/lsp-decision-matrix.md
 - plugins/zircote/skills/lsp-enable/references/lsp-setup-verification.md
+
+---
+type: progress
+timestamp: '2025-12-24T04:03:27.139110+00:00'
+summary: Configured lsp-tools as standalone plugin v0.1.0
+---
+
+Configured lsp-tools as standalone plugin v0.1.0
+## Context
+Moved lsp-enable skill and lsp-setup command from zircote plugin to new standalone lsp-tools plugin.
+
+## Deliverables
+- .claude-plugin/plugin.json (v0.1.0)
+- README.md (comprehensive documentation)
+- CHANGELOG.md (v0.1.0 release notes)
+- LICENSE (MIT)
+- .bumpversion.toml (version management)
+- Cleaned up stale references from zircote plugin
+
+## Related Files
+- plugins/lsp-tools/.claude-plugin/plugin.json
+- plugins/lsp-tools/README.md
+- plugins/lsp-tools/CHANGELOG.md
+- plugins/lsp-tools/LICENSE
+- plugins/lsp-tools/.bumpversion.toml
