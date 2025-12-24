@@ -5573,3 +5573,24 @@ tags:
 
 When invoked:
 1. Query context manager for...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:49.022172+00:00'
+summary: '...infrastructure.'
+tags:
+- auto-captured
+- post-tool-use
+- file:terraform-engineer.md
+---
+
+...infrastructure.
+
+Implementation approach:
+- Design module architecture
+- Implement state management
+- Create reusable modules
+- Add security scanning
+- Enable cost tracking
+- Build CI/CD pipelines
+- Document...
