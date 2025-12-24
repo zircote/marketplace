@@ -6011,3 +6011,25 @@ tags:
 
 Database refactoring:
 - Schema...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.470061+00:00'
+summary: '...Decorator pattern'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...Decorator pattern
+- Adapter pattern
+- Template method
+- Chain of responsibility
+- Composite pattern
+
+Database refactoring:
+- Schema normalization
+- Index optimization
+- Query simplification
+-...
