@@ -5060,3 +5060,24 @@ tags:
 | Pattern | Use Case | Anthropic Basis |
 |---------|----------|-----------------|
 | `<example>` | Code...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:10.157533+00:00'
+summary: '...adoption'
+tags:
+- auto-captured
+- post-tool-use
+- file:customer-success-manager.md
+---
+
+...adoption
+- Business outcomes
+
+Upsell and cross-sell:
+- Growth opportunity identification
+- Usage pattern analysis
+- Feature gap assessment
+- Business case development
+- Pricing discussions
+- Contract...
