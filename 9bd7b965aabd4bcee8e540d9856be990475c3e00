@@ -10179,3 +10179,19 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Product launch completed. Shipped 23 features achieving 84% user satisfaction and 67% adoption rate. Revenue impact...
+
+---
+type: progress
+timestamp: '2025-12-24T07:32:55.582290+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:product-manager.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Product launch completed. Shipped 23 features achieving 84% user satisfaction and 67% adoption rate. Revenue impact +$4.2M with...
