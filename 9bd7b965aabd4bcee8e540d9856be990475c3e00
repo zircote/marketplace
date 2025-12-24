@@ -5370,3 +5370,20 @@ Research synthesis:
 - Framework development
 - Recommendation prioritization
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:23.285194+00:00'
+summary: '...procedures**: Track escalation policies, communication templates, and
+  remediation scripts'
+tags:
+- auto-captured
+- post-tool-use
+- file:devops-incident-responder.md
+---
+
+...procedures**: Track escalation policies, communication templates, and remediation scripts
+- **Pattern recognition**: Manage incident history and root cause analysis findings
+
+<execution_strategy>
+###...
