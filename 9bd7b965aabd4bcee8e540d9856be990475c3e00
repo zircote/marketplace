@@ -3035,3 +3035,25 @@ Enterprise patterns:
 - Dependency injection
 - Custom decorators
 - Dynamic components...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:56.815350+00:00'
+summary: '...Testing strategies'
+tags:
+- auto-captured
+- post-tool-use
+- file:angular-architect.md
+---
+
+...Testing strategies
+
+Enterprise patterns:
+- Smart/dumb components
+- Facade pattern
+- Repository pattern
+- Service layer
+- Dependency injection
+- Custom decorators
+- Dynamic components
+- Content projection...
