@@ -4199,3 +4199,28 @@ Eloquent ORM:
 - Relationships
 - Query scopes
 - Mutators/accessors...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:22:53.854475+00:00'
+summary: '...Action classes'
+tags:
+- auto-captured
+- post-tool-use
+- file:laravel-specialist.md
+---
+
+...Action classes
+- View composers
+- Custom casts
+- Macro usage
+- Pipeline pattern
+- Strategy pattern
+
+Eloquent ORM:
+- Model design
+- Relationships
+- Query scopes
+- Mutators/accessors
+- Model events
+-...
