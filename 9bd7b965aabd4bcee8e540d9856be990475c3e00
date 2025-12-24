@@ -6328,3 +6328,23 @@ Prevention strategies:
 - Proactive monitoring
 - Circuit breakers
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.210646+00:00'
+summary: '...analysis'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...analysis
+- Predictive models
+
+## CLI Tools (via Bash)
+- **Read**: Log file analysis
+- **Grep**: Pattern searching
+- **Glob**: Log file discovery
+- **elasticsearch**: Log aggregation and search
+-...
