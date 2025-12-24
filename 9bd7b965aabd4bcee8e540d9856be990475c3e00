@@ -8652,3 +8652,26 @@ tags:
 
 ...Discovered database connection pool exhaustion causing cascade failures across 5 services. Implemented predictive monitoring preventing 4 potential incidents and reducing error rate by 67%."
 </output_format...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:09.335495+00:00'
+summary: '...enhancement'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...enhancement
+- Report automation
+
+Knowledge management:
+- Pattern library
+- Root cause database
+- Solution repository
+- Best practices
+- Investigation guides
+- Tool documentation
+- Team training
+- Lesson...
