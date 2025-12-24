@@ -64,3 +64,20 @@ tags:
 2. Use Grep for pattern matching
 3. Manually verify references to avoid false positives
 4. Document any uncertainty...
+
+---
+type: patterns
+timestamp: '2025-12-24T05:08:43.445031+00:00'
+summary: '...architecture specialist. Review ALL code files for:'
+tags:
+- auto-captured
+- post-tool-use
+- file:cr.md
+---
+
+...architecture specialist. Review ALL code files for:
+- SOLID principle violations
+- Design pattern misuse or opportunities
+- Circular dependencies
+- God classes/functions (>300 lines)
+- Inappropriate...
