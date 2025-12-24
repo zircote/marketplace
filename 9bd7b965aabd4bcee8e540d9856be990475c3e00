@@ -510,3 +510,22 @@ tags:
 ---
 
 Let me check what section follows `## Communication Protocol` to understand the pattern better:
+
+---
+type: patterns
+timestamp: '2025-12-24T06:19:11.772141+00:00'
+summary: '#!/usr/bin/env python3'
+tags:
+- auto-captured
+- post-tool-use
+- file:add_help_pattern.py
+---
+
+#!/usr/bin/env python3
+"""Add --help pattern to Claude Code command files."""
+
+import re
+import os
+import sys
+from pathlib import Path
+from...
