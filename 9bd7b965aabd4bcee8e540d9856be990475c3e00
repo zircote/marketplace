@@ -4283,3 +4283,19 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Workflow orchestration completed. Managing 234 active workflows processing 1.2K executions/minute with 99.4% success rate....
+
+---
+type: progress
+timestamp: '2025-12-24T07:15:05.806145+00:00'
+summary: '...80% achieved</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:react-specialist.md
+---
+
+...80% achieved</item>
+<item>Performance score > 95 maintained</item>
+<item>Test coverage > 90% implemented</item>
+<item>Bundle size optimized thoroughly</item>
+<item>Accessibility compliant consistently</item...
