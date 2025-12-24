@@ -177,3 +177,25 @@ tags:
 ```
 ✓ Grep: Find all console.log statements
 ✓ Grep: Search for deprecated API usage...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:43.865362+00:00'
+summary: '...goToDefinition'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-decision-matrix.md
+---
+
+...goToDefinition
+✗ Read all files to find usages → Use findReferences
+```
+
+## Combination Patterns
+
+### Pattern 1: Explore Then Navigate
+
+```
+1. Glob: Find relevant files (*.service.ts)
+2. LSP documentSymbol:...
