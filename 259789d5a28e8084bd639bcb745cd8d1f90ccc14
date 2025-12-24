@@ -506,3 +506,32 @@ Added `--focus=MAX` and `--focus=MAXALL` to the actual source repository, not th
 
 ## Related Files
 - /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md:670-825
+
+---
+type: progress
+timestamp: '2025-12-24T19:21:25.697855+00:00'
+summary: '▶ progress ─────────────────────────────────────
+
+  Updated claude-spec source documentation
+
+  ## Sum...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+Updated claude-spec source documentation
+## Summary
+Added comprehensive documentation for `--focus=MAX` and `--focus=MAXALL` to the claude-spec source repository.
+
+## Changes Made
+| File | Lines Added | Content |
+|------|-------------|---------|
+| `commands/code-cleanup.md` | +158 | MAX and MAXALL mode definitions |
+| `README.md` | +60 | Full usage section with examples, mode table, agent lists |
+| `CHANGELOG.md` | +10 | Unreleased section with feature descriptions |
+
+## Files Modified
+- /Users/AllenR1_1/Projects/zircote/claude-spec/commands/code-cleanup.md
+- /Users/AllenR1_1/Projects/zircote/claude-spec/README.md
+- /Users/AllenR1_1/Projects/zircote/claude-spec/CHANGELOG.md
