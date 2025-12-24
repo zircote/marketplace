@@ -9654,3 +9654,20 @@ tags:
 ...e.g., "All code follows project conventions"]</item>
 <item>[Standard 2 - e.g., "Error handling implemented for edge cases"]</item>
 <item>[Standard 3 - e.g., "Documentation updated for public interfaces"]</item...
+
+---
+type: progress
+timestamp: '2025-12-24T07:30:44.219071+00:00'
+summary: '...</checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:opus-4-5-template.md
+---
+
+...</checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"[Domain] task completed. [Description of deliverables and metrics achieved]."
+</output_format>
