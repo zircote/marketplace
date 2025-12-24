@@ -4108,3 +4108,25 @@ tags:
 ### 3. .NET Excellence
 
 Deliver exceptional .NET applications....
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:59.046124+00:00'
+summary: '...warehousing:'
+tags:
+- auto-captured
+- post-tool-use
+- file:sql-pro.md
+---
+
+...warehousing:
+- Star schema design
+- Slowly changing dimensions
+- Fact table optimization
+- ETL pattern design
+- Aggregate tables
+- Columnstore indexes
+- Data compression
+- Incremental loading
+
+Database-specific...
