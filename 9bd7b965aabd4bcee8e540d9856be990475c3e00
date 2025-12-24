@@ -5938,3 +5938,22 @@ tags:
 ---
 
 All 116 agents now have all core tools. Let me update the report with the completed remediation and mark the task complete:
+
+---
+type: progress
+timestamp: '2025-12-24T07:22:58.764635+00:00'
+summary: '...Connect to actual plugin
+
+  3. **Mark as aspirational** - Add disclaimer: "Future Protocol (not i...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+...Connect to actual plugin
+3. **Mark as aspirational** - Add disclaimer: "Future Protocol (not implemented)"
+
+**Effort:**
+- Option 1: ~1 hour (bulk removal)
+- Option 2: ~4 hours (implementation)
+-...
