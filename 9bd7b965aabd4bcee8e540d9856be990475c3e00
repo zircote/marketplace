@@ -1269,3 +1269,18 @@ tags:
 ```
 features/
   my-feature/...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:59:37.682259+00:00'
+summary: '...Loading**: Use SuspenseLoader, not early returns'
+tags:
+- auto-captured
+- post-tool-use
+- file:SKILL.md
+---
+
+...Loading**: Use SuspenseLoader, not early returns
+3. **useSuspenseQuery**: Primary data fetching pattern for new code
+4. **Features are Organized**: api/, components/, hooks/, helpers/ subdirs
+5....
