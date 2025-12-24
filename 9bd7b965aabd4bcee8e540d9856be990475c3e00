@@ -3081,3 +3081,26 @@ Hotwire/Turbo:
 - Turbo Frames
 - Turbo Streams
 - Stimulus integration...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:17:00.083260+00:00'
+summary: '...architecture'
+tags:
+- auto-captured
+- post-tool-use
+- file:rails-expert.md
+---
+
+...architecture
+- RESTful design
+- Service objects
+- Form objects
+- Query objects
+- Presenter pattern
+- Testing patterns
+- Performance patterns
+
+### 3. Rails Excellence
+
+Deliver exceptional Rails...
