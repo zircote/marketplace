@@ -5640,3 +5640,20 @@ tags:
 ---
 
 ...multiple languages. Use PROACTIVELY for pull request reviews, security code analysis, design pattern validation, and technical debt assessment. Integrates with security-auditor, qa-expert, architect-reviewer...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:50.717857+00:00'
+summary: '...**Historical comparison**: Maintain previous review patterns alongside
+  current review'
+tags:
+- auto-captured
+- post-tool-use
+- file:code-reviewer.md
+---
+
+...**Historical comparison**: Maintain previous review patterns alongside current review
+- **Deep pattern recognition**: Analyze recurring issues across extensive code history
+
+<execution_strategy>
+###...
