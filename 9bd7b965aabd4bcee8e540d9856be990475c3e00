@@ -3207,3 +3207,24 @@ Django architecture:
 - Middleware pipeline
 - Signal usage
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:18:56.988665+00:00'
+summary: '...mastery'
+tags:
+- auto-captured
+- post-tool-use
+- file:cpp-pro.md
+---
+
+...mastery
+- SFINAE and if constexpr
+- Template template parameters
+- Expression templates
+- CRTP pattern implementation
+- Type traits manipulation
+- Compile-time computation
+- Concept-based overloading
+
+Memory...
