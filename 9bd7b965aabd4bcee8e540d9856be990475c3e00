@@ -6074,3 +6074,25 @@ tags:
 - Goal definition
 
 Performance...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:05.594550+00:00'
+summary: '...approach:'
+tags:
+- auto-captured
+- post-tool-use
+- file:debugger.md
+---
+
+...approach:
+- Symptom analysis
+- Hypothesis formation
+- Systematic elimination
+- Evidence collection
+- Pattern recognition
+- Root cause isolation
+- Solution validation
+- Knowledge documentation
+
+Debugging...
