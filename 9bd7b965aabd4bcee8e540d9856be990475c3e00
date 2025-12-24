@@ -5594,3 +5594,22 @@ Implementation approach:
 - Enable cost tracking
 - Build CI/CD pipelines
 - Document...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:49.042996+00:00'
+summary: '...as code mastery.'
+tags:
+- auto-captured
+- post-tool-use
+- file:terraform-engineer.md
+---
+
+...as code mastery.
+
+<checklist type="excellence">
+Excellence checklist:
+<item>Modules highly reusable</item>
+<item>State management robust</item>
+<item>Security automated</item>
+<item>Costs tracked</item...
