@@ -2498,3 +2498,21 @@ Idiomatic Go patterns:
 - Interface composition over inheritance
 - Accept interfaces, return structs
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:13:08.808869+00:00'
+summary: '...Implement concrete types privately'
+tags:
+- auto-captured
+- post-tool-use
+- file:golang-pro.md
+---
+
+...Implement concrete types privately
+- Use composition for flexibility
+- Apply functional options pattern
+- Create testable components
+- Optimize for common case
+- Handle errors explicitly
+- Document...
