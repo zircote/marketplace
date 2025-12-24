@@ -1,0 +1,16 @@
+---
+type: patterns
+timestamp: '2025-12-24T05:06:20.703377+00:00'
+summary: '...goToDefinition` to trace imports to their source'
+tags:
+- auto-captured
+- post-tool-use
+- file:deep-research.md
+---
+
+...goToDefinition` to trace imports to their source
+   - Use `findReferences` to map module consumers
+
+2. **Pattern Analysis:**
+   - Identify design patterns and architectural decisions
+   - Note code conventions...
