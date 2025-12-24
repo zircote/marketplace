@@ -6198,3 +6198,16 @@ tags:
 name: error-detective
 description: >
   Expert error detective specializing in complex error pattern analysis, correlation, and root cause discovery. Use PROACTIVELY for error pattern investigation,...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.061010+00:00'
+summary: '...complex error pattern analysis, correlation, and root cause discovery.
+  Use PROACTIVELY for error '
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...complex error pattern analysis, correlation, and root cause discovery. Use PROACTIVELY for error pattern investigation, log correlation, anomaly detection, cascade analysis, and predictive error prevention...
