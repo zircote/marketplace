@@ -52,3 +52,24 @@ tags:
 **Symptom:** Proposing changes without reading code first
 
 **Detection...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:40.564940+00:00'
+summary: '...update the..."'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-enforcement-protocol.md
+---
+
+...update the..."
+- "Let me fix this by..."
+
+**Correction:** STOP. Use goToDefinition first.
+
+### Pattern: Blind Refactoring
+
+**Symptom:** Renaming or restructuring without impact analysis
+
+**Detection...
