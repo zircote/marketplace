@@ -2029,3 +2029,18 @@ tags:
 - Contains "completed", "finished", "milestone" → `progress`
 - Contains "pattern", "recurring", "often" → `patterns`
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T06:55:56.102745+00:00'
+summary: '...Contains "blocked", "stuck", "cannot", "impediment" → `blockers`'
+tags:
+- auto-captured
+- post-tool-use
+- file:capture.md
+---
+
+...Contains "blocked", "stuck", "cannot", "impediment" → `blockers`
+- Contains "completed", "finished", "milestone" → `progress`
+- Contains "pattern", "recurring", "often" → `patterns`
+- Default...
