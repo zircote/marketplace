@@ -2768,3 +2768,20 @@ tags:
 
 ...for full-stack development, database-to-UI features, cross-layer integration, and complete solution delivery. Integrates with frontend-developer, backend-developer, database-administrator.
 model:...
+
+---
+type: progress
+timestamp: '2025-12-24T07:06:12.139379+00:00'
+summary: '...to frontend'
+tags:
+- auto-captured
+- post-tool-use
+- file:fullstack-developer.md
+---
+
+...to frontend
+3. Review authentication and authorization across all layers
+4. Design cohesive solution maintaining consistency throughout stack
+
+<checklist type="fullstack_development">
+Fullstack...
