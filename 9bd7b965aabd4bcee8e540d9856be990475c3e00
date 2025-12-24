@@ -3013,3 +3013,25 @@ Excellence checklist:
 <item>Tests comprehensive</item>
 <item>Performance excellent</item>
 <item>Bundle minimized</item...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:56.797268+00:00'
+summary: '...DevTools integration'
+tags:
+- auto-captured
+- post-tool-use
+- file:angular-architect.md
+---
+
+...DevTools integration
+- Testing strategies
+
+Enterprise patterns:
+- Smart/dumb components
+- Facade pattern
+- Repository pattern
+- Service layer
+- Dependency injection
+- Custom decorators
+- Dynamic components...
