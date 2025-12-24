@@ -2516,3 +2516,25 @@ tags:
 - Optimize for common case
 - Handle errors explicitly
 - Document...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:15:05.825618+00:00'
+summary: '...completely</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:react-specialist.md
+---
+
+...completely</item>
+</checklist>
+
+Advanced React patterns:
+- Compound components
+- Render props pattern
+- Higher-order components
+- Custom hooks design
+- Context optimization
+- Ref forwarding
+- Portals...
