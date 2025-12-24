@@ -1062,3 +1062,17 @@ tags:
 ...| 110+ agents across all categories |
 | Add core tools (Read, Write, Bash, Glob, Grep) | ✅ Completed | 116 agents verified |
 | Reclassify fictional tools finding | ✅ Completed | Report updated...
+
+---
+type: progress
+timestamp: '2025-12-24T06:04:49.944529+00:00'
+summary: '...Glob, Grep) | ✅ Completed | 116 agents verified |'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...Glob, Grep) | ✅ Completed | 116 agents verified |
+| Reclassify fictional tools finding | ✅ Completed | Report updated |
+| Add MCP tool provenance documentation | ✅ Completed | 4 agents with conditional...
