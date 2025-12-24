@@ -1230,3 +1230,23 @@ tags:
 **Key Concepts:**
 - Lazy load heavy components (DataGrid, charts, editors)
 - Always wrap lazy...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:59:37.646074+00:00'
+summary: '...resources/component-patterns.md](resources/component-patterns.md)**'
+tags:
+- auto-captured
+- post-tool-use
+- file:SKILL.md
+---
+
+...resources/component-patterns.md](resources/component-patterns.md)**
+
+---
+
+### Data Fetching
+
+**PRIMARY PATTERN: useSuspenseQuery**
+- Use with Suspense boundaries
+- Cache-first strategy (check grid cache...
