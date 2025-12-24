@@ -6305,3 +6305,26 @@ Anomaly detection:
 - Alert optimization
 - False positive reduction
 - Severity...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.186492+00:00'
+summary: '...analysis'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...analysis
+- Event correlation
+- Timeline reconstruction
+- Hypothesis testing
+- Elimination process
+- Pattern synthesis
+
+Prevention strategies:
+- Error prediction
+- Proactive monitoring
+- Circuit breakers
+-...
