@@ -105,3 +105,21 @@ The 6-agent design is intentional, mapping to Security, Performance, Architectur
 
 ## Related Files
 - ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:415-579
+
+---
+type: learnings
+timestamp: '2025-12-24T19:20:09.462308+00:00'
+summary: Code-cleanup uses 6 agents mapped to 6 quality dimensions
+---
+
+Code-cleanup uses 6 agents mapped to 6 quality dimensions
+## Summary
+The 6-agent design is intentional, mapping to Security, Performance, Architecture, Code Quality, Test Coverage, and Documentation - the canonical dimensions of code health.
+
+## Key Points
+- Not arbitrary: each agent owns a specific review dimension
+- Extensible: additional specialists can be added via focus modes or command modification
+- Trade-off: more agents = more thorough but higher cost/latency
+
+## Related Files
+- ~/.claude/plugins/cache/zircote-claude-marketplace/claude-spec/0.6.1/commands/code-cleanup.md:415-579
