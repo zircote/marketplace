@@ -1,0 +1,8 @@
+---
+type: patterns
+timestamp: '2025-12-24T19:02:43.825518+00:00'
+summary: '...dimension-based architecture** where each agent maps to a specific review
+  dimension. This is a co'
+---
+
+...dimension-based architecture** where each agent maps to a specific review dimension. This is a common pattern in multi-agent systems - the number of agents reflects the problem domain decomposition, not...
