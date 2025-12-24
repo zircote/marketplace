@@ -130,3 +130,19 @@ tags:
 - Circular dependencies
 - God classes/functions (>300 lines)
 - Inappropriate...
+
+---
+type: patterns
+timestamp: '2025-12-24T05:17:00.326427+00:00'
+summary: '...AVAILABLE: Use goToImplementation to verify interface contracts'
+tags:
+- auto-captured
+- post-tool-use
+- file:code-cleanup.md
+---
+
+...AVAILABLE: Use goToImplementation to verify interface contracts
+
+  Output: Files modified, pattern applied, tests passing"
+)
+─────────────────────────────────────────────────────────────────────────
