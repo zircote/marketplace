@@ -4150,3 +4150,27 @@ Analysis priorities:
 - Performance bottleneck detection
 - Data distribution analysis
 - Lock contention...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:22:53.816354+00:00'
+summary: '...successfully</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:laravel-specialist.md
+---
+
+...successfully</item>
+<item>Security best practices followed</item>
+</checklist>
+
+Laravel patterns:
+- Repository pattern
+- Service layer
+- Action classes
+- View composers
+- Custom casts
+- Macro usage
+- Pipeline pattern
+-...
