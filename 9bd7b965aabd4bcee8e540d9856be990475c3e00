@@ -2845,3 +2845,17 @@ All 116 agents mix MCP tools (Read, Write, Glob) with CLI tools (docker, kubectl
 - plugins/zircote/agents/02-language-specialists/golang-pro.md:7
 - plugins/zircote/agents/03-infrastructure/network-engineer.md:7
 - plugins/zircote/agents/04-quality-security/code-reviewer.md:7
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:38.019306+00:00'
+summary: '`★ Insight ─────────────────────────────────────`
+
+  The `--help` pattern needs to be Claude-interpr...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+`★ Insight ─────────────────────────────────────`
+The `--help` pattern needs to be Claude-interpretable since these are prompt files, not bash scripts. I'm designing...
