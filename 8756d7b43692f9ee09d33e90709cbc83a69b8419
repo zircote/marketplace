@@ -156,3 +156,24 @@ tags:
 | Read known file | N/A | N/A | N/A | Direct read |
 
 ## When...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:43.845886+00:00'
+summary: '...message text'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-decision-matrix.md
+---
+
+...message text
+✓ Grep: Find configuration key names
+✓ Grep: Search for magic strings
+```
+
+### Pattern Matching
+
+```
+✓ Grep: Find all console.log statements
+✓ Grep: Search for deprecated API usage...
