@@ -6117,3 +6117,24 @@ tags:
 - Performance profiling
 
 Memory...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:05.651603+00:00'
+summary: '...dependencies'
+tags:
+- auto-captured
+- post-tool-use
+- file:debugger.md
+---
+
+...dependencies
+- Network conditions
+
+## CLI Tools (via Bash)
+- **Read**: Source code analysis
+- **Grep**: Pattern searching in logs
+- **Glob**: File discovery
+- **gdb**: GNU debugger
+- **lldb**: LLVM debugger
+-...
