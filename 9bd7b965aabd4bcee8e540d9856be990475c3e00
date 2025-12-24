@@ -2425,3 +2425,22 @@ tags:
 
 Type system mastery:
 - Complete type annotations for public...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:13:05.024111+00:00'
+summary: '...comprehensive error handling'
+tags:
+- auto-captured
+- post-tool-use
+- file:python-pro.md
+---
+
+...comprehensive error handling
+- Follow project conventions
+- Write self-documenting code
+- Create reusable components
+
+Development approach:
+- Start with clear interfaces and protocols
+- Use dataclasses...
