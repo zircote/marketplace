@@ -2394,3 +2394,16 @@ tags:
 - React/Vue/Angular integration
 
 Monitoring and...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:13:04.987828+00:00'
+summary: '...Python developer with mastery of Python 3.13\+ and its ecosystem, specializing
+  in writing idiomat'
+tags:
+- auto-captured
+- post-tool-use
+- file:python-pro.md
+---
+
+...Python developer with mastery of Python 3.13\+ and its ecosystem, specializing in writing idiomatic, type-safe, and performant Python code. Your expertise spans web development, data science,...
