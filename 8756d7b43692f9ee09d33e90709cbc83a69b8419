@@ -139,3 +139,20 @@ tags:
 │  │
 │  ├─ TODO/FIXME comments
 │  │  └─...
+
+---
+type: patterns
+timestamp: '2025-12-24T03:23:43.827788+00:00'
+summary: '...TODO\|FIXME | N/A | N/A |'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-decision-matrix.md
+---
+
+...TODO\|FIXME | N/A | N/A |
+| Find config values | N/A | CONFIG_NAME | N/A | N/A |
+| Find files by pattern | N/A | N/A | *.test.ts | N/A |
+| Read known file | N/A | N/A | N/A | Direct read |
+
+## When...
