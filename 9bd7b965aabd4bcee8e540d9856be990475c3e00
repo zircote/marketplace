@@ -6370,3 +6370,26 @@ Analysis priorities:
 - Impact assessment
 - Correlation discovery
 - Baseline establishment...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.294801+00:00'
+summary: '...correlation'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...correlation
+- Change correlation
+- External correlation
+
+Predictive analysis:
+- Trend detection
+- Pattern prediction
+- Anomaly forecasting
+- Capacity prediction
+- Failure prediction
+- Impact estimation
+-...
