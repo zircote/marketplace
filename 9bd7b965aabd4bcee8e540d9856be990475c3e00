@@ -310,3 +310,19 @@ tags:
 **code-cleanup.md Integration Pattern:**
 The code-cleanup command required LSP integration at **both steps**:
 - **Step 1 (Review)**:...
+
+---
+type: patterns
+timestamp: '2025-12-24T05:48:06.852459+00:00'
+summary: '...tools frontmatter for all language specialists'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...tools frontmatter for all language specialists
+   - Files: `02-language-specialists/*.md`
+   - Pattern: `tools: Read, Write, Bash, Glob, Grep, LSP, ...`
+
+2. **Section Renaming (110+ files)**...
