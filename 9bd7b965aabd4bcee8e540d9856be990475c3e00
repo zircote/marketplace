@@ -4949,3 +4949,17 @@ Ensure idiomatic Kotlin and cross-platform compatibility.
 <checklist type="verification">
 Quality verification:
 <item...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:26:09.883829+00:00'
+summary: '`★ Insight ─────────────────────────────────────`
+
+  The `--help` pattern needs to be Claude-interpr...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+`★ Insight ─────────────────────────────────────`
+The `--help` pattern needs to be Claude-interpretable since these are prompt files, not bash scripts. I'm designing...
