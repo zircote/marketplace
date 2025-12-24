@@ -163,3 +163,15 @@ tags:
 ---
 
 Let me check what section follows `## Communication Protocol` to understand the pattern better:
+
+---
+type: patterns
+timestamp: '2025-12-24T08:02:18.163874+00:00'
+summary: Now I understand the current structure. Let me design the `--help` pattern
+  and apply it systemati...
+tags:
+- auto-captured
+- pre-compact
+---
+
+Now I understand the current structure. Let me design the `--help` pattern and apply it systematically:
