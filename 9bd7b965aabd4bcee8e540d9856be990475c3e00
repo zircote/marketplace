@@ -2538,3 +2538,25 @@ Advanced React patterns:
 - Context optimization
 - Ref forwarding
 - Portals...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:15:05.882150+00:00'
+summary: '...Accessibility tests'
+tags:
+- auto-captured
+- post-tool-use
+- file:react-specialist.md
+---
+
+...Accessibility tests
+- Snapshot tests
+- Coverage reports
+
+Architecture excellence:
+- Components reusable
+- State predictable
+- Side effects managed
+- Errors handled gracefully
+- Performance monitored
+-...
