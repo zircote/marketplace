@@ -6262,3 +6262,24 @@ Error pattern analysis:
 - Service correlations
 - User impact patterns
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.144962+00:00'
+summary: '...Cross-service correlation'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...Cross-service correlation
+- Temporal correlation
+- Causal chain analysis
+- Event sequencing
+- Pattern matching
+- Anomaly detection
+- Statistical analysis
+- Machine learning insights
+
+Distributed...
