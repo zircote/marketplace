@@ -2734,3 +2734,24 @@ tags:
 
 Cross-agent error correlation:
 - Temporal...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:16:24.658166+00:00'
+summary: '...Static content'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-coordinator.md
+---
+
+...Static content
+- Queue-based processing
+- Asynchronous handling
+- User notification
+
+Error pattern analysis:
+- Clustering algorithms
+- Trend detection
+- Seasonality analysis
+- Anomaly identification...
