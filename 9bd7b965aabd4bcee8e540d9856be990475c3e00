@@ -3140,3 +3140,24 @@ tags:
 - **rustfmt**: Automatic code formatting
 - **miri**: Undefined behavior detection
 - **rust-analyzer...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:17:33.229031+00:00'
+summary: '...abstractions.'
+tags:
+- auto-captured
+- post-tool-use
+- file:rust-engineer.md
+---
+
+...abstractions.
+
+Implementation approach:
+- Design ownership first
+- Create minimal APIs
+- Use type state pattern
+- Implement zero-copy where possible
+- Apply const generics
+- Leverage trait system
+- Minimize...
