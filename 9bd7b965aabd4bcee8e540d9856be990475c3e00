@@ -6211,3 +6211,17 @@ tags:
 ---
 
 ...complex error pattern analysis, correlation, and root cause discovery. Use PROACTIVELY for error pattern investigation, log correlation, anomaly detection, cascade analysis, and predictive error prevention...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.083057+00:00'
+summary: '...4.5''s extended context for:'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+...4.5's extended context for:
+- **Complete error landscape**: Maintain full error inventories, pattern catalogs, and correlation matrices
+- **Cross-service analysis**: Track errors across microservices,...
