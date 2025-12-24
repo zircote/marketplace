@@ -3184,3 +3184,26 @@ Workload evaluation:
 - Analyze tasks
 - Profile workloads
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:18:52.285283+00:00'
+summary: '.../item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:django-developer.md
+---
+
+.../item>
+<item>Deployment ready verified successfully</item>
+</checklist>
+
+Django architecture:
+- MVT pattern
+- App structure
+- URL configuration
+- Settings management
+- Middleware pipeline
+- Signal usage
+-...
