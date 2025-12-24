@@ -6951,3 +6951,24 @@ All 116 agents mix MCP tools (Read, Write, Glob) with CLI tools (docker, kubectl
 - plugins/zircote/agents/02-language-specialists/golang-pro.md:7
 - plugins/zircote/agents/03-infrastructure/network-engineer.md:7
 - plugins/zircote/agents/04-quality-security/code-reviewer.md:7
+
+---
+type: patterns
+timestamp: '2025-12-24T07:32:47.221774+00:00'
+summary: '...adoption'
+tags:
+- auto-captured
+- post-tool-use
+- file:customer-success-manager.md
+---
+
+...adoption
+- Business outcomes
+
+Upsell and cross-sell:
+- Growth opportunity identification
+- Usage pattern analysis
+- Feature gap assessment
+- Business case development
+- Pricing discussions
+- Contract...
