@@ -10013,3 +10013,19 @@ Solution design:
 - Functional specifications
 - System architecture
 - Integration...
+
+---
+type: progress
+timestamp: '2025-12-24T07:32:38.804378+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:business-analyst.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Business analysis completed. Documented 87 requirements across 12 business processes. Engaged 23 stakeholders achieving...
