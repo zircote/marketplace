@@ -146,3 +146,30 @@ Comprehensive research conducted on XML tag best practices from official Anthrop
 - RESEARCH_NOTES.md - Evidence collection
 - RESEARCH_REPORT.md - Synthesized findings
 - PARALLEL_EXECUTION_PLAN.md - Implementation roadmap
+
+---
+type: decisions
+timestamp: '2025-12-24T07:10:41.037424+00:00'
+summary: '▶ decision ─────────────────────────────────────
+
+  XML demarcation improvements validated by Anthro...'
+tags:
+- auto-captured
+- pre-compact
+---
+
+XML demarcation improvements validated by Anthropic official documentation
+## Context
+Comprehensive research conducted on XML tag best practices from official Anthropic sources, followed by systematic audit of 489 files across marketplace plugins.
+
+## Rationale
+- Anthropic explicitly states XML tags are "game-changers" for structured prompts
+- Claude was "trained specifically to recognize XML tags as a prompt organizing mechanism"
+- No "magic" tags exist - semantic names that describe content are recommended
+- Current marketplace adoption is inconsistent (0-100% depending on component)
+
+## Related Files
+- RESEARCH_PLAN.md - Scope and methodology
+- RESEARCH_NOTES.md - Evidence collection
+- RESEARCH_REPORT.md - Synthesized findings
+- PARALLEL_EXECUTION_PLAN.md - Implementation roadmap
