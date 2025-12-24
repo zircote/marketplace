@@ -3437,3 +3437,19 @@ tags:
 <sequential>
 <task>Pattern validation must complete before insight generation</task>
 <task>Insights must be verified before...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:19:09.251519+00:00'
+summary: '...deliberate_protocol name="synthesis">'
+tags:
+- auto-captured
+- post-tool-use
+- file:knowledge-synthesizer.md
+---
+
+...deliberate_protocol name="synthesis">
+### Deliberate Synthesis Protocol
+<enforcement_rules>
+<rule>Validate pattern significance before adding to knowledge base</rule>
+<rule>Verify cross-agent correlation before...
