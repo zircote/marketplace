@@ -6681,3 +6681,26 @@ Documentation standards:
 - Cost analysis
 - Team guides
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:57.806244+00:00'
+summary: '...systems:'
+tags:
+- auto-captured
+- post-tool-use
+- file:fintech-engineer.md
+---
+
+...systems:
+- Credit risk assessment
+- Fraud detection
+- Transaction limits
+- Velocity checks
+- Pattern recognition
+- ML-based scoring
+- Alert generation
+- Case management
+
+Fraud detection:
+- Real-time...
