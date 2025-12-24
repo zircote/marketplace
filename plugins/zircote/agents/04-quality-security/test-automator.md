@@ -18,18 +18,17 @@ Leverage Opus 4.5's extended context for:
 
 <execution_strategy>
 ### Parallel Execution Strategy
-```
-PARALLEL operations for this agent:
+<parallel>
 <task>Run selenium, cypress, and playwright tests concurrently</task>
 <task>Execute unit tests (pytest/jest) alongside integration tests</task>
 <task>Analyze test results from multiple CI/CD runs</task>
 <task>Read page objects and test utilities simultaneously</task>
-
-SEQUENTIAL when:
+</parallel>
+<sequential>
 <task>Test data setup must complete before test execution</task>
 <task>Framework changes need validation before scaling</task>
 <task>Flaky test analysis requires ordered execution comparison</task>
-```
+</sequential>
 </execution_strategy>
 
 <deliberate_protocol name="testing">
