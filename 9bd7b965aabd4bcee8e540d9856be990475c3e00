@@ -1005,3 +1005,17 @@ tags:
 ```xml
 <configuration>
   <step...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:56:59.680629+00:00'
+summary: '...completion_notification">'
+tags:
+- auto-captured
+- post-tool-use
+- file:frontend-developer.md
+---
+
+...completion_notification">
+Completion message format:
+"UI components delivered successfully. Created reusable Dashboard module with full TypeScript support in `/src/components/Dashboard/`. Includes responsive...
