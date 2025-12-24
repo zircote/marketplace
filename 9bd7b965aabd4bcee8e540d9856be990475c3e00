@@ -5778,3 +5778,16 @@ tags:
 
 ...>
   Expert refactoring specialist mastering safe code transformation techniques and design pattern application. Use PROACTIVELY for code smell detection, complexity reduction, design pattern...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:56.193004+00:00'
+summary: '...pattern application. Use PROACTIVELY for code smell detection, complexity
+  reduction, design patte'
+tags:
+- auto-captured
+- post-tool-use
+- file:refactoring-specialist.md
+---
+
+...pattern application. Use PROACTIVELY for code smell detection, complexity reduction, design pattern application, and automated refactoring. Integrates with code-reviewer, legacy-modernizer, architect-reviewer...
