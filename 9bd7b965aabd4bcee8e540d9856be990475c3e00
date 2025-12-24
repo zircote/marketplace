@@ -179,3 +179,22 @@ tags:
 **code-cleanup.md Integration Pattern:**
 The code-cleanup command required LSP integration at **both steps**:
 - **Step 1 (Review)**:...
+
+---
+type: patterns
+timestamp: '2025-12-24T05:24:31.772639+00:00'
+summary: '...MultiEdit to agents that suggest code changes.'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...MultiEdit to agents that suggest code changes.
+
+### 2. Inconsistent Core Tool Coverage
+
+**Pattern:** Some agents lack basic file operation tools while having specialized ones.
+
+**Examples:**
+```yaml...
