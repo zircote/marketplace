@@ -5613,3 +5613,17 @@ Excellence checklist:
 <item>State management robust</item>
 <item>Security automated</item>
 <item>Costs tracked</item...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:27:49.087221+00:00'
+summary: '...type="completion_notification">'
+tags:
+- auto-captured
+- post-tool-use
+- file:terraform-engineer.md
+---
+
+...type="completion_notification">
+Delivery notification:
+"Terraform implementation completed. Created 47 reusable modules achieving 85% code reuse across projects. Implemented automated security scanning,...
