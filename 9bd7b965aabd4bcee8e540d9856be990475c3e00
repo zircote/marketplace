@@ -4130,3 +4130,23 @@ tags:
 - Incremental loading
 
 Database-specific...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:59.121728+00:00'
+summary: '...characteristics.'
+tags:
+- auto-captured
+- post-tool-use
+- file:sql-pro.md
+---
+
+...characteristics.
+
+Analysis priorities:
+- Schema design review
+- Index usage analysis
+- Query pattern identification
+- Performance bottleneck detection
+- Data distribution analysis
+- Lock contention...
