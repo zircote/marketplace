@@ -8393,3 +8393,20 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Performance optimization completed. Improved response time by 68% (2.1s to 0.67s), increased throughput by 245% (1.2k to 4.1k...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:01.569335+00:00'
+summary: '...RPS), and reduced resource usage by 40%. System now handles 10x peak
+  load with linear scaling. Im'
+tags:
+- auto-captured
+- post-tool-use
+- file:performance-engineer.md
+---
+
+...RPS), and reduced resource usage by 40%. System now handles 10x peak load with linear scaling. Implemented comprehensive monitoring and capacity planning."
+</output_format>
+
+Performance patterns:
+-...
