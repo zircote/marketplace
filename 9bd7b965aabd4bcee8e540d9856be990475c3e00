@@ -1090,3 +1090,18 @@ tags:
 ...tools finding | ✅ Completed | Report updated |
 | Add MCP tool provenance documentation | ✅ Completed | 4 agents with conditional tools |
 | Remove Context Manager Protocol sections | ✅ Completed...
+
+---
+type: progress
+timestamp: '2025-12-24T06:04:49.981942+00:00'
+summary: '...Completed | 4 agents with conditional tools |'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...Completed | 4 agents with conditional tools |
+| Remove Context Manager Protocol sections | ✅ Completed | 116 agents |
+| Remove Status Reporting JSON blocks | ✅ Completed | 115 agents |
+| Verify...
