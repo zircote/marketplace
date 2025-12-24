@@ -6183,3 +6183,18 @@ Knowledge management:
 - Team training
 - Debugging playbooks
 - Lesson...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:09.039574+00:00'
+summary: '---'
+tags:
+- auto-captured
+- post-tool-use
+- file:error-detective.md
+---
+
+---
+name: error-detective
+description: >
+  Expert error detective specializing in complex error pattern analysis, correlation, and root cause discovery. Use PROACTIVELY for error pattern investigation,...
