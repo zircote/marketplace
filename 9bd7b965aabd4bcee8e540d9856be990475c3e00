@@ -984,3 +984,24 @@ All 116 agents mix MCP tools (Read, Write, Glob) with CLI tools (docker, kubectl
 - plugins/zircote/agents/02-language-specialists/golang-pro.md:7
 - plugins/zircote/agents/03-infrastructure/network-engineer.md:7
 - plugins/zircote/agents/04-quality-security/code-reviewer.md:7
+
+---
+type: patterns
+timestamp: '2025-12-24T06:52:50.907443+00:00'
+summary: '...<trigger>When user mentions X</trigger>'
+tags:
+- auto-captured
+- post-tool-use
+- file:xml-templates.md
+---
+
+...<trigger>When user mentions X</trigger>
+  <trigger>When working on Y</trigger>
+  <trigger>When file pattern Z detected</trigger>
+</triggers>
+```
+
+### Configuration Section
+```xml
+<configuration>
+  <step...
