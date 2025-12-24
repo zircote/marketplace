@@ -6611,3 +6611,26 @@ tags:
 Evaluation methodology:
 - Run automated scanners
 - Perform...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:28:47.042553+00:00'
+summary: '...summaries'
+tags:
+- auto-captured
+- post-tool-use
+- file:api-documenter.md
+---
+
+...summaries
+- Detailed descriptions
+- Meaningful examples
+- Consistent naming
+- Proper typing
+- Reusable components
+- Security definitions
+- Extension usage
+
+Portal features:
+- Smart search
+- Code...
