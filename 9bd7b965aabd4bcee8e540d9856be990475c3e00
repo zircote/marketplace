@@ -819,3 +819,23 @@ tags:
 ```xml
 <help_check>
   If $ARGUMENTS contains --help/-h:...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:45:36.911053+00:00'
+summary: '...$ARGUMENTS contains --help/-h:'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_NOTES.md
+---
+
+...$ARGUMENTS contains --help/-h:
+    Output help text
+    HALT immediately
+</help_check>
+```
+
+### Pattern 2: Phase/Step Structure (NEEDS STANDARDIZATION)
+- claude-spec: Uses `<phase>` tags
+- gh: Uses...
