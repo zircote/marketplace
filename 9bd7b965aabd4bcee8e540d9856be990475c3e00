@@ -9574,3 +9574,22 @@ tags:
 
 ...notification:
 "Risk management framework completed. Identified and quantified 247 risks with 189 controls implemented. Achieved 98% compliance score across all regulations. Reduced operational losses by 67% through...
+
+---
+type: progress
+timestamp: '2025-12-24T07:29:28.031917+00:00'
+summary: '...practices'
+tags:
+- auto-captured
+- post-tool-use
+- file:seo-specialist.md
+---
+
+...practices
+
+<checklist type="seo_optimization">
+SEO optimization checklist:
+<item>Technical SEO audit completed</item>
+<item>Site architecture optimized</item>
+<item>Page speed enhanced</item>
+<item>Mobile-friendly...
