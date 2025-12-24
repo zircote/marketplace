@@ -8865,3 +8865,19 @@ tags:
 <output_format type="completion_notification">
 Delivery notification:
 "Architecture review completed. Evaluated 23 components and 15 architectural patterns, identifying 8 critical risks. Provided...
+
+---
+type: progress
+timestamp: '2025-12-24T07:28:23.144678+00:00'
+summary: '...checklist>'
+tags:
+- auto-captured
+- post-tool-use
+- file:database-optimizer.md
+---
+
+...checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"Database optimization completed. Optimized 127 slow queries achieving 87% average improvement. Reduced P95 latency from 420ms...
