@@ -1133,3 +1133,20 @@ tags:
 ...Remove Status Reporting JSON blocks | ✅ Completed | 115 agents |
 | Verify Opus 4.5 sections | ✅ Completed | All 116 agents have complete sections |
 | Fix broken agent cross-references | ✅ Completed...
+
+---
+type: progress
+timestamp: '2025-12-24T06:04:50.039567+00:00'
+summary: '...Completed | All 116 agents have complete sections |'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+...Completed | All 116 agents have complete sections |
+| Fix broken agent cross-references | ✅ Completed | 8 agents with name corrections |
+
+### Detailed Remediation
+
+1. **LSP Integration (23 language...
