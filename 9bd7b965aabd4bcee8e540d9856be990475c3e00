@@ -1003,3 +1003,19 @@ tags:
 - Option 1: ~1 hour (bulk removal)
 - Option 2: ~4 hours (implementation)
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T06:04:49.868561+00:00'
+summary: '### Completed Fixes'
+tags:
+- auto-captured
+- post-tool-use
+- file:AGENT_REVIEW_REPORT.md
+---
+
+### Completed Fixes
+
+| Issue | Status | Files Modified |
+|-------|--------|----------------|
+| Add LSP to...
