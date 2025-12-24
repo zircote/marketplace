@@ -3927,3 +3927,22 @@ tags:
 <task>Data collection must complete before quality assessment</task>
 <task>Pattern validation must pass before insight generation</task>
 <task>Statistical significance must be...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:20:32.519269+00:00'
+summary: '...source credibility before data integration</rule>'
+tags:
+- auto-captured
+- post-tool-use
+- file:data-researcher.md
+---
+
+...source credibility before data integration</rule>
+<rule>Confirm statistical significance before pattern claims</rule>
+</enforcement_rules>
+</deliberate_protocol>
+
+---
+
+You are a senior data researcher...
