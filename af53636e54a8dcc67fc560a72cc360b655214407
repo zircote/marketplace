@@ -94,3 +94,24 @@ Documentation engineer agent created comprehensive LSP guide for Claude Code use
 
 ## Related Files
 - ~/.claude/plugins/cache/zircote-claude-marketplace/lsp-tools/0.1.0/docs/LSP-GUIDE.md
+
+---
+type: progress
+timestamp: '2025-12-24T18:59:07.154346+00:00'
+summary: Added LSP documentation to source plugin and pushed to main
+---
+
+Added LSP documentation to source plugin and pushed to main
+## Summary
+Copied LSP-GUIDE.md from cache to source plugin directory and committed.
+
+## Changes Made
+- Created `plugins/lsp-tools/docs/` directory
+- Added `LSP-GUIDE.md` (1,051 lines) with:
+  - Setup guide for 12 languages
+  - Usage guide with best practices
+  - Troubleshooting section
+  - FAQ and quick reference
+
+## Related Files
+- plugins/lsp-tools/docs/LSP-GUIDE.md:1-1051
