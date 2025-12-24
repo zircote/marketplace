@@ -564,3 +564,20 @@ def add_help_to_command(filepath: Path, dry_run: bool = False) -> bool:
     content = filepath.read_text()
 
     # Skip if already has help...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:19:55.132758+00:00'
+summary: '#!/usr/bin/env python3'
+tags:
+- auto-captured
+- post-tool-use
+- file:add_help_pattern.py
+---
+
+#!/usr/bin/env python3
+"""Add --help pattern to Claude Code command files with XML demarcations."""
+
+import re
+import sys
+from pathlib import...
