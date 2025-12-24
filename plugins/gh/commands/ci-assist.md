@@ -5,6 +5,63 @@ model: claude-opus-4-5-20251101
 allowed-tools: Bash(*), Read, Write, Edit, Glob, Grep, LS, WebFetch, Task, TodoWrite, TodoRead, AskUserQuestion
 ---
 
+<help_check>
+## Help Check
+
+If `$ARGUMENTS` contains `--help` or `-h`:
+
+**Output this help and HALT (do not proceed further):**
+
+<help_output>
+```
+CI_ASSIST(1)                    User Commands                    CI_ASSIST(1)
+
+NAME
+    ci-assist - Onboard repository to GitHub ecosystem with Copilot
+
+SYNOPSIS
+    /gh:ci-assist [--ci=TYPE] [--copilot-only] [--dry-run] [--interactive]
+                  [--batch-report] [--source=PLATFORM] [--plan-only]
+
+DESCRIPTION
+    Onboard repository to GitHub ecosystem with Copilot integration.
+    Auto-detects and migrates CI/CD from: Concourse, Jenkins, GitLab CI,
+    CircleCI, Travis, Azure Pipelines, Bamboo, TeamCity, Drone, Buildkite.
+    Creates GitHub Actions workflows, Copilot config, issue/PR templates.
+
+OPTIONS
+    --ci=TYPE                 Force CI type (concourse|jenkins|gitlab|...)
+    --source=PLATFORM         Source platform (bitbucket-server|github|...)
+    --copilot-only            Only configure Copilot, skip CI migration
+    --dry-run                 Generate MIGRATION_REPORT.md without changes
+    --interactive             Prompt for confirmation at each phase
+    --batch-report            Generate JSON report for batch processing
+    --skip-security           Skip security workflow generation
+    --preserve-existing       Don't overwrite existing .github/ files
+    --plan-only               Generate migration plan without executing
+    --full-verify             Run complete verification with pr-review-toolkit
+    --help, -h                Show this help message
+
+EXAMPLES
+    /gh:ci-assist                     Auto-detect and migrate CI
+    /gh:ci-assist --dry-run           Preview migration without changes
+    /gh:ci-assist --copilot-only      Only configure Copilot
+    /gh:ci-assist --ci=jenkins        Force Jenkins migration
+    /gh:ci-assist --interactive       Step-by-step with confirmations
+
+SEE ALSO
+    /gh:copilot-onboard       Copilot-only configuration
+    /gh:migrate               Full platform migration
+
+                                                                CI_ASSIST(1)
+```
+</help_output>
+
+**After outputting help, HALT immediately. Do not proceed with command execution.**
+</help_check>
+
+---
+
 <context>
 Repository: $PWD
 Arguments: $ARGUMENTS

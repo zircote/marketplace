@@ -9,16 +9,16 @@ description: Frontend development guidelines for React/TypeScript applications. 
 
 Comprehensive guide for modern React development, emphasizing Suspense-based data fetching, lazy loading, proper file organization, and performance optimization.
 
-## When to Use This Skill
-
-- Creating new components or pages
-- Building new features
-- Fetching data with TanStack Query
-- Setting up routing with TanStack Router
-- Styling components with MUI v7
-- Performance optimization
-- Organizing frontend code
-- TypeScript best practices
+<triggers>
+<trigger>Creating new components or pages</trigger>
+<trigger>Building new features</trigger>
+<trigger>Fetching data with TanStack Query</trigger>
+<trigger>Setting up routing with TanStack Router</trigger>
+<trigger>Styling components with MUI v7</trigger>
+<trigger>Performance optimization</trigger>
+<trigger>Organizing frontend code</trigger>
+<trigger>TypeScript best practices</trigger>
+</triggers>
 
 ---
 
@@ -69,7 +69,8 @@ Defined in: [vite.config.ts](../../vite.config.ts) lines 180-185
 
 ## Common Imports Cheatsheet
 
-```typescript
+<example type="usage">
+<code language="typescript">
 // React & Lazy Loading
 import React, { useState, useCallback, useMemo } from 'react';
 const Heavy = React.lazy(() => import('./Heavy'));
@@ -93,13 +94,14 @@ import { useMuiSnackbar } from '@/hooks/useMuiSnackbar';
 
 // Types
 import type { Post } from '~types/post';
-```
+</code>
+</example>
 
 ---
 
 ## Topic Guides
 
-### 🎨 Component Patterns
+### Component Patterns
 
 **Modern React components use:**
 - `React.FC<Props>` for type safety
@@ -111,13 +113,13 @@ import type { Post } from '~types/post';
 - Lazy load heavy components (DataGrid, charts, editors)
 - Always wrap lazy components in Suspense
 - Use SuspenseLoader component (with fade animation)
-- Component structure: Props → Hooks → Handlers → Render → Export
+- Component structure: Props -> Hooks -> Handlers -> Render -> Export
 
-**[📖 Complete Guide: resources/component-patterns.md](resources/component-patterns.md)**
+**[Complete Guide: resources/component-patterns.md](resources/component-patterns.md)**
 
 ---
 
-### 📊 Data Fetching
+### Data Fetching
 
 **PRIMARY PATTERN: useSuspenseQuery**
 - Use with Suspense boundaries
@@ -131,11 +133,11 @@ import type { Post } from '~types/post';
 - Centralized methods per feature
 - Route format: `/form/route` (NOT `/api/form/route`)
 
-**[📖 Complete Guide: resources/data-fetching.md](resources/data-fetching.md)**
+**[Complete Guide: resources/data-fetching.md](resources/data-fetching.md)**
 
 ---
 
-### 📁 File Organization
+### File Organization
 
 **features/ vs components/:**
 - `features/`: Domain-specific (posts, comments, auth)
@@ -152,11 +154,11 @@ features/
     types/        # TypeScript types
 ```
 
-**[📖 Complete Guide: resources/file-organization.md](resources/file-organization.md)**
+**[Complete Guide: resources/file-organization.md](resources/file-organization.md)**
 
 ---
 
-### 🎨 Styling
+### Styling
 
 **Inline vs Separate:**
 - <100 lines: Inline `const styles: Record<string, SxProps<Theme>>`
@@ -168,16 +170,19 @@ features/
 - Theme access: `(theme) => theme.palette.primary.main`
 
 **MUI v7 Grid:**
-```typescript
-<Grid size={{ xs: 12, md: 6 }}>  // ✅ v7 syntax
-<Grid xs={12} md={6}>             // ❌ Old syntax
-```
 
-**[📖 Complete Guide: resources/styling-guide.md](resources/styling-guide.md)**
+<example type="usage">
+<code language="typescript">
+<Grid size={{ xs: 12, md: 6 }}>  // v7 syntax (correct)
+<Grid xs={12} md={6}>             // Old syntax (incorrect)
+</code>
+</example>
+
+**[Complete Guide: resources/styling-guide.md](resources/styling-guide.md)**
 
 ---
 
-### 🛣️ Routing
+### Routing
 
 **TanStack Router - Folder-Based:**
 - Directory: `routes/my-route/index.tsx`
@@ -185,8 +190,8 @@ features/
 - Use `createFileRoute`
 - Breadcrumb data in loader
 
-**Example:**
-```typescript
+<example type="usage">
+<code language="typescript">
 import { createFileRoute } from '@tanstack/react-router';
 import { lazy } from 'react';
 
@@ -196,27 +201,34 @@ export const Route = createFileRoute('/my-route/')({
     component: MyPage,
     loader: () => ({ crumb: 'My Route' }),
 });
-```
+</code>
+</example>
 
-**[📖 Complete Guide: resources/routing-guide.md](resources/routing-guide.md)**
+**[Complete Guide: resources/routing-guide.md](resources/routing-guide.md)**
 
 ---
 
-### ⏳ Loading & Error States
+### Loading & Error States
 
-**CRITICAL RULE: No Early Returns**
+<constraints>
+<constraint severity="critical">No early returns with loading spinners - causes layout shift</constraint>
+<constraint severity="high">Never use react-toastify - use useMuiSnackbar instead</constraint>
+<constraint severity="medium">Always wrap lazy components in SuspenseLoader</constraint>
+</constraints>
 
-```typescript
-// ❌ NEVER - Causes layout shift
+<example type="usage">
+<code language="typescript">
+// NEVER - Causes layout shift
 if (isLoading) {
     return <LoadingSpinner />;
 }
 
-// ✅ ALWAYS - Consistent layout
+// ALWAYS - Consistent layout
 <SuspenseLoader>
     <Content />
 </SuspenseLoader>
-```
+</code>
+</example>
 
 **Why:** Prevents Cumulative Layout Shift (CLS), better UX
 
@@ -225,11 +237,11 @@ if (isLoading) {
 - NEVER `react-toastify`
 - TanStack Query `onError` callbacks
 
-**[📖 Complete Guide: resources/loading-and-error-states.md](resources/loading-and-error-states.md)**
+**[Complete Guide: resources/loading-and-error-states.md](resources/loading-and-error-states.md)**
 
 ---
 
-### ⚡ Performance
+### Performance
 
 **Optimization Patterns:**
 - `useMemo`: Expensive computations (filter, sort, map)
@@ -238,11 +250,11 @@ if (isLoading) {
 - Debounced search (300-500ms)
 - Memory leak prevention (cleanup in useEffect)
 
-**[📖 Complete Guide: resources/performance.md](resources/performance.md)**
+**[Complete Guide: resources/performance.md](resources/performance.md)**
 
 ---
 
-### 📘 TypeScript
+### TypeScript
 
 **Standards:**
 - Strict mode, no `any` type
@@ -250,11 +262,11 @@ if (isLoading) {
 - Type imports: `import type { User } from '~types/user'`
 - Component prop interfaces with JSDoc
 
-**[📖 Complete Guide: resources/typescript-standards.md](resources/typescript-standards.md)**
+**[Complete Guide: resources/typescript-standards.md](resources/typescript-standards.md)**
 
 ---
 
-### 🔧 Common Patterns
+### Common Patterns
 
 **Covered Topics:**
 - React Hook Form with Zod validation
@@ -263,11 +275,11 @@ if (isLoading) {
 - `useAuth` hook for current user
 - Mutation patterns with cache invalidation
 
-**[📖 Complete Guide: resources/common-patterns.md](resources/common-patterns.md)**
+**[Complete Guide: resources/common-patterns.md](resources/common-patterns.md)**
 
 ---
 
-### 📚 Complete Examples
+### Complete Examples
 
 **Full working examples:**
 - Modern component with all patterns
@@ -277,7 +289,7 @@ if (isLoading) {
 - Suspense + useSuspenseQuery
 - Form with validation
 
-**[📖 Complete Guide: resources/complete-examples.md](resources/complete-examples.md)**
+**[Complete Guide: resources/complete-examples.md](resources/complete-examples.md)**
 
 ---
 
@@ -348,7 +360,8 @@ src/
 
 ## Modern Component Template (Quick Copy)
 
-```typescript
+<example type="usage">
+<code language="typescript">
 import React, { useState, useCallback } from 'react';
 import { Box, Paper } from '@mui/material';
 import { useSuspenseQuery } from '@tanstack/react-query';
@@ -383,7 +396,8 @@ export const MyComponent: React.FC<MyComponentProps> = ({ id, onAction }) => {
 };
 
 export default MyComponent;
-```
+</code>
+</example>
 
 For complete examples, see [resources/complete-examples.md](resources/complete-examples.md)
 

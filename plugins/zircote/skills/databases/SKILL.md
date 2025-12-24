@@ -8,19 +8,18 @@ license: MIT
 
 Unified guide for working with MongoDB (document-oriented) and PostgreSQL (relational) databases. Choose the right database for your use case and master both systems.
 
-## When to Use This Skill
-
-Use when:
-- Designing database schemas and data models
-- Writing queries (SQL or MongoDB query language)
-- Building aggregation pipelines or complex joins
-- Optimizing indexes and query performance
-- Implementing database migrations
-- Setting up replication, sharding, or clustering
-- Configuring backups and disaster recovery
-- Managing database users and permissions
-- Analyzing slow queries and performance issues
-- Administering production database deployments
+<triggers>
+<trigger>Designing database schemas and data models</trigger>
+<trigger>Writing queries (SQL or MongoDB query language)</trigger>
+<trigger>Building aggregation pipelines or complex joins</trigger>
+<trigger>Optimizing indexes and query performance</trigger>
+<trigger>Implementing database migrations</trigger>
+<trigger>Setting up replication, sharding, or clustering</trigger>
+<trigger>Configuring backups and disaster recovery</trigger>
+<trigger>Managing database users and permissions</trigger>
+<trigger>Analyzing slow queries and performance issues</trigger>
+<trigger>Administering production database deployments</trigger>
+</triggers>
 
 ## Database Selection Guide
 
@@ -56,7 +55,8 @@ Use when:
 
 ### MongoDB Setup
 
-```bash
+<example type="usage">
+<code language="bash">
 # Atlas (Cloud) - Recommended
 # 1. Sign up at mongodb.com/atlas
 # 2. Create M0 free cluster
@@ -73,11 +73,13 @@ db.users.insertOne({ name: "Alice", age: 30 })
 db.users.find({ age: { $gte: 18 } })
 db.users.updateOne({ name: "Alice" }, { $set: { age: 31 } })
 db.users.deleteOne({ name: "Alice" })
-```
+</code>
+</example>
 
 ### PostgreSQL Setup
 
-```bash
+<example type="usage">
+<code language="bash">
 # Ubuntu/Debian
 sudo apt-get install postgresql postgresql-contrib
 
@@ -93,74 +95,100 @@ INSERT INTO users (name, age) VALUES ('Alice', 30);
 SELECT * FROM users WHERE age >= 18;
 UPDATE users SET age = 31 WHERE name = 'Alice';
 DELETE FROM users WHERE name = 'Alice';
-```
+</code>
+</example>
 
 ## Common Operations
 
 ### Create/Insert
-```javascript
+
+<example type="usage">
+<code language="javascript">
 // MongoDB
 db.users.insertOne({ name: "Bob", email: "bob@example.com" })
 db.users.insertMany([{ name: "Alice" }, { name: "Charlie" }])
-```
+</code>
+</example>
 
-```sql
+<example type="usage">
+<code language="sql">
 -- PostgreSQL
 INSERT INTO users (name, email) VALUES ('Bob', 'bob@example.com');
 INSERT INTO users (name, email) VALUES ('Alice', NULL), ('Charlie', NULL);
-```
+</code>
+</example>
 
 ### Read/Query
-```javascript
+
+<example type="usage">
+<code language="javascript">
 // MongoDB
 db.users.find({ age: { $gte: 18 } })
 db.users.findOne({ email: "bob@example.com" })
-```
+</code>
+</example>
 
-```sql
+<example type="usage">
+<code language="sql">
 -- PostgreSQL
 SELECT * FROM users WHERE age >= 18;
 SELECT * FROM users WHERE email = 'bob@example.com' LIMIT 1;
-```
+</code>
+</example>
 
 ### Update
-```javascript
+
+<example type="usage">
+<code language="javascript">
 // MongoDB
 db.users.updateOne({ name: "Bob" }, { $set: { age: 25 } })
 db.users.updateMany({ status: "pending" }, { $set: { status: "active" } })
-```
+</code>
+</example>
 
-```sql
+<example type="usage">
+<code language="sql">
 -- PostgreSQL
 UPDATE users SET age = 25 WHERE name = 'Bob';
 UPDATE users SET status = 'active' WHERE status = 'pending';
-```
+</code>
+</example>
 
 ### Delete
-```javascript
+
+<example type="usage">
+<code language="javascript">
 // MongoDB
 db.users.deleteOne({ name: "Bob" })
 db.users.deleteMany({ status: "deleted" })
-```
+</code>
+</example>
 
-```sql
+<example type="usage">
+<code language="sql">
 -- PostgreSQL
 DELETE FROM users WHERE name = 'Bob';
 DELETE FROM users WHERE status = 'deleted';
-```
+</code>
+</example>
 
 ### Indexing
-```javascript
+
+<example type="usage">
+<code language="javascript">
 // MongoDB
 db.users.createIndex({ email: 1 })
 db.users.createIndex({ status: 1, createdAt: -1 })
-```
+</code>
+</example>
 
-```sql
+<example type="usage">
+<code language="sql">
 -- PostgreSQL
 CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_users_status_created ON users(status, created_at DESC);
-```
+</code>
+</example>
 
 ## Reference Navigation
 
@@ -183,7 +211,8 @@ Database utility scripts in `scripts/`:
 - **db_backup.py** - Backup and restore MongoDB and PostgreSQL
 - **db_performance_check.py** - Analyze slow queries and recommend indexes
 
-```bash
+<example type="usage">
+<code language="bash">
 # Generate migration
 python scripts/db_migrate.py --db mongodb --generate "add_user_index"
 
@@ -192,7 +221,8 @@ python scripts/db_backup.py --db postgres --output /backups/
 
 # Check performance
 python scripts/db_performance_check.py --db mongodb --threshold 100ms
-```
+</code>
+</example>
 
 ## Key Differences Summary
 
@@ -223,6 +253,15 @@ python scripts/db_performance_check.py --db mongodb --threshold 100ms
 - Use EXPLAIN ANALYZE to optimize queries
 - Regular VACUUM and ANALYZE maintenance
 - Connection pooling (pgBouncer) for web apps
+
+<constraints>
+<constraint severity="critical">Always enable authentication in production databases</constraint>
+<constraint severity="critical">Never expose database ports directly to the internet</constraint>
+<constraint severity="high">Always use TLS/SSL for database connections in production</constraint>
+<constraint severity="high">Implement automated backups with tested restore procedures</constraint>
+<constraint severity="medium">Index foreign keys in PostgreSQL to prevent full table scans on joins</constraint>
+<constraint severity="medium">MongoDB $lookup has performance limitations - consider denormalization for frequent joins</constraint>
+</constraints>
 
 ## Resources
 

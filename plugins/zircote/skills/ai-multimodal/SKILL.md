@@ -58,15 +58,15 @@ Process audio, images, videos, documents, and generate images using Google Gemin
 
 | Task | Audio | Image | Video | Document | Generation |
 |------|:-----:|:-----:|:-----:|:--------:|:----------:|
-| Transcription | ✓ | - | ✓ | - | - |
-| Summarization | ✓ | ✓ | ✓ | ✓ | - |
-| Q&A | ✓ | ✓ | ✓ | ✓ | - |
-| Object Detection | - | ✓ | ✓ | - | - |
-| Text Extraction | - | ✓ | - | ✓ | - |
-| Structured Output | ✓ | ✓ | ✓ | ✓ | - |
-| Creation | TTS | - | - | - | ✓ |
-| Timestamps | ✓ | - | ✓ | - | - |
-| Segmentation | - | ✓ | - | - | - |
+| Transcription | Y | - | Y | - | - |
+| Summarization | Y | Y | Y | Y | - |
+| Q&A | Y | Y | Y | Y | - |
+| Object Detection | - | Y | Y | - | - |
+| Text Extraction | - | Y | - | Y | - |
+| Structured Output | Y | Y | Y | Y | - |
+| Creation | TTS | - | - | - | Y |
+| Timestamps | Y | - | Y | - | - |
+| Segmentation | - | Y | - | - | - |
 
 ## Model Selection Guide
 
@@ -109,69 +109,92 @@ The skill checks for `GEMINI_API_KEY` in this order:
 **Get API key**: https://aistudio.google.com/apikey
 
 **For Vertex AI**:
-```bash
+
+<example type="usage">
+<code language="bash">
 export GEMINI_USE_VERTEX=true
 export VERTEX_PROJECT_ID=your-gcp-project-id
 export VERTEX_LOCATION=us-central1  # Optional
-```
+</code>
+</example>
 
 **Install SDK**:
-```bash
+
+<example type="usage">
+<code language="bash">
 pip install google-genai python-dotenv pillow
-```
+</code>
+</example>
 
 ### Common Patterns
 
 **Transcribe Audio**:
-```bash
+
+<example type="usage">
+<code language="bash">
 python scripts/gemini_batch_process.py \
   --files audio.mp3 \
   --task transcribe \
   --model gemini-2.5-flash
-```
+</code>
+</example>
 
 **Analyze Image**:
-```bash
+
+<example type="usage">
+<code language="bash">
 python scripts/gemini_batch_process.py \
   --files image.jpg \
   --task analyze \
   --prompt "Describe this image" \
   --output docs/assets/<output-name>.md \
   --model gemini-2.5-flash
-```
+</code>
+</example>
 
 **Process Video**:
-```bash
+
+<example type="usage">
+<code language="bash">
 python scripts/gemini_batch_process.py \
   --files video.mp4 \
   --task analyze \
   --prompt "Summarize key points with timestamps" \
   --output docs/assets/<output-name>.md \
   --model gemini-2.5-flash
-```
+</code>
+</example>
 
 **Extract from PDF**:
-```bash
+
+<example type="usage">
+<code language="bash">
 python scripts/gemini_batch_process.py \
   --files document.pdf \
   --task extract \
   --prompt "Extract table data as JSON" \
   --output docs/assets/<output-name>.md \
   --format json
-```
+</code>
+</example>
 
 **Generate Image**:
-```bash
+
+<example type="usage">
+<code language="bash">
 python scripts/gemini_batch_process.py \
   --task generate \
   --prompt "A futuristic city at sunset" \
   --output docs/assets/<output-file-name> \
   --model gemini-2.5-flash-image \
   --aspect-ratio 16:9
-```
+</code>
+</example>
 
 **Optimize Media**:
-```bash
+
+<example type="usage">
+<code language="bash">
 # Prepare large video for processing
 python scripts/media_optimizer.py \
   --input large-video.mp4 \
@@ -183,10 +206,13 @@ python scripts/media_optimizer.py \
   --input-dir ./videos \
   --output-dir docs/assets/optimized \
   --quality 85
-```
+</code>
+</example>
 
 **Convert Documents to Markdown**:
-```bash
+
+<example type="usage">
+<code language="bash">
 # Convert to PDF
 python scripts/document_converter.py \
   --input document.docx \
@@ -197,7 +223,8 @@ python scripts/document_converter.py \
   --input large.pdf \
   --output docs/assets/chapter1.md \
   --pages 1-20
-```
+</code>
+</example>
 
 ## Supported Formats
 
@@ -209,7 +236,7 @@ python scripts/document_converter.py \
 ### Images
 - PNG, JPEG, WEBP, HEIC, HEIF
 - Max 3,600 images per request
-- Resolution: ≤384px = 258 tokens, larger = tiled
+- Resolution: <=384px = 258 tokens, larger = tiled
 
 ### Video
 - MP4, MPEG, MOV, AVI, FLV, MPG, WebM, WMV, 3GPP
@@ -221,10 +248,14 @@ python scripts/document_converter.py \
 - Max 1,000 pages
 - TXT, HTML, Markdown supported (text-only)
 
-### Size Limits
-- **Inline**: <20MB total request
-- **File API**: 2GB per file, 20GB project quota
-- **Retention**: 48 hours auto-delete
+<constraints>
+<constraint severity="critical">API key must be kept secure - never commit to version control</constraint>
+<constraint severity="high">File size limit: 20MB inline, 2GB via File API</constraint>
+<constraint severity="high">YouTube processing limited to public videos only</constraint>
+<constraint severity="medium">Free tier rate limit: 10-15 requests per minute</constraint>
+<constraint severity="medium">Files uploaded via File API are auto-deleted after 48 hours</constraint>
+<constraint severity="low">Image generation requires specific flash-image model</constraint>
+</constraints>
 
 ## Reference Navigation
 

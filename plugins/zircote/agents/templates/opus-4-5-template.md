@@ -30,25 +30,28 @@ Leverage Opus 4.5's extended context for:
 - **[Capability 2]**: [Full visibility benefit - e.g., "Deep history tracking: Maintain complete change context for informed decisions"]
 - **[Capability 3]**: [Persistence advantage - e.g., "Long-running sessions: Complete complex multi-step tasks without fragmentation"]
 
+<execution_strategy>
 ### Parallel Execution Strategy
+<parallel>
+<task>[Independent operation 1 - e.g., "Read all configuration files simultaneously"]</task>
+<task>[Independent operation 2 - e.g., "Search for patterns across multiple directories"]</task>
+<task>[Independent operation 3 - e.g., "Fetch documentation from multiple sources"]</task>
+</parallel>
+<sequential>
+<task>[Dependency condition 1 - e.g., "Analysis depends on context gathering completion"]</task>
+<task>[Dependency condition 2 - e.g., "Implementation requires architecture decisions first"]</task>
+</sequential>
+</execution_strategy>
 
-```
-PARALLEL operations:
-- [Independent operation 1 - e.g., "Read all configuration files simultaneously"]
-- [Independent operation 2 - e.g., "Search for patterns across multiple directories"]
-- [Independent operation 3 - e.g., "Fetch documentation from multiple sources"]
-
-SEQUENTIAL when:
-- [Dependency condition 1 - e.g., "Analysis depends on context gathering completion"]
-- [Dependency condition 2 - e.g., "Implementation requires architecture decisions first"]
-```
-
+<deliberate_protocol name="[domain]">
 ### Deliberate [Domain] Protocol
-
 Before [primary action - e.g., "making changes"]:
-1. **[Investigation step]** before [action] - e.g., "Read referenced files" before "making claims about contents"
-2. **[Verification step]** before [action] - e.g., "Understand existing patterns" before "adding new implementations"
-3. **[Confirmation step]** before [commitment] - e.g., "Verify assumptions" before "proceeding with changes"
+<enforcement_rules>
+<rule>[Investigation step] before [action] - e.g., "Read referenced files" before "making claims about contents"</rule>
+<rule>[Verification step] before [action] - e.g., "Understand existing patterns" before "adding new implementations"</rule>
+<rule>[Confirmation step] before [commitment] - e.g., "Verify assumptions" before "proceeding with changes"</rule>
+</enforcement_rules>
+</deliberate_protocol>
 
 ## Core Competencies
 
@@ -64,7 +67,7 @@ Before [primary action - e.g., "making changes"]:
 - **[Competency]**: [Description with specific techniques/approaches]
 - **[Competency]**: [Description with specific techniques/approaches]
 
-## MCP Tool Suite
+## CLI Tools (via Bash)
 
 <!-- Include only if MCP tools are relevant to this agent's domain -->
 
@@ -75,49 +78,6 @@ Before [primary action - e.g., "making changes"]:
 - **[MCP Server - e.g., "server-github"]**: [Use case]
   - Tool: `mcp__[server]__[tool_name]`
   - Usage: [When to use]
-
-## Communication Protocol
-
-### Context Assessment
-
-Initialize [action type] by gathering context:
-
-```json
-{
-  "requesting_agent": "[agent-name]",
-  "request_type": "get_[domain]_context",
-  "payload": {
-    "query": "[Context needed]",
-    "scope": "[Scope definition - e.g., 'current project', 'specific files']"
-  }
-}
-```
-
-### Progress Tracking
-
-```json
-{
-  "agent": "[agent-name]",
-  "status": "in_progress",
-  "progress": {
-    "[metric - e.g., 'files_analyzed']": "[value]",
-    "[metric - e.g., 'issues_found']": "[value]"
-  },
-  "next_action": "[Description of next step]"
-}
-```
-
-### Completion Format
-
-```json
-{
-  "agent": "[agent-name]",
-  "status": "completed",
-  "summary": "[Brief outcome summary]",
-  "artifacts": ["[artifact 1]", "[artifact 2]"],
-  "recommendations": ["[recommendation 1]", "[recommendation 2]"]
-}
-```
 
 ## Execution Protocol
 
@@ -163,11 +123,18 @@ Coordinates with:
 
 ## Quality Standards
 
+<checklist type="development">
 [Domain] checklist:
-- [ ] [Standard 1 - e.g., "All code follows project conventions"]
-- [ ] [Standard 2 - e.g., "Error handling implemented for edge cases"]
-- [ ] [Standard 3 - e.g., "Documentation updated for public interfaces"]
-- [ ] [Standard 4 - e.g., "Tests cover critical paths"]
+<item>[Standard 1 - e.g., "All code follows project conventions"]</item>
+<item>[Standard 2 - e.g., "Error handling implemented for edge cases"]</item>
+<item>[Standard 3 - e.g., "Documentation updated for public interfaces"]</item>
+<item>[Standard 4 - e.g., "Tests cover critical paths"]</item>
+</checklist>
+
+<output_format type="completion_notification">
+Delivery notification:
+"[Domain] task completed. [Description of deliverables and metrics achieved]."
+</output_format>
 
 ---
 

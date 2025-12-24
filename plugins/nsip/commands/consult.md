@@ -3,6 +3,46 @@ description: Consult with NSIP sheep breeding expert using live data
 allowed-tools: [mcp__nsip__nsip_get_animal, mcp__nsip__nsip_search_animals, mcp__nsip__nsip_get_lineage, mcp__nsip__nsip_get_progeny, mcp__nsip__nsip_search_by_lpn, mcp__nsip__nsip_get_trait_ranges, mcp__nsip__nsip_list_breeds]
 ---
 
+<help_check>
+## Help Check
+
+If `$ARGUMENTS` contains `--help` or `-h`:
+
+**Output this help and HALT (do not proceed further):**
+
+<help_output>
+```
+CONSULT(1)                                           User Commands                                           CONSULT(1)
+
+NAME
+    consult - Consult with NSIP sheep breeding expert using live data
+
+SYNOPSIS
+    /nsip:consult [options]
+
+DESCRIPTION
+    Consult with NSIP sheep breeding expert using live data
+
+OPTIONS
+    --help, -h                Show this help message
+
+EXAMPLES
+    /nsip:consult                           
+    /nsip:consult <options>                 
+    /nsip:consult --help                    
+
+SEE ALSO
+    /nsip:* for related commands
+
+                                                                      CONSULT(1)
+```
+</help_output>
+
+**After outputting help, HALT immediately. Do not proceed with command execution.**
+</help_check>
+
+---
+
 # /consult - Expert NSIP Breeding Consultation
 
 This command provides expert sheep breeding advice using live NSIP data through the shepherd agent.
@@ -41,6 +81,7 @@ The shepherd agent will:
 
 ## Instructions
 
+<step number="1" name="Invoke Shepherd Agent">
 ALWAYS start by invoking the shepherd agent:
 
 ```
@@ -51,3 +92,4 @@ Use Task tool:
 ```
 
 The agent has access to all NSIP tools and will handle the complete consultation.
+</step>

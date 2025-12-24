@@ -10,6 +10,46 @@ allowed-tools:
   - AskUserQuestion
 ---
 
+<help_check>
+## Help Check
+
+If `$ARGUMENTS` contains `--help` or `-h`:
+
+**Output this help and HALT (do not proceed further):**
+
+<help_output>
+```
+LSP_SETUP(1)                                         User Commands                                         LSP_SETUP(1)
+
+NAME
+    lsp-setup - Set up LSP hooks and CLAUDE.md sections for the current...
+
+SYNOPSIS
+    /lsp-tools:lsp-setup [language] or auto-detect
+
+DESCRIPTION
+    Set up LSP hooks and CLAUDE.md sections for the current project
+
+OPTIONS
+    --help, -h                Show this help message
+
+EXAMPLES
+    /lsp-tools:lsp-setup                    
+    /lsp-tools:lsp-setup <language>         
+    /lsp-tools:lsp-setup --help             
+
+SEE ALSO
+    /lsp-tools:* for related commands
+
+                                                                      LSP_SETUP(1)
+```
+</help_output>
+
+**After outputting help, HALT immediately. Do not proceed with command execution.**
+</help_check>
+
+---
+
 # LSP Setup Command
 
 Set up Language Server Protocol hooks and configuration for the current project.
@@ -23,7 +63,7 @@ Set up Language Server Protocol hooks and configuration for the current project.
 
 ## Execution Steps
 
-### Step 1: Determine Languages
+<step number="1" name="Determine Languages">
 
 If a language argument is provided (e.g., `typescript`, `go`, `rust`), use that.
 
@@ -43,7 +83,9 @@ Otherwise, auto-detect by scanning for file extensions:
 
 Use Glob to scan: `**/*.{ts,tsx,js,jsx,py,pyi,go,rs,java,kt,cpp,c,h,cs,php,rb,html,css,tex}`
 
-### Step 2: Locate Hook Files
+</step>
+
+<step number="2" name="Locate Hook Files">
 
 The hook template files are in the skill's references directory:
 `${CLAUDE_PLUGIN_DIR}/skills/lsp-enable/references/`
@@ -62,7 +104,9 @@ Available hook files:
 - `html-css-hooks.json`
 - `latex-hooks.json`
 
-### Step 3: Check Existing Hooks
+</step>
+
+<step number="3" name="Check Existing Hooks">
 
 Check if `.claude/hooks.json` already exists in the project.
 
@@ -75,7 +119,9 @@ If it doesn't exist:
 - Create `.claude/` directory if needed
 - Copy hooks directly
 
-### Step 4: Install Hooks
+</step>
+
+<step number="4" name="Install Hooks">
 
 For single language:
 ```bash
@@ -90,7 +136,9 @@ jq -s '{ hooks: [ .[0].hooks[], .[1].hooks[] ] | unique_by(.name) }' \
   file1.json file2.json > .claude/hooks.json
 ```
 
-### Step 5: Offer CLAUDE.md Section (Optional)
+</step>
+
+<step number="5" name="Offer CLAUDE.md Section">
 
 Ask user: "Would you like to add LSP guidance to your project's CLAUDE.md?"
 
@@ -102,12 +150,16 @@ If yes:
 LSP section files are at:
 `${CLAUDE_PLUGIN_DIR}/skills/lsp-enable/references/{language}-lsp-section.md`
 
-### Step 6: Verify Setup
+</step>
+
+<step number="6" name="Verify Setup">
 
 After installation, confirm:
 1. `.claude/hooks.json` exists and is valid JSON
 2. Hooks are appropriate for detected languages
 3. Report what was installed
+
+</step>
 
 ## Output Format
 
@@ -134,12 +186,14 @@ Next steps:
   3. Restart Claude Code session to activate hooks
 ```
 
-## Error Handling
+<error_handling>
 
 - If no supported languages detected: Inform user and ask which language to configure
 - If hook file not found: Report error with path
 - If JSON merge fails: Fall back to replacement with user confirmation
 - If CLAUDE.md append fails: Report error but don't fail entire setup
+
+</error_handling>
 
 ## Tips
 
