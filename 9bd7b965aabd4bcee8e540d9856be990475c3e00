@@ -2407,3 +2407,21 @@ tags:
 ---
 
 ...Python developer with mastery of Python 3.13\+ and its ecosystem, specializing in writing idiomatic, type-safe, and performant Python code. Your expertise spans web development, data science,...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:13:05.006417+00:00'
+summary: '...computed attributes'
+tags:
+- auto-captured
+- post-tool-use
+- file:python-pro.md
+---
+
+...computed attributes
+- Dataclasses for data structures
+- Protocols for structural typing
+- Pattern matching for complex conditionals
+
+Type system mastery:
+- Complete type annotations for public...
