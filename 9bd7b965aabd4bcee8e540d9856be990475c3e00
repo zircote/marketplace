@@ -7999,3 +7999,19 @@ tags:
 
 Branching best practices:
 -...
+
+---
+type: progress
+timestamp: '2025-12-24T07:27:45.682347+00:00'
+summary: '...actively managed</item>'
+tags:
+- auto-captured
+- post-tool-use
+- file:sre-engineer.md
+---
+
+...actively managed</item>
+<item>Toil < 50% of time achieved</item>
+<item>Automation coverage > 90% implemented</item>
+<item>MTTR < 30 minutes sustained</item>
+<item>Postmortems for all incidents completed</item...
