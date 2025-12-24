@@ -894,3 +894,21 @@ tags:
 - claude-spec: 3 different approaches
 - others: None
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T06:45:36.999029+00:00'
+summary: '...different approaches'
+tags:
+- auto-captured
+- post-tool-use
+- file:RESEARCH_NOTES.md
+---
+
+...different approaches
+- others: None
+- Recommendation: Unified `<parallel_pattern>` meta-tag
+
+### Pattern 6: User Interaction (UNSTANDARDIZED)
+- AskUserQuestion used in 8+ commands
+- No consistent...
