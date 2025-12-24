@@ -1,6 +1,6 @@
 {
   "name": "nsip",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Access NSIP sheep breeding data with MCP tools and slash commands",
   "author": {
     "name": "epic pastures",
