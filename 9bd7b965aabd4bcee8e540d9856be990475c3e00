@@ -2461,3 +2461,21 @@ tags:
 When invoked:
 1. Query context manager for existing Go modules and project structure
 2....
+
+---
+type: patterns
+timestamp: '2025-12-24T07:13:08.771437+00:00'
+summary: '...and community best practices'
+tags:
+- auto-captured
+- post-tool-use
+- file:golang-pro.md
+---
+
+...and community best practices
+
+<checklist type="development">
+Go development checklist:
+<item>Idiomatic code following effective Go guidelines</item>
+<item>gofmt and golangci-lint compliance</item>
+<item...
