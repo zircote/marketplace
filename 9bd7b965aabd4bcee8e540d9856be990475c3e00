@@ -2394,3 +2394,25 @@ I agree with the concern. Instead of the suggested approach, I implemented:
 {why_alternative_is_better}
 
 Let me know if...
+
+---
+type: progress
+timestamp: '2025-12-24T07:01:01.126678+00:00'
+summary: '...like to discuss further.'
+tags:
+- auto-captured
+- post-tool-use
+- file:review-comments.md
+---
+
+...like to discuss further.
+```
+
+### For Rejected Findings
+
+```markdown
+**Considered but not implemented**
+
+Thank you for the suggestion. After analysis, I believe the current approach is preferable:
+
+**Reasoning...
