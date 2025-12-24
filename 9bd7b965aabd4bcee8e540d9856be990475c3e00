@@ -1347,3 +1347,22 @@ CMD ["node", "dist/server.js"]
 <code language="yaml">
 # 1. Build: Docker multi-stage build
 # 2. Test:...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:00:59.844610+00:00'
+summary: '....claude'
+tags:
+- auto-captured
+- post-tool-use
+- file:lsp-setup.md
+---
+
+....claude
+cp ${HOOKS_SOURCE} .claude/hooks.json
+```
+
+For multiple languages, merge hooks using this pattern:
+```bash
+# Read both files and combine hooks arrays
+jq -s '{ hooks: [ .[0].hooks[], .[1].hooks[]...
