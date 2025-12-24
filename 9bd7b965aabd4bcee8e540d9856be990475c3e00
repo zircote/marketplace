@@ -2339,3 +2339,17 @@ Data management:
 - Distributed transactions
 - Eventual consistency
 -...
+
+---
+type: patterns
+timestamp: '2025-12-24T07:10:49.872165+00:00'
+summary: '...entire GraphQL schema with 200+ types, interfaces, unions, and their
+  relationships'
+tags:
+- auto-captured
+- post-tool-use
+- file:graphql-architect.md
+---
+
+...entire GraphQL schema with 200+ types, interfaces, unions, and their relationships
+- **Query pattern analysis**: Track resolver chains, N+1 patterns, and DataLoader batching across complex query...
