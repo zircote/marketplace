@@ -19,3 +19,34 @@ summary: '...release-major` - major bump'
 `─────────────────────────────────────────────────`
 
 The command completed but **no plugins were bumped** because the smart-bump script detected no changes since the...
+
+---
+type: progress
+timestamp: '2025-12-26T14:22:34.511792+00:00'
+summary: Fixed all 12 lsp-tools hook files to use $CLAUDE_PROJECT_DIR instead of relative
+  paths
+---
+
+Fixed all 12 lsp-tools hook files to use $CLAUDE_PROJECT_DIR instead of relative paths
+## Summary
+Updated all language-specific hook JSON files to ensure commands that need the project root directory use `$CLAUDE_PROJECT_DIR` instead of relying on the current working directory (`.`, `./...`, `./gradlew`, etc.).
+
+## Changes Made
+- **Pattern applied**: `cd "$CLAUDE_PROJECT_DIR" && <command>` for project-wide operations
+- **Unchanged**: Commands using `$CLAUDE_FILE_PATHS` (already absolute paths)
+- **Files updated** (12 total):
+  - python-hooks.json - pre-commit quality gate
+  - typescript-hooks.json - tsc typecheck + pre-commit
+  - go-hooks.json - go vet, go build, go test
+  - rust-hooks.json - cargo check, clippy, tests
+  - cpp-hooks.json - cmake/make build detection + tests
+  - java-hooks.json - Maven/Gradle detection + builds
+  - kotlin-hooks.json - Gradle operations
+  - csharp-hooks.json - dotnet format/build/test
+  - php-hooks.json - vendor/bin tools
+  - ruby-hooks.json - bundle exec operations
+  - html-css-hooks.json - npx prettier/stylelint/htmlhint
+  - latex-hooks.json - latexmk builds
+
+## Related Files
+- plugins/lsp-tools/skills/lsp-enable/references/*-hooks.json
