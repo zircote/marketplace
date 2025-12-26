@@ -28,3 +28,28 @@ Updated all language-specific hook JSON files to ensure commands that need the p
 
 ## Related Files
 - plugins/lsp-tools/skills/lsp-enable/references/*-hooks.json
+
+---
+type: progress
+timestamp: '2025-12-26T15:08:13.093366+00:00'
+summary: Released lsp-tools v0.2.0 with $CLAUDE_PROJECT_DIR fix
+---
+
+Released lsp-tools v0.2.0 with $CLAUDE_PROJECT_DIR fix
+## Summary
+Bumped lsp-tools plugin from v0.1.1 to v0.2.0, committed, pushed, and created GitHub release.
+
+## Changes Made
+- Updated plugin.json version: 0.1.1 → 0.2.0
+- Added CHANGELOG.md entry for v0.2.0
+- Committed 14 files (plugin.json, CHANGELOG.md, 12 hook files)
+- Pushed to origin/main
+- Created GitHub release with tag `lsp-tools-v0.2.0`
+
+## Related Files
+- plugins/lsp-tools/.claude-plugin/plugin.json
+- plugins/lsp-tools/CHANGELOG.md
+- plugins/lsp-tools/skills/lsp-enable/references/*-hooks.json
+
+## Release URL
+https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.2.0
