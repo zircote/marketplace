@@ -7,7 +7,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "if [ -f pom.xml ]; then mvn compile -q 2>&1 | grep -E '\\[ERROR\\]' | head -10; fi || true",
+      "command": "if [ -f \"$CLAUDE_PROJECT_DIR/pom.xml\" ]; then cd \"$CLAUDE_PROJECT_DIR\" && mvn compile -q 2>&1 | grep -E '\\[ERROR\\]' | head -10; fi || true",
       "conditions": {
         "fileExtensions": [".java"]
       }
@@ -18,7 +18,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "if [ -f build.gradle ] || [ -f build.gradle.kts ]; then ./gradlew compileJava --console=plain 2>&1 | grep -E '^e:' | head -10; fi || true",
+      "command": "if [ -f \"$CLAUDE_PROJECT_DIR/build.gradle\" ] || [ -f \"$CLAUDE_PROJECT_DIR/build.gradle.kts\" ]; then cd \"$CLAUDE_PROJECT_DIR\" && ./gradlew compileJava --console=plain 2>&1 | grep -E '^e:' | head -10; fi || true",
       "conditions": {
         "fileExtensions": [".java"]
       }
@@ -29,7 +29,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit' && [ -f pom.xml ]; then mvn compile test -q; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit' && [ -f \"$CLAUDE_PROJECT_DIR/pom.xml\" ]; then cd \"$CLAUDE_PROJECT_DIR\" && mvn compile test -q; fi",
       "blocking": true
     },
     {
@@ -38,7 +38,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit' && [ -f build.gradle ]; then ./gradlew build --console=plain; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit' && [ -f \"$CLAUDE_PROJECT_DIR/build.gradle\" ]; then cd \"$CLAUDE_PROJECT_DIR\" && ./gradlew build --console=plain; fi",
       "blocking": true
     }
   ]

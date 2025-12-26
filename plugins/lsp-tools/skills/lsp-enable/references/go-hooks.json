@@ -18,7 +18,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "go vet ./... 2>&1 | head -10 || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && go vet ./... 2>&1 | head -10 || true",
       "conditions": {
         "fileExtensions": [".go"]
       }
@@ -29,7 +29,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "go build ./... 2>&1 | head -10 || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && go build ./... 2>&1 | head -10 || true",
       "conditions": {
         "fileExtensions": [".go"]
       }
@@ -40,7 +40,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then go vet ./... && go test ./...; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then cd \"$CLAUDE_PROJECT_DIR\" && go vet ./... && go test ./...; fi",
       "blocking": true
     }
   ]

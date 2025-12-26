@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-12-26
+
+### Fixed
+
+- All 12 language hook files now use `$CLAUDE_PROJECT_DIR` instead of relative paths
+  - Ensures hooks work correctly regardless of current working directory
+  - Commands like `go vet ./...`, `cargo test`, `./gradlew build` now properly cd to project root
+  - File existence checks use absolute paths (e.g., `"$CLAUDE_PROJECT_DIR/pom.xml"`)
+
+### Changed
+
+- Updated hook command patterns:
+  - Project-wide operations now use `cd "$CLAUDE_PROJECT_DIR" && <command>`
+  - File-specific operations still use `$CLAUDE_FILE_PATHS` (already absolute)
+
 ## [0.1.1] - 2025-12-24
 
 ### Added
@@ -72,4 +87,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hooks use `${CLAUDE_PLUGIN_DIR}` for portability
 - Strong enforcement patterns modeled after systematic-debugging skill
 
+[0.2.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.2.0
+[0.1.1]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.1.1
 [0.1.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.1.0

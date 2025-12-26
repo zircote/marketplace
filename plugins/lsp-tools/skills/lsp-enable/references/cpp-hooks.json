@@ -18,7 +18,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "if [ -d build ]; then cmake --build build 2>&1 | grep -E '^.*error:' | head -10; elif [ -f Makefile ]; then make 2>&1 | grep -E '^.*error:' | head -10; fi || true",
+      "command": "if [ -d \"$CLAUDE_PROJECT_DIR/build\" ]; then cd \"$CLAUDE_PROJECT_DIR\" && cmake --build build 2>&1 | grep -E '^.*error:' | head -10; elif [ -f \"$CLAUDE_PROJECT_DIR/Makefile\" ]; then cd \"$CLAUDE_PROJECT_DIR\" && make 2>&1 | grep -E '^.*error:' | head -10; fi || true",
       "conditions": {
         "fileExtensions": [".c", ".cpp", ".cc", ".cxx", ".h", ".hpp"]
       }
@@ -40,7 +40,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then cmake --build build && ctest --test-dir build --output-on-failure; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then cd \"$CLAUDE_PROJECT_DIR\" && cmake --build build && ctest --test-dir build --output-on-failure; fi",
       "blocking": true
     }
   ]

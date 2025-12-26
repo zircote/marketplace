@@ -7,7 +7,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "npx prettier --write $CLAUDE_FILE_PATHS 2>/dev/null || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && npx prettier --write $CLAUDE_FILE_PATHS 2>/dev/null || true",
       "conditions": {
         "fileExtensions": [".html", ".htm"]
       }
@@ -18,7 +18,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "npx prettier --write $CLAUDE_FILE_PATHS 2>/dev/null || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && npx prettier --write $CLAUDE_FILE_PATHS 2>/dev/null || true",
       "conditions": {
         "fileExtensions": [".css", ".scss", ".sass", ".less"]
       }
@@ -29,7 +29,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "npx stylelint $CLAUDE_FILE_PATHS 2>/dev/null | head -15 || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && npx stylelint $CLAUDE_FILE_PATHS 2>/dev/null | head -15 || true",
       "conditions": {
         "fileExtensions": [".css", ".scss"]
       }
@@ -40,7 +40,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "npx htmlhint $CLAUDE_FILE_PATHS 2>/dev/null | head -15 || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && npx htmlhint $CLAUDE_FILE_PATHS 2>/dev/null | head -15 || true",
       "conditions": {
         "fileExtensions": [".html", ".htm"]
       }

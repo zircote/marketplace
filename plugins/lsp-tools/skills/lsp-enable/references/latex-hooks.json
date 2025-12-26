@@ -18,7 +18,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "latexmk -pdf -interaction=nonstopmode $CLAUDE_FILE_PATHS 2>&1 | grep -E '^!' | head -10 || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && latexmk -pdf -interaction=nonstopmode $CLAUDE_FILE_PATHS 2>&1 | grep -E '^!' | head -10 || true",
       "conditions": {
         "fileExtensions": [".tex"]
       }
@@ -29,7 +29,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then latexmk -pdf *.tex; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then cd \"$CLAUDE_PROJECT_DIR\" && latexmk -pdf *.tex; fi",
       "blocking": true
     }
   ]

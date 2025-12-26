@@ -40,7 +40,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then ruff check . && pyright; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then cd \"$CLAUDE_PROJECT_DIR\" && ruff check . && pyright; fi",
       "blocking": true
     }
   ]

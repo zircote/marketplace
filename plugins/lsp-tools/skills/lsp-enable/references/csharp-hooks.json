@@ -7,7 +7,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "dotnet format --include $CLAUDE_FILE_PATHS 2>/dev/null || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && dotnet format --include $CLAUDE_FILE_PATHS 2>/dev/null || true",
       "conditions": {
         "fileExtensions": [".cs"]
       }
@@ -18,7 +18,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "dotnet build --no-restore 2>&1 | grep -E 'error CS' | head -10 || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && dotnet build --no-restore 2>&1 | grep -E 'error CS' | head -10 || true",
       "conditions": {
         "fileExtensions": [".cs"]
       }
@@ -29,7 +29,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then dotnet format --verify-no-changes && dotnet build && dotnet test; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then cd \"$CLAUDE_PROJECT_DIR\" && dotnet format --verify-no-changes && dotnet build && dotnet test; fi",
       "blocking": true
     }
   ]

@@ -1,6 +1,6 @@
 {
   "name": "lsp-tools",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "LSP-first code intelligence for Claude Code. Enforces semantic code navigation with mandatory pre-edit checks, impact analysis before refactoring, and post-edit diagnostics. Includes setup command and hooks for 12 languages.",
   "author": {
     "name": "zircote",

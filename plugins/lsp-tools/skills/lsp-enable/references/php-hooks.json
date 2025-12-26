@@ -7,7 +7,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "./vendor/bin/php-cs-fixer fix $CLAUDE_FILE_PATHS --quiet 2>/dev/null || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && ./vendor/bin/php-cs-fixer fix $CLAUDE_FILE_PATHS --quiet 2>/dev/null || true",
       "conditions": {
         "fileExtensions": [".php"]
       }
@@ -29,7 +29,7 @@
       "event": "PostToolUse",
       "matcher": "Write|Edit|str_replace_editor",
       "type": "command",
-      "command": "./vendor/bin/phpstan analyse $CLAUDE_FILE_PATHS --no-progress 2>/dev/null | head -15 || true",
+      "command": "cd \"$CLAUDE_PROJECT_DIR\" && ./vendor/bin/phpstan analyse $CLAUDE_FILE_PATHS --no-progress 2>/dev/null | head -15 || true",
       "conditions": {
         "fileExtensions": [".php"]
       }
@@ -40,7 +40,7 @@
       "event": "PreToolUse",
       "matcher": "Bash",
       "type": "command",
-      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then ./vendor/bin/php-cs-fixer fix --dry-run --diff && ./vendor/bin/phpstan analyse && ./vendor/bin/phpunit; fi",
+      "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'git commit'; then cd \"$CLAUDE_PROJECT_DIR\" && ./vendor/bin/php-cs-fixer fix --dry-run --diff && ./vendor/bin/phpstan analyse && ./vendor/bin/phpunit; fi",
       "blocking": true
     }
   ]
