@@ -6,3 +6,12 @@ summary: Now I understand the full scope. Many hooks use relative paths (`.`, `.
 ---
 
 Now I understand the full scope. Many hooks use relative paths (`.`, `./...`, `./gradlew`, etc.) that need...
+
+---
+type: learnings
+timestamp: '2025-12-26T15:08:13.133152+00:00'
+summary: Now I understand the issue. Many hooks use `.` or `./...` to reference the
+  current directory, but sh
+---
+
+Now I understand the issue. Many hooks use `.` or `./...` to reference the current directory, but should use...
