@@ -7,6 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2025-12-27
+
+### Added
+
+- **LSP Server Installation Scripts** - Per-language scripts for automated LSP server installation
+  - Bash scripts for Unix/macOS (`scripts/bash/install-{language}-lsp.sh`)
+  - PowerShell scripts for Windows (`scripts/powershell/install-{language}-lsp.ps1`)
+  - Covers all 12 supported languages (TypeScript, Python, Rust, Go, Java, Kotlin, C/C++, C#, PHP, Ruby, HTML/CSS, LaTeX)
+
+- **Prerequisite Verification** - System prerequisite checks before installation
+  - `check-prerequisites.sh` (bash) and `check-prerequisites.ps1` (PowerShell)
+  - Verifies package managers (npm, pip, brew, apt, winget, choco, scoop)
+  - Verifies language runtimes (Node.js, Python, Go, Rust, Java, etc.)
+
+- **LSP Server Verification** - Quick status check for all LSP servers
+  - `verify-lsp-servers.sh` (bash) and `verify-lsp-servers.ps1` (PowerShell)
+  - Reports installed/missing status for each language server
+
+- **LSP Server Registry** - Comprehensive reference documentation
+  - `references/lsp-server-registry.md` with installation commands for all platforms
+  - Verification commands, minimum versions, and PATH requirements
+
+- **Enhanced `/lsp-tools:lsp-setup` Command**
+  - New `--verify-only` flag to check LSP server status without installing
+  - New `--skip-install` flag to skip server installation prompts
+  - New `--skip-hooks` flag to skip hooks installation
+  - New `--skip-claudemd` flag to skip CLAUDE.md modifications
+  - **Per-server installation prompts** - User approval for each missing server
+  - Full prerequisite verification before installation
+  - Post-installation verification to confirm success
+
+### Changed
+
+- `/lsp-tools:lsp-setup` now includes full LSP toolchain setup (servers, environment, hooks, CLAUDE.md)
+- SKILL.md updated with server installation section and script references
+
 ## [0.2.0] - 2025-12-26
 
 ### Fixed
@@ -87,6 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hooks use `${CLAUDE_PLUGIN_DIR}` for portability
 - Strong enforcement patterns modeled after systematic-debugging skill
 
+[0.3.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.3.0
 [0.2.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.2.0
 [0.1.1]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.1.1
 [0.1.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.1.0

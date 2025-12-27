@@ -133,6 +133,37 @@ export ENABLE_LSP_TOOL=1
 
 **Full setup guide:** `references/lsp-setup-verification.md`
 
+## Server Installation
+
+If LSP servers are not installed, use `/lsp-tools:lsp-setup` for guided installation.
+
+**Quick verification:**
+```bash
+# Run verification script
+bash "${CLAUDE_PLUGIN_DIR}/scripts/bash/verify-lsp-servers.sh"
+```
+
+**Per-language installation scripts are available:**
+
+| Language | Server | Install Script |
+|----------|--------|----------------|
+| TypeScript/JS | vtsls | `scripts/bash/install-typescript-lsp.sh` |
+| Python | pyright | `scripts/bash/install-python-lsp.sh` |
+| Rust | rust-analyzer | `scripts/bash/install-rust-lsp.sh` |
+| Go | gopls | `scripts/bash/install-go-lsp.sh` |
+| Java | jdtls | `scripts/bash/install-java-lsp.sh` |
+| Kotlin | kotlin-language-server | `scripts/bash/install-kotlin-lsp.sh` |
+| C/C++ | clangd | `scripts/bash/install-cpp-lsp.sh` |
+| C# | OmniSharp | `scripts/bash/install-csharp-lsp.sh` |
+| PHP | phpactor | `scripts/bash/install-php-lsp.sh` |
+| Ruby | ruby-lsp | `scripts/bash/install-ruby-lsp.sh` |
+| HTML/CSS | vscode-langservers | `scripts/bash/install-html-css-lsp.sh` |
+| LaTeX | texlab | `scripts/bash/install-latex-lsp.sh` |
+
+**Windows users:** Use corresponding PowerShell scripts in `scripts/powershell/`.
+
+**Server registry with full details:** `references/lsp-server-registry.md`
+
 ## Why LSP Over Grep
 
 | Metric                     | LSP                         | Grep                               |
