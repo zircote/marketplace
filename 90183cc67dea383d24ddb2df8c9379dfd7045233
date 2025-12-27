@@ -30,3 +30,22 @@ Incorporated LSP server setup guidance from the claude-code-lsps repository into
 - plugins/lsp-tools/skills/lsp-enable/SKILL.md (updated)
 - plugins/lsp-tools/.claude-plugin/plugin.json (v0.3.0)
 - plugins/lsp-tools/CHANGELOG.md (updated)
+
+---
+type: progress
+timestamp: '2025-12-27T18:11:23.298999+00:00'
+summary: Released lsp-tools v0.3.0 to GitHub
+---
+
+Released lsp-tools v0.3.0 to GitHub
+## Summary
+Committed and tagged lsp-tools v0.3.0 with all the new LSP server installation automation features.
+
+## Changes Made
+- Committed 35 files (2,816 insertions, 84 deletions)
+- Created tag `lsp-tools-v0.3.0`
+- Pushed to origin/main
+
+## Related Files
+- Commit: 90183cc
+- Tag: lsp-tools-v0.3.0
