@@ -53,3 +53,36 @@ Bumped lsp-tools plugin from v0.1.1 to v0.2.0, committed, pushed, and created Gi
 
 ## Release URL
 https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.2.0
+
+---
+type: progress
+timestamp: '2025-12-27T18:07:30.660889+00:00'
+summary: Enhanced lsp-tools plugin with full LSP server installation automation
+---
+
+Enhanced lsp-tools plugin with full LSP server installation automation
+## Summary
+Incorporated LSP server setup guidance from the claude-code-lsps repository into the lsp-tools plugin, adding automated installation scripts with per-server user prompts for seamless LSP toolchain setup.
+
+## Changes Made
+- Created `lsp-server-registry.md` - comprehensive reference with verification commands, installation instructions for all platforms
+- Created 12 bash installation scripts (`scripts/bash/install-{language}-lsp.sh`) for Unix/macOS
+- Created 12 PowerShell installation scripts (`scripts/powershell/install-{language}-lsp.ps1`) for Windows
+- Created prerequisite check scripts (`check-prerequisites.sh`, `check-prerequisites.ps1`)
+- Created verification scripts (`verify-lsp-servers.sh`, `verify-lsp-servers.ps1`)
+- Enhanced `/lsp-tools:lsp-setup` command with:
+  - Full prerequisite verification
+  - Per-server installation prompts with user approval
+  - New flags: `--verify-only`, `--skip-install`, `--skip-hooks`, `--skip-claudemd`
+  - Post-installation verification
+- Updated SKILL.md with server installation section
+- Bumped version to 0.3.0 with full changelog
+
+## Related Files
+- plugins/lsp-tools/skills/lsp-enable/references/lsp-server-registry.md (new)
+- plugins/lsp-tools/scripts/bash/*.sh (14 new scripts)
+- plugins/lsp-tools/scripts/powershell/*.ps1 (14 new scripts)
+- plugins/lsp-tools/commands/lsp-setup.md (enhanced)
+- plugins/lsp-tools/skills/lsp-enable/SKILL.md (updated)
+- plugins/lsp-tools/.claude-plugin/plugin.json (v0.3.0)
+- plugins/lsp-tools/CHANGELOG.md (updated)
