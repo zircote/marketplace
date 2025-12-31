@@ -49,12 +49,12 @@
       "description": "Project specification lifecycle management with strategic planning, implementation tracking, and retrospectives"
     },
     {
-      "name": "memory-capture",
+      "name": "subcog",
       "source": {
         "source": "github",
-        "repo": "zircote/git-notes-memory"
+        "repo": "zircote/subcog"
       },
-      "description": "Git-backed memory system for Claude Code. Captures decisions, learnings, and context as git notes with semantic search and automatic recall."
+      "description": "subcog is a Git-backed memory system for Claude Code, capturing decisions, learnings, and context as git notes with semantic search and automatic recall."
     },
     {
       "name": "git-adr",
