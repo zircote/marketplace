@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 7 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 10 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -23,6 +23,9 @@ claude /plugin install datadog    # DataDog monitoring agents
 claude /plugin install document-skills  # PDF/DOCX/XLSX/PPTX processing
 claude /plugin install nsip       # Sheep breeding data (NSIP)
 claude /plugin install cs         # Project specification lifecycle
+claude /plugin install markdown-lsp  # LSP tools + diagnostic hooks for Markdown
+claude /plugin install subcog     # Git-backed memory system
+claude /plugin install git-adr    # ADR management via git notes
 ```
 
 ## Available Plugins
@@ -123,6 +126,23 @@ LSP-first code intelligence for Claude Code - enforces Language Server Protocol 
 
 ```bash
 claude /plugin install lsp-tools
+```
+
+---
+
+### markdown-lsp - Markdown LSP Tools
+
+LSP tools plugin and diagnostic hooks for Markdown files.
+
+**External Source:** [zircote/markdown-lsp](https://github.com/zircote/markdown-lsp)
+
+**Features:**
+- LSP-powered Markdown editing and validation
+- Diagnostic hooks for Claude Code
+- Syntax checking and link validation
+
+```bash
+claude /plugin install markdown-lsp
 ```
 
 ---

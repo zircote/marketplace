@@ -57,6 +57,14 @@
       "description": "subcog is a Git-backed memory system for Claude Code, capturing decisions, learnings, and context as git notes with semantic search and automatic recall."
     },
     {
+      "name": "markdown-lsp",
+      "source": {
+        "source": "github",
+        "repo": "zircote/markdown-lsp"
+      },
+      "description": "LSP tools plugin and diagnostic hooks for Markdown files in Claude Code"
+    },
+    {
       "name": "git-adr",
       "source": {
         "source": "github",
