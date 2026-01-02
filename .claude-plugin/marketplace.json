@@ -11,11 +11,6 @@
   },
   "plugins": [
     {
-      "name": "lsp-tools",
-      "source": "./plugins/lsp-tools",
-      "description": "LSP-first code intelligence enforcing Language Server Protocol usage for all code operations across 12 languages"
-    },
-    {
       "name": "datadog",
       "source": "./plugins/datadog",
       "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration"
@@ -55,30 +50,6 @@
         "repo": "zircote/subcog"
       },
       "description": "subcog is a Git-backed memory system for Claude Code, capturing decisions, learnings, and context as git notes with semantic search and automatic recall."
-    },
-    {
-      "name": "markdown-lsp",
-      "source": {
-        "source": "github",
-        "repo": "zircote/markdown-lsp"
-      },
-      "description": "LSP tools plugin and diagnostic hooks for Markdown files in Claude Code"
-    },
-    {
-      "name": "rust-lsp",
-      "source": {
-        "source": "github",
-        "repo": "zircote/rust-lsp"
-      },
-      "description": "Rust development with rust-analyzer LSP, 16 hooks for clippy, security scanning, and dependency management"
-    },
-    {
-      "name": "terraform-lsp",
-      "source": {
-        "source": "github",
-        "repo": "zircote/terraform-lsp"
-      },
-      "description": "Terraform/Terragrunt development with terraform-ls LSP, 17 hooks for security (trivy/checkov), linting (tflint), and formatting"
     },
     {
       "name": "git-adr",
