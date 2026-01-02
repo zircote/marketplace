@@ -16,20 +16,20 @@ claude /plugin marketplace add zircote/marketplace
 claude /plugin list
 
 # Install a specific plugin (format: plugin-name@marketplace-name)
-claude /plugin install zircote@zircote-claude-marketplace           # 116 specialized agents
-claude /plugin install gh@zircote-claude-marketplace                # Git workflow + Copilot onboarding
-claude /plugin install datadog@zircote-claude-marketplace           # DataDog monitoring agents
-claude /plugin install document-skills@zircote-claude-marketplace   # PDF/DOCX/XLSX/PPTX processing
-claude /plugin install nsip@zircote-claude-marketplace              # Sheep breeding data (NSIP)
-claude /plugin install cs@zircote-claude-marketplace                # Project specification lifecycle
-claude /plugin install subcog@zircote-claude-marketplace            # Git-backed memory system
-claude /plugin install git-adr@zircote-claude-marketplace           # ADR management via git notes
+claude /plugin install zircote@zircote           # 116 specialized agents
+claude /plugin install gh@zircote                # Git workflow + Copilot onboarding
+claude /plugin install datadog@zircote           # DataDog monitoring agents
+claude /plugin install document-skills@zircote   # PDF/DOCX/XLSX/PPTX processing
+claude /plugin install nsip@zircote              # Sheep breeding data (NSIP)
+claude /plugin install cs@zircote                # Project specification lifecycle
+claude /plugin install subcog@zircote            # Git-backed memory system
+claude /plugin install git-adr@zircote           # ADR management via git notes
 
 # LSP Plugins (see "Language Server Protocol" section below)
-claude /plugin install lsp-tools@zircote-claude-marketplace       # Multi-language LSP foundation (14 languages)
-claude /plugin install markdown-lsp@zircote-claude-marketplace    # Markdown LSP + validation hooks
-claude /plugin install rust-lsp@zircote-claude-marketplace        # Rust development toolchain
-claude /plugin install terraform-lsp@zircote-claude-marketplace   # Terraform/Terragrunt + security scanning
+claude /plugin install lsp-tools@zircote       # Multi-language LSP foundation (14 languages)
+claude /plugin install markdown-lsp@zircote    # Markdown LSP + validation hooks
+claude /plugin install rust-lsp@zircote        # Rust development toolchain
+claude /plugin install terraform-lsp@zircote   # Terraform/Terragrunt + security scanning
 ```
 
 ## Available Plugins
@@ -181,7 +181,7 @@ The foundational LSP plugin supporting 12 programming languages with automated s
 
 **Setup Command:**
 ```bash
-claude /plugin install lsp-tools@zircote-claude-marketplace
+claude /plugin install lsp-tools@zircote
 
 # Auto-detect languages and configure
 /lsp-tools:lsp-setup
@@ -219,7 +219,7 @@ claude /plugin install lsp-tools@zircote-claude-marketplace
 LSP-powered Markdown editing with Marksman server and validation hooks.
 
 ```bash
-claude /plugin install markdown-lsp@zircote-claude-marketplace
+claude /plugin install markdown-lsp@zircote
 ```
 
 **Hooks (4):**
@@ -237,7 +237,7 @@ claude /plugin install markdown-lsp@zircote-claude-marketplace
 Comprehensive Rust development with rust-analyzer LSP and cargo ecosystem integration.
 
 ```bash
-claude /plugin install rust-lsp@zircote-claude-marketplace
+claude /plugin install rust-lsp@zircote
 
 # Interactive setup
 /rust-lsp:setup
@@ -260,7 +260,7 @@ claude /plugin install rust-lsp@zircote-claude-marketplace
 Infrastructure-as-Code development with terraform-ls LSP and security scanning.
 
 ```bash
-claude /plugin install terraform-lsp@zircote-claude-marketplace
+claude /plugin install terraform-lsp@zircote
 
 # Interactive setup
 /terraform-lsp:setup
