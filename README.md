@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 10 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 12 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Includes 4 specialized LSP plugins with automated hooks for language-specific development workflows. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -18,14 +18,18 @@ claude /plugin list
 # Install a specific plugin
 claude /plugin install zircote    # 116 specialized agents
 claude /plugin install gh         # Git workflow + Copilot onboarding
-claude /plugin install lsp-tools  # LSP-first code intelligence
 claude /plugin install datadog    # DataDog monitoring agents
 claude /plugin install document-skills  # PDF/DOCX/XLSX/PPTX processing
 claude /plugin install nsip       # Sheep breeding data (NSIP)
 claude /plugin install cs         # Project specification lifecycle
-claude /plugin install markdown-lsp  # LSP tools + diagnostic hooks for Markdown
 claude /plugin install subcog     # Git-backed memory system
 claude /plugin install git-adr    # ADR management via git notes
+
+# LSP Plugins (see "Language Server Protocol" section below)
+claude /plugin install lsp-tools       # Multi-language LSP foundation (14 languages)
+claude /plugin install markdown-lsp    # Markdown LSP + validation hooks
+claude /plugin install rust-lsp        # Rust development toolchain
+claude /plugin install terraform-lsp   # Terraform/Terragrunt + security scanning
 ```
 
 ## Available Plugins
@@ -84,65 +88,6 @@ Streamlined version control operations, GitHub ecosystem integration, and Copilo
 
 ```bash
 claude /plugin install gh
-```
-
----
-
-### lsp-tools - LSP-First Code Intelligence
-
-LSP-first code intelligence for Claude Code - enforces Language Server Protocol usage for all code operations.
-
-**Command:**
-| Command | Description |
-|---------|-------------|
-| `/lsp-setup` | Copies language-specific hooks to project's `.claude/hooks.json` |
-
-**Skill:** `lsp-enable` - Enforces the "Three Iron Laws" of LSP-first development:
-1. **Never guess** - Always use LSP for definitions, references, and symbols
-2. **Never assume** - Verify imports, types, and dependencies via LSP
-3. **Never skip** - Run LSP diagnostics before and after every change
-
-**Language Support (12 languages):**
-| Language | LSP Server | Key Operations |
-|----------|------------|----------------|
-| TypeScript/JavaScript | typescript-language-server | Go to definition, find references, rename |
-| Python | pylsp, pyright | Type checking, import resolution |
-| Go | gopls | Package navigation, interface implementation |
-| Rust | rust-analyzer | Trait resolution, macro expansion |
-| Java | jdtls | Maven/Gradle integration, refactoring |
-| Kotlin | kotlin-language-server | Null safety, coroutine support |
-| C# | omnisharp | .NET integration, NuGet packages |
-| C/C++ | clangd | Header navigation, compile commands |
-| Ruby | solargraph | Gem resolution, YARD documentation |
-| PHP | intelephense | Composer packages, PSR standards |
-| HTML/CSS | vscode-html-language-server | Class references, selector validation |
-| LaTeX | texlab | Citation resolution, reference checking |
-
-**Reference Documentation:**
-- LSP Operations Guide
-- Enforcement Protocol
-- Decision Matrix
-- Setup Verification
-
-```bash
-claude /plugin install lsp-tools
-```
-
----
-
-### markdown-lsp - Markdown LSP Tools
-
-LSP tools plugin and diagnostic hooks for Markdown files.
-
-**External Source:** [zircote/markdown-lsp](https://github.com/zircote/markdown-lsp)
-
-**Features:**
-- LSP-powered Markdown editing and validation
-- Diagnostic hooks for Claude Code
-- Syntax checking and link validation
-
-```bash
-claude /plugin install markdown-lsp
 ```
 
 ---
@@ -219,6 +164,123 @@ claude /plugin install nsip
 
 ---
 
+## Language Server Protocol (LSP) Plugins
+
+Specialized plugins providing LSP integration, automated hooks, and diagnostic tooling for specific languages and file types. Each plugin includes preconfigured `.lsp.json` configurations and Claude Code hooks that run automatically on file changes.
+
+| Plugin | LSP Server | Hooks | Setup Command |
+|--------|------------|-------|---------------|
+| **lsp-tools** | 12 servers (pyright, gopls, rust-analyzer, etc.) | Language-specific hook templates | `/lsp-tools:lsp-setup` |
+| **markdown-lsp** | marksman | 4 hooks (links, frontmatter, code blocks, syntax) | — |
+| **rust-lsp** | rust-analyzer | 16 hooks (clippy, security, dependencies) | `/rust-lsp:setup` |
+| **terraform-lsp** | terraform-ls | 17 hooks (tflint, trivy, checkov, terragrunt) | `/terraform-lsp:setup` |
+
+### lsp-tools - Multi-Language LSP Foundation
+
+The foundational LSP plugin supporting 12 programming languages with automated server installation and project-level hook configuration.
+
+**Setup Command:**
+```bash
+claude /plugin install lsp-tools
+
+# Auto-detect languages and configure
+/lsp-tools:lsp-setup
+
+# Setup specific languages only
+/lsp-tools:lsp-setup typescript python go
+```
+
+**Supported Languages:**
+
+| Language | LSP Server | Key Features |
+|----------|------------|--------------|
+| TypeScript/JavaScript | vtsls | Type checking, import resolution |
+| Python | pyright | Type inference, strict mode |
+| Go | gopls | Package navigation, interface implementation |
+| Rust | rust-analyzer | Trait resolution, macro expansion |
+| Java | jdtls | Maven/Gradle integration |
+| Kotlin | kotlin-language-server | Null safety, coroutines |
+| C/C++ | clangd | Header navigation, compile commands |
+| C# | omnisharp | .NET integration, NuGet |
+| PHP | phpactor/intelephense | Composer, PSR standards |
+| Ruby | ruby-lsp/solargraph | Gem resolution, YARD docs |
+| HTML/CSS | vscode-html-language-server | Class references, selectors |
+| LaTeX | texlab | Citation resolution, references |
+
+**Skill:** `lsp-enable` - Enforces LSP-first development with the "Three Iron Laws":
+1. Never guess—always use LSP for definitions and references
+2. Never assume—verify imports and types via LSP
+3. Never skip—run diagnostics before and after every change
+
+---
+
+### markdown-lsp - Markdown Language Server
+
+LSP-powered Markdown editing with Marksman server and validation hooks.
+
+```bash
+claude /plugin install markdown-lsp
+```
+
+**Hooks (4):**
+- Code block validation (language identifiers)
+- Link validation (internal anchors, file references)
+- Frontmatter YAML structure validation
+- Claude Code syntax checking (LSP operations, slash commands)
+
+**LSP Operations:** documentSymbol, goToDefinition, findReferences, hover, workspaceSymbol
+
+---
+
+### rust-lsp - Rust Development Toolchain
+
+Comprehensive Rust development with rust-analyzer LSP and cargo ecosystem integration.
+
+```bash
+claude /plugin install rust-lsp
+
+# Interactive setup
+/rust-lsp:setup
+```
+
+**Hooks (16 across 3 categories):**
+
+| Category | Hooks |
+|----------|-------|
+| Code Quality | Auto-format, compilation check, clippy lint, test compilation |
+| Security & Dependencies | Vulnerability scan (cargo-audit), license check, outdated deps, unsafe code flags |
+| Advanced Analysis | API compatibility, unsafe metrics, mutation testing hints |
+
+**Tools Installed:** rust-analyzer, cargo-clippy, cargo-audit, cargo-outdated, cargo-udeps, cargo-deny, cargo-semver-checks, cargo-mutants, cargo-expand, cargo-bloat
+
+---
+
+### terraform-lsp - Terraform/Terragrunt Development
+
+Infrastructure-as-Code development with terraform-ls LSP and security scanning.
+
+```bash
+claude /plugin install terraform-lsp
+
+# Interactive setup
+/terraform-lsp:setup
+```
+
+**Hooks (17 across 6 categories):**
+
+| Category | Hooks |
+|----------|-------|
+| Core Terraform | Format, validate, init check, plan hints |
+| Linting | tflint rules, TODO/FIXME detection |
+| Security | trivy vulnerability scan, checkov compliance |
+| Variable Files | .tfvars formatting, sensitive data detection |
+| Terragrunt | HCL formatting, validation |
+| Contextual | terraform-docs, infracost estimates, dependency upgrades |
+
+**Tools Integrated:** terraform-ls, tflint, trivy, checkov, terraform-docs, infracost, terragrunt
+
+---
+
 ### cs - Project Specification Lifecycle
 
 Strategic project planning, implementation tracking, and retrospectives.
@@ -256,9 +318,10 @@ marketplace/
 │   │   ├── agents/               # copilot-assistant
 │   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune, migrate
 │   │   └── skills/               # GitHub ecosystem
-│   ├── lsp-tools/                # LSP-first code intelligence
+│   ├── lsp-tools/                # Multi-language LSP foundation
 │   │   ├── commands/             # lsp-setup
-│   │   └── skills/               # lsp-enable
+│   │   ├── skills/               # lsp-enable
+│   │   └── scripts/              # Installation scripts (bash + powershell)
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
 │   ├── document-skills/          # Document processing
@@ -270,6 +333,13 @@ marketplace/
 │       ├── agents/               # shepherd
 │       ├── commands/             # 10 commands
 │       └── hooks/                # 14 hooks
+├── External Plugins (GitHub)
+│   ├── zircote/claude-spec       # Project specification lifecycle
+│   ├── zircote/subcog            # Git-backed memory system
+│   ├── zircote/git-adr           # ADR management via git notes
+│   ├── zircote/markdown-lsp      # Markdown LSP + 4 validation hooks
+│   ├── zircote/rust-lsp          # Rust LSP + 16 hooks
+│   └── zircote/terraform-lsp     # Terraform LSP + 17 hooks
 └── README.md                     # This file
 ```
 

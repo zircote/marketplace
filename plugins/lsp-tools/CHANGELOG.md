@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-01-02
+
+### Added
+
+- **Specialized Plugin Integration** - Detects installed `zircote/*-lsp` plugins and defers hook installation
+  - `zircote/rust-lsp` - 16 hooks (clippy, security, dependencies)
+  - `zircote/terraform-lsp` - 17 hooks (tflint, trivy, checkov, terragrunt)
+  - `zircote/markdown-lsp` - 4 hooks (links, frontmatter, code blocks, syntax)
+  - When specialized plugins are installed, lsp-tools skips hooks for those languages to avoid conflicts
+
+- **Markdown Language Support** - New language support with marksman LSP server
+  - `references/markdown-lsp-section.md` for CLAUDE.md guidance
+  - `scripts/bash/install-markdown-lsp.sh` and `scripts/powershell/install-markdown-lsp.ps1`
+
+- **Terraform Language Support** - New language support with terraform-ls LSP server
+  - `references/terraform-lsp-section.md` for CLAUDE.md guidance
+  - `scripts/bash/install-terraform-lsp.sh` and `scripts/powershell/install-terraform-lsp.ps1`
+
+### Changed
+
+- `/lsp-tools:lsp-setup` now includes plugin detection step (Step 2)
+- Language detection expanded to 14 languages (added `.md`, `.markdown`, `.tf`, `.tfvars`, `.hcl`)
+- Hook installation step now skips languages covered by specialized plugins
+- Help text updated with SPECIALIZED PLUGINS section
+- Final report distinguishes between lsp-tools hooks and specialized plugin hooks
+
 ## [0.3.0] - 2025-12-27
 
 ### Added
@@ -123,6 +149,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hooks use `${CLAUDE_PLUGIN_DIR}` for portability
 - Strong enforcement patterns modeled after systematic-debugging skill
 
+[0.4.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.4.0
 [0.3.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.3.0
 [0.2.0]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.2.0
 [0.1.1]: https://github.com/zircote/marketplace/releases/tag/lsp-tools-v0.1.1

@@ -28,9 +28,13 @@ SYNOPSIS
     /lsp-tools:lsp-setup [language...] [options]
 
 DESCRIPTION
-    Complete LSP toolchain setup: detects languages, verifies LSP servers are
-    installed, offers to install missing servers, configures hooks, and updates
-    CLAUDE.md with LSP guidance.
+    Complete LSP toolchain setup: detects languages (including Markdown and
+    Terraform), verifies LSP servers are installed, offers to install missing
+    servers, configures hooks, and updates CLAUDE.md with LSP guidance.
+
+    SPECIALIZED PLUGINS: If zircote/*-lsp plugins are installed (rust-lsp,
+    terraform-lsp, markdown-lsp), hooks for those languages are skipped since
+    the specialized plugins provide their own hooks.
 
 OPTIONS
     --help, -h           Show this help message
@@ -38,6 +42,15 @@ OPTIONS
     --skip-hooks         Skip hooks installation
     --skip-claudemd      Skip CLAUDE.md modifications
     --verify-only        Only verify LSP servers, don't install anything
+
+LANGUAGES
+    TypeScript/JavaScript, Python, Go, Rust, Java, Kotlin, C/C++, C#,
+    PHP, Ruby, HTML/CSS, LaTeX, Markdown, Terraform
+
+SPECIALIZED PLUGINS (hooks provided by plugin, not lsp-tools)
+    zircote/rust-lsp       16 hooks (clippy, security, dependencies)
+    zircote/terraform-lsp  17 hooks (tflint, trivy, checkov, terragrunt)
+    zircote/markdown-lsp   4 hooks (links, frontmatter, code blocks, syntax)
 
 EXAMPLES
     /lsp-tools:lsp-setup                     Auto-detect and full setup
@@ -64,11 +77,12 @@ Complete Language Server Protocol toolchain setup for the current project.
 ## What This Command Does
 
 1. Detects languages used in the project (or accepts explicit language arguments)
-2. Checks system prerequisites (package managers, runtimes)
-3. Verifies each required LSP server is installed
-4. **Prompts user for each missing server** with install option
-5. Copies appropriate LSP hooks to `.claude/hooks.json`
-6. Optionally appends LSP guidance to `CLAUDE.md`
+2. **Detects installed `zircote/*-lsp` plugins** (skip hooks for covered languages)
+3. Checks system prerequisites (package managers, runtimes)
+4. Verifies each required LSP server is installed
+5. **Prompts user for each missing server** with install option
+6. Copies appropriate LSP hooks to `.claude/hooks.json` (only for languages without specialized plugins)
+7. Optionally appends LSP guidance to `CLAUDE.md`
 
 ---
 
@@ -98,14 +112,87 @@ Complete Language Server Protocol toolchain setup for the current project.
 | `.rb` | Ruby |
 | `.html`, `.css`, `.scss` | HTML/CSS |
 | `.tex` | LaTeX |
+| `.md`, `.markdown` | Markdown |
+| `.tf`, `.tfvars`, `.hcl` | Terraform |
 
-Use Glob to scan: `**/*.{ts,tsx,js,jsx,py,pyi,go,rs,java,kt,cpp,c,h,cs,php,rb,html,css,tex}`
+Use Glob to scan: `**/*.{ts,tsx,js,jsx,py,pyi,go,rs,java,kt,cpp,c,h,cs,php,rb,html,css,tex,md,markdown,tf,tfvars,hcl}`
 
 **Output detected languages to user.**
 
 </step>
 
-<step number="2" name="Check System Prerequisites">
+<step number="2" name="Detect Installed zircote/*-lsp Plugins">
+
+Check if any specialized `zircote/*-lsp` plugins are installed that provide their own hooks.
+
+**Specialized Plugin Registry:**
+
+| Language | Plugin Name | Hooks Provided |
+|----------|-------------|----------------|
+| Rust | `zircote/rust-lsp` | 16 hooks (clippy, security, dependencies) |
+| Terraform | `zircote/terraform-lsp` | 17 hooks (tflint, trivy, checkov) |
+| Markdown | `zircote/markdown-lsp` | 4 hooks (links, frontmatter, code blocks) |
+
+**Detection method:**
+
+Check for plugin installation by looking for plugin cache directories or using Claude Code's plugin list:
+
+```bash
+# Check plugin cache locations
+PLUGIN_CACHE_DIRS=(
+  "${HOME}/.claude/plugins/cache"
+  "${HOME}/.config/claude/plugins/cache"
+)
+
+SPECIALIZED_PLUGINS=()
+
+for cache_dir in "${PLUGIN_CACHE_DIRS[@]}"; do
+  # Check for rust-lsp
+  if [[ -d "${cache_dir}/zircote/rust-lsp" ]] || [[ -d "${cache_dir}/rust-lsp" ]]; then
+    SPECIALIZED_PLUGINS+=("rust")
+  fi
+  # Check for terraform-lsp
+  if [[ -d "${cache_dir}/zircote/terraform-lsp" ]] || [[ -d "${cache_dir}/terraform-lsp" ]]; then
+    SPECIALIZED_PLUGINS+=("terraform")
+  fi
+  # Check for markdown-lsp
+  if [[ -d "${cache_dir}/zircote/markdown-lsp" ]] || [[ -d "${cache_dir}/markdown-lsp" ]]; then
+    SPECIALIZED_PLUGINS+=("markdown")
+  fi
+done
+```
+
+**Also check project-local `.claude/settings.json`** for enabled plugins:
+
+```bash
+if [[ -f ".claude/settings.json" ]]; then
+  if jq -e '.plugins[]? | select(. | test("rust-lsp"))' .claude/settings.json >/dev/null 2>&1; then
+    SPECIALIZED_PLUGINS+=("rust")
+  fi
+  if jq -e '.plugins[]? | select(. | test("terraform-lsp"))' .claude/settings.json >/dev/null 2>&1; then
+    SPECIALIZED_PLUGINS+=("terraform")
+  fi
+  if jq -e '.plugins[]? | select(. | test("markdown-lsp"))' .claude/settings.json >/dev/null 2>&1; then
+    SPECIALIZED_PLUGINS+=("markdown")
+  fi
+fi
+```
+
+**Output detected specialized plugins:**
+
+```
+Specialized zircote/*-lsp plugins detected:
+  ✓ rust-lsp (16 hooks) - hooks will be provided by plugin
+  ✓ terraform-lsp (17 hooks) - hooks will be provided by plugin
+
+Languages requiring lsp-tools hooks: TypeScript, Python, Go
+```
+
+**Store list of languages covered by specialized plugins** for use in Step 7 (Install Hooks).
+
+</step>
+
+<step number="3" name="Check System Prerequisites">
 
 Run the prerequisite check script to verify package managers and runtimes.
 
@@ -132,7 +219,7 @@ bash "${CLAUDE_PLUGIN_DIR}/scripts/bash/check-prerequisites.sh"
 
 </step>
 
-<step number="3" name="Verify LSP Servers">
+<step number="4" name="Verify LSP Servers">
 
 For each detected language, check if the corresponding LSP server is installed.
 
@@ -152,6 +239,8 @@ For each detected language, check if the corresponding LSP server is installed.
 | Ruby | ruby-lsp | `command -v ruby-lsp \|\| command -v solargraph` |
 | HTML/CSS | vscode-html-language-server | `command -v vscode-html-language-server` |
 | LaTeX | texlab | `command -v texlab` |
+| Markdown | marksman | `command -v marksman` |
+| Terraform | terraform-ls | `command -v terraform-ls` |
 
 **Track which servers are:**
 - Installed (green checkmark)
@@ -161,7 +250,7 @@ For each detected language, check if the corresponding LSP server is installed.
 
 </step>
 
-<step number="4" name="Prompt for Missing Server Installation">
+<step number="5" name="Prompt for Missing Server Installation">
 
 **Skip this step if `--skip-install` flag is set.**
 
@@ -197,6 +286,10 @@ Would you like to install it now?
 | Ruby | `scripts/bash/install-ruby-lsp.sh` | `scripts/powershell/install-ruby-lsp.ps1` |
 | HTML/CSS | `scripts/bash/install-html-css-lsp.sh` | `scripts/powershell/install-html-css-lsp.ps1` |
 | LaTeX | `scripts/bash/install-latex-lsp.sh` | `scripts/powershell/install-latex-lsp.ps1` |
+| Markdown | `scripts/bash/install-markdown-lsp.sh` | `scripts/powershell/install-markdown-lsp.ps1` |
+| Terraform | `scripts/bash/install-terraform-lsp.sh` | `scripts/powershell/install-terraform-lsp.ps1` |
+
+**Note:** For Markdown, Rust, and Terraform, if the corresponding `zircote/*-lsp` plugin is installed, the plugin's `/setup` command should be used instead of these scripts for full toolchain setup.
 
 **Execute installation:**
 
@@ -214,7 +307,7 @@ For Windows:
 
 </step>
 
-<step number="5" name="Check ENABLE_LSP_TOOL Environment">
+<step number="6" name="Check ENABLE_LSP_TOOL Environment">
 
 Verify the `ENABLE_LSP_TOOL` environment variable is set:
 
@@ -237,9 +330,44 @@ Or add to Claude Code settings.json:
 
 </step>
 
-<step number="6" name="Install Hooks">
+<step number="7" name="Install Hooks">
 
 **Skip this step if `--skip-hooks` flag is set.**
+
+**IMPORTANT: Skip hooks for languages covered by specialized `zircote/*-lsp` plugins.**
+
+The specialized plugins (`rust-lsp`, `terraform-lsp`, `markdown-lsp`) include their own hooks that are automatically installed with the plugin. Installing duplicate hooks from lsp-tools would cause conflicts.
+
+**Filter out languages with specialized plugins:**
+
+```bash
+# Languages detected in Step 1
+DETECTED_LANGUAGES=("typescript" "python" "rust" "go")
+
+# Languages covered by specialized plugins from Step 2
+SPECIALIZED_LANGUAGES=("rust")  # From SPECIALIZED_PLUGINS array
+
+# Languages that need lsp-tools hooks
+LANGUAGES_NEEDING_HOOKS=()
+for lang in "${DETECTED_LANGUAGES[@]}"; do
+  if [[ ! " ${SPECIALIZED_LANGUAGES[*]} " =~ " ${lang} " ]]; then
+    LANGUAGES_NEEDING_HOOKS+=("$lang")
+  fi
+done
+
+# Result: LANGUAGES_NEEDING_HOOKS=("typescript" "python" "go")
+```
+
+**If all detected languages are covered by specialized plugins:**
+
+```
+All detected languages are covered by specialized zircote/*-lsp plugins:
+  - Rust → zircote/rust-lsp (16 hooks)
+
+No additional hooks needed from lsp-tools. Skipping hooks installation.
+```
+
+**Otherwise, proceed with hook installation for remaining languages:**
 
 The hook template files are in the skill's references directory:
 `${CLAUDE_PLUGIN_DIR}/skills/lsp-enable/references/`
@@ -268,7 +396,7 @@ jq -s '{ hooks: [ .[0].hooks[], .[1].hooks[] ] | unique_by(.name) }' \
 
 </step>
 
-<step number="7" name="Update CLAUDE.md">
+<step number="8" name="Update CLAUDE.md">
 
 **Skip this step if `--skip-claudemd` flag is set.**
 
@@ -284,7 +412,7 @@ LSP section files are at:
 
 </step>
 
-<step number="8" name="Final Verification and Report">
+<step number="9" name="Final Verification and Report">
 
 **Re-run server verification** for all detected languages.
 
@@ -294,17 +422,21 @@ LSP section files are at:
 LSP Setup Complete
 ==================
 
-Languages: TypeScript, Python, Go
+Languages Detected: TypeScript, Python, Rust, Go
+
+Specialized zircote/*-lsp Plugins:
+  ✓ Rust → zircote/rust-lsp (16 hooks provided by plugin)
 
 LSP Servers:
   [OK] TypeScript (vtsls): installed
   [OK] Python (pyright): 1.1.389
+  [OK] Rust (rust-analyzer): 2024-01-15 (managed by rust-lsp plugin)
   [OK] Go (gopls): v0.16.2
 
 Environment:
   [OK] ENABLE_LSP_TOOL=1
 
-Hooks Installed:
+Hooks from lsp-tools:
   - format-on-edit (TypeScript)
   - typecheck-on-edit (TypeScript)
   - format-on-edit (Python)
@@ -312,8 +444,11 @@ Hooks Installed:
   - format-on-edit (Go)
   - vet-on-edit (Go)
 
+Hooks from Specialized Plugins:
+  - Rust: 16 hooks (clippy, security, deps) via zircote/rust-lsp
+
 Files Modified:
-  - .claude/hooks.json (created)
+  - .claude/hooks.json (created - TypeScript, Python, Go only)
   - CLAUDE.md (appended LSP sections)
 
 Setup complete! Restart Claude Code to activate hooks.

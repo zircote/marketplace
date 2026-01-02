@@ -65,12 +65,20 @@
       "description": "LSP tools plugin and diagnostic hooks for Markdown files in Claude Code"
     },
     {
-      "name": "zircote/rust-lsp",
+      "name": "rust-lsp",
       "source": {
         "source": "github",
         "repo": "zircote/rust-lsp"
       },
-      "description": "LSP tools plugin and diagnostic hooks for Rust files in Claude Code"
+      "description": "Rust development with rust-analyzer LSP, 16 hooks for clippy, security scanning, and dependency management"
+    },
+    {
+      "name": "terraform-lsp",
+      "source": {
+        "source": "github",
+        "repo": "zircote/terraform-lsp"
+      },
+      "description": "Terraform/Terragrunt development with terraform-ls LSP, 17 hooks for security (trivy/checkov), linting (tflint), and formatting"
     },
     {
       "name": "git-adr",

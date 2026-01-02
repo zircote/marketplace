@@ -2,7 +2,7 @@
 
 > LSP-first code intelligence for Claude Code with strong enforcement patterns
 
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ## Overview
@@ -12,8 +12,9 @@ LSP Tools enforces semantic code navigation using Language Server Protocol, prov
 ### Key Features
 
 - **Three Iron Laws** - Mandatory behavioral constraints for code operations
-- **12 Language Support** - TypeScript, Python, Go, Rust, Java, Kotlin, C/C++, C#, PHP, Ruby, HTML/CSS, LaTeX
+- **14 Language Support** - TypeScript, Python, Go, Rust, Java, Kotlin, C/C++, C#, PHP, Ruby, HTML/CSS, LaTeX, Markdown, Terraform
 - **Setup Command** - Automatically configures hooks for your project
+- **Specialized Plugin Integration** - Defers to `zircote/*-lsp` plugins when installed
 - **Decision Trees** - Clear guidance on when to use LSP vs Grep vs Glob
 
 ## Installation
@@ -131,20 +132,32 @@ WHAT DO YOU NEED?
 
 ## Supported Languages
 
-| Language | LSP Server | Hooks File |
-|----------|-----------|------------|
-| TypeScript/JavaScript | vtsls | `typescript-hooks.json` |
-| Python | pyright | `python-hooks.json` |
-| Go | gopls | `go-hooks.json` |
-| Rust | rust-analyzer | `rust-hooks.json` |
-| Java | jdtls | `java-hooks.json` |
-| Kotlin | kotlin-language-server | `kotlin-hooks.json` |
-| C/C++ | clangd | `cpp-hooks.json` |
-| C# | OmniSharp | `csharp-hooks.json` |
-| PHP | phpactor | `php-hooks.json` |
-| Ruby | ruby-lsp | `ruby-hooks.json` |
-| HTML/CSS | vscode-langservers | `html-css-hooks.json` |
-| LaTeX | texlab | `latex-hooks.json` |
+| Language | LSP Server | Hooks File | Specialized Plugin |
+|----------|-----------|------------|-------------------|
+| TypeScript/JavaScript | vtsls | `typescript-hooks.json` | — |
+| Python | pyright | `python-hooks.json` | — |
+| Go | gopls | `go-hooks.json` | — |
+| Rust | rust-analyzer | `rust-hooks.json` | `zircote/rust-lsp` (16 hooks) |
+| Java | jdtls | `java-hooks.json` | — |
+| Kotlin | kotlin-language-server | `kotlin-hooks.json` | — |
+| C/C++ | clangd | `cpp-hooks.json` | — |
+| C# | OmniSharp | `csharp-hooks.json` | — |
+| PHP | phpactor | `php-hooks.json` | — |
+| Ruby | ruby-lsp | `ruby-hooks.json` | — |
+| HTML/CSS | vscode-langservers | `html-css-hooks.json` | — |
+| LaTeX | texlab | `latex-hooks.json` | — |
+| Markdown | marksman | `markdown-hooks.json` | `zircote/markdown-lsp` (4 hooks) |
+| Terraform | terraform-ls | `terraform-hooks.json` | `zircote/terraform-lsp` (17 hooks) |
+
+### Specialized Plugin Integration
+
+When a `zircote/*-lsp` plugin is installed, lsp-tools automatically defers to it:
+
+- **Hook installation is skipped** for languages covered by specialized plugins
+- **LSP server installation uses the specialized plugin's `/setup` command**
+- **The final report shows** which hooks come from which source
+
+This prevents duplicate hooks and ensures you get the full benefits of the specialized plugins (which include additional tooling like security scanners, linters, and formatters beyond basic LSP).
 
 ## Plugin Structure
 
@@ -222,7 +235,7 @@ LSP findReferences → 23 matches (exact function usages only)
 | [Enforcement Protocol](skills/lsp-enable/references/lsp-enforcement-protocol.md) | Detailed enforcement patterns and scenarios |
 | [Decision Matrix](skills/lsp-enable/references/lsp-decision-matrix.md) | When to use LSP vs Grep vs Glob vs Read |
 | [Setup & Verification](skills/lsp-enable/references/lsp-setup-verification.md) | Installation and troubleshooting |
-| [All Languages Guide](skills/lsp-enable/references/SETUP-GUIDE-ALL-LANGUAGES.md) | Quick setup for all 12 languages |
+| [All Languages Guide](skills/lsp-enable/references/SETUP-GUIDE-ALL-LANGUAGES.md) | Quick setup for all 14 languages |
 
 ## Troubleshooting
 
