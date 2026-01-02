@@ -65,6 +65,14 @@
       "description": "LSP tools plugin and diagnostic hooks for Markdown files in Claude Code"
     },
     {
+      "name": "zircote/rust-lsp",
+      "source": {
+        "source": "github",
+        "repo": "zircote/rust-lsp"
+      },
+      "description": "LSP tools plugin and diagnostic hooks for Rust files in Claude Code"
+    },
+    {
       "name": "git-adr",
       "source": {
         "source": "github",
