@@ -1,0 +1,10 @@
+{
+    "sql": {
+        "command": "sql-language-server",
+        "args": ["up", "--method", "stdio"],
+        "extensionToLanguage": {
+            ".sql": "sql"
+        },
+        "transport": "stdio"
+    }
+}

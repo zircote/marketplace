@@ -1,0 +1,21 @@
+[sqlfluff]
+# Set your SQL dialect
+dialect = postgres
+# Options: postgres, mysql, sqlite, bigquery, redshift, snowflake, tsql, etc.
+max_line_length = 120
+
+[sqlfluff:indentation]
+indent_unit = space
+tab_space_size = 4
+
+[sqlfluff:rules:capitalisation.keywords]
+# Keywords should be upper case
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.functions]
+# Function names should be upper case
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.identifiers]
+# Unquoted identifiers should be lower case
+capitalisation_policy = lower
