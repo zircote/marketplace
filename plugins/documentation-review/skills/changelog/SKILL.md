@@ -1,7 +1,7 @@
 ---
-name: changelog
-description: Generate and maintain CHANGELOG.md using semantic-release and conventional commits. Use when preparing releases, documenting changes, or reviewing version history.
-allowed-tools: Read, Edit, Write, Bash, Grep
+name: Changelog Management
+description: This skill should be used when the user asks to "update changelog", "add changelog entry", "prepare release notes", "document version changes", "generate changelog", "review release history", "create release entry", or needs guidance on Keep a Changelog format, semantic-release configuration, conventional commits mapping, or version documentation best practices.
+version: 0.1.0
 ---
 
 # Changelog Management Skill
@@ -124,7 +124,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     { "type": "style", "release": false },
     { "type": "chore", "release": false },
     { "type": "refactor", "release": false },
-    { "type": "test", "release": false" },
+    { "type": "test", "release": false },
     { "type": "build", "release": false },
     { "type": "ci", "release": false }
   ],

@@ -21,6 +21,11 @@
       "description": "AI-powered document processing for PDF, DOCX, XLSX, and PPTX files with text extraction and analysis"
     },
     {
+      "name": "documentation-review",
+      "source": "./plugins/documentation-review",
+      "description": "Automated review of technical documentation for clarity, accuracy, and completeness using AI-powered analysis and best practices"
+    },
+    {
       "name": "gh",
       "source": "./plugins/gh",
       "description": "Git workflow commands, GitHub Copilot configuration, and multi-CI migration to GitHub Actions"

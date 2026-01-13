@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-01-13
+
+### Added
+- **documentation-review plugin** - Documentation quality management
+  - `doc-review` skill for documentation quality assessment
+  - `changelog` skill for Keep a Changelog management
+  - `doc-writer` and `doc-reviewer` agents
+- **terraform-lsp plugin** - Terraform Language Server integration
+- **rust-lsp plugin** - Rust Analyzer LSP integration with diagnostic hooks
+- **markdown-lsp plugin** - Markdown language server support
+- **gh plugin**: Changelog management skill for release documentation
+- **lsp-tools**: Automated LSP server installation with per-server prompts
+- **lsp-tools**: Comprehensive LSP setup and troubleshooting guide
+- Python hooks for formatting, linting, and type checking
+
+### Changed
+- Renamed marketplace from `zircote-claude-marketplace` to `zircote`
+- **lsp-tools**: Updated to v0.4.0 with expanded language support
+
+### Fixed
+- **gh plugin**: Enforce mandatory thread resolution in review-comments
+- **gh plugin**: Correct GraphQL escaping in review-comments command
+- **gh plugin**: Fix thread resolution in review-comments command
+- Corrected plugin install syntax to use `@zircote-claude-marketplace`
+- Address code review feedback on XML structure
+
+### Removed
+- Deprecated LSP server registry and setup verification guide
+- Language-specific LSP hooks and sections for PHP, Python, Ruby, Rust, and TypeScript/JavaScript (consolidated into lsp-tools)
+- Deprecated LSP plugins from marketplace.json
+
 ## [1.6.0] - 2025-12-23
 
 ### Added
