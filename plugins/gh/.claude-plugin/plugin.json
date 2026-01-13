@@ -1,6 +1,6 @@
 {
   "name": "gh",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "GitHub ecosystem integration with git workflows, Copilot configuration, and multi-CI migration",
   "author": {
     "name": "zircote",
@@ -24,25 +24,5 @@
     "gh-cli",
     "dependabot",
     "codeowners"
-  ],
-  "agents": [
-    "./agents/copilot-assistant.md"
-  ],
-  "skills": [
-    "./skills/ecosystem/SKILL.md"
-  ],
-  "commands": [
-    "./commands/copilot-onboard.md",
-    "./commands/cp.md",
-    "./commands/ff.md",
-    "./commands/fr.md",
-    "./commands/ci-assist.md",
-    "./commands/migrate.md",
-    "./commands/onboard.md",
-    "./commands/pr.md",
-    "./commands/pr-fix.md",
-    "./commands/prune.md",
-    "./commands/review-comments.md",
-    "./commands/sync.md"
   ]
 }
