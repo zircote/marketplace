@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 12 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Includes 4 specialized LSP plugins with automated hooks for language-specific development workflows. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 10 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -16,27 +16,25 @@ claude /plugin marketplace add zircote/marketplace
 claude /plugin list
 
 # Install a specific plugin (format: plugin-name@marketplace-name)
-claude /plugin install zircote@zircote           # 116 specialized agents
-claude /plugin install gh@zircote                # Git workflow + Copilot onboarding
-claude /plugin install datadog@zircote           # DataDog monitoring agents
-claude /plugin install document-skills@zircote   # PDF/DOCX/XLSX/PPTX processing
-claude /plugin install nsip@zircote              # Sheep breeding data (NSIP)
-claude /plugin install cs@zircote                # Project specification lifecycle
-claude /plugin install subcog@zircote            # Git-backed memory system
-claude /plugin install git-adr@zircote           # ADR management via git notes
+claude /plugin install zircote@zircote              # 115 specialized agents + 54 skills
+claude /plugin install gh@zircote                   # Git workflow + Copilot onboarding
+claude /plugin install datadog@zircote              # DataDog monitoring agents
+claude /plugin install document-skills@zircote      # PDF/DOCX/XLSX/PPTX processing
+claude /plugin install documentation-review@zircote # Documentation management
+claude /plugin install adr@zircote                  # ADR lifecycle management
+claude /plugin install nsip@zircote                 # Sheep breeding data (NSIP)
 
-# LSP Plugins (see "Language Server Protocol" section below)
-claude /plugin install lsp-tools@zircote       # Multi-language LSP foundation (14 languages)
-claude /plugin install markdown-lsp@zircote    # Markdown LSP + validation hooks
-claude /plugin install rust-lsp@zircote        # Rust development toolchain
-claude /plugin install terraform-lsp@zircote   # Terraform/Terragrunt + security scanning
+# External GitHub plugins
+claude /plugin install claude-spec@zircote         # Project specification lifecycle
+claude /plugin install subcog@zircote              # Git-backed memory system
+claude /plugin install git-adr@zircote             # ADR management via git notes
 ```
 
 ## Available Plugins
 
-### z - Agent Library
+### zircote - Agent Library
 
-**116 specialized Opus 4.5 agents** organized by domain, plus 54 skills and powerful commands.
+**115 specialized Opus 4.5 agents** organized by domain, plus 54 skills.
 
 | Category | Agents | Examples |
 |----------|--------|----------|
@@ -51,16 +49,10 @@ claude /plugin install terraform-lsp@zircote   # Terraform/Terragrunt + security
 | Meta Orchestration | 8 | multi-agent-coordinator, workflow-orchestrator |
 | Research & Analysis | 6 | research-analyst, competitive-analyst |
 
-**Commands:**
-- `/explore <path|pattern|question>` - Exhaustive codebase exploration with parallel subagents
-- `/deep-research <topic>` - Multi-phase research protocol with structured deliverables
-- `/code:review [path|--focus=security]` - Comprehensive code review with 6 specialist agents
-- `/code:review-fix [--quick]` - Interactive remediation of code review findings
-
 **Skills:** 54 specialized skills including `claude-code`, `anthropic-prompt-engineer`, `databases`, `devops`, `debugging`, and more.
 
 ```bash
-claude /plugin install z
+claude /plugin install zircote@zircote
 ```
 
 ---
@@ -87,7 +79,7 @@ Streamlined version control operations, GitHub ecosystem integration, and Copilo
 - **GitHub Ecosystem** - Actions, templates, CODEOWNERS, Dependabot setup
 
 ```bash
-claude /plugin install gh
+claude /plugin install gh@zircote
 ```
 
 ---
@@ -106,7 +98,7 @@ Expert agents for monitoring setup, dashboard creation, and APM integration.
 - Regional configuration support (US, EU, AP regions)
 
 ```bash
-claude /plugin install datadog
+claude /plugin install datadog@zircote
 ```
 
 ---
@@ -123,7 +115,7 @@ AI-powered document processing for common office formats.
 | **PPTX** | Slide content, speaker notes, shapes, animations |
 
 ```bash
-claude /plugin install document-skills
+claude /plugin install document-skills@zircote
 
 # Usage
 claude "Analyze the contents of report.pdf"
@@ -157,135 +149,87 @@ Access National Sheep Improvement Program breeding data with MCP tools.
 **Hooks:** 14 intelligent hooks for error resilience, caching, and exports
 
 ```bash
-claude /plugin install nsip
+claude /plugin install nsip@zircote
 ```
 
 **Prerequisites:** `uv` package manager (https://docs.astral.sh/uv/)
 
 ---
 
-## Language Server Protocol (LSP) Plugins
+### documentation-review - Documentation Management
 
-Specialized plugins providing LSP integration, automated hooks, and diagnostic tooling for specific languages and file types. Each plugin includes preconfigured `.lsp.json` configurations and Claude Code hooks that run automatically on file changes.
+Comprehensive documentation management with review, creation, update, and maintenance capabilities.
 
-| Plugin | LSP Server | Hooks | Setup Command |
-|--------|------------|-------|---------------|
-| **lsp-tools** | 12 servers (pyright, gopls, rust-analyzer, etc.) | Language-specific hook templates | `/lsp-tools:lsp-setup` |
-| **markdown-lsp** | marksman | 4 hooks (links, frontmatter, code blocks, syntax) | — |
-| **rust-lsp** | rust-analyzer | 16 hooks (clippy, security, dependencies) | `/rust-lsp:setup` |
-| **terraform-lsp** | terraform-ls | 17 hooks (tflint, trivy, checkov, terragrunt) | `/terraform-lsp:setup` |
+**Agents:**
+- **doc-writer** - Generate new documentation from codebase analysis
+- **doc-reviewer** - Review documentation for quality, accuracy, and completeness
 
-### lsp-tools - Multi-Language LSP Foundation
+**Commands:**
+- `/doc-review` - Review documentation for quality issues
+- `/doc-create` - Generate new documentation from codebase analysis
+- `/doc-update` - Update outdated documentation with current information
+- `/doc-cleanup` - Identify and report obsolete documentation
+- `/doc-setup` - Interactive setup for documentation configuration
+- `/changelog` - Manage CHANGELOG.md entries and release documentation
 
-The foundational LSP plugin supporting 12 programming languages with automated server installation and project-level hook configuration.
+**Skills:**
+- **documentation-standards** - Best practices for documentation quality
+- **changelog** - Keep a Changelog format and conventions
+- **api-documentation** - API specification and documentation patterns
 
-**Setup Command:**
 ```bash
-claude /plugin install lsp-tools@zircote
-
-# Auto-detect languages and configure
-/lsp-tools:lsp-setup
-
-# Setup specific languages only
-/lsp-tools:lsp-setup typescript python go
+claude /plugin install documentation-review@zircote
 ```
-
-**Supported Languages:**
-
-| Language | LSP Server | Key Features |
-|----------|------------|--------------|
-| TypeScript/JavaScript | vtsls | Type checking, import resolution |
-| Python | pyright | Type inference, strict mode |
-| Go | gopls | Package navigation, interface implementation |
-| Rust | rust-analyzer | Trait resolution, macro expansion |
-| Java | jdtls | Maven/Gradle integration |
-| Kotlin | kotlin-language-server | Null safety, coroutines |
-| C/C++ | clangd | Header navigation, compile commands |
-| C# | omnisharp | .NET integration, NuGet |
-| PHP | phpactor/intelephense | Composer, PSR standards |
-| Ruby | ruby-lsp/solargraph | Gem resolution, YARD docs |
-| HTML/CSS | vscode-html-language-server | Class references, selectors |
-| LaTeX | texlab | Citation resolution, references |
-
-**Skill:** `lsp-enable` - Enforces LSP-first development with the "Three Iron Laws":
-1. Never guess—always use LSP for definitions and references
-2. Never assume—verify imports and types via LSP
-3. Never skip—run diagnostics before and after every change
 
 ---
 
-### markdown-lsp - Markdown Language Server
+### adr - ADR Lifecycle Management
 
-LSP-powered Markdown editing with Marksman server and validation hooks.
+Complete lifecycle management for Architectural Decision Records with multi-format support.
+
+**Agents:**
+- **adr-compliance** - Audit code against accepted ADRs
+- **adr-researcher** - Research context and options for decisions
+- **adr-author** - Detect and document architectural decisions
+
+**Commands:**
+- `/adr-new` - Create a new ADR
+- `/adr-list` - List all ADRs with status filtering
+- `/adr-update` - Update an existing ADR
+- `/adr-supersede` - Create an ADR that supersedes another
+- `/adr-search` - Search ADRs by content, status, or tags
+- `/adr-export` - Export ADRs to HTML, JSON, or PDF
+- `/adr-setup` - Interactive setup for ADR configuration
+
+**Skills:**
+- **adr-fundamentals** - ADR basics and best practices
+- **adr-format-madr** - MADR 4.0 template format
+- **adr-format-nygard** - Classic Nygard format
+- **adr-format-y-statement** - Concise Y-Statement format
+- **adr-format-alexandrian** - Pattern-based Alexandrian format
+- **adr-format-business-case** - Business case format for executives
+- **adr-quality** - ADR quality checklist and validation
+- **adr-decision-drivers** - Identifying architectural forces
+- **adr-integration** - CI/CD and tooling integration
+- **adr-compliance** - Code compliance auditing
+
+**Formats Supported:** MADR, Nygard, Y-Statement, Alexandrian, Tyree-Akerman, Business Case
 
 ```bash
-claude /plugin install markdown-lsp@zircote
+claude /plugin install adr@zircote
 ```
-
-**Hooks (4):**
-- Code block validation (language identifiers)
-- Link validation (internal anchors, file references)
-- Frontmatter YAML structure validation
-- Claude Code syntax checking (LSP operations, slash commands)
-
-**LSP Operations:** documentSymbol, goToDefinition, findReferences, hover, workspaceSymbol
 
 ---
 
-### rust-lsp - Rust Development Toolchain
+## External GitHub Plugins
 
-Comprehensive Rust development with rust-analyzer LSP and cargo ecosystem integration.
+Plugins hosted in separate GitHub repositories.
 
-```bash
-claude /plugin install rust-lsp@zircote
-
-# Interactive setup
-/rust-lsp:setup
-```
-
-**Hooks (16 across 3 categories):**
-
-| Category | Hooks |
-|----------|-------|
-| Code Quality | Auto-format, compilation check, clippy lint, test compilation |
-| Security & Dependencies | Vulnerability scan (cargo-audit), license check, outdated deps, unsafe code flags |
-| Advanced Analysis | API compatibility, unsafe metrics, mutation testing hints |
-
-**Tools Installed:** rust-analyzer, cargo-clippy, cargo-audit, cargo-outdated, cargo-udeps, cargo-deny, cargo-semver-checks, cargo-mutants, cargo-expand, cargo-bloat
-
----
-
-### terraform-lsp - Terraform/Terragrunt Development
-
-Infrastructure-as-Code development with terraform-ls LSP and security scanning.
-
-```bash
-claude /plugin install terraform-lsp@zircote
-
-# Interactive setup
-/terraform-lsp:setup
-```
-
-**Hooks (17 across 6 categories):**
-
-| Category | Hooks |
-|----------|-------|
-| Core Terraform | Format, validate, init check, plan hints |
-| Linting | tflint rules, TODO/FIXME detection |
-| Security | trivy vulnerability scan, checkov compliance |
-| Variable Files | .tfvars formatting, sensitive data detection |
-| Terragrunt | HCL formatting, validation |
-| Contextual | terraform-docs, infracost estimates, dependency upgrades |
-
-**Tools Integrated:** terraform-ls, tflint, trivy, checkov, terraform-docs, infracost, terragrunt
-
----
-
-### cs - Project Specification Lifecycle
+### claude-spec - Project Specification Lifecycle
 
 Strategic project planning, implementation tracking, and retrospectives.
 
-**External Source:** [zircote/claude-spec](https://github.com/zircote/claude-spec)
+**Source:** [zircote/claude-spec](https://github.com/zircote/claude-spec)
 
 **Commands:**
 - `/cs:p <project-idea>` - Strategic project planner with Socratic elicitation
@@ -299,7 +243,42 @@ Strategic project planning, implementation tracking, and retrospectives.
 - Git worktree management for parallel development
 
 ```bash
-claude /plugin install cs
+claude /plugin install claude-spec@zircote
+```
+
+---
+
+### subcog - Git-Backed Memory System
+
+A Git-backed memory system for Claude Code, capturing decisions, learnings, and context as git notes with semantic search and automatic recall.
+
+**Source:** [zircote/subcog](https://github.com/zircote/subcog)
+
+**Features:**
+- Memory capture with namespaces (decisions, patterns, learnings, context)
+- Semantic search and automatic recall
+- Git notes storage for version control integration
+- MCP server integration
+
+```bash
+claude /plugin install subcog@zircote
+```
+
+---
+
+### git-adr - ADR Management via Git Notes
+
+A command-line tool that integrates Architecture Decision Record management directly into your git workflow using git notes.
+
+**Source:** [zircote/git-adr](https://github.com/zircote/git-adr)
+
+**Features:**
+- ADRs stored as git notes (not files)
+- Integrated with git workflow
+- Searchable decision history
+
+```bash
+claude /plugin install git-adr@zircote
 ```
 
 ---
@@ -311,17 +290,13 @@ marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # Central plugin registry
 ├── plugins/
-│   ├── zircote/                  # Agent library (116 agents, 54 skills)
+│   ├── zircote/                  # Agent library (115 agents, 54 skills)
 │   │   ├── agents/               # Organized by domain (01-10)
 │   │   └── skills/               # Development skills
 │   ├── gh/                       # Git workflow + Copilot
 │   │   ├── agents/               # copilot-assistant
 │   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune, migrate
 │   │   └── skills/               # GitHub ecosystem
-│   ├── lsp-tools/                # Multi-language LSP foundation
-│   │   ├── commands/             # lsp-setup
-│   │   ├── skills/               # lsp-enable
-│   │   └── scripts/              # Installation scripts (bash + powershell)
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
 │   ├── document-skills/          # Document processing
@@ -329,6 +304,14 @@ marketplace/
 │   │   ├── docx/                 # Word skill
 │   │   ├── xlsx/                 # Excel skill
 │   │   └── pptx/                 # PowerPoint skill
+│   ├── documentation-review/     # Documentation management
+│   │   ├── agents/               # doc-writer, doc-reviewer
+│   │   ├── commands/             # review, create, update, cleanup
+│   │   └── skills/               # documentation-standards, changelog
+│   ├── adr/                      # ADR lifecycle management
+│   │   ├── agents/               # adr-compliance, adr-researcher, adr-author
+│   │   ├── commands/             # new, list, update, supersede, search
+│   │   └── skills/               # Format templates, quality, integration
 │   └── nsip/                     # Sheep breeding data
 │       ├── agents/               # shepherd
 │       ├── commands/             # 10 commands
@@ -336,10 +319,7 @@ marketplace/
 ├── External Plugins (GitHub)
 │   ├── zircote/claude-spec       # Project specification lifecycle
 │   ├── zircote/subcog            # Git-backed memory system
-│   ├── zircote/git-adr           # ADR management via git notes
-│   ├── zircote/markdown-lsp      # Markdown LSP + 4 validation hooks
-│   ├── zircote/rust-lsp          # Rust LSP + 16 hooks
-│   └── zircote/terraform-lsp     # Terraform LSP + 17 hooks
+│   └── zircote/git-adr           # ADR management via git notes
 └── README.md                     # This file
 ```
 
@@ -452,7 +432,7 @@ MIT License. Individual plugins may have their own licenses - see each plugin's 
 
 ## Version
 
-**Marketplace:** 1.6.0
+**Marketplace:** 1.7.0
 
 ---
 
