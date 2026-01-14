@@ -330,4 +330,4 @@ for para in doc.paragraphs:
 
 ## Version
 
-**Plugin:** 1.0.0
+**Plugin:** 1.1.2

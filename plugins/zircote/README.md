@@ -1,6 +1,6 @@
 # zircote Plugin
 
-Comprehensive agent library featuring 116 specialized Opus 4.5 agents organized by domain, 54 development skills, and powerful exploration and code review commands for enhanced Claude Code workflows.
+Comprehensive agent library featuring 115 specialized Opus 4.5 agents organized by domain, 54 development skills, and powerful exploration and code review commands for enhanced Claude Code workflows.
 
 ## Installation
 
@@ -28,7 +28,7 @@ You should see agents like `python-pro`, `frontend-developer`, `code-reviewer` i
 
 ## Contents
 
-### Agents (116 total)
+### Agents (115 total)
 
 Specialized agents organized by domain in `agents/`:
 
@@ -229,7 +229,6 @@ The zircote plugin agents integrate with other marketplace plugins:
 
 ## Version
 
-**Plugin:** 1.0.1
-**Agents:** 116
+**Plugin:** 0.5.3
+**Agents:** 115
 **Skills:** 54
-**Commands:** 4

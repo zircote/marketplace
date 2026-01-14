@@ -357,6 +357,6 @@ Works identically on:
 
 ## Version
 
-- **Plugin**: 1.3.0
+- **Plugin**: 1.4.4
 - **Hooks**: 2.0.0 (14 hooks across 4 lifecycle events)
 - **Tests**: 78 tests with 98.7% success rate
