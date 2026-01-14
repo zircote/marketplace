@@ -238,6 +238,10 @@ When enabled, the plugin:
 - [ADR Templates](https://adr.github.io/adr-templates/) - Various ADR formats
 - [Michael Nygard's ADRs](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) - Original ADR concept
 
+## Version
+
+**Plugin:** 0.1.0
+
 ## License
 
 MIT

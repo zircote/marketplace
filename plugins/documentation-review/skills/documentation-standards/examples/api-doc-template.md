@@ -256,7 +256,7 @@ All errors return a consistent format:
 
 ## Changelog
 
-See [CHANGELOG.md](./CHANGELOG.md) for version history.
+See CHANGELOG.md for version history.
 
 ## Support
 

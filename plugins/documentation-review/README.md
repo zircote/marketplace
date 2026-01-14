@@ -131,27 +131,27 @@ Output preferences:
 ## Usage Examples
 
 ### Review all project documentation
-```
+```bash
 /doc-review
 ```
 
 ### Review specific file
-```
+```bash
 /doc-review docs/api-reference.md
 ```
 
 ### Generate README from codebase
-```
+```bash
 /doc-create readme
 ```
 
 ### Generate API documentation
-```
+```bash
 /doc-create api
 ```
 
 ### Find outdated documentation
-```
+```bash
 /doc-cleanup
 ```
 
@@ -166,6 +166,10 @@ Hooks are defined directly in component frontmatter (modern pattern):
 - PostToolUse hook on Write/Edit - validates documentation changes
 
 This component-scoped approach keeps validation logic with the components that use it.
+
+## Version
+
+**Plugin:** 0.1.0
 
 ## License
 
