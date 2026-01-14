@@ -6,8 +6,8 @@
     "url": "https://github.com/zircote"
   },
   "metadata": {
-    "description": "Curated collection of Claude Code plugins: NSIP breeding data, agents, git workflows, monitoring, document processing, and project specification lifecycle",
-    "version": "1.6.0"
+    "description": "Curated collection of Claude Code plugins: NSIP breeding data, agents, git workflows, monitoring, document processing, ADR management, and project specification lifecycle",
+    "version": "1.7.0"
   },
   "plugins": [
     {
@@ -24,6 +24,11 @@
       "name": "documentation-review",
       "source": "./plugins/documentation-review",
       "description": "Automated review of technical documentation for clarity, accuracy, and completeness using AI-powered analysis and best practices"
+    },
+    {
+      "name": "adr",
+      "source": "./plugins/adr",
+      "description": "Complete ADR lifecycle management with multi-format support (MADR, Nygard, Y-Statement), compliance auditing, proactive detection, and configurable workflows"
     },
     {
       "name": "gh",

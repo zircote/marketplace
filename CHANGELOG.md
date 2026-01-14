@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **adr**: Complete Architectural Decision Record lifecycle management plugin
+  - Multi-format support: MADR 4.0.0 (default), Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman
+  - 7 commands: `adr-new`, `adr-list`, `adr-update`, `adr-supersede`, `adr-search`, `adr-setup`, `adr-export`
+  - 3 agents: `adr-author` (proactive detection), `adr-compliance` (code auditing), `adr-researcher` (context gathering)
+  - 11 skills covering fundamentals, decision drivers, quality, formats, compliance, and integration
+  - Export to HTML, JSON, PDF with JSON schema definition
+  - Git integration with auto-commit support
+  - Configurable status workflow, numbering patterns, and multi-directory support
+  - ADR linking: supersedes, relates-to, amends relationships
+  - CI/CD pipeline templates for GitHub Actions, GitLab CI, Azure DevOps, Jenkins
+
 ## [1.7.0] - 2026-01-13
 
 ### Added

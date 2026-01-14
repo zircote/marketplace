@@ -1,0 +1,110 @@
+---
+# ADR Plugin Configuration
+# Copy this file to: .claude/adr.local.md
+
+# ADR directories (supports multiple for module-level ADRs)
+adr_paths:
+  - docs/adr/                # Primary ADR directory
+
+# Default template format
+# Options: madr, nygard, y-statement, alexandrian, business-case, tyree-akerman
+default_format: madr
+
+# MADR variant (when using madr format)
+# Options: full, minimal, bare, bare-minimal
+madr_variant: full
+
+# Numbering configuration
+numbering:
+  pattern: "4digit"          # Options: 4digit, 3digit, date, custom
+  # custom_pattern: "{YYYY}{MM}{DD}-{slug}"  # When pattern is "custom"
+  start_from: 1              # Starting number for new projects
+
+# Status workflow configuration
+statuses:
+  workflow:                  # Ordered list of valid statuses
+    - proposed
+    - accepted
+    - deprecated
+    - superseded
+  allow_rejected: true       # Include 'rejected' as valid status
+  custom_statuses: []        # Additional project-specific statuses
+
+# ADR linking
+linking:
+  auto_update_superseded: true    # Auto-add superseded-by when superseding
+  require_supersedes_reason: true # Require reason when superseding
+
+# Index (README.md) configuration
+index:
+  auto_generate: true        # Auto-regenerate index on changes
+  include_summary: true      # Include decision summary in index
+  include_status_badge: true # Show status badges
+  group_by_status: false     # Group ADRs by status in index
+  custom_header: null        # Custom header content for README.md
+
+# Git integration
+git:
+  enabled: true
+  auto_commit: false         # Auto-commit ADR changes
+  commit_template: "docs(adr): {action} ADR-{id} {title}"
+
+# Compliance checking
+compliance:
+  enabled: true
+  check_all_accepted: true   # Check against all accepted ADRs
+  # enforceable_tags: []     # Only check ADRs with these tags (if check_all_accepted: false)
+  file_patterns:             # Patterns to check for compliance
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.py"
+    - "**/*.go"
+    - "**/*.java"
+  ignore_patterns:
+    - "**/node_modules/**"
+    - "**/vendor/**"
+    - "**/.git/**"
+    - "**/dist/**"
+    - "**/build/**"
+
+# Export settings
+export:
+  default_format: html       # Options: html, json, pdf
+  html_template: default     # Template for HTML export
+  include_toc: true          # Include table of contents
+  include_status_badges: true
+  output_dir: null           # Default: same directory as ADRs
+
+# Custom templates (supplement bundled templates)
+custom_templates:
+  # template_name: path/to/template.md
+
+# Research settings
+research:
+  include_codebase: true     # Analyze codebase for context
+  include_web: true          # Search web for best practices
+  max_web_results: 5         # Limit web search results
+---
+
+# Project ADR Context
+
+Add project-specific ADR context, conventions, and notes here.
+This section provides additional context to ADR agents.
+
+## Architecture Principles
+
+- List key architecture principles for this project
+- Note any constraints or non-negotiables
+- Reference external architecture documents if applicable
+
+## Decision Making Process
+
+- Who are the key decision makers?
+- What is the review/approval process?
+- How are ADRs communicated to the team?
+
+## Areas of Focus
+
+- List areas where ADRs are most critical
+- Note any pending architectural decisions
+- Highlight known technical debt areas

@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/zircote/marketplace/adr-export.schema.json",
+  "title": "ADR Export",
+  "description": "Schema for exported Architecture Decision Records",
+  "type": "object",
+  "required": ["metadata", "adrs"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Export metadata",
+      "required": ["project", "exported", "total"],
+      "properties": {
+        "project": {
+          "type": "string",
+          "description": "Project name"
+        },
+        "exported": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Export timestamp in ISO 8601 format"
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of ADRs exported"
+        },
+        "version": {
+          "type": "string",
+          "description": "Export schema version"
+        }
+      }
+    },
+    "adrs": {
+      "type": "array",
+      "description": "List of exported ADRs",
+      "items": {
+        "$ref": "#/definitions/adr"
+      }
+    },
+    "statistics": {
+      "$ref": "#/definitions/statistics"
+    }
+  },
+  "definitions": {
+    "adr": {
+      "type": "object",
+      "description": "An Architecture Decision Record",
+      "required": ["id", "title", "status", "file"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "ADR identifier (numeric string, e.g., '0001')"
+        },
+        "title": {
+          "type": "string",
+          "description": "ADR title"
+        },
+        "slug": {
+          "type": "string",
+          "description": "URL-friendly slug derived from title"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["proposed", "accepted", "deprecated", "superseded", "rejected"],
+          "description": "Current decision status"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Creation or decision date (YYYY-MM-DD)"
+        },
+        "format": {
+          "type": "string",
+          "enum": ["madr", "nygard", "y-statement", "alexandrian", "business-case", "tyree-akerman"],
+          "description": "ADR template format used"
+        },
+        "file": {
+          "type": "string",
+          "description": "Relative file path to the ADR"
+        },
+        "sections": {
+          "type": "object",
+          "description": "Parsed ADR content sections",
+          "properties": {
+            "context": {
+              "type": "string",
+              "description": "Context and Problem Statement content"
+            },
+            "decision": {
+              "type": "string",
+              "description": "Decision Outcome content"
+            },
+            "consequences": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "List of consequences"
+            },
+            "options": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "List of considered options"
+            },
+            "decision_drivers": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "List of decision drivers"
+            }
+          }
+        },
+        "links": {
+          "type": "object",
+          "description": "ADR relationships",
+          "properties": {
+            "supersedes": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "ADR IDs this decision supersedes"
+            },
+            "superseded_by": {
+              "type": ["string", "null"],
+              "description": "ADR ID that supersedes this decision"
+            },
+            "relates_to": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Related ADR IDs"
+            },
+            "amends": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "ADR IDs this decision amends"
+            }
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Categorization tags"
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "description": "Aggregate statistics about exported ADRs",
+      "properties": {
+        "by_status": {
+          "type": "object",
+          "description": "Count of ADRs by status",
+          "additionalProperties": { "type": "integer" }
+        },
+        "by_month": {
+          "type": "object",
+          "description": "Count of ADRs by month (YYYY-MM)",
+          "additionalProperties": { "type": "integer" }
+        },
+        "by_format": {
+          "type": "object",
+          "description": "Count of ADRs by template format",
+          "additionalProperties": { "type": "integer" }
+        }
+      }
+    }
+  }
+}
