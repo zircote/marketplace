@@ -1,6 +1,6 @@
 {
   "name": "adr",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Complete lifecycle management for Architectural Decision Records (ADRs): create, update, supersede, search, audit compliance, and export",
   "author": {
     "name": "zircote",

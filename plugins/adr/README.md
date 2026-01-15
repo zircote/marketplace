@@ -244,7 +244,7 @@ When enabled, the plugin:
 
 ## Version
 
-**Plugin:** 0.1.0
+**Plugin:** 0.2.0
 
 ## License
 
