@@ -48,13 +48,14 @@ Use AskUserQuestion for structured input:
 ### Template Format
 "Which ADR template format?"
 - MADR (recommended)
+- Structured MADR (comprehensive with frontmatter and audit sections)
 - Nygard
 - Y-Statement
 - Alexandrian
 - Business Case
 - Tyree-Akerman
 
-### MADR Variant (if MADR selected)
+### MADR Variant (if MADR selected, not applicable for Structured MADR)
 "Which MADR template variant?"
 - Full (recommended)
 - Minimal

@@ -73,7 +73,7 @@
         },
         "format": {
           "type": "string",
-          "enum": ["madr", "nygard", "y-statement", "alexandrian", "business-case", "tyree-akerman"],
+          "enum": ["madr", "structured-madr", "nygard", "y-statement", "alexandrian", "business-case", "tyree-akerman"],
           "description": "ADR template format used"
         },
         "file": {

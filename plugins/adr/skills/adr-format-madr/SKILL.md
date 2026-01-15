@@ -272,6 +272,7 @@ Templates available at `${CLAUDE_PLUGIN_ROOT}/templates/madr/`:
 - **adr-fundamentals** - ADR basics and lifecycle management
 - **adr-decision-drivers** - Identifying and documenting decision drivers
 - **adr-quality** - Quality criteria and review process
+- **adr-format-structured-madr** - Extended: MADR with frontmatter and audit sections
 - **adr-format-nygard** - Alternative: Classic Nygard format
 - **adr-format-y-statement** - Alternative: Concise Y-Statement format
 

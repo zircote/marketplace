@@ -221,12 +221,6 @@ Ensure ADRs connect to:
 
 ## Additional Resources
 
-### Reference Files
-
-For detailed guidance:
-- **`references/writing-guide.md`** - Detailed writing guidelines
-- **`references/examples.md`** - Good and bad ADR examples
-
 ### Related Skills
 
 - **adr-fundamentals** - ADR basics and lifecycle
