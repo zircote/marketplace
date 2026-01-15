@@ -7,11 +7,12 @@ adr_paths:
   - docs/adr/                # Primary ADR directory
 
 # Default template format
-# Options: madr, nygard, y-statement, alexandrian, business-case, tyree-akerman
+# Options: madr, structured-madr, nygard, y-statement, alexandrian, business-case, tyree-akerman
 default_format: madr
 
 # MADR variant (when using madr format)
 # Options: full, minimal, bare, bare-minimal
+# Note: structured-madr has no variants (always full with audit section)
 madr_variant: full
 
 # Numbering configuration

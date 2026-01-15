@@ -4,7 +4,7 @@ Complete lifecycle management for Architectural Decision Records (ADRs): create,
 
 ## Features
 
-- **Multi-Format Support** - MADR, Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman
+- **Multi-Format Support** - MADR, Structured MADR, Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman
 - **Full Lifecycle Management** - Create, update, supersede, deprecate, archive
 - **Compliance Auditing** - Proactive checks of code against accepted ADRs
 - **Research Assistant** - Codebase analysis and web research for decision context
@@ -64,6 +64,7 @@ Add to your Claude Code plugins or install via marketplace.
 
 ### Format Skills
 - **adr-format-madr** - MADR 4.0.0 format (default)
+- **adr-format-structured-madr** - MADR with frontmatter, comprehensive options, and audit sections
 - **adr-format-nygard** - Classic Nygard format
 - **adr-format-y-statement** - Concise Y-Statement format
 - **adr-format-alexandrian** - Pattern-based Alexandrian format
@@ -129,7 +130,7 @@ Add project-specific notes here...
 Directories for ADR storage. Supports multiple paths for module-level ADRs.
 
 #### default_format
-Template format: `madr`, `nygard`, `y-statement`, `alexandrian`, `business-case`, `tyree-akerman`
+Template format: `madr`, `structured-madr`, `nygard`, `y-statement`, `alexandrian`, `business-case`, `tyree-akerman`
 
 #### numbering
 - `pattern`: `4digit`, `3digit`, `date`, or `custom`
@@ -179,6 +180,9 @@ proposed → accepted → [deprecated] → superseded
 
 ### MADR (Default)
 Markdown Architectural Decision Records - lean, option-focused format with pros/cons analysis.
+
+### Structured MADR
+Extended MADR with YAML frontmatter, comprehensive option analysis with risk assessments, and required audit sections. Best for regulated environments and projects requiring compliance tracking.
 
 ### Nygard
 Classic 5-section format: Title, Status, Context, Decision, Consequences.

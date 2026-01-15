@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - **adr**: Complete Architectural Decision Record lifecycle management plugin
-  - Multi-format support: MADR 4.0.0 (default), Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman
+  - Multi-format support: MADR 4.0.0 (default), Structured MADR, Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman
+  - **Structured MADR format**: New format with YAML frontmatter for machine-readable metadata, comprehensive option analysis with risk assessments, and required audit sections for compliance tracking
   - 7 commands: `adr-new`, `adr-list`, `adr-update`, `adr-supersede`, `adr-search`, `adr-setup`, `adr-export`
   - 3 agents: `adr-author` (proactive detection), `adr-compliance` (code auditing), `adr-researcher` (context gathering)
   - 11 skills covering fundamentals, decision drivers, quality, formats, compliance, and integration

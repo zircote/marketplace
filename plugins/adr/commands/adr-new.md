@@ -70,9 +70,12 @@ Use AskUserQuestion for structured input when helpful.
 Use template from `${CLAUDE_PLUGIN_ROOT}/templates/{format}/`:
 - `madr/adr-template-full.md`
 - `madr/adr-template-minimal.md`
+- `structured-madr/adr-template.md` (comprehensive with frontmatter and audit)
 - `nygard/adr-template.md`
 - `y-statement/adr-template.md`
-- etc.
+- `alexandrian/adr-template.md`
+- `business-case/adr-template.md`
+- `tyree-akerman/adr-template.md`
 
 ## File Creation
 
