@@ -508,7 +508,20 @@ git add CHANGELOG.md
 git commit -m "docs: remove duplicate changelog entries"
 ```
 
-## References
+## Additional Resources
+
+### Reference Files
+
+For detailed guidance, consult:
+- **`references/semantic-release-config.md`** - Advanced semantic-release configuration patterns
+- **`references/conventional-commits-mapping.md`** - Mapping from commit types to changelog sections
+
+### Example Files
+
+Working examples in `examples/`:
+- **`sample-changelog.md`** - Complete changelog following Keep a Changelog format
+
+### External References
 
 - Keep a Changelog: https://keepachangelog.com
 - Semantic Versioning: https://semver.org
