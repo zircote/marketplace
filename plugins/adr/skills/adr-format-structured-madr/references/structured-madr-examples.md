@@ -311,7 +311,7 @@ Mitigations:
 
 ## Related Decisions
 
-- [ADR-0012: Namespace Weighting](adr_0012.md) - Affects score inputs
+None currently documented.
 
 ## Links
 
