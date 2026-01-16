@@ -19,6 +19,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Configurable status workflow, numbering patterns, and multi-directory support
   - ADR linking: supersedes, relates-to, amends relationships
   - CI/CD pipeline templates for GitHub Actions, GitLab CI, Azure DevOps, Jenkins
+- **documentation-review**: Add references and examples for changelog skill
+  - Semantic-release configuration patterns reference
+  - Conventional commits to changelog mapping reference
+  - Sample changelog example following Keep a Changelog format
+- **lsp-tools**: Add SQL LSP configuration
+
+### Fixed
+- **adr**: Remove broken cross-reference in structured-madr example
 
 ## [1.7.0] - 2026-01-13
 
