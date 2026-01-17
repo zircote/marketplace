@@ -35,7 +35,10 @@
     },
     {
       "name": "adr",
-      "source": "./plugins/adr",
+      "source": {
+        "source": "github",
+        "repo": "zircote/adr"
+      },
       "description": "Complete ADR lifecycle management with multi-format support (MADR, Nygard, Y-Statement), compliance auditing, proactive detection, and configurable workflows"
     },
     {
