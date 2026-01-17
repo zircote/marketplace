@@ -46,7 +46,10 @@
     },
     {
       "name": "gh",
-      "source": "./plugins/gh",
+      "source": {
+        "source": "github",
+        "repo": "zircote/gh"
+      },
       "description": "Git workflow commands, GitHub Copilot configuration, and multi-CI migration to GitHub Actions"
     },
     {
