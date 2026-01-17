@@ -59,8 +59,11 @@
     },
     {
       "name": "zircote",
-      "source": "./plugins/zircote",
-      "description": "116 specialized Opus 4.5 agents organized by domain with 54 skills for comprehensive development workflows"
+      "source": {
+        "source": "github",
+        "repo": "zircote/agents"
+      },
+      "description": "115+ specialized Opus 4.5 agents organized by domain with 54 skills for comprehensive development workflows"
     },
     {
       "name": "claude-spec",
