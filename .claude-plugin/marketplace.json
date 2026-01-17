@@ -27,7 +27,10 @@
     },
     {
       "name": "human-voice",
-      "source": "./plugins/human-voice",
+      "source": {
+        "source": "github",
+        "repo": "zircote/human-voice"
+      },
       "description": "Detect and prevent AI-generated writing patterns to ensure authentic human voice in content with multi-tier analysis"
     },
     {
