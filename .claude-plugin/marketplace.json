@@ -22,8 +22,11 @@
     },
     {
       "name": "documentation-review",
-      "source": "./plugins/documentation-review",
-      "description": "Automated review of technical documentation for clarity, accuracy, and completeness using AI-powered analysis and best practices"
+      "source": {
+        "source": "github",
+        "repo": "zircote/documentation-review"
+      },
+      "description": "Comprehensive documentation management: review, create, update, and maintain high-quality documentation with AI-powered analysis"
     },
     {
       "name": "human-voice",
