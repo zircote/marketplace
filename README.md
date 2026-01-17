@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 11 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 12 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -26,6 +26,7 @@ claude /plugin install adr@zircote                  # ADR lifecycle management
 claude /plugin install nsip@zircote                 # Sheep breeding data (NSIP)
 
 # External GitHub plugins
+claude /plugin install aesth@zircote               # Design system management with Subcog
 claude /plugin install claude-spec@zircote         # Project specification lifecycle
 claude /plugin install subcog@zircote              # Git-backed memory system
 claude /plugin install git-adr@zircote             # ADR management via git notes
@@ -255,6 +256,37 @@ claude /plugin install adr@zircote
 
 Plugins hosted in separate GitHub repositories.
 
+### aesth - Design System Management
+
+Craft-focused design system management powered by Subcog memory. Build interfaces with elegance, consistency, and semantic memory.
+
+**Source:** [zircote/aesth](https://github.com/zircote/aesth)
+
+**Commands:**
+- `/aesth:init` - Initialize skill and load design system from Subcog
+- `/aesth:status` - Display current design system state
+- `/aesth:validate` - Validate code against design rules
+- `/aesth:capture` - Store patterns and decisions to Subcog
+- `/aesth:extract` - Extract patterns from existing code
+
+**Skill:** aesth - Craft principles, Subcog integration, design directions
+
+**Features:**
+- Six design directions (Precision & Density, Warmth & Approachability, etc.)
+- Memory-first architecture with Subcog MCP
+- Validation against spacing grid, colors, depth strategy, typography
+- Cross-project craft principles sharing
+
+**Scope:** Dashboards, admin panels, SaaS apps, tools (not marketing sites)
+
+```bash
+claude /plugin install aesth@zircote
+```
+
+**Prerequisites:** Subcog MCP server configured and running
+
+---
+
 ### claude-spec - Project Specification Lifecycle
 
 Strategic project planning, implementation tracking, and retrospectives.
@@ -351,6 +383,7 @@ marketplace/
 │       ├── commands/             # 10 commands
 │       └── hooks/                # 14 hooks
 ├── External Plugins (GitHub)
+│   ├── zircote/aesth             # Design system management
 │   ├── zircote/claude-spec       # Project specification lifecycle
 │   ├── zircote/subcog            # Git-backed memory system
 │   └── zircote/git-adr           # ADR management via git notes
@@ -466,7 +499,7 @@ MIT License. Individual plugins may have their own licenses - see each plugin's 
 
 ## Version
 
-**Marketplace:** 1.7.0
+**Marketplace:** 1.8.0
 
 ---
 

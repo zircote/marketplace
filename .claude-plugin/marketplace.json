@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Curated collection of Claude Code plugins: NSIP breeding data, agents, git workflows, monitoring, document processing, ADR management, and project specification lifecycle",
-    "version": "1.7.0"
+    "version": "1.8.0"
   },
   "plugins": [
     {
@@ -91,6 +91,14 @@
         "repo": "zircote/git-adr"
       },
       "description": "`git-adr` is a command-line tool that integrates Architecture Decision Record management directly into your git workflow. Unlike file-based ADR tools, `git-adr` stores ADRs in **git notes**,"
+    },
+    {
+      "name": "aesth",
+      "source": {
+        "source": "github",
+        "repo": "zircote/aesth"
+      },
+      "description": "Craft-focused design system management powered by Subcog memory. Build interfaces with elegance, consistency, and semantic memory for dashboards, apps, and tools."
     }
   ]
 }
