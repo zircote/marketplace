@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 10 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 11 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -21,6 +21,7 @@ claude /plugin install gh@zircote                   # Git workflow + Copilot onb
 claude /plugin install datadog@zircote              # DataDog monitoring agents
 claude /plugin install document-skills@zircote      # PDF/DOCX/XLSX/PPTX processing
 claude /plugin install documentation-review@zircote # Documentation management
+claude /plugin install human-voice@zircote         # AI writing pattern detection
 claude /plugin install adr@zircote                  # ADR lifecycle management
 claude /plugin install nsip@zircote                 # Sheep breeding data (NSIP)
 
@@ -183,6 +184,35 @@ claude /plugin install documentation-review@zircote
 
 ---
 
+### human-voice - AI Writing Pattern Detection
+
+Detect and prevent AI-generated writing patterns to ensure authentic human voice in content.
+
+**Agent:**
+- **voice-reviewer** - Proactive content review after writing/editing markdown files
+
+**Commands:**
+- `/human-voice:review [path]` - Analyze content for AI patterns (4-tier analysis)
+- `/human-voice:fix [path]` - Auto-fix character-level issues (em dashes, smart quotes, emojis)
+
+**Skill:**
+- **human-voice** - Multi-tier detection patterns and writing guidelines
+
+**Detection Tiers:**
+
+| Tier | Type | Examples | Fix |
+|------|------|----------|-----|
+| 1 | Characters | Em dashes, smart quotes, emojis | Automated |
+| 2 | Language | "delve", "harness", "it's worth noting" | Manual |
+| 3 | Structural | List addiction, rule-of-three overuse | Manual |
+| 4 | Voice | Passive voice, generic analogies | Manual |
+
+```bash
+claude /plugin install human-voice@zircote
+```
+
+---
+
 ### adr - ADR Lifecycle Management
 
 Complete lifecycle management for Architectural Decision Records with multi-format support.
@@ -308,6 +338,10 @@ marketplace/
 │   │   ├── agents/               # doc-writer, doc-reviewer
 │   │   ├── commands/             # review, create, update, cleanup
 │   │   └── skills/               # documentation-standards, changelog
+│   ├── human-voice/              # AI writing pattern detection
+│   │   ├── agents/               # voice-reviewer
+│   │   ├── commands/             # review, fix
+│   │   └── skills/               # human-voice detection patterns
 │   ├── adr/                      # ADR lifecycle management
 │   │   ├── agents/               # adr-compliance, adr-researcher, adr-author
 │   │   ├── commands/             # new, list, update, supersede, search

@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **human-voice**: AI writing pattern detection plugin v0.1.0
+  - Multi-tier pattern detection: characters, language, structural, and voice analysis
+  - `/human-voice:review` command for comprehensive content analysis
+  - `/human-voice:fix` command for automated character-level fixes
+  - `voice-reviewer` agent for proactive content review after edits
+  - Detection patterns for em dashes, smart quotes, AI buzzwords, hedging phrases
+  - Reference documentation for all pattern tiers with examples
 - **adr**: Complete Architectural Decision Record lifecycle management plugin
   - Multi-format support: MADR 4.0.0 (default), Structured MADR, Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman
   - **Structured MADR format**: New format with YAML frontmatter for machine-readable metadata, comprehensive option analysis with risk assessments, and required audit sections for compliance tracking

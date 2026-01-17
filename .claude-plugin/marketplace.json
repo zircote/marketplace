@@ -26,6 +26,11 @@
       "description": "Automated review of technical documentation for clarity, accuracy, and completeness using AI-powered analysis and best practices"
     },
     {
+      "name": "human-voice",
+      "source": "./plugins/human-voice",
+      "description": "Detect and prevent AI-generated writing patterns to ensure authentic human voice in content with multi-tier analysis"
+    },
+    {
       "name": "adr",
       "source": "./plugins/adr",
       "description": "Complete ADR lifecycle management with multi-format support (MADR, Nygard, Y-Statement), compliance auditing, proactive detection, and configurable workflows"
