@@ -51,8 +51,11 @@
     },
     {
       "name": "nsip",
-      "source": "./plugins/nsip",
-      "description": "National Sheep Improvement Program breeding data with MCP tools, expert advisor agent, and smart hooks"
+      "source": {
+        "source": "github",
+        "repo": "zircote/nsip"
+      },
+      "description": "NSIP sheep breeding data with 9 MCP tools, 10 slash commands, expert shepherd agent, and 14 intelligent hooks"
     },
     {
       "name": "zircote",
