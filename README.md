@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 12 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 13 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -30,6 +30,7 @@ claude /plugin install aesth@zircote               # Design system management wi
 claude /plugin install claude-spec@zircote         # Project specification lifecycle
 claude /plugin install subcog@zircote              # Git-backed memory system
 claude /plugin install git-adr@zircote             # ADR management via git notes
+claude /plugin install github-social@zircote       # Repository presentation optimizer
 ```
 
 ## Available Plugins
@@ -345,6 +346,39 @@ claude /plugin install git-adr@zircote
 
 ---
 
+### github-social - Repository Presentation Optimizer
+
+Optimize GitHub repository presentation with social preview images and engaging metadata.
+
+**Source:** [zircote/github-social](https://github.com/zircote/github-social)
+
+**Commands:**
+
+| Command | Description |
+|---------|-------------|
+| `/social-preview` | Generate a social preview image for the current project |
+| `/social-preview:setup` | Interactive setup wizard for configuration |
+| `/repo-metadata` | Generate optimized description and topics (use `--apply` to update GitHub) |
+
+**Skills:**
+- **social-preview** - Analyze project and generate social preview images
+- **repo-metadata** - Generate optimized repository descriptions and topics
+
+**Features:**
+- Analyzes project files (README, package.json, CLAUDE.md) to understand purpose
+- Generates detailed image prompts for social preview images
+- Supports multiple image providers: DALL-E 3, Stable Diffusion, Midjourney, manual
+- Outputs images meeting GitHub requirements (1280x640px, <1MB)
+- Generates SEO-friendly repository descriptions (max 350 chars)
+- Suggests relevant topics for discoverability (max 20 topics)
+- Can apply changes via `gh` CLI or output for manual review
+
+```bash
+claude /plugin install github-social@zircote
+```
+
+---
+
 ## Marketplace Structure
 
 ```
@@ -386,7 +420,8 @@ marketplace/
 │   ├── zircote/aesth             # Design system management
 │   ├── zircote/claude-spec       # Project specification lifecycle
 │   ├── zircote/subcog            # Git-backed memory system
-│   └── zircote/git-adr           # ADR management via git notes
+│   ├── zircote/git-adr           # ADR management via git notes
+│   └── zircote/github-social     # Repository presentation optimizer
 └── README.md                     # This file
 ```
 
