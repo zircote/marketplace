@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Curated collection of Claude Code plugins: NSIP breeding data, agents, git workflows, monitoring, document processing, ADR management, and project specification lifecycle",
-    "version": "1.8.0"
+    "version": "1.9.0"
   },
   "plugins": [
     {
@@ -99,6 +99,14 @@
         "repo": "zircote/aesth"
       },
       "description": "Craft-focused design system management powered by Subcog memory. Build interfaces with elegance, consistency, and semantic memory for dashboards, apps, and tools."
+    },
+    {
+      "name": "github-social",
+      "source": {
+        "source": "github",
+        "repo": "zircote/github-social"
+      },
+      "description": "Generate social preview images for GitHub repositories by analyzing project intent and purpose. Supports DALL-E, Stable Diffusion, and manual prompt generation."
     }
   ]
 }
