@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **github-social**: GitHub social preview and repository metadata generator v0.2.0
+  - `/github-social:social-preview` command for generating social preview images
+  - `/github-social:repo-metadata` command for optimized descriptions and topics
+  - `/github-social:setup` interactive configuration wizard
+- **aesth**: Design system validation and pattern capture plugin v0.1.0
+  - `/aesth:validate` command for code validation against design tokens
+  - `/aesth:capture` command for capturing design patterns to Subcog memory
+  - `/aesth:extract` command for extracting patterns from existing code
+  - `/aesth:status` and `/aesth:init` commands for design system state management
 - **human-voice**: AI writing pattern detection plugin v0.1.0
   - Multi-tier pattern detection: characters, language, structural, and voice analysis
   - `/human-voice:review` command for comprehensive content analysis
@@ -31,6 +40,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Conventional commits to changelog mapping reference
   - Sample changelog example following Keep a Changelog format
 - **lsp-tools**: Add SQL LSP configuration
+
+### Changed
+- **gh**: Migrated to standalone repository (zircote/gh)
+- **zircote**: Migrated to standalone repository (zircote/zircote)
+- **nsip**: Migrated to standalone repository (zircote/nsip)
+- **documentation-review**: Migrated to standalone repository (zircote/documentation-review)
+- **adr**: Migrated to standalone repository (zircote/adr)
+- **human-voice**: Migrated to standalone repository (zircote/human-voice)
 
 ### Fixed
 - **adr**: Remove broken cross-reference in structured-madr example
