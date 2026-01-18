@@ -106,7 +106,7 @@
         "source": "github",
         "repo": "zircote/github-social"
       },
-      "description": "Generate social preview images for GitHub repositories by analyzing project intent and purpose. Supports DALL-E, Stable Diffusion, and manual prompt generation."
+      "description": "Optimize GitHub repository presentation with social preview images and engaging metadata (descriptions, topics). Supports DALL-E, Stable Diffusion, and gh CLI integration."
     }
   ]
 }
