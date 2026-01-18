@@ -314,7 +314,8 @@ Before submitting:
 ## Questions?
 
 - Open an issue for questions or suggestions
-- Check existing plugins for examples (nsip is the most comprehensive)
+- Check existing internal plugins for examples (`datadog`, `document-skills`)
+- See external plugin repositories (e.g., [zircote/nsip](https://github.com/zircote/nsip), [zircote/adr](https://github.com/zircote/adr)) for comprehensive examples with hooks and MCP servers
 - See [Claude Code Plugin Documentation](https://docs.anthropic.com/en/docs/claude-code) for protocol details
 
 ## License

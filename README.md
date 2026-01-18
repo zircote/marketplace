@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 13 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 13 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Most plugins (11 of 13) are hosted in standalone GitHub repositories for independent versioning and development, while 2 plugins remain internal to this repository. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -15,75 +15,30 @@ claude /plugin marketplace add zircote/marketplace
 # List available plugins
 claude /plugin list
 
-# Install a specific plugin (format: plugin-name@marketplace-name)
-claude /plugin install zircote@zircote              # 115 specialized agents + 54 skills
-claude /plugin install gh@zircote                   # Git workflow + Copilot onboarding
+# Install plugins (format: plugin-name@marketplace-name)
+# Internal plugins (hosted in this repository)
 claude /plugin install datadog@zircote              # DataDog monitoring agents
 claude /plugin install document-skills@zircote      # PDF/DOCX/XLSX/PPTX processing
+
+# External plugins (hosted in standalone GitHub repositories)
+claude /plugin install zircote@zircote              # 115 specialized agents + 54 skills
+claude /plugin install gh@zircote                   # Git workflow + Copilot onboarding
 claude /plugin install documentation-review@zircote # Documentation management
-claude /plugin install human-voice@zircote         # AI writing pattern detection
+claude /plugin install human-voice@zircote          # AI writing pattern detection
 claude /plugin install adr@zircote                  # ADR lifecycle management
 claude /plugin install nsip@zircote                 # Sheep breeding data (NSIP)
-
-# External GitHub plugins
-claude /plugin install aesth@zircote               # Design system management with Subcog
-claude /plugin install claude-spec@zircote         # Project specification lifecycle
-claude /plugin install subcog@zircote              # Git-backed memory system
-claude /plugin install git-adr@zircote             # ADR management via git notes
-claude /plugin install github-social@zircote       # Repository presentation optimizer
+claude /plugin install aesth@zircote                # Design system management with Subcog
+claude /plugin install claude-spec@zircote          # Project specification lifecycle
+claude /plugin install subcog@zircote               # Git-backed memory system
+claude /plugin install git-adr@zircote              # ADR management via git notes
+claude /plugin install github-social@zircote        # Repository presentation optimizer
 ```
 
 ## Available Plugins
 
-### zircote - Agent Library
+### Internal Plugins
 
-**115 specialized Opus 4.5 agents** organized by domain, plus 54 skills.
-
-| Category | Agents | Examples |
-|----------|--------|----------|
-| Core Development | 11 | frontend-developer, backend-developer, api-designer |
-| Language Specialists | 23 | python-pro, typescript-pro, golang-pro, rust-engineer |
-| Infrastructure | 12 | devops-engineer, sre-engineer, kubernetes-specialist |
-| Quality & Security | 12 | code-reviewer, security-auditor, penetration-tester |
-| Data & AI | 12 | data-scientist, ml-engineer, llm-architect, postgres-pro |
-| Developer Experience | 10 | documentation-engineer, cli-developer, mcp-developer |
-| Specialized Domains | 11 | fintech-engineer, blockchain-developer, game-developer |
-| Business & Product | 10 | product-manager, technical-writer, scrum-master |
-| Meta Orchestration | 8 | multi-agent-coordinator, workflow-orchestrator |
-| Research & Analysis | 6 | research-analyst, competitive-analyst |
-
-**Skills:** 54 specialized skills including `claude-code`, `anthropic-prompt-engineer`, `databases`, `devops`, `debugging`, and more.
-
-```bash
-claude /plugin install zircote@zircote
-```
-
----
-
-### gh - Git Workflow & GitHub Ecosystem
-
-Streamlined version control operations, GitHub ecosystem integration, and Copilot configuration.
-
-| Command | Description |
-|---------|-------------|
-| `/git:cm` | Stage all and commit with conventional commit format |
-| `/git:cp` | Stage, commit, and push in one operation |
-| `/git:pr [to] [from]` | Create pull request via `gh` CLI |
-| `/git:fr [remote] [branch]` | Fetch and rebase onto remote branch |
-| `/git:sync [remote] [branch]` | Full sync: fetch, rebase, push |
-| `/git:ff [remote] [branch]` | Fast-forward merge only |
-| `/git:prune [--force]` | Clean up stale local branches |
-| `/gh:copilot-onboard [path]` | Generate Copilot config from CLAUDE.md |
-| `/gh:migrate [--ci=TYPE]` | Multi-CI to GitHub Actions migration |
-
-**Agent:** `copilot-assistant` - Bridge Claude Code and GitHub Copilot configurations
-
-**Skills:**
-- **GitHub Ecosystem** - Actions, templates, CODEOWNERS, Dependabot setup
-
-```bash
-claude /plugin install gh@zircote
-```
+Plugins hosted directly in this repository.
 
 ---
 
@@ -127,7 +82,71 @@ claude "Extract data from sales.xlsx"
 
 ---
 
+### External Plugins
+
+Plugins hosted in standalone GitHub repositories for independent versioning and development.
+
+---
+
+### zircote - Agent Library
+
+**Source:** [zircote/agents](https://github.com/zircote/agents)
+
+**115 specialized Opus 4.5 agents** organized by domain, plus 54 skills.
+
+| Category | Agents | Examples |
+|----------|--------|----------|
+| Core Development | 11 | frontend-developer, backend-developer, api-designer |
+| Language Specialists | 23 | python-pro, typescript-pro, golang-pro, rust-engineer |
+| Infrastructure | 12 | devops-engineer, sre-engineer, kubernetes-specialist |
+| Quality & Security | 12 | code-reviewer, security-auditor, penetration-tester |
+| Data & AI | 12 | data-scientist, ml-engineer, llm-architect, postgres-pro |
+| Developer Experience | 10 | documentation-engineer, cli-developer, mcp-developer |
+| Specialized Domains | 11 | fintech-engineer, blockchain-developer, game-developer |
+| Business & Product | 10 | product-manager, technical-writer, scrum-master |
+| Meta Orchestration | 8 | multi-agent-coordinator, workflow-orchestrator |
+| Research & Analysis | 6 | research-analyst, competitive-analyst |
+
+**Skills:** 54 specialized skills including `claude-code`, `anthropic-prompt-engineer`, `databases`, `devops`, `debugging`, and more.
+
+```bash
+claude /plugin install zircote@zircote
+```
+
+---
+
+### gh - Git Workflow & GitHub Ecosystem
+
+**Source:** [zircote/gh](https://github.com/zircote/gh)
+
+Streamlined version control operations, GitHub ecosystem integration, and Copilot configuration.
+
+| Command | Description |
+|---------|-------------|
+| `/git:cm` | Stage all and commit with conventional commit format |
+| `/git:cp` | Stage, commit, and push in one operation |
+| `/git:pr [to] [from]` | Create pull request via `gh` CLI |
+| `/git:fr [remote] [branch]` | Fetch and rebase onto remote branch |
+| `/git:sync [remote] [branch]` | Full sync: fetch, rebase, push |
+| `/git:ff [remote] [branch]` | Fast-forward merge only |
+| `/git:prune [--force]` | Clean up stale local branches |
+| `/gh:copilot-onboard [path]` | Generate Copilot config from CLAUDE.md |
+| `/gh:migrate [--ci=TYPE]` | Multi-CI to GitHub Actions migration |
+
+**Agent:** `copilot-assistant` - Bridge Claude Code and GitHub Copilot configurations
+
+**Skills:**
+- **GitHub Ecosystem** - Actions, templates, CODEOWNERS, Dependabot setup
+
+```bash
+claude /plugin install gh@zircote
+```
+
+---
+
 ### nsip - NSIP Sheep Breeding
+
+**Source:** [zircote/nsip](https://github.com/zircote/nsip)
 
 Access National Sheep Improvement Program breeding data with MCP tools.
 
@@ -161,6 +180,8 @@ claude /plugin install nsip@zircote
 
 ### documentation-review - Documentation Management
 
+**Source:** [zircote/documentation-review](https://github.com/zircote/documentation-review)
+
 Comprehensive documentation management with review, creation, update, and maintenance capabilities.
 
 **Agents:**
@@ -187,6 +208,8 @@ claude /plugin install documentation-review@zircote
 ---
 
 ### human-voice - AI Writing Pattern Detection
+
+**Source:** [zircote/human-voice](https://github.com/zircote/human-voice)
 
 Detect and prevent AI-generated writing patterns to ensure authentic human voice in content.
 
@@ -216,6 +239,8 @@ claude /plugin install human-voice@zircote
 ---
 
 ### adr - ADR Lifecycle Management
+
+**Source:** [zircote/adr](https://github.com/zircote/adr)
 
 Complete lifecycle management for Architectural Decision Records with multi-format support.
 
@@ -252,10 +277,6 @@ claude /plugin install adr@zircote
 ```
 
 ---
-
-## External GitHub Plugins
-
-Plugins hosted in separate GitHub repositories.
 
 ### aesth - Design System Management
 
@@ -384,39 +405,22 @@ claude /plugin install github-social@zircote
 ```
 marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json          # Central plugin registry
-├── plugins/
-│   ├── zircote/                  # Agent library (115 agents, 54 skills)
-│   │   ├── agents/               # Organized by domain (01-10)
-│   │   └── skills/               # Development skills
-│   ├── gh/                       # Git workflow + Copilot
-│   │   ├── agents/               # copilot-assistant
-│   │   ├── commands/             # cm, cp, pr, fr, sync, ff, prune, migrate
-│   │   └── skills/               # GitHub ecosystem
+│   └── marketplace.json          # Central plugin registry (13 plugins total)
+├── plugins/                      # Internal plugins (2)
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
-│   ├── document-skills/          # Document processing
-│   │   ├── pdf/                  # PDF skill
-│   │   ├── docx/                 # Word skill
-│   │   ├── xlsx/                 # Excel skill
-│   │   └── pptx/                 # PowerPoint skill
-│   ├── documentation-review/     # Documentation management
-│   │   ├── agents/               # doc-writer, doc-reviewer
-│   │   ├── commands/             # review, create, update, cleanup
-│   │   └── skills/               # documentation-standards, changelog
-│   ├── human-voice/              # AI writing pattern detection
-│   │   ├── agents/               # voice-reviewer
-│   │   ├── commands/             # review, fix
-│   │   └── skills/               # human-voice detection patterns
-│   ├── adr/                      # ADR lifecycle management
-│   │   ├── agents/               # adr-compliance, adr-researcher, adr-author
-│   │   ├── commands/             # new, list, update, supersede, search
-│   │   └── skills/               # Format templates, quality, integration
-│   └── nsip/                     # Sheep breeding data
-│       ├── agents/               # shepherd
-│       ├── commands/             # 10 commands
-│       └── hooks/                # 14 hooks
-├── External Plugins (GitHub)
+│   └── document-skills/          # Document processing
+│       ├── pdf/                  # PDF skill
+│       ├── docx/                 # Word skill
+│       ├── xlsx/                 # Excel skill
+│       └── pptx/                 # PowerPoint skill
+├── External Plugins (11 GitHub repos)
+│   ├── zircote/agents            # Agent library (115 agents, 54 skills)
+│   ├── zircote/gh                # Git workflow + Copilot onboarding
+│   ├── zircote/nsip              # Sheep breeding data (MCP tools)
+│   ├── zircote/documentation-review  # Documentation management
+│   ├── zircote/human-voice       # AI writing pattern detection
+│   ├── zircote/adr               # ADR lifecycle management
 │   ├── zircote/aesth             # Design system management
 │   ├── zircote/claude-spec       # Project specification lifecycle
 │   ├── zircote/subcog            # Git-backed memory system
@@ -534,7 +538,7 @@ MIT License. Individual plugins may have their own licenses - see each plugin's 
 
 ## Version
 
-**Marketplace:** 1.8.0
+**Marketplace:** 1.9.0
 
 ---
 
