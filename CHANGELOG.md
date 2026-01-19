@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **sdlc-quality**: Software development lifecycle quality tools and workflows
+- **rlm-rs-plugin**: Rust-based RLM plugin for Claude Code
 - **github-social**: GitHub social preview and repository metadata generator v0.2.0
   - `/github-social:social-preview` command for generating social preview images
   - `/github-social:repo-metadata` command for optimized descriptions and topics
@@ -50,6 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **human-voice**: Migrated to standalone repository (zircote/human-voice)
 
 ### Fixed
+- **agents**: Renamed plugin reference from 'zircote' to 'agents'
 - **adr**: Remove broken cross-reference in structured-madr example
 
 ## [1.7.0] - 2026-01-13

@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 13 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Most plugins (11 of 13) are hosted in standalone GitHub repositories for independent versioning and development, while 2 plugins remain internal to this repository. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 15 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Most plugins (13 of 15) are hosted in standalone GitHub repositories for independent versioning and development, while 2 plugins remain internal to this repository. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -21,7 +21,7 @@ claude /plugin install datadog@zircote              # DataDog monitoring agents
 claude /plugin install document-skills@zircote      # PDF/DOCX/XLSX/PPTX processing
 
 # External plugins (hosted in standalone GitHub repositories)
-claude /plugin install zircote@zircote              # 115 specialized agents + 54 skills
+claude /plugin install agents@zircote               # 115 specialized agents + 54 skills
 claude /plugin install gh@zircote                   # Git workflow + Copilot onboarding
 claude /plugin install documentation-review@zircote # Documentation management
 claude /plugin install human-voice@zircote          # AI writing pattern detection
@@ -32,6 +32,8 @@ claude /plugin install claude-spec@zircote          # Project specification life
 claude /plugin install subcog@zircote               # Git-backed memory system
 claude /plugin install git-adr@zircote              # ADR management via git notes
 claude /plugin install github-social@zircote        # Repository presentation optimizer
+claude /plugin install sdlc-quality@zircote         # SDLC quality tools and workflows
+claude /plugin install rlm-rs-plugin@zircote        # Rust-based RLM plugin
 ```
 
 ## Available Plugins
@@ -400,12 +402,36 @@ claude /plugin install github-social@zircote
 
 ---
 
+### sdlc-quality - SDLC Quality Tools
+
+Software development lifecycle quality tools and workflows.
+
+**Source:** [zircote/sdlc-quality](https://github.com/zircote/sdlc-quality)
+
+```bash
+claude /plugin install sdlc-quality@zircote
+```
+
+---
+
+### rlm-rs-plugin - Rust RLM Plugin
+
+Rust-based RLM plugin for Claude Code.
+
+**Source:** [zircote/rlm-rs-plugin](https://github.com/zircote/rlm-rs-plugin)
+
+```bash
+claude /plugin install rlm-rs-plugin@zircote
+```
+
+---
+
 ## Marketplace Structure
 
 ```
 marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json          # Central plugin registry (13 plugins total)
+│   └── marketplace.json          # Central plugin registry (15 plugins total)
 ├── plugins/                      # Internal plugins (2)
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
@@ -414,7 +440,7 @@ marketplace/
 │       ├── docx/                 # Word skill
 │       ├── xlsx/                 # Excel skill
 │       └── pptx/                 # PowerPoint skill
-├── External Plugins (11 GitHub repos)
+├── External Plugins (13 GitHub repos)
 │   ├── zircote/agents            # Agent library (115 agents, 54 skills)
 │   ├── zircote/gh                # Git workflow + Copilot onboarding
 │   ├── zircote/nsip              # Sheep breeding data (MCP tools)
@@ -425,7 +451,9 @@ marketplace/
 │   ├── zircote/claude-spec       # Project specification lifecycle
 │   ├── zircote/subcog            # Git-backed memory system
 │   ├── zircote/git-adr           # ADR management via git notes
-│   └── zircote/github-social     # Repository presentation optimizer
+│   ├── zircote/github-social     # Repository presentation optimizer
+│   ├── zircote/sdlc-quality      # SDLC quality tools and workflows
+│   └── zircote/rlm-rs-plugin     # Rust-based RLM plugin
 └── README.md                     # This file
 ```
 
