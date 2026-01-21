@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 15 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Most plugins (13 of 15) are hosted in standalone GitHub repositories for independent versioning and development, while 2 plugins remain internal to this repository. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 16 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Most plugins (14 of 16) are hosted in standalone GitHub repositories for independent versioning and development, while 2 plugins remain internal to this repository. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -41,26 +41,6 @@ claude /plugin install rlm-rs@zircote               # Rust-based RLM plugin
 ### Internal Plugins
 
 Plugins hosted directly in this repository.
-
----
-
-### auto-harness - Test Framework Generator
-
-Hook-driven automated test framework generator for Claude Code projects.
-
-**Commands:**
-- `/harness:init` - Scaffold test infrastructure into target project
-- `/run-tests` - Execute automated functional test suite
-
-**Features:**
-- YAML/JSON test definitions with variable capture
-- UserPromptSubmit hook for test interception
-- Test filtering by category and tags
-- Markdown and JSON report generation
-
-```bash
-claude /plugin install auto-harness@zircote
-```
 
 ---
 
@@ -446,12 +426,34 @@ claude /plugin install rlm-rs@zircote
 
 ---
 
+### auto-harness - Test Framework Generator
+
+Hook-driven automated test framework generator for Claude Code projects.
+
+**Source:** [zircote/auto-harness](https://github.com/zircote/auto-harness)
+
+**Commands:**
+- `/harness:init` - Scaffold test infrastructure into target project
+- `/run-tests` - Execute automated functional test suite
+
+**Features:**
+- YAML/JSON test definitions with variable capture
+- UserPromptSubmit hook for test interception
+- Test filtering by category and tags
+- Markdown and JSON report generation
+
+```bash
+claude /plugin install auto-harness@zircote
+```
+
+---
+
 ## Marketplace Structure
 
 ```
 marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json          # Central plugin registry (15 plugins total)
+│   └── marketplace.json          # Central plugin registry (16 plugins total)
 ├── plugins/                      # Internal plugins (2)
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
@@ -460,7 +462,7 @@ marketplace/
 │       ├── docx/                 # Word skill
 │       ├── xlsx/                 # Excel skill
 │       └── pptx/                 # PowerPoint skill
-├── External Plugins (13 GitHub repos)
+├── External Plugins (14 GitHub repos)
 │   ├── zircote/agents            # Agent library (115 agents, 54 skills)
 │   ├── zircote/gh                # Git workflow + Copilot onboarding
 │   ├── zircote/nsip              # Sheep breeding data (MCP tools)
@@ -473,7 +475,8 @@ marketplace/
 │   ├── zircote/git-adr           # ADR management via git notes
 │   ├── zircote/github-social     # Repository presentation optimizer
 │   ├── zircote/sdlc-quality      # sdlc - SDLC quality tools
-│   └── zircote/rlm-rs-plugin     # rlm-rs - Rust-based RLM plugin
+│   ├── zircote/rlm-rs-plugin     # rlm-rs - Rust-based RLM plugin
+│   └── zircote/auto-harness      # auto-harness - Test framework generator
 └── README.md                     # This file
 ```
 
