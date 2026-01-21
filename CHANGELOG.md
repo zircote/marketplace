@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.10.0] - 2026-01-21
+
 ### Added
 - **auto-harness**: Hook-driven test framework generator for Claude Code projects v1.0.2
   - `/harness:init` command to scaffold test infrastructure
@@ -158,7 +160,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Plugin manifest format
 - External plugin support
 
-[Unreleased]: https://github.com/zircote/marketplace/compare/v1.7.0...HEAD
+[Unreleased]: https://github.com/zircote/marketplace/compare/v1.10.0...HEAD
+[1.10.0]: https://github.com/zircote/marketplace/compare/v1.7.0...v1.10.0
 [1.7.0]: https://github.com/zircote/marketplace/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/zircote/marketplace/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/zircote/marketplace/compare/v1.4.0...v1.5.0

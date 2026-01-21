@@ -589,7 +589,7 @@ MIT License. Individual plugins may have their own licenses - see each plugin's 
 
 ## Version
 
-**Marketplace:** 1.9.0
+**Marketplace:** 1.10.0
 
 ---
 
