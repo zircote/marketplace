@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 PLUGINS_DIR = Path(__file__).parent.parent / "plugins"
-PLUGINS = ["zircote", "gh", "nsip", "datadog", "document-skills"]
+PLUGINS = ["auto-harness", "zircote", "gh", "nsip", "datadog", "document-skills"]
 
 
 def run(cmd: list[str], cwd: Path | None = None, check: bool = True) -> subprocess.CompletedProcess:
