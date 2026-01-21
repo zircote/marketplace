@@ -11,6 +11,14 @@
   },
   "plugins": [
     {
+      "name": "auto-harness",
+      "source": {
+        "source": "github",
+        "repo": "zircote/auto-harness"
+      },
+      "description": "Hook-driven automated test framework generator for Claude Code projects with YAML/JSON test definitions, variable capture, and rich reporting"
+    },
+    {
       "name": "datadog",
       "source": "./plugins/datadog",
       "description": "DataDog API specialists for monitoring setup, dashboard creation, metric queries, and APM integration"
