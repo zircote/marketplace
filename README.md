@@ -90,7 +90,7 @@ Plugins hosted in standalone GitHub repositories for independent versioning and 
 
 ---
 
-### zircote - Agent Library
+### agents - Agent Library
 
 **Source:** [zircote/agents](https://github.com/zircote/agents)
 
@@ -112,7 +112,7 @@ Plugins hosted in standalone GitHub repositories for independent versioning and 
 **Skills:** 54 specialized skills including `claude-code`, `anthropic-prompt-engineer`, `databases`, `devops`, `debugging`, and more.
 
 ```bash
-claude /plugin install zircote@zircote
+claude /plugin install agents@zircote
 ```
 
 ---
