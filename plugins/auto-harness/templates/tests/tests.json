@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "description": "{{PROJECT_NAME}} Functional Test Suite",
+  "generated_by": "auto-harness",
+  "tests": [
+    {
+      "id": "smoke_basic",
+      "description": "Basic smoke test to verify test framework is working",
+      "category": "smoke",
+      "action": "Confirm the test framework is operational by responding with 'Test framework operational'",
+      "expect": [{ "contains": "operational" }, { "not_contains": "error" }],
+      "tags": ["smoke", "critical"]
+    }
+  ]
+}
