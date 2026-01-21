@@ -8,8 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- **sdlc-quality**: Software development lifecycle quality tools and workflows
-- **rlm-rs-plugin**: Rust-based RLM plugin for Claude Code
+- **auto-harness**: Hook-driven test framework generator for Claude Code projects v1.0.2
+  - `/harness:init` command to scaffold test infrastructure
+  - `/run-tests` command for automated test execution
+  - UserPromptSubmit hook for test interception
+  - YAML/JSON test definitions with variable capture
+  - Markdown and JSON report generation
+- **sdlc**: Software development lifecycle quality tools and workflows (repo: zircote/sdlc-quality)
+- **rlm-rs**: Rust-based RLM plugin for Claude Code (repo: zircote/rlm-rs-plugin)
 - **github-social**: GitHub social preview and repository metadata generator v0.2.0
   - `/github-social:social-preview` command for generating social preview images
   - `/github-social:repo-metadata` command for optimized descriptions and topics

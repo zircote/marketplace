@@ -32,8 +32,8 @@ claude /plugin install claude-spec@zircote          # Project specification life
 claude /plugin install subcog@zircote               # Git-backed memory system
 claude /plugin install git-adr@zircote              # ADR management via git notes
 claude /plugin install github-social@zircote        # Repository presentation optimizer
-claude /plugin install sdlc-quality@zircote         # SDLC quality tools and workflows
-claude /plugin install rlm-rs-plugin@zircote        # Rust-based RLM plugin
+claude /plugin install sdlc@zircote                  # SDLC quality tools and workflows
+claude /plugin install rlm-rs@zircote               # Rust-based RLM plugin
 ```
 
 ## Available Plugins
@@ -41,6 +41,26 @@ claude /plugin install rlm-rs-plugin@zircote        # Rust-based RLM plugin
 ### Internal Plugins
 
 Plugins hosted directly in this repository.
+
+---
+
+### auto-harness - Test Framework Generator
+
+Hook-driven automated test framework generator for Claude Code projects.
+
+**Commands:**
+- `/harness:init` - Scaffold test infrastructure into target project
+- `/run-tests` - Execute automated functional test suite
+
+**Features:**
+- YAML/JSON test definitions with variable capture
+- UserPromptSubmit hook for test interception
+- Test filtering by category and tags
+- Markdown and JSON report generation
+
+```bash
+claude /plugin install auto-harness@zircote
+```
 
 ---
 
@@ -402,26 +422,26 @@ claude /plugin install github-social@zircote
 
 ---
 
-### sdlc-quality - SDLC Quality Tools
+### sdlc - SDLC Quality Tools
 
 Software development lifecycle quality tools and workflows.
 
 **Source:** [zircote/sdlc-quality](https://github.com/zircote/sdlc-quality)
 
 ```bash
-claude /plugin install sdlc-quality@zircote
+claude /plugin install sdlc@zircote
 ```
 
 ---
 
-### rlm-rs-plugin - Rust RLM Plugin
+### rlm-rs - Rust RLM Plugin
 
 Rust-based RLM plugin for Claude Code.
 
 **Source:** [zircote/rlm-rs-plugin](https://github.com/zircote/rlm-rs-plugin)
 
 ```bash
-claude /plugin install rlm-rs-plugin@zircote
+claude /plugin install rlm-rs@zircote
 ```
 
 ---
@@ -452,8 +472,8 @@ marketplace/
 │   ├── zircote/subcog            # Git-backed memory system
 │   ├── zircote/git-adr           # ADR management via git notes
 │   ├── zircote/github-social     # Repository presentation optimizer
-│   ├── zircote/sdlc-quality      # SDLC quality tools and workflows
-│   └── zircote/rlm-rs-plugin     # Rust-based RLM plugin
+│   ├── zircote/sdlc-quality      # sdlc - SDLC quality tools
+│   └── zircote/rlm-rs-plugin     # rlm-rs - Rust-based RLM plugin
 └── README.md                     # This file
 ```
 
