@@ -131,6 +131,14 @@
         "repo": "zircote/rlm-rs-plugin"
       },
       "description": "Rust-based RLM plugin for Claude Code"
+    },
+    {
+      "name": "sigint",
+      "source": {
+        "source": "github",
+        "repo": "zircote/sigint"
+      },
+      "description": "Comprehensive market research toolkit with iterative workflows, multi-audience reports, trend-based modeling (three-valued logic), and GitHub issue generation"
     }
   ]
 }

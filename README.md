@@ -4,7 +4,7 @@ A curated collection of Claude Code plugins featuring specialized agents, develo
 
 ## Overview
 
-This marketplace provides 16 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Most plugins (14 of 16) are hosted in standalone GitHub repositories for independent versioning and development, while 2 plugins remain internal to this repository. All plugins work identically across Claude Code CLI and VS Code extension.
+This marketplace provides 17 plugins for Claude Code, ranging from domain-specific expert agents to productivity-enhancing workflow tools. Most plugins (15 of 17) are hosted in standalone GitHub repositories for independent versioning and development, while 2 plugins remain internal to this repository. All plugins work identically across Claude Code CLI and VS Code extension.
 
 ## Quick Start
 
@@ -34,6 +34,7 @@ claude /plugin install git-adr@zircote              # ADR management via git not
 claude /plugin install github-social@zircote        # Repository presentation optimizer
 claude /plugin install sdlc@zircote                  # SDLC quality tools and workflows
 claude /plugin install rlm-rs@zircote               # Rust-based RLM plugin
+claude /plugin install sigint@zircote               # Market research toolkit
 ```
 
 ## Available Plugins
@@ -448,12 +449,60 @@ claude /plugin install auto-harness@zircote
 
 ---
 
+### sigint - Market Research Toolkit
+
+Comprehensive market research toolkit with iterative workflows, multi-audience reports, and trend-based modeling.
+
+**Source:** [zircote/sigint](https://github.com/zircote/sigint)
+
+**Commands:**
+
+| Command | Description |
+|---------|-------------|
+| `/sigint:start <topic>` | Begin new research session |
+| `/sigint:augment <area>` | Deep-dive into specific area |
+| `/sigint:update` | Refresh existing research data |
+| `/sigint:report` | Generate comprehensive report |
+| `/sigint:issues` | Create GitHub issues from findings |
+| `/sigint:resume` | Resume previous research session |
+| `/sigint:status` | Show current research state |
+| `/sigint:init` | Manually initialize Subcog context |
+
+**Agents:**
+- **market-researcher** - Autonomous market research and data gathering
+- **issue-architect** - Converts findings to sprint-sized GitHub issues
+- **report-synthesizer** - Generates multi-format reports with visualizations
+
+**Skills (Research Methodologies):**
+- Competitive Analysis (Porter's 5 Forces)
+- Market Sizing (TAM/SAM/SOM)
+- Trend Analysis & Modeling (three-valued logic: INC/DEC/CONST)
+- Customer Research & Personas
+- Tech Assessment & Feasibility
+- Financial Analysis & Unit Economics
+- Regulatory Review
+- Report Writing
+
+**Features:**
+- Multi-audience reports (executives, PMs, investors, developers)
+- Transitional scenario graphs (Mermaid)
+- Subcog memory integration for session persistence
+- GitHub issue generation from findings
+
+```bash
+claude /plugin install sigint@zircote
+```
+
+**Prerequisites:** Subcog MCP server, GitHub CLI (`gh`)
+
+---
+
 ## Marketplace Structure
 
 ```
 marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json          # Central plugin registry (16 plugins total)
+│   └── marketplace.json          # Central plugin registry (17 plugins total)
 ├── plugins/                      # Internal plugins (2)
 │   ├── datadog/                  # Monitoring integration
 │   │   └── agents/               # datadog-pro, datadog-api-expert
@@ -462,7 +511,7 @@ marketplace/
 │       ├── docx/                 # Word skill
 │       ├── xlsx/                 # Excel skill
 │       └── pptx/                 # PowerPoint skill
-├── External Plugins (14 GitHub repos)
+├── External Plugins (15 GitHub repos)
 │   ├── zircote/agents            # Agent library (115 agents, 54 skills)
 │   ├── zircote/gh                # Git workflow + Copilot onboarding
 │   ├── zircote/nsip              # Sheep breeding data (MCP tools)
@@ -476,7 +525,8 @@ marketplace/
 │   ├── zircote/github-social     # Repository presentation optimizer
 │   ├── zircote/sdlc-quality      # sdlc - SDLC quality tools
 │   ├── zircote/rlm-rs-plugin     # rlm-rs - Rust-based RLM plugin
-│   └── zircote/auto-harness      # auto-harness - Test framework generator
+│   ├── zircote/auto-harness      # auto-harness - Test framework generator
+│   └── zircote/sigint            # sigint - Market research toolkit
 └── README.md                     # This file
 ```
 

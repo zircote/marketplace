@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **sigint**: Market research toolkit with iterative workflows (repo: zircote/sigint)
+  - 8 commands: `/sigint:start`, `/sigint:augment`, `/sigint:update`, `/sigint:report`, `/sigint:issues`, `/sigint:resume`, `/sigint:status`, `/sigint:init`
+  - 3 agents: market-researcher, issue-architect, report-synthesizer
+  - 9 research methodology skills (competitive analysis, market sizing, trend modeling, etc.)
+  - Three-valued logic trend modeling (INC/DEC/CONST)
+  - Multi-audience reports for executives, PMs, investors, developers
+  - Subcog memory integration and GitHub issue generation
+
 ## [1.10.0] - 2026-01-21
 
 ### Added
