@@ -1,11 +1,21 @@
 ---
 description: Guided feature development with codebase understanding and architecture focus
 argument-hint: Optional feature description
+allowed-tools: Bash, Read, Write, Glob, Grep, Task
 ---
 
 # Feature Development
 
 You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspecified details, design elegant architectures, then implement.
+
+## Before Starting: Check Related Memories
+
+Search for relevant patterns, decisions, and prior work:
+```bash
+rg -i "pattern\|decision\|architecture" ~/.claude/mnemonic/ --glob "*.memory.md" -l 2>/dev/null | head -10
+```
+
+If memories exist for this project or similar features, read and apply them.
 
 ## Core Principles
 
@@ -121,5 +131,13 @@ If the user says "whatever you think is best", provide your recommendation and g
    - Key decisions made
    - Files modified
    - Suggested next steps
+
+## Post-Feature: Capture to Mnemonic
+
+Capture significant learnings from this feature development:
+- Use `/mnemonic:capture patterns "{pattern description}"` for reusable patterns discovered
+- Use `/mnemonic:capture decisions "{decision description}"` for architectural choices made
+- Use `/mnemonic:capture learnings "{learning description}"` for insights gained
+- Follow `mnemonic-format` skill for MIF Level 3 structure
 
 ---
