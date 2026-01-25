@@ -1,4 +1,5 @@
 ---
+allowed-tools: Bash, Read, Write, Glob, Grep
 description: Cleans up all git branches marked as [gone] (branches that have been deleted on the remote but still exist locally), including removing associated worktrees.
 ---
 
@@ -51,3 +52,9 @@ After executing these commands, you will:
 
 If no branches are marked as [gone], report that no cleanup was needed.
 
+## Post-Cleanup: Capture to Mnemonic (Optional)
+
+If significant cleanup was performed or an issue was encountered:
+- Use `/mnemonic:capture episodic "Branch cleanup: {description}"` for cleanup events
+- Use `/mnemonic:capture learnings "Git cleanup: {lesson learned}"` for insights
+- Follow `mnemonic-format` skill for MIF Level 3 structure
