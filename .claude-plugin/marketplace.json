@@ -139,6 +139,14 @@
         "repo": "zircote/sigint"
       },
       "description": "Comprehensive market research toolkit with iterative workflows, multi-audience reports, trend-based modeling (three-valued logic), and GitHub issue generation"
+    },
+    {
+      "name": "skills",
+      "source": {
+        "source": "github",
+        "repo": "zircote/skills"
+      },
+      "description": "55 specialized skills for Claude Code: development, debugging, design, problem-solving, AI/multimodal, and domain expertise"
     }
   ]
 }
