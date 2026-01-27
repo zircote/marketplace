@@ -1,22 +1,19 @@
 ---
-name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.
-license: Complete terms in LICENSE.txt
 allowed-tools: Bash, Read, Write, Glob, Grep
+description: Create distinctive, production-grade frontend interfaces with high design
+  quality. Use this skill when the user asks to build web components, pages, or applications.
+  Generates creative, polished code that avoids generic AI aesthetics.
+license: Complete terms in LICENSE.txt
+name: frontend-design
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
 
-This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
 
-The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
-
-## Before Starting: Check Related Memories
-
-Search for project design patterns, style decisions, and prior UI work:
-```bash
-rg -i "design\|style\|ui\|frontend\|color\|typography" ~/.claude/mnemonic/ --glob "*.memory.md" -l 2>/dev/null | head -10
-```
-
-If memories exist (design systems, color palettes, typography choices, component patterns), read and apply them to ensure consistency while maintaining creative distinction.
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 ## Design Thinking
 
@@ -51,12 +48,3 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 
 Remember: Claude is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
 
-## Post-Design: Capture to Mnemonic
-
-After creating a distinctive interface, capture design decisions for consistency:
-- Use `/mnemonic:capture patterns "Design pattern: {component/layout description}"` for reusable UI patterns
-- Use `/mnemonic:capture decisions "Design decision: {aesthetic choice}"` for typography, color, or style decisions
-- Use `/mnemonic:capture context "Design system: {project name}"` for project-wide design systems
-- Follow `mnemonic-format` skill for MIF Level 3 structure
-
-Capture elements like: font pairings, color palettes, animation timing, spacing scales, and component conventions.
