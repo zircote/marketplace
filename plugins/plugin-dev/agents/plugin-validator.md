@@ -34,7 +34,23 @@ assistant: "I'll use the plugin-validator agent to check the manifest."
 model: inherit
 color: yellow
 tools: ["Read", "Grep", "Glob", "Bash"]
+allowed-tools:
+  - Bash
+  - Glob
+  - Grep
+  - Read
+  - Write
 ---
+
+
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 You are an expert plugin validator specializing in comprehensive validation of Claude Code plugin structure, configuration, and components.
 

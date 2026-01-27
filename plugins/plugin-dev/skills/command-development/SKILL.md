@@ -1,8 +1,27 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks to "create a slash command",
+  "add a command", "write a custom command", "define command arguments", "use command
+  frontmatter", "organize commands", "create command with file references", "interactive
+  command", "use AskUserQuestion in command", or needs guidance on slash command structure,
+  YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction
+  patterns, or command development best practices for Claude Code.
 name: Command Development
-description: This skill should be used when the user asks to "create a slash command", "add a command", "write a custom command", "define command arguments", "use command frontmatter", "organize commands", "create command with file references", "interactive command", "use AskUserQuestion in command", or needs guidance on slash command structure, YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction patterns, or command development best practices for Claude Code.
 version: 0.2.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Command Development for Claude Code
 

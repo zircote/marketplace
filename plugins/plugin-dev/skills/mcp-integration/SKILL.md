@@ -1,8 +1,27 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks to "add MCP server", "integrate
+  MCP", "configure MCP in plugin", "use .mcp.json", "set up Model Context Protocol",
+  "connect external service", mentions "${CLAUDE_PLUGIN_ROOT} with MCP", or discusses
+  MCP server types (SSE, stdio, HTTP, WebSocket). Provides comprehensive guidance
+  for integrating Model Context Protocol servers into Claude Code plugins for external
+  tool and service integration.
 name: MCP Integration
-description: This skill should be used when the user asks to "add MCP server", "integrate MCP", "configure MCP in plugin", "use .mcp.json", "set up Model Context Protocol", "connect external service", mentions "${CLAUDE_PLUGIN_ROOT} with MCP", or discusses MCP server types (SSE, stdio, HTTP, WebSocket). Provides comprehensive guidance for integrating Model Context Protocol servers into Claude Code plugins for external tool and service integration.
 version: 0.1.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # MCP Integration for Claude Code Plugins
 

@@ -1,8 +1,26 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks to "create an agent", "add
+  an agent", "write a subagent", "agent frontmatter", "when to use description", "agent
+  examples", "agent tools", "agent colors", "autonomous agent", or needs guidance
+  on agent structure, system prompts, triggering conditions, or agent development
+  best practices for Claude Code plugins.
 name: Agent Development
-description: This skill should be used when the user asks to "create an agent", "add an agent", "write a subagent", "agent frontmatter", "when to use description", "agent examples", "agent tools", "agent colors", "autonomous agent", or needs guidance on agent structure, system prompts, triggering conditions, or agent development best practices for Claude Code plugins.
 version: 0.1.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Agent Development for Claude Code Plugins
 

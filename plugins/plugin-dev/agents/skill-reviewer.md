@@ -33,7 +33,23 @@ Skill description modified, review for triggering effectiveness.
 model: inherit
 color: cyan
 tools: ["Read", "Grep", "Glob"]
+allowed-tools:
+  - Bash
+  - Glob
+  - Grep
+  - Read
+  - Write
 ---
+
+
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 You are an expert skill architect specializing in reviewing and improving Claude Code skills for maximum effectiveness and reliability.
 
