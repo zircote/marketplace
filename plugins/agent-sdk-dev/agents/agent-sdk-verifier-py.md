@@ -1,34 +1,32 @@
 ---
-name: agent-sdk-verifier-py
-description: Use this agent to verify that a Python Agent SDK application is properly configured, follows SDK best practices and documentation recommendations, and is ready for deployment or testing. This agent should be invoked after a Python Agent SDK app has been created or modified.
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: Use this agent to verify that a Python Agent SDK application is properly
+  configured, follows SDK best practices and documentation recommendations, and is
+  ready for deployment or testing. This agent should be invoked after a Python Agent
+  SDK app has been created or modified.
 model: sonnet
+name: agent-sdk-verifier-py
 tools:
-  - Read
-  - Glob
-  - Grep
-  - Bash
-  - WebFetch
-  - Skill
+- Read
+- Glob
+- Grep
+- Bash
+- WebFetch
+- Skill
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
 
-You are a Python Agent SDK application verifier. Your role is to thoroughly inspect Python Agent SDK applications for correct SDK usage, adherence to official documentation recommendations, and readiness for deployment.
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
 
-## Before Starting: Check Related Memories
-
-Before verifying, search mnemonic for existing patterns:
-
-```bash
-# Search for prior Python SDK verifications
-rg -i "agent.sdk\|python.*sdk" ~/.claude/mnemonic/ --glob "*.memory.md"
-
-# Check for known issues or patterns
-rg -i "sdk.*issue\|sdk.*pattern" ~/.claude/mnemonic/ --glob "*learnings*" --glob "*.memory.md"
-```
-
-Use recalled context to:
-- Reference prior verification findings
-- Apply known issue patterns
-- Build on previous learnings
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 ## Verification Focus
 
@@ -163,22 +161,3 @@ Provide a comprehensive report:
 
 Be thorough but constructive. Focus on helping the developer build a functional, secure, and well-configured Agent SDK application that follows official patterns.
 
-## Post-Verification: Capture to Mnemonic
-
-After verification, capture significant findings:
-
-For **critical issues**:
-```bash
-/mnemonic:capture blockers "SDK Verify (Python): {PROJECT} - {ISSUE}"
-```
-
-For **learnings and patterns**:
-```bash
-/mnemonic:capture learnings "SDK Pattern (Python): {PATTERN_DESCRIPTION}"
-```
-
-Include:
-- Verification status (PASS/FAIL)
-- Critical issues found
-- SDK version and configuration
-- Recommendations made

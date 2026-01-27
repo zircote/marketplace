@@ -1,10 +1,18 @@
 ---
+allowed-tools: Read, Write, Glob, Grep, Bash, WebFetch, WebSearch, AskUserQuestion,
+  Task, Skill
+argument-hint:
+- project-name
 description: Create and setup a new Claude Agent SDK application
-argument-hint: [project-name]
-allowed-tools: Read, Write, Glob, Grep, Bash, WebFetch, WebSearch, AskUserQuestion, Task, Skill
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
 
-You are tasked with helping the user create a new Claude Agent SDK application. Follow these steps carefully:
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 ## Reference Documentation
 
@@ -176,25 +184,3 @@ Once setup is complete and verified, provide the user with:
 
 Begin by asking the FIRST requirement question only. Wait for the user's answer before proceeding to the next question.
 
-## Memory Integration
-
-### Post-Creation: Capture to Mnemonic
-
-After creating the Agent SDK application, capture the setup:
-
-```bash
-/mnemonic:capture patterns "Agent SDK App: {PROJECT_NAME} ({LANGUAGE}) - created"
-```
-
-Include:
-- Project name and language (TypeScript/Python)
-- Agent type (coding, business, custom)
-- Starting point chosen
-- Package manager used
-- SDK version installed
-- Any custom tools or MCP integrations
-
-This enables future recall for:
-- Consistent SDK app creation patterns
-- Referencing prior configurations
-- Tracking SDK version usage across projects
