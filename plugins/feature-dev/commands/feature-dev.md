@@ -1,21 +1,17 @@
 ---
-description: Guided feature development with codebase understanding and architecture focus
-argument-hint: Optional feature description
 allowed-tools: Bash, Read, Write, Glob, Grep, Task
+argument-hint: Optional feature description
+description: Guided feature development with codebase understanding and architecture
+  focus
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
 
-# Feature Development
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
 
-You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspecified details, design elegant architectures, then implement.
-
-## Before Starting: Check Related Memories
-
-Search for relevant patterns, decisions, and prior work:
-```bash
-rg -i "pattern\|decision\|architecture" ~/.claude/mnemonic/ --glob "*.memory.md" -l 2>/dev/null | head -10
-```
-
-If memories exist for this project or similar features, read and apply them.
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 ## Core Principles
 
@@ -48,7 +44,7 @@ Initial request: $ARGUMENTS
 **Goal**: Understand relevant existing code and patterns at both high and low levels
 
 **Actions**:
-1. Launch 2-3 code-explorer agents in parallel. Each agent should:
+1. Launch 2-3 `feature-dev:code-explorer` agents in parallel. Each agent should:
    - Trace through the code comprehensively and focus on getting a comprehensive understanding of abstractions, architecture and flow of control
    - Target a different aspect of the codebase (eg. similar features, high level understanding, architectural understanding, user experience, etc)
    - Include a list of 5-10 key files to read
@@ -85,7 +81,7 @@ If the user says "whatever you think is best", provide your recommendation and g
 **Goal**: Design multiple implementation approaches with different trade-offs
 
 **Actions**:
-1. Launch 2-3 code-architect agents in parallel with different focuses: minimal changes (smallest change, maximum reuse), clean architecture (maintainability, elegant abstractions), or pragmatic balance (speed + quality)
+1. Launch 2-3 `feature-dev:code-architect` agents in parallel with different focuses: minimal changes (smallest change, maximum reuse), clean architecture (maintainability, elegant abstractions), or pragmatic balance (speed + quality)
 2. Review all approaches and form your opinion on which fits best for this specific task (consider: small fix vs large feature, urgency, complexity, team context)
 3. Present to user: brief summary of each approach, trade-offs comparison, **your recommendation with reasoning**, concrete implementation differences
 4. **Ask user which approach they prefer**
@@ -113,7 +109,7 @@ If the user says "whatever you think is best", provide your recommendation and g
 **Goal**: Ensure code is simple, DRY, elegant, easy to read, and functionally correct
 
 **Actions**:
-1. Launch 3 code-reviewer agents in parallel with different focuses: simplicity/DRY/elegance, bugs/functional correctness, project conventions/abstractions
+1. Launch 3 `feature-dev:code-reviewer` agents in parallel with different focuses: simplicity/DRY/elegance, bugs/functional correctness, project conventions/abstractions
 2. Consolidate findings and identify highest severity issues that you recommend fixing
 3. **Present findings to user and ask what they want to do** (fix now, fix later, or proceed as-is)
 4. Address issues based on user decision
@@ -131,13 +127,5 @@ If the user says "whatever you think is best", provide your recommendation and g
    - Key decisions made
    - Files modified
    - Suggested next steps
-
-## Post-Feature: Capture to Mnemonic
-
-Capture significant learnings from this feature development:
-- Use `/mnemonic:capture patterns "{pattern description}"` for reusable patterns discovered
-- Use `/mnemonic:capture decisions "{decision description}"` for architectural choices made
-- Use `/mnemonic:capture learnings "{learning description}"` for insights gained
-- Follow `mnemonic-format` skill for MIF Level 3 structure
 
 ---

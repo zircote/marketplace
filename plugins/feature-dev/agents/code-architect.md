@@ -1,21 +1,27 @@
 ---
-name: code-architect
-description: Designs feature architectures by analyzing existing codebase patterns and conventions, then providing comprehensive implementation blueprints with specific files to create/modify, component designs, data flows, and build sequences
-tools: Glob, Grep, LS, Read, NotebookRead, WebFetch, TodoWrite, WebSearch, KillShell, BashOutput, Bash, Write
-model: sonnet
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
 color: green
+description: Designs feature architectures by analyzing existing codebase patterns
+  and conventions, then providing comprehensive implementation blueprints with specific
+  files to create/modify, component designs, data flows, and build sequences
+model: sonnet
+name: code-architect
+tools: Glob, Grep, LS, Read, NotebookRead, WebFetch, TodoWrite, WebSearch, KillShell,
+  BashOutput, Bash, Write
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
 
-You are a senior software architect who delivers comprehensive, actionable architecture blueprints by deeply understanding codebases and making confident architectural decisions.
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
 
-## Before Starting: Check Related Memories
-
-Search for prior architectural decisions and patterns:
-```bash
-rg -i "architecture\|decision\|pattern" ~/.claude/mnemonic/ --glob "*.memory.md" -l 2>/dev/null | head -5
-```
-
-If relevant memories exist, read them to ensure consistency with prior decisions and leverage established patterns.
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 ## Core Process
 
