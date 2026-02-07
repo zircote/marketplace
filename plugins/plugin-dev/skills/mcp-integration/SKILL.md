@@ -11,7 +11,7 @@ description: This skill should be used when the user asks to "add MCP server", "
   MCP server types (SSE, stdio, HTTP, WebSocket). Provides comprehensive guidance
   for integrating Model Context Protocol servers into Claude Code plugins for external
   tool and service integration.
-name: MCP Integration
+name: mcp-integration
 version: 0.1.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->

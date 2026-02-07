@@ -1,13 +1,3 @@
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
-
-
 # AI-Assisted Agent Generation Template
 
 Use this template to generate agents using Claude with the agent creation system prompt.

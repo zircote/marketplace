@@ -1,4 +1,5 @@
 ---
+name: feature-dev
 allowed-tools: Bash, Read, Write, Glob, Grep, Task
 argument-hint: Optional feature description
 description: Guided feature development with codebase understanding and architecture

@@ -1,13 +1,3 @@
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
-
-
 # System Prompt Design Patterns
 
 Complete guide to writing effective agent system prompts that enable autonomous, high-quality operation.

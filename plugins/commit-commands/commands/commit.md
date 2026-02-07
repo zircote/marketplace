@@ -1,4 +1,5 @@
 ---
+name: commit
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash, Read,
   Write, Glob, Grep
 description: Create a git commit

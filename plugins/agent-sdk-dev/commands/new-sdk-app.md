@@ -1,4 +1,5 @@
 ---
+name: new-sdk-app
 allowed-tools: Read, Write, Glob, Grep, Bash, WebFetch, WebSearch, AskUserQuestion,
   Task, Skill
 argument-hint:

@@ -1,13 +1,3 @@
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
-
-
 # Agent Triggering Examples: Best Practices
 
 Complete guide to writing effective `<example>` blocks in agent descriptions for reliable triggering.
