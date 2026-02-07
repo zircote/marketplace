@@ -1,3 +1,13 @@
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
+
+
 # MCP Server Types: Deep Dive
 
 Complete reference for all MCP server types supported in Claude Code plugins.

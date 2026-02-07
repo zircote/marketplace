@@ -11,7 +11,7 @@ description: This skill should be used when the user asks to "create a plugin", 
   auto-discovery", or needs guidance on plugin directory layout, manifest configuration,
   component organization, file naming conventions, or Claude Code plugin architecture
   best practices.
-name: plugin-structure
+name: Plugin Structure
 version: 0.1.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
