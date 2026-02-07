@@ -12,7 +12,7 @@ description: This skill should be used when the user asks to "create a hook", "a
   SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides
   comprehensive guidance for creating and implementing Claude Code plugin hooks with
   focus on advanced prompt-based hooks API.
-name: hook-development
+name: Hook Development
 version: 0.1.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->

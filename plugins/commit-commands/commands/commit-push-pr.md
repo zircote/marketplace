@@ -1,5 +1,4 @@
 ---
-name: commit-push-pr
 allowed-tools: Bash(git checkout --branch:*), Bash(git add:*), Bash(git status:*),
   Bash(git push:*), Bash(git commit:*), Bash(gh pr create:*), Bash, Read, Write, Glob,
   Grep

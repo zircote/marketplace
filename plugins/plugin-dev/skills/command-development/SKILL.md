@@ -11,7 +11,7 @@ description: This skill should be used when the user asks to "create a slash com
   command", "use AskUserQuestion in command", or needs guidance on slash command structure,
   YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction
   patterns, or command development best practices for Claude Code.
-name: command-development
+name: Command Development
 version: 0.2.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
