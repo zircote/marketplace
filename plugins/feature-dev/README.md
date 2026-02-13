@@ -58,7 +58,7 @@ Claude: Let me understand what you need...
 **Goal**: Understand relevant existing code and patterns
 
 **What happens:**
-- Launches 2-3 `code-explorer` agents in parallel
+- Launches 2-3 `feature-dev:code-explorer` agents in parallel
 - Each agent explores different aspects (similar features, architecture, UI patterns)
 - Agents return comprehensive analyses with key files to read
 - Claude reads all identified files to build deep understanding
@@ -115,7 +115,7 @@ Before designing the architecture, I need to clarify:
 **Goal**: Design multiple implementation approaches
 
 **What happens:**
-- Launches 2-3 `code-architect` agents with different focuses:
+- Launches 2-3 `feature-dev:code-architect` agents with different focuses:
   - **Minimal changes**: Smallest change, maximum reuse
   - **Clean architecture**: Maintainability, elegant abstractions
   - **Pragmatic balance**: Speed + quality
@@ -178,7 +178,7 @@ Which approach would you like to use?
 **Goal**: Ensure code is simple, DRY, elegant, and functionally correct
 
 **What happens:**
-- Launches 3 `code-reviewer` agents in parallel with different focuses:
+- Launches 3 `feature-dev:code-reviewer` agents in parallel with different focuses:
   - **Simplicity/DRY/Elegance**: Code quality and maintainability
   - **Bugs/Correctness**: Functional correctness and logic errors
   - **Conventions/Abstractions**: Project standards and patterns
@@ -248,7 +248,7 @@ Suggested next steps:
 
 ## Agents
 
-### `code-explorer`
+### `feature-dev:code-explorer`
 
 **Purpose**: Deeply analyzes existing codebase features by tracing execution paths
 
@@ -270,7 +270,7 @@ Suggested next steps:
 - Architecture insights
 - List of essential files to read
 
-### `code-architect`
+### `feature-dev:code-architect`
 
 **Purpose**: Designs feature architectures and implementation blueprints
 
@@ -292,7 +292,7 @@ Suggested next steps:
 - Implementation map with specific files
 - Build sequence with phases
 
-### `code-reviewer`
+### `feature-dev:code-reviewer`
 
 **Purpose**: Reviews code for bugs, quality issues, and project conventions
 
@@ -325,17 +325,17 @@ Let the workflow guide you through all 7 phases.
 
 **Explore a feature:**
 ```
-"Launch code-explorer to trace how authentication works"
+"Launch feature-dev:code-explorer to trace how authentication works"
 ```
 
 **Design architecture:**
 ```
-"Launch code-architect to design the caching layer"
+"Launch feature-dev:code-architect to design the caching layer"
 ```
 
 **Review code:**
 ```
-"Launch code-reviewer to check my recent changes"
+"Launch feature-dev:code-reviewer to check my recent changes"
 ```
 
 ## Best Practices
