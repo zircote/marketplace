@@ -174,10 +174,10 @@ Context: User mentions code is hard to understand
 user: "This code is confusing and hard to follow"
 assistant: "I can help improve the code clarity."
 <commentary>
-User indicates complexity issues. Trigger code-simplifier agent to refactor
+User indicates complexity issues. Trigger simplifier agent to refactor
 for better readability.
 </commentary>
-assistant: "I'll use the code-simplifier agent to suggest improvements."
+assistant: "I'll use the simplifier agent to suggest improvements."
 </example>
 ```
 
