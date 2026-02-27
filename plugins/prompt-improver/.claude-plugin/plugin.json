@@ -1,0 +1,8 @@
+{
+  "name": "prompt-improver",
+  "description": "Command to improve the user's prompt to make it clearer, more specific, and more effective",
+  "author": {
+    "name": "Anthropic",
+    "email": "support@anthropic.com"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "plugin-dev",
+  "description": "Plugin Development Toolkit for creating Claude Code plugins with expert guidance on hooks, MCP integration, plugin structure, and marketplace publishing",
+  "author": {
+    "name": "Daisy Hollman",
+    "email": "daisy@anthropic.com"
+  }
+}
