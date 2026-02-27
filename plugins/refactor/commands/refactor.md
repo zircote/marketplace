@@ -12,8 +12,8 @@ You are the team lead orchestrating an automated, iterative code refactoring pro
 
 This command implements a comprehensive refactoring workflow using 4 specialist agents coordinated as a swarm team:
 - **architect** — Reviews architecture, identifies improvements, scores quality
-- **test** — Analyzes coverage, runs tests, reports failures
-- **code** — Implements optimizations, fixes test failures
+- **refactor-test** — Analyzes coverage, runs tests, reports failures
+- **refactor-code** — Implements optimizations, fixes test failures
 - **simplifier** — Simplifies changed code for clarity and consistency
 
 The workflow uses parallel execution where possible and iterates 3 times for continuous improvement.
@@ -63,21 +63,21 @@ Spawn all 4 teammates using the **Task tool** with `team_name: "refactor-team"`.
      prompt: "You are the architect agent on a refactoring swarm team. Wait for task assignments via the task list. Check TaskList for your assigned tasks. When you complete a task, mark it completed with TaskUpdate and send your results to the team lead via SendMessage."
    ```
 
-2. **test** teammate:
+2. **refactor-test** teammate:
    ```
    Task tool with:
-     subagent_type: "refactor:test"
+     subagent_type: "refactor:refactor-test"
      team_name: "refactor-team"
-     name: "test"
+     name: "refactor-test"
      prompt: "You are the test agent on a refactoring swarm team. Wait for task assignments via the task list. Check TaskList for your assigned tasks. When you complete a task, mark it completed with TaskUpdate and send your results to the team lead via SendMessage."
    ```
 
-3. **code** teammate:
+3. **refactor-code** teammate:
    ```
    Task tool with:
-     subagent_type: "refactor:code"
+     subagent_type: "refactor:refactor-code"
      team_name: "refactor-team"
-     name: "code"
+     name: "refactor-code"
      prompt: "You are the code agent on a refactoring swarm team. Wait for task assignments via the task list. Check TaskList for your assigned tasks. When you complete a task, mark it completed with TaskUpdate and send your results to the team lead via SendMessage."
    ```
 
@@ -99,7 +99,7 @@ Spawn all 4 teammates using the **Task tool** with `team_name: "refactor-team"`.
 Create two tasks and assign them in parallel:
 
 1. **TaskCreate**: "Analyze test coverage for [scope]. Identify gaps, add comprehensive test cases for critical paths/edge cases/error handling, run all tests, verify passing, report coverage status."
-   - **TaskUpdate**: assign owner to "test"
+   - **TaskUpdate**: assign owner to "refactor-test"
 
 2. **TaskCreate**: "Review code architecture for [scope]. Analyze structure, patterns, quality. Identify all optimization opportunities (structural, duplication, naming, organization, complexity, dependencies). Create initial prioritized optimization plan."
    - **TaskUpdate**: assign owner to "architect"
@@ -107,8 +107,8 @@ Create two tasks and assign them in parallel:
 ### Step 1.2: Wait for Both to Complete
 
 - Monitor TaskList until both Phase 1 tasks show status: completed
-- Read the results from messages received from test and architect teammates
-- Verify test agent confirms all tests are passing before proceeding
+- Read the results from messages received from refactor-test and architect teammates
+- Verify refactor-test agent confirms all tests are passing before proceeding
 
 ### Step 1.3: Checkpoint
 
@@ -132,31 +132,31 @@ Repeat the following for `max_iterations` (3) times:
 ### Step 2.B: Implement Optimizations
 
 1. **TaskCreate**: "Implement the top 3 optimizations from the architect's plan: [paste architect's top 3]. Preserve all existing functionality. Apply clean code principles. Make incremental, safe changes. Report all files modified."
-   - **TaskUpdate**: assign owner to "code"
+   - **TaskUpdate**: assign owner to "refactor-code"
 2. Wait for completion
 3. Record implementation report (files changed, optimizations applied)
 
 ### Step 2.C: Test Verification
 
 1. **TaskCreate**: "Run the complete test suite. Report pass/fail status. If failures: provide detailed failure report with causes and suggestions."
-   - **TaskUpdate**: assign owner to "test"
+   - **TaskUpdate**: assign owner to "refactor-test"
 2. Wait for completion
 
 ### Step 2.D: Fix Failures (If Any)
 
-If test agent reported failures:
+If refactor-test agent reported failures:
 
 1. **TaskCreate**: "Fix test failures: [paste failure report]. Analyze root causes. Implement fixes. Preserve refactoring improvements."
-   - **TaskUpdate**: assign owner to "code"
+   - **TaskUpdate**: assign owner to "refactor-code"
 2. Wait for completion
 3. **TaskCreate**: "Re-run full test suite to verify fixes."
-   - **TaskUpdate**: assign owner to "test"
+   - **TaskUpdate**: assign owner to "refactor-test"
 4. Wait for completion
 5. If still failing, repeat Step 2.D (max 3 attempts, then ask user for guidance)
 
 ### Step 2.E: Simplify Changed Code
 
-1. **TaskCreate**: "Simplify all code changed in this iteration. Files modified: [list from code agent's report]. Focus on naming clarity, control flow simplification, redundancy removal, and style consistency. Do not change functionality."
+1. **TaskCreate**: "Simplify all code changed in this iteration. Files modified: [list from refactor-code agent's report]. Focus on naming clarity, control flow simplification, redundancy removal, and style consistency. Do not change functionality."
    - **TaskUpdate**: assign owner to "simplifier"
 2. Wait for completion
 3. Record simplification report
@@ -164,7 +164,7 @@ If test agent reported failures:
 ### Step 2.F: Verify Simplification
 
 1. **TaskCreate**: "Run full test suite to verify simplification preserved all functionality."
-   - **TaskUpdate**: assign owner to "test"
+   - **TaskUpdate**: assign owner to "refactor-test"
 2. Wait for completion
 3. If failures: send simplification failure report to simplifier for reversion, then re-test
 
@@ -196,9 +196,9 @@ Monitor TaskList until both tasks show completed.
 ### Step 3.3: Final Test Run
 
 1. **TaskCreate**: "Final full test suite run. Report complete pass/fail results."
-   - **TaskUpdate**: assign owner to "test"
+   - **TaskUpdate**: assign owner to "refactor-test"
 2. Wait for completion
-3. If failures: coordinate fix with code agent, re-test
+3. If failures: coordinate fix with refactor-code agent, re-test
 
 ### Step 3.4: Final Scoring
 
@@ -244,7 +244,7 @@ Quality Scores:
 - Team lead (this command) makes all sequencing decisions
 
 ### Parallel Execution Points
-- **Phase 1**: test + architect run simultaneously (both read-only analysis)
+- **Phase 1**: refactor-test + architect run simultaneously (both read-only analysis)
 - **Phase 3.1**: simplifier + architect run simultaneously
 - All other steps are sequential due to data dependencies
 
@@ -256,7 +256,7 @@ Quality Scores:
 
 ### State Management
 - Track `refactoring_iteration` counter carefully
-- Keep architect's optimization plan accessible for code agent
+- Keep architect's optimization plan accessible for refactor-code agent
 - Track which files were modified each iteration for simplifier
 - Maintain list of all changes across iterations for final report
 

@@ -7,8 +7,8 @@ Swarm-orchestrated iterative code refactoring with specialized AI agents that en
 The Refactor plugin orchestrates four specialized agents as a swarm team to systematically improve code quality while preserving functionality:
 
 - **Architect Agent** — Reviews code architecture, plans optimizations, scores quality
-- **Test Agent** — Ensures comprehensive test coverage and validates changes
-- **Code Agent** — Implements clean code improvements safely
+- **Refactor-Test Agent** — Ensures comprehensive test coverage and validates changes
+- **Refactor-Code Agent** — Implements clean code improvements safely
 - **Simplifier Agent** — Simplifies changed code for clarity, consistency, and maintainability
 
 ## How It Works
@@ -18,29 +18,29 @@ The refactoring process uses swarm orchestration (TeamCreate, TaskCreate/TaskUpd
 ```
 Phase 0: Initialize
 ├── Create swarm team
-├── Spawn 4 teammates: architect, test, code, simplifier
+├── Spawn 4 teammates: architect, refactor-test, refactor-code, simplifier
 └── Create phase tasks
 
 Phase 1: Foundation (PARALLEL)
-├── [test]      → Analyze coverage, add missing tests, verify passing
+├── [refactor-test]      → Analyze coverage, add missing tests, verify passing
 └── [architect] → Initial architecture review, identify all opportunities
 
 Phase 2: Iteration Loop (×3)
 │
-├── Step A: [architect]  → Create optimization plan (top 3 priorities)
-├── Step B: [code]       → Implement top 3 optimizations
-├── Step C: [test]       → Run full test suite, report pass/fail
-├── Step D: [code]       → Fix test failures if any → [test] re-run
-├── Step E: [simplifier] → Simplify all code changed this iteration
-└── Step F: [test]       → Verify simplification preserved functionality
+├── Step A: [architect]       → Create optimization plan (top 3 priorities)
+├── Step B: [refactor-code]  → Implement top 3 optimizations
+├── Step C: [refactor-test]  → Run full test suite, report pass/fail
+├── Step D: [refactor-code]  → Fix test failures if any → [refactor-test] re-run
+├── Step E: [simplifier]     → Simplify all code changed this iteration
+└── Step F: [refactor-test]  → Verify simplification preserved functionality
 
 Phase 3: Final Assessment (PARALLEL)
 ├── [simplifier] → Final whole-scope simplification pass
 └── [architect]  → Prepare final quality assessment framework
 
 Phase 4: Final Verification & Report
-├── [test]      → Final test suite run
-├── [architect] → Score code (Clean Code + Architecture, 1-10 each)
+├── [refactor-test] → Final test suite run
+├── [architect]     → Score code (Clean Code + Architecture, 1-10 each)
 ├── Generate refactor-result-{timestamp}.md
 └── Shutdown team
 ```
@@ -106,14 +106,14 @@ Phase 4: Final Verification & Report
 
 **Tools**: Glob, Grep, Read, TodoWrite, WebFetch
 
-### Test Agent
+### Refactor-Test Agent
 **Role**: Quality assurance through testing
 
 **Capabilities**: Coverage analysis, test case generation, test execution, failure diagnosis
 
 **Tools**: Glob, Grep, Read, Write, Edit, Bash, TodoWrite
 
-### Code Agent
+### Refactor-Code Agent
 **Role**: Implementation of refactoring
 
 **Capabilities**: Clean code refactoring, safe incremental changes, test failure fixing, best practice application
@@ -271,4 +271,4 @@ Current version: 2.0.0
 
 ### 1.0.0
 - Initial release with sequential 7-step workflow
-- Three agents: architect, test, code
+- Three agents: architect, refactor-test, refactor-code
