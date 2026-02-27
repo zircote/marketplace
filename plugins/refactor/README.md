@@ -195,13 +195,117 @@ Phase 4: Final Verification & Report
 
 ## Configuration
 
-The refactoring process uses these defaults:
+### Config File: `.claude/refactor.config.json`
+
+The refactor plugin supports a project-level configuration file at `.claude/refactor.config.json` that controls post-refactor GitHub integration (commits, PRs, issues, discussions).
+
+**First run behavior**: If no config file exists, the plugin runs an interactive setup wizard via `AskUserQuestion` prompts. Your answers are saved to `.claude/refactor.config.json` for all future runs.
+
+**Subsequent runs**: The config file is loaded silently — no prompts.
+
+**Zero-config default**: If you create the file with all defaults (or answer all defaults during setup), behavior is identical to v2.0.0 — no commits, no PRs, no publishing.
+
+### Schema
+
+```json
+{
+  "version": "1.0",
+  "postRefactor": {
+    "commitStrategy": "none",
+    "createPR": false,
+    "prDraft": true,
+    "publishReport": "none",
+    "discussionCategory": "General"
+  }
+}
+```
+
+### Field Reference
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `commitStrategy` | `"none"` \| `"per-iteration"` \| `"single-final"` | `"none"` | Controls when/if git commits happen |
+| `createPR` | `boolean` | `false` | Whether to open a PR after refactoring |
+| `prDraft` | `boolean` | `true` | If PR is created, make it a draft (only relevant when `createPR: true`) |
+| `publishReport` | `"none"` \| `"github-issue"` \| `"github-discussion"` | `"none"` | Where to publish the final refactor report |
+| `discussionCategory` | `string` | `"General"` | GitHub Discussion category name (only relevant when `publishReport: "github-discussion"`) |
+
+### Commit Strategy Options
+
+- **`"none"`** — No automatic commits. You handle git yourself (default, matches v2.0.0 behavior).
+- **`"per-iteration"`** — Commits after each iteration completes (Step 2.G). Message format: `refactor(iteration 1/3): {summary}`.
+- **`"single-final"`** — Single commit after all iterations and final assessment. Message format: `refactor: {scope} — clean code 8/10, architecture 9/10`.
+
+### Pull Request Options
+
+- **`createPR: false`** — No PR created (default).
+- **`createPR: true, prDraft: true`** — Draft PR created after refactoring.
+- **`createPR: true, prDraft: false`** — Ready-for-review PR created after refactoring.
+
+When a PR is created, the plugin will:
+- Create a `refactor/{scope}-{date}` branch if you're on a default branch
+- Include the refactor report summary and quality scores in the PR body
+- Cross-reference any issue or discussion created by `publishReport`
+
+### Report Publishing Options
+
+- **`"none"`** — Report saved as local file only (default).
+- **`"github-issue"`** — Creates a GitHub issue with the refactor report. Title: `Refactor Report: {scope} — {date}`, label: `refactoring`.
+- **`"github-discussion"`** — Creates a GitHub Discussion in the configured category with the same title and body.
+
+### Example Configurations
+
+**Commit per iteration, no PR or publishing:**
+```json
+{
+  "version": "1.0",
+  "postRefactor": {
+    "commitStrategy": "per-iteration",
+    "createPR": false,
+    "prDraft": true,
+    "publishReport": "none",
+    "discussionCategory": "General"
+  }
+}
+```
+
+**Full workflow — single commit, draft PR, issue report:**
+```json
+{
+  "version": "1.0",
+  "postRefactor": {
+    "commitStrategy": "single-final",
+    "createPR": true,
+    "prDraft": true,
+    "publishReport": "github-issue",
+    "discussionCategory": "General"
+  }
+}
+```
+
+**Discussion-based reporting with ready-for-review PR:**
+```json
+{
+  "version": "1.0",
+  "postRefactor": {
+    "commitStrategy": "single-final",
+    "createPR": true,
+    "prDraft": false,
+    "publishReport": "github-discussion",
+    "discussionCategory": "Engineering"
+  }
+}
+```
+
+### Error Handling
+
+All GitHub operations are non-blocking. If any operation fails (e.g., `gh` not authenticated, no remote configured), the plugin logs a warning and continues. The refactor workflow is never blocked by a publishing or PR creation failure.
+
+### Refactoring Process Defaults
 
 - **Max Iterations**: 3
 - **Optimizations per Iteration**: Top 3
 - **Test Coverage Target**: Production quality (typically 80%+)
-
-These are currently hardcoded but designed for future configurability.
 
 ## Troubleshooting
 
@@ -258,9 +362,18 @@ A: All languages. Agents adapt to your project's testing framework and conventio
 
 ## Version
 
-Current version: 2.0.0
+Current version: 2.1.0
 
 ## Changelog
+
+### 2.1.0
+- Configuration-driven post-refactor workflow via `.claude/refactor.config.json`
+- Interactive first-run setup wizard with AskUserQuestion prompts
+- Commit strategies: none, per-iteration, single-final
+- Optional PR creation (draft or ready-for-review) after refactoring
+- Report publishing to GitHub Issues or GitHub Discussions
+- Cross-referencing between PRs and published reports
+- Non-blocking error handling for all GitHub operations
 
 ### 2.0.0
 - Swarm orchestration (TeamCreate, TaskCreate/TaskUpdate, SendMessage)

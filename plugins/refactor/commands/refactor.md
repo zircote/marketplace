@@ -25,6 +25,70 @@ The workflow uses parallel execution where possible and iterates 3 times for con
 - If file path: refactor specific file(s)
 - If description: refactor code matching description
 
+## Phase 0.0: Configuration Check
+
+### Step 0.0.1: Load or Create Configuration
+
+1. Attempt to read `.claude/refactor.config.json` from the project root
+2. **If file exists**: Parse the JSON silently. Merge with defaults (any missing fields use defaults). Store as `config`. Proceed to Phase 0.
+3. **If file does NOT exist**: Run interactive setup (Step 0.0.2)
+
+### Step 0.0.2: Interactive Setup (First Run Only)
+
+Run the following **AskUserQuestion** prompts sequentially:
+
+1. **Q1** (header: "Commits"): "How should refactoring changes be committed?"
+   - Options:
+     - "Don't commit (I'll handle it)" *(default)* — maps to `commitStrategy: "none"`
+     - "Commit after each iteration" — maps to `commitStrategy: "per-iteration"`
+     - "Single commit when done" — maps to `commitStrategy: "single-final"`
+
+2. **Q2** (header: "Pull Request"): "Create a pull request when refactoring completes?"
+   - Options:
+     - "No" *(default)* — maps to `createPR: false`
+     - "Yes, as draft PR" — maps to `createPR: true, prDraft: true`
+     - "Yes, as ready-for-review PR" — maps to `createPR: true, prDraft: false`
+
+3. **Q3** (header: "Report"): "Where should the final refactor report be published?"
+   - Options:
+     - "Local file only" *(default)* — maps to `publishReport: "none"`
+     - "GitHub Issue" — maps to `publishReport: "github-issue"`
+     - "GitHub Discussion" — maps to `publishReport: "github-discussion"`
+
+4. **If Q3 answer is "GitHub Discussion"**: Ask follow-up with AskUserQuestion (header: "Discussion Category"): "Which GitHub Discussion category?" with options "General" (default) and "Engineering". Store answer as `discussionCategory`.
+
+### Step 0.0.3: Write Configuration File
+
+1. Map all answers to the config JSON schema:
+   ```json
+   {
+     "version": "1.0",
+     "postRefactor": {
+       "commitStrategy": "<from Q1>",
+       "createPR": <from Q2>,
+       "prDraft": <from Q2>,
+       "publishReport": "<from Q3>",
+       "discussionCategory": "<from Q3 follow-up or 'General'>"
+     }
+   }
+   ```
+2. Use the **Write** tool to save to `.claude/refactor.config.json`
+3. Store as `config`. Proceed to Phase 0.
+
+**Default config** (equivalent to zero-config behavior):
+```json
+{
+  "version": "1.0",
+  "postRefactor": {
+    "commitStrategy": "none",
+    "createPR": false,
+    "prDraft": true,
+    "publishReport": "none",
+    "discussionCategory": "General"
+  }
+}
+```
+
 ## Phase 0: Initialize Team
 
 ### Step 0.1: Understand Scope
@@ -172,8 +236,12 @@ If refactor-test agent reported failures:
 
 1. Increment `refactoring_iteration += 1`
 2. Inform user: "Iteration {refactoring_iteration} of {max_iterations} complete."
-3. If `refactoring_iteration < max_iterations`: continue to next iteration (Step 2.A)
-4. If `refactoring_iteration >= max_iterations`: proceed to Phase 3
+3. **If `config.postRefactor.commitStrategy` is `"per-iteration"`**:
+   - Use the **commit-commands:commit** skill to commit all changes
+   - Commit message format: `refactor(iteration {refactoring_iteration}/{max_iterations}): {brief summary from architect's plan}`
+   - If commit fails (e.g., no git, no changes), log a warning to the user and continue
+4. If `refactoring_iteration < max_iterations`: continue to next iteration (Step 2.A)
+5. If `refactoring_iteration >= max_iterations`: proceed to Phase 3
 
 ## Phase 3: Final Assessment (Parallel)
 
@@ -213,6 +281,57 @@ Monitor TaskList until both tasks show completed.
 1. Generate timestamp
 2. Create `refactor-result-{timestamp}.md` with architect's final assessment report
 3. Use Write tool to save the report
+
+### Step 4.1.5: Commit Final Changes (Conditional)
+
+**Only when `config.postRefactor.commitStrategy` is `"single-final"`**:
+
+1. Use the **commit-commands:commit** skill to commit all changes
+2. Commit message format: `refactor: {scope} — clean code {clean_code_score}/10, architecture {architecture_score}/10`
+3. If commit fails (e.g., no git, no changes), log a warning to the user and continue
+
+### Step 4.1.6: Publish Report (Conditional)
+
+**Only when `config.postRefactor.publishReport` is not `"none"`**:
+
+1. Generate the current date as `{date}` (YYYY-MM-DD format)
+
+2. **If `publishReport` is `"github-issue"`**:
+   - Run via Bash: `gh issue create --title "Refactor Report: {scope} — {date}" --body "{report_content}" --label "refactoring"`
+   - If the `refactoring` label doesn't exist, create it first: `gh label create refactoring --description "Code refactoring" --color "0E8A16"` (ignore errors if it already exists)
+   - Store the created issue URL as `published_url`
+   - If `gh` fails (not authenticated, no remote, etc.), log a warning to the user and continue
+
+3. **If `publishReport` is `"github-discussion"`**:
+   - First, get the repository ID and discussion category ID:
+     ```bash
+     gh api graphql -f query='{ repository(owner: "{owner}", name: "{repo}") { id discussionCategories(first: 25) { nodes { id name } } } }'
+     ```
+   - Find the category ID matching `config.postRefactor.discussionCategory` (default: "General")
+   - Create the discussion:
+     ```bash
+     gh api graphql -f query='mutation { createDiscussion(input: { repositoryId: "{repo_id}", categoryId: "{category_id}", title: "Refactor Report: {scope} — {date}", body: "{report_content}" }) { discussion { url } } }'
+     ```
+   - Store the created discussion URL as `published_url`
+   - If any `gh api` call fails, log a warning to the user and continue
+
+### Step 4.1.7: Create Pull Request (Conditional)
+
+**Only when `config.postRefactor.createPR` is `true`**:
+
+1. Check if currently on a feature branch (not `main`/`master`/`develop`). If on a default branch:
+   - Generate a scope slug from `{scope}` (lowercase, hyphens, no special chars)
+   - Create and switch to branch: `refactor/{scope-slug}-{date}`
+
+2. Ensure all changes are committed (if `commitStrategy` was `"none"`, use **commit-commands:commit** skill now with message: `refactor: {scope} — clean code {clean_code_score}/10, architecture {architecture_score}/10`)
+
+3. Create the PR using the **commit-commands:commit-push-pr** skill or `gh pr create`:
+   - Title: `refactor: {scope}`
+   - If `config.postRefactor.prDraft` is `true`: add `--draft` flag
+   - Body should include the refactor report summary and quality scores
+   - If a `published_url` was created in Step 4.1.6, include a cross-reference: `Related: {published_url}`
+
+4. If PR creation fails (e.g., no remote, auth issues), log a warning to the user and continue
 
 ### Step 4.2: Report to User
 
