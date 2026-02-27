@@ -11,16 +11,7 @@ description: This skill should be used when the user asks about "plugin settings
   make plugin behavior configurable. Documents the .claude/plugin-name.local.md pattern
   for storing plugin-specific configuration with YAML frontmatter and markdown content.
 name: plugin-settings
-version: 0.1.0
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # Plugin Settings Pattern for Claude Code Plugins
 

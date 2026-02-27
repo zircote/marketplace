@@ -11,14 +11,6 @@ description: Guide for creating effective skills. This skill should be used when
 license: Complete terms in LICENSE.txt
 name: skill-creator
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # Skill Creator
 

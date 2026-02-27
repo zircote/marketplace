@@ -14,14 +14,6 @@ name: code-explorer
 tools: Glob, Grep, LS, Read, NotebookRead, WebFetch, TodoWrite, WebSearch, KillShell,
   BashOutput, Bash, Write
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 ## Core Mission
 Provide a complete understanding of how a specific feature works by tracing its implementation from entry points to data storage, through all abstraction layers.

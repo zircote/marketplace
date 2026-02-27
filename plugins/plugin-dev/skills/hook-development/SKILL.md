@@ -13,16 +13,7 @@ description: This skill should be used when the user asks to "create a hook", "a
   comprehensive guidance for creating and implementing Claude Code plugin hooks with
   focus on advanced prompt-based hooks API.
 name: hook-development
-version: 0.1.0
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # Hook Development for Claude Code Plugins
 

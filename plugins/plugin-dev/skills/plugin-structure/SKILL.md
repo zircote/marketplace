@@ -12,16 +12,7 @@ description: This skill should be used when the user asks to "create a plugin", 
   component organization, file naming conventions, or Claude Code plugin architecture
   best practices.
 name: plugin-structure
-version: 0.1.0
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # Plugin Structure for Claude Code
 

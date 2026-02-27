@@ -11,16 +11,7 @@ description: This skill should be used when the user asks to "create an agent", 
   on agent structure, system prompts, triggering conditions, or agent development
   best practices for Claude Code plugins.
 name: agent-development
-version: 0.1.0
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # Agent Development for Claude Code Plugins
 
